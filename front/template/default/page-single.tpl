@@ -1,21 +1,13 @@
-<!DOCTYPE html>
-<html lang="{$langon}">
-
-<head>
-   {include file="{$incfile.metatag}" title=title}
-   {include file="{$incfile.style}" title=title}
-</head>
-
-<body>
-   <div class="layout-global">
-      {if $fileInclude|default:null}
-         {include file="{$incfile.header}" title=title}
-         {include file="{$fileInclude|templateInclude:$settemplate}" title=pageContent}
-      {/if}
-   </div>
-   {include file="{$incfile.pdpa}" title=title}
-   {include file="{$incfile.loadscript}" title=title}
-   {include file="{$incfile.modal}" title=title}
-</body>
-
-</html>
+{if $fileInclude|default:null}
+{include file="{$fileInclude|templateInclude}" title=pageContent}
+  {if $incjs|default:null}
+    {include file="$incjs" title=title}
+  {/if}
+  {strip}
+    {if {$assignjs_ps|default:null}}
+        {foreach $assignjs_ps as $addAssetScript}
+            {$addAssetScript}
+        {/foreach}
+    {/if}
+{/strip}
+{/if}

@@ -1,6 +1,0 @@
-a.disabled {
-  pointer-events: none;
-  cursor: default;
-}
-.detail-page .main .body-title p:lang(th),
-.detail-page .main .body-title span:lang(th) {font-family: 'quark'; font-weight: 500;}

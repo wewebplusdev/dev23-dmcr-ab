@@ -1,406 +1,433 @@
 <?php
-$callSetWebsite = new settingWebsite();
-$infoSetting = $callSetWebsite->callSetting();
-$smarty->assign("typeMember", $typeMember);
+// recaptcha v2
+$sitekey = '6LeZ0OQeAAAAAIY6RetHSCs9To8U_ewnPafgMllU';
+$secretkey = '6LeZ0OQeAAAAAD3lb4O6IHJIDeZLq8hGc-5UQvpM';
+// // recaptcha v3
+// $sitekey = '6LfH7xkeAAAAAPFz-fYiFvAIIVZP0aMQU6CCCdX6';
+// $secretkey = '6LfH7xkeAAAAALzFVzS3VPGR4xAle6rfqX9U8a7v';
+$smarty->assign("sitekey", $sitekey);
+$smarty->assign("secretkey", $resultSetting->fields);
 
+// if (!empty($memberLogin)) {
+// // $profileMember = callProfileMember($config['member']['masterkey'],$memberID['member_info']['id']);
+// // $smarty->assign("listProfile",$profileMember);
+//     // print_pre($url);
+//     $sql = "SELECT
+//   " . $config['member']['db'] . "." . $config['member']['db'] . "_id,
+//   " . $config['member']['db'] . "." . $config['member']['db'] . "_masterkey,
+//   " . $config['member']['db'] . "." . $config['member']['db'] . "_fname,
+//   " . $config['member']['db'] . "." . $config['member']['db'] . "_lname,
+//   " . $config['member']['db'] . "." . $config['member']['db'] . "_email,
+//   " . $config['member']['db'] . "." . $config['member']['db'] . "_date,
+//   " . $config['member']['db'] . "." . $config['member']['db'] . "_month,
+//   " . $config['member']['db'] . "." . $config['member']['db'] . "_year,
+//   " . $config['member']['db'] . "." . $config['member']['db'] . "_credate,
+//   " . $config['member']['db'] . "." . $config['member']['db'] . "_logindate,
+//   " . $config['member']['db'] . "." . $config['member']['db'] . "_status,
+//   " . $config['member']['db'] . "." . $config['member']['db'] . "_pic,
+//   " . $config['member']['db'] . "." . $config['member']['db'] . "_tel,
+//   " . $config['member']['db'] . "." . $config['member']['db'] . "_sex,
+//   " . $config['member']['db'] . "." . $config['member']['db'] . "_type,
+//   " . $config['member']['db'] . "." . $config['member']['db'] . "_address,
+//   " . $config['member']['db'] . "." . $config['member']['db'] . "_lastdate
+//
+// FROM
+//   " . $config['member']['db'] . "
+// WHERE
+//   " . $config['member']['db'] . "." . $config['member']['db'] . "_masterkey = 'mem' and
+//   " . $config['member']['db'] . "." . $config['member']['db'] . "_status = 'Enable' and
+//   " . $config['member']['db'] . "." . $config['member']['db'] . "_id = $memberID['member_info']['id']
+//   ";
+//
+//
+//
+//
+// //print_pre($sql);
+//
+//     $result = $db->execute($sql);
+//     return $result;
+//
+// print_pre($result);
+// }
+$sqlSetting = "SELECT
+   " . $config['system']['setting'] . "." . $config['system']['setting'] . "_subject as subject,
+   " . $config['system']['setting'] . "." . $config['system']['setting'] . "_title as title,
+   " . $config['system']['setting'] . "." . $config['system']['setting'] . "_subjectoffice as subjectoffice,
+   " . $config['system']['setting'] . "." . $config['system']['setting'] . "_masterkey as masterkey,
+   " . $config['system']['setting'] . "." . $config['system']['setting'] . "_description as description,
+   " . $config['system']['setting'] . "." . $config['system']['setting'] . "_keywords as keywords,
+   " . $config['system']['setting'] . "." . $config['system']['setting'] . "_metatitle as metatitle,
+   " . $config['system']['setting'] . "." . $config['system']['setting'] . "_social as social,
+   " . $config['system']['setting'] . "." . $config['system']['setting'] . "_config as config,
+   " . $config['system']['setting'] . "." . $config['system']['setting'] . "_addresspic as addresspic,
+   " . $config['system']['setting'] . "." . $config['system']['setting'] . "_qr as qr,
+   " . $config['system']['setting'] . "." . $config['system']['setting'] . "_fac as fac
+ FROM
+   " . $config['system']['setting'] . "";
+ $sqlSetting .= " where " . $config['system']['setting'] . "." . $config['system']['setting'] . "_masterkey = '" . $config['system']['setting:key'] . "'";
+//print_pre($sqlSetting);
+ $resultSetting = $db->execute($sqlSetting);
+//print_pre($resultSetting);
+ $smarty->assign("settingpage", $resultSetting->fields);
+// // print_pre($resultSetting->fields);
+//
+// $sqlRelatelink = "SELECT
+// " . $config['banner']['db'] . "." . $config['banner']['db'] . "_id,
+// " . $config['banner']['db'] . "." . $config['banner']['db'] . "_masterkey,
+// " . $config['banner']['db'] . "." . $config['banner']['db'] . "_subject,
+// " . $config['banner']['db'] . "." . $config['banner']['db'] . "_title,
+// " . $config['banner']['db'] . "." . $config['banner']['db'] . "_pic,
+// " . $config['banner']['db'] . "." . $config['banner']['db'] . "_url
+//
+// FROM
+// " . $config['banner']['db'] . "
+// WHERE
+// " . $config['banner']['db'] . "." . $config['banner']['db'] . "_masterkey = '".$config['banner']['masterkey'] ."' and
+// " . $config['banner']['db'] . "." . $config['banner']['db'] . "_status = 'Home'
+//
+// ";
+//   $sql .= "
+// ORDER  BY " . $config['banner']['db'] . "." . $config['banner']['db'] . "_order DESC
+// ";
+// $resultRelatelink = $db->execute($sqlRelatelink);
+// $smarty->assign("listrelatelink", $resultRelatelink);
+//
+//
+// $langenews = $url->pagelang[3];
+// function callGroupEnews($id){
+// global $config, $db, $url;
+//   $sqlenewsgroup = "SELECT
+//   " . $config['e-news-group']['db'] . "." . $config['e-news-group']['db'] . "_id,
+//   " . $config['e-news-group']['db'] . "." . $config['e-news-group']['db'] . "_masterkey,
+//   " . $config['e-news-group']['db'] . "." . $config['e-news-group']['db'] . "_subject$langenews
+//
+//   FROM
+//   " . $config['e-news-group']['db'] . "
+//   WHERE
+//   " . $config['e-news-group']['db'] . "." . $config['e-news-group']['db'] . "_masterkey = '".$config['e-news']['masterkey'] ."'
+//   ";
+//   if (!empty($id)) {
+//     $sqlenewsgroup .= " AND " . $config['e-news-group']['db'] . "." . $config['e-news-group']['db'] . "_id = $id ";
+//   }
+//     $sqlenewsgroup .= "
+//   ORDER  BY " . $config['e-news-group']['db'] . "." . $config['e-news-group']['db'] . "_order DESC
+//   ";
+//   $resultenewsgroup = $db->execute($sqlenewsgroup);
+//   return $resultenewsgroup;
+// }
+// $resultgenews = callGroupEnews();
+// $smarty->assign("listenewsgroup", $resultgenews);
+// // print_pre($resultenewsgroup);
+//
+//
+// # setting modulus _mainpage
+// $contact = array();
+//
+// // print_pre($resultSetting);
+//
+// $contact['contact'] = unserialize($resultSetting->fields['7']);
+// // print_pre($contact['contact']);
+// // $smarty->assign("contactinfo", $contact);
+// # setting social _mainpage
+// $contact['social'] = unserialize($resultSetting->fields['6']);
+// # setting slogan _mainpage
+// // $contact['slogan'] = unserialize($resultSetting->fields['14']);
+// // $contact['fac'] = unserialize($resultSetting->fields['15']);
+// // print_pre($contact['fac']);
+// // $contact['addresspic'] = $resultSetting->fields['8'];
+// // $listDataDetail= array();
+// // foreach ($contact['fac'] as $titleKey => $value){
+// //   foreach ($value as $key => $valueDetail){
+// //     $listDataDetail[$key][$titleKey] =  $valueDetail;
+// //   }
+// //
+// // }
+//
+// // $contact['fac'] = $listDataDetail;
+// $smarty->assign("contactinfo", $contact);
+// // print_pre($contact);
+//
+// // $urlYoutubeHome = explode("v=",$contact['contact']['LinkVdo']);
+// // $smarty->assign("urlYoutubeHome",$urlYoutubeHome[1]);
+//
+//
+//
+#function assign seo & title page
 
-/*End get token*/
+// function Seo($title, $desc, $keyword) {
+//     global $smarty, $resultSetting;
+//     $list = array();
+//     if (!empty($title)) {
+//
+//         if (!empty($resultSetting->fields['3'])) {
+//             $list_last = $resultSetting->fields['3'];
+//         } else {
+//             $list_last = $resultSetting->fields['5'];
+//         }
+//
+//
+//         $list['title'] = trim($title) . " - " . $list_last;
+//     } else {
+//         if (!empty($resultSetting->fields['3'])) {
+//             $list['title'] = $resultSetting->fields['3'];
+//         } else {
+//             $list['title'] = $resultSetting->fields['5'];
+//         }
+//     }
+//
+//     if (!empty($desc)) {
+//         $list['desc'] = trim($desc);
+//     } else {
+//         $list['desc'] = $resultSetting->fields['1'];
+//     }
+//
+//     if (!empty($keyword)) {
+//         $list['keyword'] = trim($keyword);
+//     } else {
+//         $list['keyword'] = $resultSetting->fields['2'];
+//     }
+//     // print_pre($list);
+//     $smarty->assign("seo", $list);
+// }
 
-/*Start get Setting*/
-$valMainSiteData = $infoSetting->fields;
-$valSiteUpdatedateArray = explode(" ", $valMainSiteData['lastdate']);
-$valSiteUpdatedate = strtotime("+1 day", strtotime($valSiteUpdatedateArray[0]));
-if ($valMainSiteData->lastdate == "") {
-  $valSiteUpdatedate = $valSiteRealdate;
-}
-
-if ($valMainSiteData == "" || $valSiteUpdatedate >= $valSiteRealdate) {
-    $callsetting = $callSetWebsite->callSetting();
-}
-
-/*End get Setting*/
-
-
-$segment = $url->segment[0];
-$smarty->assign("segment", $segment);
-
-
-$_setting = array(
-    'subject' => 'subject',
-    'gsubject' => 'gsubject',
-    'title' => 'title',
-    'credate' => 'credate',
-    'page-km' => 'knowledge',
-);
-$smarty->assign("_setting", $_setting);
-
-Seo();
-function Seo($title = '', $desc = '', $keyword = '')
-{
-    global $smarty, $infoSetting, $arr_metatag, $url;
+function Seo($title, $desc, $keyword) {
+    global $smarty, $lang;
     $list = array();
     if (!empty($title)) {
-        if (!empty($infoSetting->fields['metatitle'])) {
-            $list_last = $infoSetting->fields['metatitle'];
-        } elseif (!empty($infoSetting->fields['subject'])) {
-            $list_last = $infoSetting->fields['subject'];
-        } else {
-            $list_last = $arr_metatag[$url->pagelang[2]];
-        }
+        //
+        // if (!empty($resultSetting->fields['3'])) {
+        //     $list_last = $resultSetting->fields['3'];
+        // } else {
+            // $list_last = $resultSetting->fields['5'];
+        // }
 
+        $list_last = $lang['site']['name'];
         $list['title'] = trim($title) . " - " . $list_last;
     } else {
-        if (!empty($infoSetting->fields['metatitle'])) {
-            $list['title'] = $infoSetting->fields['metatitle'];
-        } elseif (!empty($infoSetting->fields['subject'])) {
-            $list['title'] =$infoSetting->fields['subject'];
+        if (!empty($resultSetting->fields['3'])) {
+            $list['title'] = $resultSetting->fields['3'];
         } else {
-            $list['title'] = $arr_metatag[$url->pagelang[2]];
+            $list['title'] = $resultSetting->fields['5'];
         }
     }
 
     if (!empty($desc)) {
         $list['desc'] = trim($desc);
     } else {
-        $list['desc'] = $infoSetting->fields['description'];
+        $list['desc'] = $resultSetting->fields['1'];
     }
 
     if (!empty($keyword)) {
         $list['keyword'] = trim($keyword);
     } else {
-        $list['keyword'] = $infoSetting->fields['keyword'];
+        $list['keyword'] = $resultSetting->fields['2'];
     }
+    // print_pre($list);
     $smarty->assign("seo", $list);
 }
 
-#### SETTING
 
 
-$settingWeb = array();
-$settingWeb['masterkey'] = $infoSetting->fields['masterkey'];
-$settingWeb['subject'] = $infoSetting->fields['subject'];
-$settingWeb['subjecten'] = $infoSetting->fields['subjecten'];
-$settingWeb['subjectoffice'] = $infoSetting->fields['subjectoffice'];
-$settingWeb['subjectofficeen'] = $infoSetting->fields['subjectofficeen'];
-$settingWeb['description'] = $infoSetting->fields['description'];
-$settingWeb['keywords'] = $infoSetting->fields['keywords'];
-$settingWeb['metatitle'] = $infoSetting->fields['metatitle'];
-$settingWeb['contact'] = unserialize($infoSetting->fields['config']);
-$settingWeb['social'] = unserialize($infoSetting->fields['social']);
-$settingWeb['addresspic'] = $infoSetting->fields['addresspic'];
-$smarty->assign("settingWeb", $settingWeb);
+function callTopgraphic(){
+  global $config, $db, $url;
+
+  $sql = "SELECT
+  " . $config['tgp']['db'] . "." . $config['tgp']['db'] . "_id as id,
+  " . $config['tgp']['db'] . "." . $config['tgp']['db'] . "_masterkey as masterkey,
+  " . $config['tgp']['db'] . "." . $config['tgp']['db'] . "_subject as subject,
+  " . $config['tgp']['db'] . "." . $config['tgp']['db'] . "_title as title,
+  " . $config['tgp']['db'] . "." . $config['tgp']['db'] . "_pic as pic,
+  " . $config['tgp']['db'] . "." . $config['tgp']['db'] . "_url as url,
+  " . $config['tgp']['db'] . "." . $config['tgp']['db'] . "_target as target,
+  " . $config['tgp']['db'] . "." . $config['tgp']['db'] . "_credate as credate
+
+  FROM
+  " . $config['tgp']['db'] . "
+  WHERE
+  " . $config['tgp']['db'] . "." . $config['tgp']['db'] . "_masterkey = '".$config['tgp']['masterkey']."' and
+  " . $config['tgp']['db'] . "." . $config['tgp']['db'] . "_status = 'Enable' and
+  ((" . $config['tgp']['db'] . "." . $config['tgp']['db'] . "_sdate='0000-00-00 00:00:00' AND
+  " . $config['tgp']['db'] . "." . $config['tgp']['db'] . "_edate='0000-00-00 00:00:00')   OR
+  (" . $config['tgp']['db'] . "." . $config['tgp']['db'] . "_sdate='0000-00-00 00:00:00' AND
+  TO_DAYS(" . $config['tgp']['db'] . "." . $config['tgp']['db'] . "_edate)>=TO_DAYS(NOW()) ) OR
+  (TO_DAYS(" . $config['tgp']['db'] . "." . $config['tgp']['db'] . "_sdate)<=TO_DAYS(NOW()) AND
+  " . $config['tgp']['db'] . "." . $config['tgp']['db'] . "_edate='0000-00-00 00:00:00' )  OR
+  (TO_DAYS(" . $config['tgp']['db'] . "." . $config['tgp']['db'] . "_sdate)<=TO_DAYS(NOW()) AND
+  TO_DAYS(" . $config['tgp']['db'] . "." . $config['tgp']['db'] . "_edate)>=TO_DAYS(NOW())  ))
+
+  ";
 
 
-class settingWebsite
-{
+  $sql .= "
+  ORDER  BY " . $config['tgp']['db'] . "." . $config['tgp']['db'] . "_order DESC
+  ";
 
-    // function apiCallSetting()
-    // {
-    //     global $urlapi;
-    //     $curl = curl_init();
-
-    //     curl_setopt_array($curl, array(
-    //         CURLOPT_URL => '' . $urlapi . '?method=CallSettingSite',
-    //         CURLOPT_RETURNTRANSFER => true,
-    //         CURLOPT_ENCODING => '',
-    //         CURLOPT_MAXREDIRS => 10,
-    //         CURLOPT_TIMEOUT => 0,
-    //         CURLOPT_FOLLOWLOCATION => true,
-    //         CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-    //         CURLOPT_CUSTOMREQUEST => 'GET',
-    //         CURLOPT_HTTPHEADER => array(
-    //             'Authorization: Bearer ' . $_SESSION['token']->tokenid . ''
-    //         ),
-    //     ));
-
-    //     $response = curl_exec($curl);
-    //     $obj = json_decode($response);
-    //     // print_pre($obj);
-    //     curl_close($curl);
-
-    //     $SettingMainSite = array();
-    //     $SettingMainSite['social'] = $obj->list_data[0]->social;
-    //     $SettingMainSite['config'] = $obj->list_data[0]->config;
-
-
-    //     unset($_SESSION['settingpage'],$_SESSION['SettingMainSite']);
-
-    //     $_SESSION['settingpage'] = $obj->list_data[0];
-    //     $_SESSION['SettingMainSite'] = $SettingMainSite;
-
-    //     return $obj->list_data;
-    // }
-    function callSetting()
-    {
-        global $config, $db, $url;
-        $lang = $url->pagelang[3];
-        $sql = "SELECT
-        " . $config['setting']['db'] . "." . $config['setting']['db'] . "_id as id,
-        " . $config['setting']['db'] . "." . $config['setting']['db'] . "_masterkey as masterkey,
-        " . $config['setting']['db'] . "." . $config['setting']['db'] . "_subject as subject,
-        " . $config['setting']['db'] . "." . $config['setting']['db'] . "_subjecten as subjecten,
-        " . $config['setting']['db'] . "." . $config['setting']['db'] . "_subjectoffice as subjectoffice,
-        " . $config['setting']['db'] . "." . $config['setting']['db'] . "_subjectofficeen as subjectofficeen,
-        " . $config['setting']['db'] . "." . $config['setting']['db'] . "_description as description,
-        " . $config['setting']['db'] . "." . $config['setting']['db'] . "_keywords as keywords,
-        " . $config['setting']['db'] . "." . $config['setting']['db'] . "_metatitle as metatitle,
-        " . $config['setting']['db'] . "." . $config['setting']['db'] . "_social as social,
-        " . $config['setting']['db'] . "." . $config['setting']['db'] . "_config as config,
-        " . $config['setting']['db'] . "." . $config['setting']['db'] . "_addresspic  as addresspic,
-        " . $config['setting']['db'] . "." . $config['setting']['db'] . "_lastdate  as lastdate
-        FROM
-        " . $config['setting']['db'] . "
-        WHERE
-        " . $config['setting']['db'] . "." . $config['setting']['db'] . "_masterkey = '" . $config['setting']['masterkey'] . "' 
-        ";
 // print_pre($sql);
-        $result = $db->execute($sql);
-        return $result;
-    }
+  $result = $db->execute($sql);
+  return $result;
+}
 
-    function Call_Album($id, $table, $lang = null)
-    {
-        global $config, $db, $url,$infolang;
-        $lang = $url->pagelang[3];
 
-        $sql = "SELECT 
-            " . $table . "." . $table . "_id                AS id,
-            " . $table . "." . $table . "_contantid         AS contantid,
-            " . $table . "." . $table . "_filename          AS filename,
-            " . $table . "." . $table . "_name              AS name,
-            " . $table . "." . $table . "_download          AS download
-            FROM " . $table . "  
-            WHERE 1=1 AND
-            " . $table . "." . $table . "_contantid = '" . $id . "'
-            AND
-            " . $table . "." . $table . "_language = '" . $url->pagelang[4] . "'
-            ";
 
-        $sql .= " ORDER BY " . $table . "." . $table . "_id ASC ";
-        // print_pre($sql);
-        $result = $db->execute($sql);
-        return $result;
-    }
+$callTGP = callTopgraphic();
+$smarty->assign("callTGP",$callTGP);
 
-    function Call_File($id)
-    {
-        global $config, $db, $url,$infolang;
-        $lang = $url->pagelang[3];
-        $langFull = $url->pagelang[4];
 
-        $sql = "SELECT 
-            " . $config['cmf']['db']['main'] . "." . $config['cmf']['db']['main'] . "_id                AS id,
-            " . $config['cmf']['db']['main'] . "." . $config['cmf']['db']['main'] . "_contantid         AS contantid,
-            " . $config['cmf']['db']['main'] . "." . $config['cmf']['db']['main'] . "_filename          AS filename,
-            " . $config['cmf']['db']['main'] . "." . $config['cmf']['db']['main'] . "_name              AS name,
-            " . $config['cmf']['db']['main'] . "." . $config['cmf']['db']['main'] . "_download          AS download
-            FROM " . $config['cmf']['db']['main'] . "  
-            WHERE 1=1 
-            AND " . $config['cmf']['db']['main'] . "." . $config['cmf']['db']['main'] . "_contantid = '" . $id . "'
-            AND " . $config['cmf']['db']['main'] . "." . $config['cmf']['db']['main'] . "_language = '" . $url->pagelang[4] . "'
-            ";
+function callPolicy($masterkey){
+  global $config, $db, $url;
 
-        $sql .= " ORDER BY " . $config['cmf']['db']['main'] . "." . $config['cmf']['db']['main'] . "_id ASC ";
-        // print_pre($sql);
-        $result = $db->execute($sql);
-        return $result;
-    }
-    
-    
-    function updateView($id, $masterkey, $table)
-    {
-        global $config, $db, $url;
+  $sql = "SELECT
+  " . $config['about']['policy'] . "." . $config['about']['policy'] . "_id,
+  " . $config['about']['policy'] . "." . $config['about']['policy'] . "_masterkey,
+  " . $config['about']['policy'] . "." . $config['about']['policy'] . "_htmlfilename,
+  " . $config['about']['policy'] . "." . $config['about']['policy'] . "_description,
+  " . $config['about']['policy'] . "." . $config['about']['policy'] . "_keywords,
+  " . $config['about']['policy'] . "." . $config['about']['policy'] . "_metatitle
 
-        $sql = "SELECT
-        " . $table . "." . $table . "_view
-        FROM
-        " . $table . "
-        WHERE
-        " . $table . "." . $table . "_masterkey = '$masterkey' 
-        AND
-        " . $table . "." . $table . "_id = '$id' 
-        ";
-        // print_pre($sql);
-        $result = $db->execute($sql);
-        $view = $result->fields[0] + 1;
+  FROM
+  " . $config['about']['policy'] . "
+  WHERE
+  " . $config['about']['policy'] . "." . $config['about']['policy'] . "_masterkey = '".$masterkey."' and
+  " . $config['about']['policy'] . "." . $config['about']['policy'] . "_status = 'Enable' 
 
-        $listView[$table . '_view'] = $view;
-        $updateView = sqlupdate($listView, $table, $table . "_id", "'" . $id . "'");
+  ";
 
-        return $updateView;
-    }
+// print_pre($sql);
+  $result = $db->execute($sql);
+  return $result;
+}
 
-    function Call_File_Table($id, $table = 'md_cmf')
-    {
-        global $config, $db, $url;
-        $lang = $url->pagelang[3];
-        $langFull = $url->pagelang[4];
+// print_pre($config['about']['policyfile']);
+ function callAboutPolicyFile($id) {
+     global $config, $db, $url;
+     $sql = "SELECT
+    *,
+    '" . $config['about']['policyfile'] . "' as td
+  FROM
+    " . $config['about']['policyfile'] . "
+  WHERE
+    " . $config['about']['policyfile'] . "." . $config['about']['policyfile'] . "_contantid = $id
+    ";
+// print_pre($sql);
+     $result = $db->execute($sql);
+     return $result;
+ }
+ 
 
-        $sql = "SELECT 
-            " . $table . "." . $table . "_id                AS id,
-            " . $table . "." . $table . "_contantid         AS contantid,
-            " . $table . "." . $table . "_filename          AS filename,
-            " . $table . "." . $table . "_name              AS name,
-            " . $table . "." . $table . "_download          AS download
-            FROM " . $table . "  
-            WHERE 1=1 
-            AND " . $table . "." . $table . "_contantid = '" . $id . "'
-            ";
+$callPolicyP1 = callPolicy($config['masterkey']['policy']['secure']);
+$callPolicyP2 = callPolicy($config['masterkey']['policy']['site']);
+$callPolicyP3 = callPolicy($config['masterkey']['policy']['protect']);
+$smarty->assign("callPolicyP1",$callPolicyP1);
+$smarty->assign("callPolicyP2",$callPolicyP2);
+$smarty->assign("callPolicyP3",$callPolicyP3);
 
-        $sql .= " ORDER BY " . $table . "." . $table . "_id ASC ";
-        // print_pre($sql);
-        $result = $db->execute($sql);
-        return $result;
-    }
+$infoPolicyFileP1 = callAboutPolicyFile($callPolicyP1->fields[0]);
+$infoPolicyFileP2 = callAboutPolicyFile($callPolicyP2->fields[0]);
+$infoPolicyFileP3 = callAboutPolicyFile($callPolicyP3->fields[0]);
+$smarty->assign("infoPolicyFileP1",$infoPolicyFileP1);
+$smarty->assign("infoPolicyFileP2",$infoPolicyFileP2);
+$smarty->assign("infoPolicyFileP3",$infoPolicyFileP3);
 
-    function template_mail($body){
-        global $settingWeb, $path_template, $templateweb, $url;
-        $strHTML = "<!doctype html>
-        <html lang='en'>
-        
-        <head>
-            <meta charset='utf-8'>
-            <meta name='viewport' content='width=device-width, initial-scale=1'>
-            <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css' rel='stylesheet'
-                integrity='sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x' crossorigin='anonymous'>
-        </head>
-        
-        <body>
-            <table border='0' width='100%' cellspacing='0' cellpadding='0' align='center'>
-                <tbody>
-                    <tr>
-                        <td>
-                            <table style='font-family: Arial, sans-serif; border: 1px solid #ebebeb; height: 629px;' border='0'
-                                width='600' cellspacing='0' cellpadding='0' align='center'>
-                                <tbody>
-                                    <tr style='height: 22px;'>
-                                        <td style='height: 22px; width: 596px; padding-top: 10px;border-bottom:1px solid #ebebeb;'>
-                                            <table style='width: 100%;' border='0' width='100%' cellspacing='0' cellpadding='0' align='center'>
-                                                <tbody>
-                                                    <tr>
-                                                        <td style='width: 2%;'></td>
-                                                        <td style='width: 24.9161%;'><img
-                                                                src='"._URL."/".$path_template[$templateweb][0]."/assets/img/static/mnre-logo.png'
-                                                                style='width: 90px;' alt='git-logo.png'></td>
-                                                        <td
-                                                            style='width: 54.9161%; font-size: 14px; color: #666;text-align: right;padding-right: 20px;'>
-                                                            <b>".$settingWeb['contact']['address'.$url->pagelang[3]]."</td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </td>
-                                    </tr>";
-        $strHTML .= $body;
-        $tel_explode = explode(",", $settingWeb['contact']['tel']);
-        $strHTML .="                <tr style='height: 298px;'>
-                                        <td style='height: 298px; width: 596px;'>
-                                            <table style='background-color: #fbfbfb;' border='0' width='100%' cellspacing='0' cellpadding='0' align='center'>
-                                                <tbody>
-                                    <tr>
-                                        <td width='40'>&nbsp;</td>
-                                        <td valign='top'>
-                                            <table style='background-color: #fbfbfb; height: 186px; width: 100%;' border='0' width='100%'
-                                                cellspacing='0' cellpadding='0' align='center'>
-                                                <tbody>
-                                                    <tr style='height: 45px;'>
-                                                        <td style='height: 45px;'>
-                                                            <div style='font-size: 13px; font-weight: bold; color: #037ee5; line-height: 1.2em;'>
-                                                            ".$settingWeb['subjectoffice']."</div>
-                                                        </td>
-                                                    </tr>
-                                                    <tr style='height: 18px;'>
-                                                        <td style='height: 18px;' height='8'>&nbsp;</td>
-                                                    </tr>
-                                                    <tr style='height: 18px;'>
-                                                        <td style='height: 18px;'>
-                                                            <table border='0' width='100%' cellspacing='0' cellpadding='0' align='center'>
-                                                                <tbody>
-                                                                    <tr>
-                                                                        <td>
-                                                                            <div style='font-size: 11px; color: #666;'><img
-                                                                                    style='display: inline-block; vertical-align: middle;'
-                                                                                    src='"._URL . $path_template[$templateweb][0]."/assets/img/static/template-tel.jpg' alt='template-tel.jpg' />".$tel_explode[0]."</div>
-                                                                        </td>
-                                                                        <td>
-                                                                            <div style='font-size: 11px; color: #666;'><img
-                                                                                    style='display: inline-block; vertical-align: middle;'
-                                                                                    src='"._URL . $path_template[$templateweb][0]."/assets/img/static/template-fax.jpg' alt='template-fax.jpg' />".$settingWeb['contact']['fax']."</div>
-                                                                        </td>
-                                                                        <td>
-                                                                            <div style='font-size: 11px; color: #666;'><img
-                                                                                    style='display: inline-block; vertical-align: middle;'
-                                                                                    src='"._URL . $path_template[$templateweb][0]."/assets/img/static/template-email.jpg'
-                                                                                    alt='template-email.jpg' />".$settingWeb['contact']['email']."</div>
-                                                                        </td>
-                                                                    </tr>
-                                                                </tbody>
-                                                            </table>
-                                                        </td>
-                                                    <tr style='height: 18px;'>
-                                                        <td style='height: 18px;'>";
-                                                            if ($settingWeb['social']['Facebook']['link'] != "" && $settingWeb['social']['Facebook']['link'] != "#") {
-                                                                $strHTML .="<a title='Facebook' href='".$settingWeb['social']['Facebook']['link']."'
-                                                                    target='_blank' rel='nofollow'><img
-                                                                    src='"._URL . $path_template[$templateweb][0]."/assets/img/static/social-fb.png' alt='social-fb.png'
-                                                                    height='30' /></a>";
-                                                            }
-                                                            if ($settingWeb['social']['Twitter']['link'] != "" && $settingWeb['social']['Twitter']['link'] != "#") {
-                                                                $strHTML .="<a title='Twitter' href='".$settingWeb['social']['Twitter']['link']."' target='_blank'
-                                                                    rel='nofollow'><img src='"._URL . $path_template[$templateweb][0]."/assets/img/static/social-tw.png'
-                                                                    alt='social-tw.png' height='30' /></a>";
-                                                            }
-                                                            if ($settingWeb['social']['Instagram']['link'] != "" && $settingWeb['social']['Instagram']['link'] != "#") {
-                                                                $strHTML .="<a title='Instagram' href='".$settingWeb['social']['Instagram']['link']."' target='_blank'
-                                                                    rel='nofollow'><img src='"._URL . $path_template[$templateweb][0]."/assets/img/static/social-ig.png'
-                                                                    alt='social-ig.png' height='30' /></a>";
-                                                            }
-                                                            if ($settingWeb['social']['Youtube']['link'] != "" && $settingWeb['social']['Youtube']['link'] != "#") {
-                                                                $strHTML .="<a title='Youtube' href='".$settingWeb['social']['Instagram']['link']."'
-                                                                    target='_blank' rel='nofollow'><img
-                                                                    src='"._URL . $path_template[$templateweb][0]."/assets/img/static/social-yt.png' alt='social-yt.png'
-                                                                    height='30' /></a>";
-                                                            }
-                                                            if ($settingWeb['social']['Line']['link'] != "" && $settingWeb['social']['Line']['link'] != "#") {
-                                                                $strHTML .="<a title='Line' href='".$settingWeb['social']['Line']['link']."'
-                                                                    target='_blank' rel='nofollow'><img
-                                                                    src='"._URL . $path_template[$templateweb][0]."/assets/img/static/social-li.png' alt='social-li.png'
-                                                                    height='30' /></a>";
-                                                            }
-                                            $strHTML .=" </td>
-                                                    </tr>
-                                                    <tr style='height: 20px;'>
-                                                        <td style='height: 20px;' height='20'>&nbsp;</td>
-                                                    </tr>
-                                                    <tr style='height: 13px;'>
-                                                        <td style='height: 13px;'>
-                                                            <div style='font-size: 11px; color: #999; line-height: 1.2em;'>&copy;
-                                                            2565 สงวนลิขสิทธิ์ตามพระราชบัญญัติลิขสิทธิ์โดย สถาบันการพัฒนาทรัพยากรธรรมชาติและสิ่งแวดล้อมอย่างยั่งยืน (สพท.)</div>
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </td>
-                                    </tr>
-                                <tr>
-                                    <td colspan='5' height='30'>&nbsp;</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        </td>
-        </tr>
-        </tbody>
-        </table>
-        <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js'
-        integrity='sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4' crossorigin='anonymous'>
-        </script>
-        </body>
+// print_pre($callPolicyP2);
+  $smarty->assign("masterkeyPl1",$config['masterkey']['policy']['secure']);
+  $smarty->assign("masterkeyPl2",$config['masterkey']['policy']['site']);
+  $smarty->assign("masterkeyPl3",$config['masterkey']['policy']['protect']);
+  
+  
+  
+  //POPUP
+  
+  function callPopup($masterkey){
+  global $config, $db, $url;
 
-        </html>";
+  $sql = "SELECT
+  " . $config['popup']['db'] . "." . $config['popup']['db'] . "_id as id,
+  " . $config['popup']['db'] . "." . $config['popup']['db'] . "_masterkey as masterkey,
+  " . $config['popup']['db'] . "." . $config['popup']['db'] . "_subject as subject,
+  " . $config['popup']['db'] . "." . $config['popup']['db'] . "_file as file,
+  " . $config['popup']['db'] . "." . $config['popup']['db'] . "_url as url,
+  " . $config['popup']['db'] . "." . $config['popup']['db'] . "_target as target
 
-        return $strHTML;
-    }
+  FROM
+  " . $config['popup']['db'] . "
+  WHERE
+  " . $config['popup']['db'] . "." . $config['popup']['db'] . "_masterkey = '".$masterkey."' and
+  " . $config['popup']['db'] . "." . $config['popup']['db'] . "_status = 'Enable' and
+  ((" . $config['popup']['db'] . "." . $config['popup']['db'] . "_sdate='0000-00-00 00:00:00' AND
+  " . $config['popup']['db'] . "." . $config['popup']['db'] . "_edate='0000-00-00 00:00:00')   OR
+  (" . $config['popup']['db'] . "." . $config['popup']['db'] . "_sdate='0000-00-00 00:00:00' AND
+  TO_DAYS(" . $config['popup']['db'] . "." . $config['popup']['db'] . "_edate)>=TO_DAYS(NOW()) ) OR
+  (TO_DAYS(" . $config['popup']['db'] . "." . $config['popup']['db'] . "_sdate)<=TO_DAYS(NOW()) AND
+  " . $config['popup']['db'] . "." . $config['popup']['db'] . "_edate='0000-00-00 00:00:00' )  OR
+  (TO_DAYS(" . $config['popup']['db'] . "." . $config['popup']['db'] . "_sdate)<=TO_DAYS(NOW()) AND
+  TO_DAYS(" . $config['popup']['db'] . "." . $config['popup']['db'] . "_edate)>=TO_DAYS(NOW())  ))
+
+  ";
+
+// print_pre($sql);
+  $result = $db->execute($sql);
+  return $result;
+}
+
+$infoPopup = callPopup($config['popup']['masterkey']);
+$smarty->assign('infoPopup',$infoPopup);
+
+/**Call Menu */
+function callMenuGroup($masterkey=null){
+  global $config, $db, $url;
+
+  $sql = "SELECT
+  " . $config['menu']['group'] . "." . $config['menu']['group'] . "_id as id,
+  " . $config['menu']['group'] . "." . $config['menu']['group'] . "_masterkey as masterkey,
+  " . $config['menu']['group'] . "." . $config['menu']['group'] . "_subject as subject,
+  " . $config['menu']['group'] . "." . $config['menu']['group'] . "_title as title,
+  " . $config['menu']['group'] . "." . $config['menu']['group'] . "_pic as pic,
+  " . $config['menu']['group'] . "." . $config['menu']['group'] . "_url as url,
+  " . $config['menu']['group'] . "." . $config['menu']['group'] . "_target as target,
+  " . $config['menu']['group'] . "." . $config['menu']['group'] . "_column as columns
+  FROM
+  " . $config['menu']['group'] . "
+  WHERE
+  " . $config['menu']['group'] . "." . $config['menu']['group'] . "_masterkey = '$masterkey' and
+  " . $config['menu']['group'] . "." . $config['menu']['group'] . "_status != 'Disable'
+";
+
+  $sql .= "
+   ORDER  BY " . $config['menu']['group'] . "." . $config['menu']['group'] . "_order DESC
+   ";
+
+  // echo $sql;
+  $result = $db->execute($sql);
+  return $result;
+}
+
+$infoMenuGroup= callMenuGroup($config['menu']['masterkey']);
+$smarty->assign('infoMenuGroup',$infoMenuGroup);
+
+function callMenu($masterkey=null,$gid=null){
+  global $config, $db, $url;
+
+  $sql = "SELECT
+  " . $config['menu']['db'] . "." . $config['menu']['db'] . "_id as id,
+  " . $config['menu']['db'] . "." . $config['menu']['db'] . "_masterkey as masterkey,
+  " . $config['menu']['db'] . "." . $config['menu']['db'] . "_groupProoject as gid,
+  " . $config['menu']['db'] . "." . $config['menu']['db'] . "_subject as subject,
+  " . $config['menu']['db'] . "." . $config['menu']['db'] . "_title as title,
+  " . $config['menu']['db'] . "." . $config['menu']['db'] . "_url as url,
+  " . $config['menu']['db'] . "." . $config['menu']['db'] . "_target as target
+  FROM
+  " . $config['menu']['db'] . "
+  WHERE
+  " . $config['menu']['db'] . "." . $config['menu']['db'] . "_masterkey = '$masterkey' and
+  " . $config['menu']['db'] . "." . $config['menu']['db'] . "_groupProoject = '$gid' and
+  " . $config['menu']['db'] . "." . $config['menu']['db'] . "_status = 'Enable'
+";
+
+  $sql .= "
+   ORDER  BY " . $config['menu']['db'] . "." . $config['menu']['db'] . "_order DESC
+   ";
+
+  // print_pre($sql);
+  $result = $db->execute($sql);
+  return $result;
 }

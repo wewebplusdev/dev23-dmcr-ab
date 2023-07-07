@@ -3,12 +3,11 @@
 session_cache_expire(1280);
 $cache_expire = session_cache_expire();
 @session_start();
-
 date_default_timezone_set('Asia/Bangkok');
 ini_set('memory_limit', '128M');
 
-ini_set('display_startup_errors', -1);
-ini_set('display_errors', -1);
+ini_set('display_startup_errors', 1);
+ini_set('display_errors', 1);
 error_reporting(-1);
 
 if (!empty($_REQUEST['mode'])) {
@@ -19,47 +18,23 @@ if (!empty($_REQUEST['mode'])) {
 
 switch ($modefunction) {
     case 'debug':
-        echo "<pre>";
+    echo '<pre>';
         echo "<i>## DEBUG MODE ##</i>";
         break;
 
     case 'delsession':
         echo "<i>## TOKEN DEL MODE ##</i>";
-//        echo "<pre>";
-//        print_r($_SERVER['HTTP_COOKIE']);
-//        echo "</pre>";
-//        echo "###################################";
-
         $_SESSION["token"] = "";
         unset($_SESSION["token"]);
-
-
-//
-//        echo "<pre>";
-//        print_r($_SERVER['HTTP_COOKIE']);
-//        echo "</pre>";
         exit();
         break;
 
     case 'delcookie':
         echo "<i>## TOKEN DEL MODE ##</i>";
-//        echo "<pre>";
-//        print_r($_SERVER['HTTP_COOKIE']);
-//        echo "</pre>";
-//        echo "###################################";
-
         $_COOKIE["token"] = "";
         unset($_COOKIE["token"]);
-
-
         setcookie("token", null, time() - 3600, "/");
         setcookie("token", null, time() - 3600);
-
-
-//
-//        echo "<pre>";
-//        print_r($_SERVER['HTTP_COOKIE']);
-//        echo "</pre>";
         exit();
         break;
 
@@ -71,11 +46,29 @@ switch ($modefunction) {
 
 ## config Sql ##
 $coreLanguageSQL = "mysqli";
-// CORE_ENV จะไป config ต่อที่ setting.php
+/*
 $core_db_hostname = "localhost";
 $core_db_username = "root";
-$core_db_password = "IySY?Pk7!!mH";
-$core_db_name     = "2023_dmcr_ab";
+$core_db_password = "dmcr1234";
+$core_db_name = "dmcr";
+
+$core_db_hostname = "202.139.197.168:3307";
+$core_db_username = "root";
+$core_db_password = "CqtJ!6CD";
+$core_db_name = "register";
+*/
+
+//prod
+$core_db_hostname = "61.19.55.239";
+$core_db_username = "root";
+$core_db_password = "May@1984";
+$core_db_name = "register";
+
+//dev
+// $core_db_hostname = "192.168.101.129";
+// $core_db_username = "root";
+// $core_db_password = "IySY?Pk7!!mH";
+// $core_db_name = "2022_dmcr_register";
 
 $core_db_charecter_set = array('charset' => "utf8", 'collation' => "utf8_general_ci");
 
@@ -90,35 +83,19 @@ $token_cookie_timeout = "8"; // หน่วยเป็นชม
 $token_action = "10"; // การเข้าที่หน้าสงสัยจำนวนครั้ง จะบล๊อคไม่ให้เข้าสู่ระบบตามจำนวน $token_cookie_timeout
 ## lang ## ex. "xx" => array("dbinclude","fullname","shortname")
 $lang_set = array(
-    "th" => array("", "Thai", "th", "", "Thai"),
-    "en" => array("", "English", "en", "en", "Eng"),
-    "jp" => array("", "日本人", "jp", "cn", "日本人")
+    "th" => array("", "Thai", "th", "","Thai"),
+    "en" => array("", "English", "en", "en","Eng")
 );
-$lang_default = "en";
+$lang_default = "th";
 
 ## url ##
-$url_show_lang = true;
+$url_show_lang = false;
 $url_show_default = "home";
 
 ## config path system ##
 $path_template = array(
     "default" => array('front/template/default', 'style.css')
 );
-
-
-$lastModify = "?u=" . date("YdmHis");
-
-##  Config inc-file
-$incfile['header'] = "inc/inc-header.tpl";
-$incfile['footer'] = "inc/inc-footer.tpl";
-$incfile['metatag'] = "inc/inc-metatag.tpl";
-$incfile['style'] = "inc/inc-loadstyle.tpl";
-$incfile['loadscript'] = "inc/inc-loadscript.tpl";
-$incfile['modal'] = "inc/inc-modal.tpl";
-$incfile['preloader'] = "inc/inc-preloader.tpl";
-$incfile['pagination'] = "inc/inc-pagination.tpl";
-$incfile['pdpa'] = "inc/inc-pdpa.tpl";
-
 
 ## addon js ##
 $listjs = array();
@@ -167,16 +144,19 @@ $validsizefile = 1024; // kb
 ## date month ##
 $strMonthCut['shot']['th'] = array("", "ม.ค.", "ก.พ.", "มี.ค.", "เม.ย.", "พ.ค.", "มิ.ย.", "ก.ค.", "ส.ค.", "ก.ย.", "ต.ค.", "พ.ย.", "ธ.ค.");
 $strMonthCut['shot']['en'] = array("", 'Jan.', 'Feb.', 'Mar.', 'Apr.', 'May', 'Jun.', 'Jul.', 'Aug.', 'Sep.', 'Oct.', 'Nov.', 'Dec.');
-$strMonthCut['shot2']['en'] = array("", 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec');
 
 $strMonthCut['full']['th'] = array("", "มกราคม", "กุมภาพันธ์", "มีนาคม", "เมษายน", "พฤษภาคม", "มิถุนายน", "กรกฎาคม", "สิงหาคม", "กันยายน", "ตุลาคม", "พฤศจิกายน", "ธันวาคม");
-$strMonthCut['full']['en'] = array('', 'January', 'February', 'March', 'April', 'May', 'June', 'July ', 'August', 'September', 'October', 'November', 'December', );
+$strMonthCut['full']['en'] = array('', 'January', 'February', 'March', 'April', 'May', 'June', 'July ', 'August', 'September', 'October', 'November', 'December',);
 
 
 $weekDay['th'] = array('อา', 'จ', 'อ', 'พ', 'พฤ', 'ศ', 'ส');
 $weekDay['en'] = array('Su', 'M', 'T', 'W', 'Th', 'F', 'Sa');
 
 $colorpatten = array("#e6e6e6", "#f46b23", "#ffb400", "#e7352b", "#8d42a1", "#3853d8", "#20a5ea", "#5cb328", "#7c5e4c", "#484848", "#01d2f9", "#7f8c8d");
+
+$gender['th'] = array("","ชาย","หญิง");
+$coreTxtDateBookingThai=array("","ทั้งวัน","เช้า","บ่าย","นอกเวลาราชการ");
+$lang_ability['th'] = array("ดีมาก","ดี","พอใช้");
 
 #member
 $config['member']['masterkey'] = "mem";
@@ -185,21 +165,18 @@ $config['member']['db_group'] = "md_meg";
 $config['member']['db_user_group'] = "md_mel";
 $config['member']['db_user_address'] = "md_mea";
 
-#country
-$config['main']['db_country_amphur'] = "md_ads_amphures";
-$config['main']['db_country_amphur_postcode'] = "md_ads_amphur_postcode";
-$config['main']['db_country_district'] = "md_ads_districts";
-$config['main']['db_country_province'] = "md_ads_provinces";
+#กรองคำหยาบ
+$config['board']['obsence'] = "md_blo";
 
-$config['sy_mnu']['db']['main'] = "sy_mnu";
-$config['cmg']['db']['main'] = "md_cmg";
-$config['cms']['db']['main'] = "md_cms";
-$config['cmsg']['db']['main'] = "md_cmsg";
+#country
 // $config['main']['db_country_amphur'] = "md_re_amphur";
 // $config['main']['db_country_amphur_postcode'] = "md_re_amphur_postcode";
 // $config['main']['db_country_district'] = "md_re_district";
 // $config['main']['db_country_province'] = "md_re_province";
-
+$config['main']['db_country_amphur'] = "ot_amp";
+$config['main']['db_country_district'] = "ot_dis";
+$config['main']['db_country_province'] = "ot_pro";
+$config['main']['db_country_amphur_postcode'] = "ot_zipcodes";
 
 /* =Time&Date Config
   -------------------------------------------------------------- */
@@ -292,13 +269,19 @@ $DateThai = array(
 );
 /* =Time&Date Config
 -------------------------------------------------------------- */
-
-
+#######RSS#########
+$core_relativepath_rss ="rss";
+// $core_relativepath_rss ="upload/rss";
 
 #########Setting Email##########
-$url_website = _URL . '/' . $path_template[$templateweb][0];
+$url_website = _URL.'/'.$path_template[$templateweb][0];
 $url_website2 = _URL;
 $core_default_typemail = 3;
-$core_send_email = "info@aimautomation.co.th";
+$core_send_email = "it@dmcr.mail.go.th";
+$fornt_name_title = "กรมทรัพยากรทางทะเลและชายฝั่ง Department of Marine and Coastal Resoucres, Thailand";
+$namesite_email = "กรมทรัพยากรทางทะเลและชายฝั่ง กระทรวงทรัพยากรธรรมชาติและสิ่งแวดล้อม";
+#########Setting VersionTem ##########
+//$valSetVersionTemp = "?v=20160301";
+//$valSetVersionTemp = "?v=".date('Ydm')."".time();
+//$smarty->assign("setVersionTemp", $valSetVersionTemp);
 
-$typeMember = array('', 'ร้านค้า', 'สมาชิกทั่วไป');

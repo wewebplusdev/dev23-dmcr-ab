@@ -36,8 +36,7 @@ class member {
     }
 
     function tokenUpdate($array) {
-    // print_pre($array);
-    // die();
+//print_pre($array);
         $_SESSION[_URL]['reboot'] = false;
         $tokenList = unserialize(decodeStr($_SESSION[_URL]["token"]));
         if ($tokenList['url'] == _URL) {

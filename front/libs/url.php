@@ -32,12 +32,15 @@ class url
 		//print_pre($this->rootDocument);
         $this->url = end(explode($pathFirst, str_replace('//', '/', $_SERVER['DOCUMENT_ROOT'] . $_SERVER['REQUEST_URI'])));
         define("_URL", _http . "://" . str_replace('//', '/', $_SERVER['HTTP_HOST'] . "/" . $this->onFolder) . "/");
+        
 
         $urlall = explode("?", $this->url);
         $segment = cleanArray(explode('/', $urlall[0]));
+
         $this->segment = $segment;
         $this->onModulus = $segment['0'] ? $segment['0'] : $url_show_default;
         if (!empty($url_show_lang)) {
+            // print_pre('1');
             if (isset($lang_set[$this->segment[0]])) {
                 $this->pagelang = $lang_set[$this->segment[0]];
                 array_splice($this->segment, 0, 1);
@@ -49,6 +52,7 @@ class url
                // exit();
             }
         } else {
+            // print_pre('2');
             if (!empty($_SESSION['pagelang'])) {
                 $this->pagelang = $lang_set[$_SESSION['pagelang']];
             } else {
@@ -72,6 +76,7 @@ class url
         // }
 
         if (!empty($urlall[1])) {
+            
             $this->parametter = $urlall[1];
             $uri_frist = cleanArray(explode('&', $urlall[1]));
             foreach ($uri_frist as $xuri) {
@@ -81,7 +86,10 @@ class url
                 }
             }
             $this->uri = $uri;
+            
+            
         }
+        
     }
 	
 
@@ -100,11 +108,13 @@ class url
             $this->onfolderType = 'out site folder';
             $trimPath = $onBase;
         }
+        
         return $trimPath;
     }
-
+    
     public function page()
     {
+        
         $folderpage = _DIR . '/front/controller/script/' . $this->segment[0] . "/";
         //  print_pre($folderpage);
         if (file_exists($folderpage)) {
@@ -116,17 +126,19 @@ class url
                 foreach ($this->listfilemodulus as $value) {
                     $loderpage['load'][] = $folderpage . $value;
                 }
-				//print_pre('1');
+                // print_pre($loderpage);
+				// print_pre('1');
                 return $loderpage;
             } else {
-				//print_pre('11');
+				// print_pre('11');
                 return $this->setpagedefault();
             }
 
         } else {
-				//print_pre('122');
+				// print_pre('122');
             return $this->setpagedefault();
         }
+        
     }
 
     public function setpagedefault()
@@ -139,6 +151,7 @@ class url
             $loderpage['load'][] = $path . "/" . $value;
         }
         return $loderpage;
+        
     }
 
     public function checkpagefile($page)
@@ -163,6 +176,7 @@ class url
             }
         }
         return $loderpage;
+        
     }
 
 }
