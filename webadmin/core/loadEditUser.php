@@ -335,7 +335,7 @@ jQuery(document).ready(function(){
     <td width="18%" align="right"  valign="top"  class="formLeftContantTb" ><?=$langTxt["us:typeuser"]?><span class="fontContantAlert"></span></td>
     <td width="82%" colspan="6" align="left"  valign="top"  class="formRightContantTb" >
     	<?
-        $countTypeProplemArray=count($coreTxtTypeProplemUser);
+        $countTypeProplemArray=oldCount($coreTxtTypeProplemUser);
 		$valChkPortion="";
         for($i=1;$i<$countTypeProplemArray;$i++){
         ?>

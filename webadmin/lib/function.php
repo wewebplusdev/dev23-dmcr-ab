@@ -2334,5 +2334,8 @@ function loadDistrictMember($provinceID){
 
 
 
-    
+function oldCount($input)
+{
+   return isset($input) && is_array($input) ? count($input) : 0;
+}
 ?>
