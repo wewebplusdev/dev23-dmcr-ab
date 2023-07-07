@@ -14,8 +14,8 @@ for($i=1;$i<=$_REQUEST['TotalCheckBoxID'];$i++) {
 	$permissionID=$myVar;
 		
 			$sql = "SELECT  ".$mod_tb_root."_picmap,".$mod_tb_root."_pic,".$mod_tb_root."_urlminisite,".$mod_tb_root."_memid,".$mod_tb_root."_qr  FROM ".$mod_tb_root." WHERE  ".$mod_tb_root."_id='".$permissionID."' ";
-			$Query=mysql_query($sql);
-			$Row=mysql_fetch_array($Query);
+			$Query=wewebQueryDB($coreLanguageSQL,$sql);
+			$Row=wewebFetchArrayDB($coreLanguageSQL,$Query);
 			$deletepicmap=$Row[0];
 			$deletepic=$Row[1];
 			$valFolderSite=$Row[2];
@@ -67,13 +67,13 @@ for($i=1;$i<=$_REQUEST['TotalCheckBoxID'];$i++) {
 			
 			######################### Delete  Contant ###############################
 			$sql="DELETE FROM ".$mod_tb_root." WHERE ".$mod_tb_root."_id=".$permissionID." ";
-			$Query=mysql_query($sql);
+			$Query=wewebQueryDB($coreLanguageSQL,$sql);
  		######################### END Delete  Contant ###############################
 		
 
 		######################### Start Delete User ###############################
 		$sql="DELETE FROM ".$core_tb_staff." WHERE ".$core_tb_staff."_id='".$valMemberId."'  AND  ".$core_tb_staff."_typemini='1' ";
-		$Query=mysql_query($sql);
+		$Query=wewebQueryDB($coreLanguageSQL,$sql);
 		######################### END Delete User ###############################
 		
 		

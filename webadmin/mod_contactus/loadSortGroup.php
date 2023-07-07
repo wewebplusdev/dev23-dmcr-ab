@@ -96,13 +96,13 @@ $valPermission= getUserPermissionOnMenu($_SESSION[$valSiteManage."core_session_g
     <?
 		$sql = "SELECT   ".$mod_tb_root_group."_id,".$mod_tb_root_group."_subject,".$mod_tb_root_group."_lastdate,".$mod_tb_root_group."_status,".$mod_tb_root_group."_subjecten  FROM ".$mod_tb_root_group." WHERE ".$mod_tb_root_group."_masterkey ='".$_REQUEST['masterkey']."'    ";
 		$sql .= " ORDER BY ".$mod_tb_root_group."_order DESC";
-	$query=mysql_query($sql) ;
-	$recordCount=mysql_num_rows($query);
+	$query=wewebQueryDB($coreLanguageSQL,$sql) ;
+	$recordCount=wewebNumRowsDB($coreLanguageSQL,$query);
 	if($recordCount>=1){
 ?>
 <ul id="boxPermissionSort"  >
 <?
-while($row=mysql_fetch_array($query)) {
+while($row=wewebFetchArrayDB($coreLanguageSQL,$query)) {
 		$valID=$row[0];
 		$valName=$row[1];
 	 	$valDateCredate = dateFormatReal($row[2]);

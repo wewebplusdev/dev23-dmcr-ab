@@ -12,18 +12,18 @@ $valClassNav = 2;
 $valNav1 = $langTxt["nav:home2"];
 $valLinkNav1 = "../core/index.php";
 
-$update = "";
+$update = array();
 $update[] = $mod_tb_root . "_status  	='Read'";
 
 $sql = "UPDATE " . $mod_tb_root . " SET " . implode(",", $update) . " WHERE " . $mod_tb_root . "_id='" . $_POST["valEditID"] . "'  ";
-$Query = mysql_query($sql);
+$Query = wewebQueryDB($coreLanguageSQL,$sql);
 
 
 $sql = "SELECT   ";
 $sql .= "   " . $mod_tb_root . "_id , " . $mod_tb_root . "_credate, " . $mod_tb_root . "_status 	, " . $mod_tb_root . "_subject, " . $mod_tb_root . "_message, " . $mod_tb_root . "_name  ,  " . $mod_tb_root . "_address  ,  " . $mod_tb_root . "_email  ,  " . $mod_tb_root . "_tel   ,  " . $mod_tb_root . "_ip,  " . $mod_tb_root . "_gid ";
 $sql .= " FROM " . $mod_tb_root . " WHERE " . $mod_tb_root . "_masterkey='" . $_REQUEST["masterkey"] . "'  AND  " . $mod_tb_root . "_id='" . $_REQUEST['valEditID'] . "' ";
-$Query = mysql_query($sql);
-$Row = mysql_fetch_array($Query);
+$Query = wewebQueryDB($coreLanguageSQL,$sql);
+$Row = wewebFetchArrayDB($coreLanguageSQL,$Query);
 $valID = $Row[0];
 $valCredate = DateFormat($Row[1]);
 $valStatus = $Row[2];
@@ -123,8 +123,8 @@ logs_access('3', 'View');
                                             }
 
                                             $sql_group .= "  FROM " . $mod_tb_root_group . " WHERE  " . $mod_tb_root_group . "_id='" . $valGid . "'  ORDER BY " . $mod_tb_root_group . "_order DESC ";
-                                            $query_group = mysql_query($sql_group);
-                                            $row_group = mysql_fetch_array($query_group);
+                                            $query_group = wewebQueryDB($coreLanguageSQL,$sql_group);
+                                            $row_group = wewebFetchArrayDB($coreLanguageSQL,$query_group);
                                             $row_groupid = $row_group[0];
                                             echo $row_groupname = $row_group[1];
                                             ?>

@@ -99,14 +99,14 @@ include("config.php");
 				}
 			
 			}else{
-			$newfilename = $mod_path_pictures."/".$picname;; // New file name for thumb
+			$newfilename = $mod_path_pictures."/".$picname; // New file name for thumb
 			$w = $sizeWidthPic;
 			$h = $sizeHeightPic;
 			$thumbnail = resize($imgReal, $w, $h, $newfilename);
 			}
 			
 			##  Office ################################################################################
-			$newfilename = $mod_path_office."/".$picname;; // New file name for thumb
+			$newfilename = $mod_path_office."/".$picname; // New file name for thumb
 			$w = $sizeWidthOff;
 			$h = $sizeHeightOff;
 			$thumbnail = resize($imgReal, $w, $h, $newfilename);

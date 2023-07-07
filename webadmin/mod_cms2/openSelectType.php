@@ -13,8 +13,8 @@ $sql_cat = $sql_cat."  AND ".$mod_tb_product."_gid ='".$_REQUEST['inputGroupID']
 <select name="inputTypeID"  id="inputTypeID"class="formSelectContantTb" >
         <option value="0"><?=$langMod["tit:selectt"]?></option>
               <? 
-		$query_cat=mysql_query($sql_cat);
-		while($row_cat=mysql_fetch_array($query_cat)) {
+		$query_cat=wewebQueryDB($coreLanguageSQL,$sql_cat);
+		while($row_cat=wewebFetchArrayDB($coreLanguageSQL,$query_cat)) {
 		$row_catid=$row_cat[0];
 		$row_catname=$row_cat[1];
 		$row_catnameeng=$row_cat[2];

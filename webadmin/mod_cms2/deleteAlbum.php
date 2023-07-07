@@ -8,23 +8,23 @@ include("config.php");
 
 		
 	$sql_fileNew="SELECT ".$mod_tb_root_album."_filename  FROM ".$mod_tb_root_album." WHERE ".$mod_tb_root_album."_id 	='".$_REQUEST['valDelAlbum']."' ";
-	$query_fileNew=mysql_query($sql_fileNew);
-	$row_fileNew=mysql_fetch_array($query_fileNew);
+	$query_fileNew=wewebQueryDB($coreLanguageSQL,$sql_fileNew);
+	$row_fileNew=wewebFetchArrayDB($coreLanguageSQL,$query_fileNew);
 	$downloadFile=$row_fileNew[0];
 	if(file_exists($mod_path_album."/".$downloadFile)) {
 		@unlink($mod_path_album."/".$downloadFile);
 	}	
 		
 	$sql="DELETE FROM ".$mod_tb_root_album." WHERE   ".$mod_tb_root_album."_id='".$_REQUEST['valDelAlbum']."' ";
-	$Query=mysql_query($sql);
+	$Query=wewebQueryDB($coreLanguageSQL,$sql);
 	
 			
 		$sql="SELECT ".$mod_tb_root_album."_id,".$mod_tb_root_album."_filename,".$mod_tb_root_album."_name,".$mod_tb_root_album."_download FROM ".$mod_tb_root_album." WHERE ".$mod_tb_root_album."_contantid 	='".$_REQUEST['valEditID']."' ORDER BY ".$mod_tb_root_album."_id ASC";
-			$query_file=mysql_query($sql);
-			$number_row=mysql_num_rows($query_file);
+			$query_file=wewebQueryDB($coreLanguageSQL,$sql);
+			$number_row=wewebNumRowsDB($coreLanguageSQL,$query_file);
 			if($number_row>=1){
 			$txtFile="";
-			while($row_file=mysql_fetch_array($query_file)){
+			while($row_file=wewebFetchArrayDB($coreLanguageSQL,$query_file)){
 			$linkRelativePath = $mod_path_album."/".$row_file[1];
 			$downloadFile = $row_file[1];
 			$downloadID = $row_file[0];

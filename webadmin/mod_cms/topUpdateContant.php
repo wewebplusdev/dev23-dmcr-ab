@@ -7,18 +7,18 @@ include("../lib/checkMember.php");
 include("config.php");
 
 		$sql = "SELECT MAX(".$mod_tb_root."_order) FROM ".$mod_tb_root;
-		$Query=mysql_query($sql);
-		$Row=mysql_fetch_array($Query);
+		$Query=wewebQueryDB($coreLanguageSQL,$sql);
+		$Row=wewebFetchArrayDB($coreLanguageSQL,$Query);
 		$maxOrder = $Row[0]+1;
 
-		$update="";
+		$update = array();
 		$update[]=$mod_tb_root."_order='".$maxOrder."'";
 		$update[]=$mod_tb_root."_lastbyid='".$_SESSION[$valSiteManage.'core_session_id']."'";
 		$update[]=$mod_tb_root."_lastby='".$_SESSION[$valSiteManage.'core_session_name']."'";
 		$update[]=$mod_tb_root."_lastdate=NOW()";
 
 		$sql="UPDATE ".$mod_tb_root." SET ".implode(",",$update)." WHERE ".$mod_tb_root."_id='".$_POST["valEditID"]."' ";
-		$Query=mysql_query($sql);
+		$Query=wewebQueryDB($coreLanguageSQL,$sql);
 
 		 logs_access('3','Sort');
 	include("../lib/incRss.php");

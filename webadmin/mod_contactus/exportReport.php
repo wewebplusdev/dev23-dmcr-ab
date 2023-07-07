@@ -47,13 +47,13 @@ xmlns="http://www.w3.org/TR/REC-html40">
     
     <?
 $sql=str_replace('\\','',$_POST['sql_export']);
-$query=mysql_query($sql) ;
-$count_record=mysql_num_rows($query);
+$query=wewebQueryDB($coreLanguageSQL,$sql) ;
+$count_record=wewebNumRowsDB($coreLanguageSQL,$query);
 $date_print=DateFormat(date("Y-m-d"));
 
 			  if($count_record>=1){
 			  $index=1;
-			while($rowExport=mysql_fetch_array($query)) {
+			while($rowExport=wewebFetchArrayDB($coreLanguageSQL,$query)) {
 			$valID=$rowExport[0];
 			$valCredate=DateFormat($rowExport[1]);
 			$valStatus=$rowExport[2];
@@ -74,8 +74,8 @@ $date_print=DateFormat(date("Y-m-d"));
 			}
 			 
 			$sql_group .= "  FROM ".$mod_tb_root_group." WHERE  ".$mod_tb_root_group."_id='".$valGid."'  ORDER BY ".$mod_tb_root_group."_order DESC ";
-		$query_group=mysql_query($sql_group);
-		$row_group=mysql_fetch_array($query_group);
+		$query_group=wewebQueryDB($coreLanguageSQL,$sql_group);
+		$row_group=wewebFetchArrayDB($coreLanguageSQL,$query_group);
 		$row_groupid=$row_group[0];
 	 	$row_groupname=$row_group[1];
 		

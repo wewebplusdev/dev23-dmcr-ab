@@ -9,7 +9,7 @@ include("../lib/checkMember.php");
 		
 	 	$memberID=$_POST['valEditID'];
 		
-		$update="";
+		$update = array();
 		$update[]=$core_tb_staff."_username  	='".changeQuot($_REQUEST['inputUserName'])."'";
 		$update[]=$core_tb_staff."_password  ='".encodeStr(changeQuot($_REQUEST['inputPassword']))."'";
 		$update[]=$core_tb_staff."_prefix  	='".changeQuot($_REQUEST['inputPrefix'])."'";

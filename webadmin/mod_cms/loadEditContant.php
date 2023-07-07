@@ -20,13 +20,11 @@ $valLinkNav1="../core/index.php";
 				$sql .= " , ".$mod_tb_root."_subject  ,    ".$mod_tb_root."_title , ".$mod_tb_root."_htmlfilename   ,    ".$mod_tb_root."_metatitle  	 	 ,    ".$mod_tb_root."_description  	 	 ,    ".$mod_tb_root."_keywords    ";
 			}elseif($_REQUEST['inputLt']=="Eng"){
 				$sql .= " , ".$mod_tb_root."_subjecten  ,    ".$mod_tb_root."_titleen , ".$mod_tb_root."_htmlfilenameen   ,    ".$mod_tb_root."_metatitleen  	 	 ,    ".$mod_tb_root."_descriptionen  	 	 ,    ".$mod_tb_root."_keywordsen    ";
-			}else{
-				$sql .= " , ".$mod_tb_root."_subjectcn  ,    ".$mod_tb_root."_titlecn, ".$mod_tb_root."_htmlfilenamecn   ,    ".$mod_tb_root."_metatitlecn  	 	 ,    ".$mod_tb_root."_descriptioncn  	 	 ,    ".$mod_tb_root."_keywordscn    ";
 			}
 
 			$sql .= " , ".$mod_tb_root."_picshow, ".$mod_tb_root."_cid, ".$mod_tb_root."_votetus	FROM ".$mod_tb_root." WHERE ".$mod_tb_root."_masterkey='".$_POST["masterkey"]."' AND  ".$mod_tb_root."_id 	='".$_POST["valEditID"]."'";
-			$Query=mysql_query($sql);
-			$Row=mysql_fetch_array($Query);
+			$Query=wewebQueryDB($coreLanguageSQL,$sql);
+			$Row=wewebFetchArrayDB($coreLanguageSQL,$Query);
 			$valid=$Row[0];
 			$valcredate=DateFormatInsertRe($Row[1]);
 			$valcreby=$Row[2];
@@ -215,50 +213,52 @@ jQuery(document).ready(function(){
     <select name="inputGroupID"  id="inputGroupID"class="formSelectContantTb" onchange="openSelectSub('openSelectSub.php')">
         <option value="0"><?=$langMod["tit:selectg"]?></option>
         <?
-	$sql_group = "SELECT ";
-			if($_REQUEST['inputLt']=="Thai"){
-				$sql_group .= "  ".$mod_tb_root_group."_id,".$mod_tb_root_group."_subject";
-			}else if($_REQUEST['inputLt']=="Eng"){
-				$sql_group .= " ".$mod_tb_root_group."_id,".$mod_tb_root_group."_subjecten ";
-			}else{
-				$sql_group .= " ".$mod_tb_root_group."_id,".$mod_tb_root_group."_subjectcn ";
-			}
+	// $sql_group = "SELECT ";
+	// 		if($_REQUEST['inputLt']=="Thai"){
+	// 			$sql_group .= "  ".$mod_tb_root_group."_id,".$mod_tb_root_group."_subject";
+	// 		}else if($_REQUEST['inputLt']=="Eng"){
+	// 			$sql_group .= " ".$mod_tb_root_group."_id,".$mod_tb_root_group."_subjecten ";
+	// 		}
 
-			$sql_group .= "  FROM ".$mod_tb_root_group." WHERE  ".$mod_tb_root_group."_masterkey ='".$_REQUEST['masterkey']."'   ORDER BY ".$mod_tb_root_group."_order DESC ";
-		$query_group=mysql_query($sql_group);
-		while($row_group=mysql_fetch_array($query_group)) {
-		$row_groupid=$row_group[0];
-		$row_groupname=$row_group[1];
+	// 		$sql_group .= "  FROM ".$mod_tb_root_group." WHERE  ".$mod_tb_root_group."_masterkey ='".$_REQUEST['masterkey']."'   ORDER BY ".$mod_tb_root_group."_order DESC ";
+	// 	$query_group=wewebQueryDB($coreLanguageSQL,$sql_group);
+	// 	while($row_group=wewebFetchArrayDB($coreLanguageSQL,$query_group)) {
+	// 	$row_groupid=$row_group[0];
+	// 	$row_groupname=$row_group[1];
 		?>
         <option value="<?=$row_groupid?>" <?  if($valGid==$row_groupid){ ?> selected="selected" <?  }?>><?=$row_groupname?></option>
-        <? }?>
+        <? 
+	// }
+	?>
     </select></td>
   </tr> -->
 	<!-- <tr >
 		<td width="18%" align="right"  valign="top"  class="formLeftContantTb" ><?=$langMod["tit:selectsgn"]?><span class="fontContantAlert"></span></td>
 		<td width="82%" colspan="6" align="left"  valign="top"  class="formRightContantTb" id="boxSubSelect" >
 		<?
-		$sql_cat = "SELECT ";
-		if($_REQUEST['inputLt']=="Thai"){
-			$sql_cat .= "  ".$mod_tb_root_subgroup."_id,".$mod_tb_root_subgroup."_subject";
-		}else{
-			$sql_cat .= " ".$mod_tb_root_subgroup."_id,".$mod_tb_root_subgroup."_subjecten ";
-		}
-		$sql_cat .= "  FROM ".$mod_tb_root_subgroup." WHERE  ".$mod_tb_root_subgroup."_masterkey ='".$_REQUEST['masterkey']."'    ";
-		$sql_cat = $sql_cat."  AND ".$mod_tb_root_subgroup."_gid ='".$valGid."'   ";
-		$sql_cat = $sql_cat."  ORDER BY ".$mod_tb_root_subgroup."_order DESC  ";
+		// $sql_cat = "SELECT ";
+		// if($_REQUEST['inputLt']=="Thai"){
+		// 	$sql_cat .= "  ".$mod_tb_root_subgroup."_id,".$mod_tb_root_subgroup."_subject";
+		// }else{
+		// 	$sql_cat .= " ".$mod_tb_root_subgroup."_id,".$mod_tb_root_subgroup."_subjecten ";
+		// }
+		// $sql_cat .= "  FROM ".$mod_tb_root_subgroup." WHERE  ".$mod_tb_root_subgroup."_masterkey ='".$_REQUEST['masterkey']."'    ";
+		// $sql_cat = $sql_cat."  AND ".$mod_tb_root_subgroup."_gid ='".$valGid."'   ";
+		// $sql_cat = $sql_cat."  ORDER BY ".$mod_tb_root_subgroup."_order DESC  ";
 
 	?>
 		<select name="inputSubID"  id="inputSubID"class="formSelectContantTb" >
 				<option value="0"><?=$langMod["tit:selectsg"]?></option>
 							<?
-		$query_cat=mysql_query($sql_cat);
-		while($row_cat=mysql_fetch_array($query_cat)) {
-		$row_catid=$row_cat[0];
-		$valNamecShow=$row_cat[1];
+		// $query_cat=wewebQueryDB($coreLanguageSQL,$sql_cat);
+		// while($row_cat=wewebFetchArrayDB($coreLanguageSQL,$query_cat)) {
+		// $row_catid=$row_cat[0];
+		// $valNamecShow=$row_cat[1];
 		?>
 				<option value="<?=$row_catid?>" <?  if($valSGid==$row_catid){ ?> selected="selected" <?  }?>><?=$valNamecShow?></option>
-				<?  }?>
+				<?  
+			// }
+			?>
 
 		</select></td>
 	</tr> -->
@@ -358,11 +358,11 @@ jQuery(document).ready(function(){
 <div id="boxAlbumNew" class="formFontTileTxt">
 <?
 			 $sql_filetemp="SELECT  ".$mod_tb_root_album."_id,".$mod_tb_root_album."_filename,".$mod_tb_root_album."_name,".$mod_tb_root_album."_download  FROM ".$mod_tb_root_album." WHERE ".$mod_tb_root_album."_contantid 	='".$_REQUEST['valEditID']."'    ORDER BY ".$mod_tb_root_album."_id ASC";
-			$query_filetemp=mysql_query($sql_filetemp);
-		 	$number_filetemp=mysql_num_rows($query_filetemp);
+			$query_filetemp=wewebQueryDB($coreLanguageSQL,$sql_filetemp);
+		 	$number_filetemp=wewebNumRowsDB($coreLanguageSQL,$query_filetemp);
 			if($number_filetemp>=1){
 			$valAlbum="";
-			while($row_filetemp=mysql_fetch_array($query_filetemp)){
+			while($row_filetemp=wewebFetchArrayDB($coreLanguageSQL,$query_filetemp)){
 			$linkRelativePath = $mod_path_album."/".$row_filetemp[1];
 			$downloadFile = $row_filetemp[1];
 			$downloadID = $row_filetemp[0];
@@ -452,11 +452,11 @@ jQuery(document).ready(function(){
 <div id="boxFileNew" class="formFontTileTxt">
 <?
 			$sql="SELECT ".$mod_tb_file."_id,".$mod_tb_file."_filename,".$mod_tb_file."_name,".$mod_tb_file."_download FROM ".$mod_tb_file." WHERE ".$mod_tb_file."_contantid 	='".$valid."' ORDER BY ".$mod_tb_file."_id ASC";
-			$query_file=mysql_query($sql);
-			$number_row=mysql_num_rows($query_file);
+			$query_file=wewebQueryDB($coreLanguageSQL,$sql);
+			$number_row=wewebNumRowsDB($coreLanguageSQL,$query_file);
 			if($number_row>=1){
 			$txtFile="";
-			while($row_file=mysql_fetch_array($query_file)){
+			while($row_file=wewebFetchArrayDB($coreLanguageSQL,$query_file)){
 			$linkRelativePath = $mod_path_file."/".$row_file[1];
 			$downloadFile = $row_file[1];
 			$downloadID = $row_file[0];

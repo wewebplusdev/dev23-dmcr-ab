@@ -15,7 +15,7 @@ include("config.php");
 <?
 	if($execute=="update"){
 
-		$update="";
+		$update = array();
 		if($_REQUEST['inputLt']=="Thai"){
 		$update[]=$mod_tb_root_group."_subject='".changeQuot($_POST['inputSubject'])."'";
 		$update[]=$mod_tb_root_group."_title  	='".changeQuot($_POST['inputComment'])."'";
@@ -33,7 +33,7 @@ include("config.php");
 		$update[]=$mod_tb_root_group."_pic='".$_POST["picname"]."'";
 
 		$sql="UPDATE ".$mod_tb_root_group." SET ".implode(",",$update)." WHERE ".$mod_tb_root_group."_id='".$_POST["valEditID"]."' ";
-		$Query=mysql_query($sql);
+		$Query=wewebQueryDB($coreLanguageSQL,$sql);
 
 		logs_access('3','Update Group');
 		?>

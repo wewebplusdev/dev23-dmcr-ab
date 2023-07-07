@@ -10,10 +10,10 @@ include("config.php");
 
 		$sql = "SELECT MAX(".$mod_tb_root_subgroup."_order) FROM ".$mod_tb_root_subgroup;
 		$Query=mysql_db_query($core_db_name,$sql);
-		$Row=mysql_fetch_array($Query);
+		$Row=wewebFetchArrayDB($coreLanguageSQL,$Query);
 		$maxOrder = $Row[0]+1;
 
-		$insert="";
+		$insert = array();
 		$insert[$mod_tb_root_subgroup."_language"] = "'".$_SESSION[$valSiteManage.'core_session_language']."'";
 		$insert[$mod_tb_root_subgroup."_masterkey"] = "'".$_REQUEST["masterkey"]."'";
 		$insert[$mod_tb_root_subgroup."_subject"] = "'".changeQuot($_REQUEST['inputSubject'])."'";
@@ -32,8 +32,8 @@ include("config.php");
 		// $insert[$mod_tb_root_subgroup."_pic"] = "'".$_POST["picname"]."'";
 
 		$sql="INSERT INTO ".$mod_tb_root_subgroup."(".implode(",",array_keys($insert)).") VALUES (".implode(",",array_values($insert)).")";
-		$Query=mysql_query($sql);
-		$contantID=mysql_insert_id();
+		$Query=wewebQueryDB($coreLanguageSQL,$sql);
+		$contantID=wewebInsertID($coreLanguageSQL);
 
 
 

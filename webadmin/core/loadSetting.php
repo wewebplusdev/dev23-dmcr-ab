@@ -17,7 +17,7 @@ $queryCheck = wewebQueryDB($coreLanguageSQL, $sqlCheck);
 $countNumCheck = wewebNumRowsDB($coreLanguageSQL, $queryCheck);
 if ($countNumCheck <= 0) {
 
-    $insert = "";
+    $insert = array();
     $insert[$core_tb_setting . "_lang"] = "'Thai'";
     $insert[$core_tb_setting . "_type"] = "'2'";
     $insert[$core_tb_setting . "_credate"] = "" . wewebNow($coreLanguageSQL) . "";

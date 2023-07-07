@@ -26,8 +26,8 @@ $valLinkNav1="../core/index.php";
 			}
 			$sql .= " ,".$mod_tb_root_subgroup."_gid ";
 			$sql .= " 	FROM ".$mod_tb_root_subgroup." WHERE ".$mod_tb_root_subgroup."_masterkey='".$_POST["masterkey"]."' AND  ".$mod_tb_root_subgroup."_id 	='".$_POST["valEditID"]."'";
-			$Query=mysql_query($sql);
-			$Row=mysql_fetch_array($Query);
+			$Query=wewebQueryDB($coreLanguageSQL,$sql);
+			$Row=wewebFetchArrayDB($coreLanguageSQL,$Query);
 			$valid=$Row[0];
 			$valcredate=DateFormat($Row[1]);
 			$valcreby=$Row[2];
@@ -171,8 +171,8 @@ $sql_group = "SELECT ";
 	}
 
 	$sql_group .= "  FROM ".$mod_tb_root_group." WHERE  ".$mod_tb_root_group."_masterkey ='".$_REQUEST['masterkey']."'   ORDER BY ".$mod_tb_root_group."_order DESC ";
-$query_group=mysql_query($sql_group);
-while($row_group=mysql_fetch_array($query_group)) {
+$query_group=wewebQueryDB($coreLanguageSQL,$sql_group);
+while($row_group=wewebFetchArrayDB($coreLanguageSQL,$query_group)) {
 $row_groupid=$row_group[0];
 $row_groupname=$row_group[1];
 ?>

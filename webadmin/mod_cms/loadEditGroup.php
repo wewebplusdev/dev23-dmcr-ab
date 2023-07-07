@@ -26,8 +26,8 @@ $valLinkNav1="../core/index.php";
 			}
 			$sql .= " ,".$mod_tb_root_group."_pic ";
 			$sql .= " 	FROM ".$mod_tb_root_group." WHERE ".$mod_tb_root_group."_masterkey='".$_POST["masterkey"]."' AND  ".$mod_tb_root_group."_id 	='".$_POST["valEditID"]."'";
-			$Query=mysql_query($sql);
-			$Row=mysql_fetch_array($Query);
+			$Query=wewebQueryDB($coreLanguageSQL,$sql);
+			$Row=wewebFetchArrayDB($coreLanguageSQL,$Query);
 			$valid=$Row[0];
 			$valcredate=DateFormat($Row[1]);
 			$valcreby=$Row[2];

@@ -12,7 +12,7 @@ include("../lib/checkMember.php");
 			$_REQUEST['inputTypeApprove']="0";
 		}
 
-		$update="";
+		$update = array();
 		$update[]=$core_tb_staff."_groupid  	='".changeQuot($_REQUEST['inputgroupid'])."'";
 		$update[]=$core_tb_staff."_unitid  	='".changeQuot($_REQUEST['inputUnitID'])."'";
 		

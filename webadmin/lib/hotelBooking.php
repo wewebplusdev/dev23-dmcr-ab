@@ -81,10 +81,10 @@ include("weadmin/mod_hotelg/config.php");
 		. "" . $mod_tb_root . "_picshow , "
 		. "" . $mod_tb_root . "_hotelID  ";
 	  	$sqlCheck .= "  FROM ".$mod_tb_root." WHERE   ((".$mod_tb_root."_sdate='0000-00-00 00:00:00' AND ".  $mod_tb_root."_edate='0000-00-00 00:00:00')  OR (".$mod_tb_root."_sdate='0000-00-00 00:00:00' AND   TO_DAYS(".$mod_tb_root."_edate)>=TO_DAYS(NOW()) ) OR (TO_DAYS(".$mod_tb_root."_sdate)<=TO_DAYS(NOW()) AND ".  $mod_tb_root."_edate='0000-00-00 00:00:00' ) OR (TO_DAYS(".$mod_tb_root."_sdate)<=TO_DAYS(NOW()) AND  TO_DAYS(".$mod_tb_root."_edate)>=TO_DAYS(NOW())  ))  AND ".$mod_tb_root."_masterkey='".$masterkey."' AND     ".$mod_tb_root."_id='".$_POST['inputHotelIDdb']."' AND  ".$mod_tb_root."_status!='Disable'" ;
-		$Queryeck=mysql_query($sqlCheck);
-		$countCheckRow=mysql_num_rows($Queryeck);
+		$Queryeck=wewebQueryDB($coreLanguageSQL,$sqlCheck);
+		$countCheckRow=wewebNumRowsDB($coreLanguageSQL,$Queryeck);
 		//echo "<br/>".$countCheckRow."==><br/>".$sqlCheck."<br/>";
-			$Row = mysql_fetch_array($Queryeck);
+			$Row = wewebFetchArrayDB($coreLanguageSQL,$Queryeck);
 			$valID = $Row[0];
 			$valSubject = rechangeQuot($Row[1]);
 			$valTitle = rechangeQuot($Row[2]);
@@ -142,10 +142,10 @@ $sqlCheckSub = "SELECT ";
 		. "" . $mod_tb_root_room . "_pic,    "
 		. "" . $mod_tb_root_room . "_htmlfilename ";
 		$sqlCheckSub .= "  FROM ".$mod_tb_root_room." WHERE  ".$mod_tb_root_room."_masterkey='".$masterkey."'   AND     ".$mod_tb_root_room."_id='".$_POST['inputRoomHotelIDdb']."' AND  ".$mod_tb_root_room."_status!='Disable'  LIMIT 0,1 " ;
-		$QueryCheckSub=mysql_query($sqlCheckSub);
-		$countCheckRowSub=mysql_num_rows($QueryCheckSub);
+		$QueryCheckSub=wewebQueryDB($coreLanguageSQL,$sqlCheckSub);
+		$countCheckRowSub=wewebNumRowsDB($coreLanguageSQL,$QueryCheckSub);
 		
-			$RowSub = mysql_fetch_array($QueryCheckSub);
+			$RowSub = wewebFetchArrayDB($coreLanguageSQL,$QueryCheckSub);
 			$valSubID = $RowSub[0];
 			$valSubSubject = rechangeQuot($RowSub[1]);
 			$valSubRoomID = rechangeQuot($RowSub[2]);
@@ -169,8 +169,8 @@ $sqlCheckSub = "SELECT ";
 		. "" . $mod_tb_member . "_email , "
 		. "" . $mod_tb_member . "_tel ";
 	  	$sqlCheckMember .= "  FROM ".$mod_tb_member." WHERE  ".$mod_tb_member."_id='".$_POST['inputMemberID']."'   LIMIT 0,1 " ;
-		$QueryCheckMember=mysql_query($sqlCheckMember);
-		$RowMember = mysql_fetch_array($QueryCheckMember);
+		$QueryCheckMember=wewebQueryDB($coreLanguageSQL,$sqlCheckMember);
+		$RowMember = wewebFetchArrayDB($coreLanguageSQL,$QueryCheckMember);
 			$valMemberEmail = rechangeQuot($RowMember[1]);
 			$valMemberTel = rechangeQuot($RowMember[2]);
 ?>

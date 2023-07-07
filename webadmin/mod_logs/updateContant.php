@@ -19,7 +19,7 @@ include("config.php");
 		if(!is_dir($core_pathname_upload."/".$masterkey)) { mkdir($core_pathname_upload."/".$masterkey,0777); }
 		if(!is_dir($mod_path_html)) { mkdir($mod_path_html,0777); }
 		
-		$update="";
+		$update = array();
 		$update[]=$mod_tb_root."_urlminisite='".changeQuot($_POST['inputUrlMinisite'])."'";
 		$update[]=$mod_tb_root."_subject='".changeQuot($_POST['inputSubject'])."'";
 		$update[]=$mod_tb_root."_color='".changeQuot($_POST['inputColor'])."'";
@@ -39,7 +39,7 @@ include("config.php");
 		$update[]=$mod_tb_root."_lastdate=NOW()";
 
 		 $sql="UPDATE ".$mod_tb_root." SET ".implode(",",$update)." WHERE ".$mod_tb_root."_id='".$_POST["valEditID"]."' ";
-		$Query=mysql_query($sql);
+		$Query=wewebQueryDB($coreLanguageSQL,$sql);
 		
 		/* ################### Start Rename Folder ####################*/
 
@@ -59,8 +59,8 @@ include("config.php");
 		$valMainUrlMinisite=$core_full_pathMinisite.$_REQUEST['inputUrlMinisite']."/";
 		$valMainUrlMinisiteOld=$core_full_pathMinisite.$_REQUEST['inputUrlMiniO']."/";
 		$sqlMenu = "SELECT  md_mue_id,md_mue_link,md_mue_linken FROM md_mue WHERE  md_mue_masterkey='".$_POST["valEditID"]."me' ";
-		$QueryMenu = mysql_query($sqlMenu);
-		while($RowMenu = mysql_fetch_array($QueryMenu)) {
+		$QueryMenu = wewebQueryDB($coreLanguageSQL,$sqlMenu);
+		while($RowMenu = wewebFetchArrayDB($coreLanguageSQL,$QueryMenu)) {
 		$valMenuID = $RowMenu[0];
 		$valMenuLink = str_replace($valMainUrlMinisiteOld,$valMainUrlMinisite,$RowMenu[1]);
 		$valMenuLinkEn = str_replace($valMainUrlMinisiteOld,$valMainUrlMinisite,$RowMenu[2]);
@@ -70,7 +70,7 @@ include("config.php");
 		$update[]="md_mue_linken  	='".$valMenuLinkEn."'";
 
 		 $sqlUpdate="UPDATE md_mue SET ".implode(",",$update)." WHERE md_mue_id='".$valMenuID."' ";
-		$queryUpdate=mysql_query($sqlUpdate);	
+		$queryUpdate=wewebQueryDB($coreLanguageSQL,$sqlUpdate);	
 		
 		}
 
@@ -87,7 +87,7 @@ include("config.php");
 		$update[]=$core_tb_staff."_lastdate  	=".wewebNow($coreLanguageSQL)."";
 
 		 $sql="UPDATE ".$core_tb_staff." SET ".implode(",",$update)." WHERE ".$core_tb_staff."_id='".$_REQUEST['inputMemberId']."' ";
-		$Query=mysql_query($sql);	
+		$Query=wewebQueryDB($coreLanguageSQL,$sql);	
 		
 		/* ################### End Update Username Unit ####################*/
 		
@@ -115,7 +115,7 @@ include("config.php");
 		$Row=wewebFetchArrayDB($coreLanguageSQL,$Query);
 		$maxOrder = $Row[0]+1;
 		
-		$insert="";
+		$insert = array();
 		$insert[$core_tb_staff."_groupid"] = "'".changeQuot($valUserGID)."'";
 		$insert[$core_tb_staff."_username"] = "'".changeQuot($valUserName)."'";
 		$insert[$core_tb_staff."_password"] = "'".encodeStr(changeQuot($valUserPass))."'";
@@ -139,12 +139,12 @@ include("config.php");
 		$insert[$core_tb_staff."_typemini"] = "'1'";
 		$sql="INSERT INTO ".$core_tb_staff."(".implode(",",array_keys($insert)).") VALUES (".implode(",",array_values($insert)).")";
 		$Query=wewebQueryDB($coreLanguageSQL,$sql);	
-		$valStaffID=mysql_insert_id();
+		$valStaffID=wewebInsertID($coreLanguageSQL);
 		
 		/* ################### End Insert Username&Password ####################*/
 		
 		/* ################### Start Update Unit ####################*/
-		$update="";
+		$update = array();
 		$update[]=$mod_tb_root."_memid  	='".changeQuot($valStaffID)."'";
 		$sql="UPDATE ".$mod_tb_root." SET ".implode(",",$update)." WHERE ".$mod_tb_root."_id='".$_POST["valEditID"]."' ";
 		$Query=wewebQueryDB($coreLanguageSQL,$sql);	

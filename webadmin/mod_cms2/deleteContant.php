@@ -13,9 +13,9 @@ for($i=1;$i<=$_REQUEST['TotalCheckBoxID'];$i++) {
 	if(strlen($myVar)>=1) {
 	$permissionID=$myVar;
 		
-			$sql = "SELECT  ".$mod_tb_root."_htmlfilename,".$mod_tb_root."_pic,".$mod_tb_root."_filevdo,".$mod_tb_root."_htmlfilenameen,".$mod_tb_root."_htmlfilenamecn FROM ".$mod_tb_root." WHERE  ".$mod_tb_root."_id='".$permissionID."' ";
-			$Query=mysql_query($sql);
-			$Row=mysql_fetch_array($Query);
+			$sql = "SELECT  ".$mod_tb_root."_htmlfilename,".$mod_tb_root."_pic,".$mod_tb_root."_filevdo,".$mod_tb_root."_htmlfilenameen FROM ".$mod_tb_root." WHERE  ".$mod_tb_root."_id='".$permissionID."' ";
+			$Query=wewebQueryDB($coreLanguageSQL,$sql);
+			$Row=wewebFetchArrayDB($coreLanguageSQL,$Query);
 			$deletepichtml=$Row[0];
 			$deletepic=$Row[1];
 			$deletevideo=$Row[2];
@@ -56,10 +56,10 @@ for($i=1;$i<=$_REQUEST['TotalCheckBoxID'];$i++) {
 			
 			######################### Delete  In Folder File ###############################
 			$sql="SELECT ".$mod_tb_file."_id,".$mod_tb_file."_filename FROM ".$mod_tb_file." WHERE ".$mod_tb_file."_contantid ='".$permissionID."'";
-			$query_file=mysql_query($sql);
-			$number_row=mysql_num_rows($query_file);
+			$query_file=wewebQueryDB($coreLanguageSQL,$sql);
+			$number_row=wewebNumRowsDB($coreLanguageSQL,$query_file);
 			if($number_row>=1){
-				while($row_file=mysql_fetch_array($query_file)){
+				while($row_file=wewebFetchArrayDB($coreLanguageSQL,$query_file)){
 				$downloadID = $row_file[0];
 				$deletefilename=$row_file[1];
 
@@ -71,14 +71,14 @@ for($i=1;$i<=$_REQUEST['TotalCheckBoxID'];$i++) {
 			}
 			
 			$sql="DELETE FROM ".$mod_tb_file." WHERE   ".$mod_tb_file."_contantid='".$permissionID."' ";
-			$Query=mysql_query($sql);
+			$Query=wewebQueryDB($coreLanguageSQL,$sql);
 			
 			######################### Delete  In Folder File ###############################
 			$sql="SELECT ".$mod_tb_root_album."_id,".$mod_tb_root_album."_filename FROM ".$mod_tb_root_album." WHERE ".$mod_tb_root_album."_contantid ='".$permissionID."'";
-			$query_file=mysql_query($sql);
-			$number_row=mysql_num_rows($query_file);
+			$query_file=wewebQueryDB($coreLanguageSQL,$sql);
+			$number_row=wewebNumRowsDB($coreLanguageSQL,$query_file);
 			if($number_row>=1){
-				while($row_file=mysql_fetch_array($query_file)){
+				while($row_file=wewebFetchArrayDB($coreLanguageSQL,$query_file)){
 				$downloadID = $row_file[0];
 				$deletefilename=$row_file[1];
 
@@ -97,15 +97,15 @@ for($i=1;$i<=$_REQUEST['TotalCheckBoxID'];$i++) {
 			}
 			
 			$sql="DELETE FROM ".$mod_tb_root_album." WHERE   ".$mod_tb_root_album."_contantid='".$permissionID."' ";
-			$Query=mysql_query($sql);
+			$Query=wewebQueryDB($coreLanguageSQL,$sql);
 			
 			######################### Delete  Contant ###############################
 			$sql="DELETE FROM ".$mod_tb_root." WHERE ".$mod_tb_root."_id=".$permissionID." ";
-			$Query=mysql_query($sql);
+			$Query=wewebQueryDB($coreLanguageSQL,$sql);
 			
 			## URL Search ###################################
 			$sqlSch="DELETE FROM ".$core_tb_search." WHERE   ".$core_tb_search."_contantid='".$permissionID."'  AND ".$core_tb_search."_masterkey='".$_POST["masterkey"]."'  ";
-			$querySch=mysql_query($sqlSch);
+			$querySch=wewebQueryDB($coreLanguageSQL,$sqlSch);
 		
 		}}
 		 logs_access('3','Delete');

@@ -16,7 +16,7 @@ for($i=1;$i<=$_REQUEST['TotalCheckBoxID'];$i++) {
 
 			######################### Delete  Contant ###############################
 			$sql="DELETE FROM ".$mod_tb_root." WHERE ".$mod_tb_root."_id=".$permissionID." ";
-			$Query=mysql_query($sql);
+			$Query=wewebQueryDB($coreLanguageSQL,$sql);
 
 		}}
 		 logs_access('3','Delete');

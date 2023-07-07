@@ -15,7 +15,7 @@ include("config.php");
         <?
         if ($execute == "update") {
             print_pre($_POST['inputFac']);
-            $update = "";
+            $update = array();
             $update[] = $mod_tb_set . "_metatitle='" . changeQuot($_POST['inputTagTitle']) . "'";
             $update[] = $mod_tb_set . "_description  	='" . changeQuot($_POST['inputTagDescription']) . "'";
             $update[] = $mod_tb_set . "_keywords  	='" . changeQuot($_POST['inputTagKeywords']) . "'";
@@ -54,7 +54,7 @@ include("config.php");
             $update[] = $mod_tb_set . "_lastdate=NOW()";
 
             $sql = "UPDATE " . $mod_tb_set . " SET " . implode(",", $update) . " WHERE " . $mod_tb_set . "_id='" . $_POST["valEditID"] . "' ";
-            $Query = mysql_query($sql);
+            $Query = wewebQueryDB($coreLanguageSQL,$sql);
 
             logs_access('3', 'Update Group');
             // print_pre($_POST['inputfaction']);

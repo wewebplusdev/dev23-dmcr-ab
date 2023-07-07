@@ -217,8 +217,8 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
 
                                 //    print_pre($sql);
 
-                                $query = mysql_query($sql);
-                                $count_totalrecord = mysql_num_rows($query);
+                                $query = wewebQueryDB($coreLanguageSQL,$sql);
+                                $count_totalrecord = wewebNumRowsDB($coreLanguageSQL,$query);
 
 // Find max page size #########################
                                 if ($count_totalrecord > $module_pagesize) {
@@ -237,13 +237,13 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
 
                                 $sql .= " ORDER BY ".$module_orderby_page." $module_adesc LIMIT $recordstart , $module_pagesize ";
                                // print_pre($sql);
-                                $query = mysql_query($sql);
-                                $count_record = mysql_num_rows($query);
+                                $query = wewebQueryDB($coreLanguageSQL,$sql);
+                                $count_record = wewebNumRowsDB($coreLanguageSQL,$query);
                                 $index = 1;
                                 $valDivTr = "divSubOverTb";
                                 if ($count_record > 0) {
                                     while ($index < $count_record + 1) {
-                                        $row = mysql_fetch_array($query);
+                                        $row = wewebFetchArrayDB($coreLanguageSQL,$query);
                                         $valID = $row[0];
                                         $valName = rechangeQuot($row[1]);
                                         $valDateCredate = dateFormatReal($row[2]);

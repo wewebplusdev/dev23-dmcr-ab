@@ -8,11 +8,11 @@ include("incModLang.php");
 include("config.php");
 
 			$sql_filetemp="SELECT  ".$mod_tb_root_album."_id,".$mod_tb_root_album."_filename,".$mod_tb_root_album."_name,".$mod_tb_root_album."_download  FROM ".$mod_tb_root_album." WHERE ".$mod_tb_root_album."_contantid 	='".$_REQUEST['valEditID']."'      ORDER BY ".$mod_tb_root_album."_id ASC";
-			$query_filetemp=mysql_query($sql_filetemp);
-		 	$number_filetemp=mysql_num_rows($query_filetemp);
+			$query_filetemp=wewebQueryDB($coreLanguageSQL,$sql_filetemp);
+		 	$number_filetemp=wewebNumRowsDB($coreLanguageSQL,$query_filetemp);
 			if($number_filetemp>=1){
 			$valAlbum="";
-			while($row_filetemp=mysql_fetch_array($query_filetemp)){
+			while($row_filetemp=wewebFetchArrayDB($coreLanguageSQL,$query_filetemp)){
 			$linkRelativePath = $mod_path_album."/".$row_filetemp[1];
 			$downloadFile = $row_filetemp[1];
 			$downloadID = $row_filetemp[0];

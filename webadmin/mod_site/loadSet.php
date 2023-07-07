@@ -17,7 +17,7 @@ $countNumCheck = wewebNumRowsDB($coreLanguageSQL, $queryCheck);
 
 
 if ($countNumCheck <= 0) {
-    $insert = "";
+    $insert = array();
     $insert[$mod_tb_set . "_language"] = "'" . $_SESSION[$valSiteManage . 'core_session_language'] . "'";
     $insert[$mod_tb_set . "_masterkey"] = "'" . $_REQUEST["masterkey"] . "'";
     $insert[$mod_tb_set . "_crebyid"] = "'" . $_SESSION[$valSiteManage . 'core_session_id'] . "'";

@@ -114,15 +114,15 @@ include("config.php");
 			$h = $sizeHeightOff;
 			$thumbnail = resize($imgReal, $w, $h, $newfilename);
 			
-		$update="";
+		$update = array();
 		$update[]=$mod_tb_root."_pic  	='".$picname."'";
 		$sql="UPDATE ".$mod_tb_root." SET ".implode(",",$update)." WHERE ".$mod_tb_root."_id='".$_REQUEST["myID"]."'  ";
-		$Query=mysql_query($sql);
+		$Query=wewebQueryDB($coreLanguageSQL,$sql);
                 
                  $updateSch[]=$core_tb_search."_pic  	='".$picname."'";
 	 	$sqlSch="UPDATE ".$core_tb_search." SET ".implode(",",$updateSch)." WHERE ".$core_tb_search."_contantid='".$_REQUEST["myID"]."'  AND ".$core_tb_search."_masterkey='".$_REQUEST["masterkey"]."' ";
 		//print_pre($sqlSch);
-                $querySch=mysql_query($sqlSch);
+                $querySch=wewebQueryDB($coreLanguageSQL,$sqlSch);
 
 		
 		$msg .= "<img src=\"".$mod_path_pictures."/".$picname."\"  style=\"float:left;border:#c8c7cc solid 1px;max-width:600px;\"   />";

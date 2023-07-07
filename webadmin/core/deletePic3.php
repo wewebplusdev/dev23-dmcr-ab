@@ -11,10 +11,10 @@ include("../lib/function.php");
 	}	
 
 
-		$update="";
+		$update = array();
 		$update[]=$core_tb_setting."_bg  	=''";
 		$sql="UPDATE ".$core_tb_setting." SET ".implode(",",$update)."  ";
-		$Query=mysql_query($sql);
+		$Query=wewebQueryDB($coreLanguageSQL,$sql);
 
 
 			

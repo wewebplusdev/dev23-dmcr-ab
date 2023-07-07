@@ -20,10 +20,10 @@ include("config.php");
 	}	
 
 //echo $_REQUEST['picnameMap'];
-		$update="";
+		$update = array();
 		$update[]=$mod_tb_root."_picmap  	=''";
 		$sql="UPDATE ".$mod_tb_root." SET ".implode(",",$update)." WHERE ".$mod_tb_root."_id='".$_REQUEST["valEditID"]."'  ";
-		$Query=mysql_query($sql);
+		$Query=wewebQueryDB($coreLanguageSQL,$sql);
 
 			
 include("../lib/disconnect.php");

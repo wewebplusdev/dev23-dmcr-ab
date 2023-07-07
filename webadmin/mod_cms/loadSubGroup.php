@@ -128,8 +128,8 @@ if($_REQUEST['inputSearch']!="") {
 <option value="0"><?=$langMod["tit:selectg"]?> </option>
 <?
 $sql_group = "SELECT ".$mod_tb_root_group."_id,".$mod_tb_root_group."_subject,".$mod_tb_root_group."_subjecten  FROM ".$mod_tb_root_group." WHERE  ".$mod_tb_root_group."_masterkey ='".$_REQUEST['masterkey']."'   ORDER BY ".$mod_tb_root_group."_order DESC ";
-$query_group=mysql_query($sql_group);
-while($row_group=mysql_fetch_array($query_group)) {
+$query_group=wewebQueryDB($coreLanguageSQL,$sql_group);
+while($row_group=wewebFetchArrayDB($coreLanguageSQL,$query_group)) {
 $row_groupid=$row_group[0];
 $row_groupname=$row_group[1];
 $row_groupnameeng=$row_group[2];
@@ -210,8 +210,8 @@ if($inputSearch<>"") {
 }
 
 
-$query=mysql_query($sql);
-$count_totalrecord=mysql_num_rows($query);
+$query=wewebQueryDB($coreLanguageSQL,$sql);
+$count_totalrecord=wewebNumRowsDB($coreLanguageSQL,$query);
 
 // Find max page size #########################
 if($count_totalrecord>$module_pagesize) {
@@ -228,13 +228,13 @@ $recordstart = ($module_pageshow-1)*$module_pagesize;
 
   $sql .= " ORDER BY $module_orderby $module_adesc LIMIT $recordstart , $module_pagesize ";
 
-$query=mysql_query($sql);
-$count_record=mysql_num_rows($query);
+$query=wewebQueryDB($coreLanguageSQL,$sql);
+$count_record=wewebNumRowsDB($coreLanguageSQL,$query);
 $index=1;
 $valDivTr="divSubOverTb";
 if($count_record>0) {
 	while($index<$count_record+1) {
-		$row=mysql_fetch_array($query);
+		$row=wewebFetchArrayDB($coreLanguageSQL,$query);
 		$valID=$row[0];
 		$valName=rechangeQuot($row[1]);
 	 	$valDateCredate = dateFormatReal($row[2]);

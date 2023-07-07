@@ -14,11 +14,11 @@ include("config.php");
 		$valMainUrlMinisite=$core_full_pathMinisite.$_REQUEST['inputUrlMinisite']."/";
 			
 		$sql = "SELECT MAX(".$mod_tb_root."_order) FROM ".$mod_tb_root;
-		$Query=mysql_query($sql);
-		$Row=mysql_fetch_array($Query);
+		$Query=wewebQueryDB($coreLanguageSQL,$sql);
+		$Row=wewebFetchArrayDB($coreLanguageSQL,$Query);
 		$maxOrder = $Row[0]+1;
 		
-		$insert="";
+		$insert = array();
 		$insert[$mod_tb_root."_language"] = "'".$_SESSION[$valSiteManage.'core_session_language']."'";
 		$insert[$mod_tb_root."_masterkey"] = "'".$_REQUEST["masterkey"]."'";
 		
@@ -45,8 +45,8 @@ include("config.php");
 		$insert[$mod_tb_root."_status"] = "'Disable'";
 		$insert[$mod_tb_root."_order"] = "'".$maxOrder."'";
 		 $sql="INSERT INTO ".$mod_tb_root."(".implode(",",array_keys($insert)).") VALUES (".implode(",",array_values($insert)).")";
-		$Query=mysql_query($sql);			
-		$contantID=mysql_insert_id();
+		$Query=wewebQueryDB($coreLanguageSQL,$sql);			
+		$contantID=wewebInsertID($coreLanguageSQL);
 		
 		/* ################### Start Create Folder ####################*/
 			$valFolderSite=trim($_REQUEST['inputUrlMinisite']);
@@ -76,11 +76,11 @@ include("config.php");
 		$valUserOther ="";
 
 		$sql = "SELECT MAX(".$core_tb_staff."_order) FROM ".$core_tb_staff;
-		$Query=mysql_query($sql);
-		$Row=mysql_fetch_array($Query);
+		$Query=wewebQueryDB($coreLanguageSQL,$sql);
+		$Row=wewebFetchArrayDB($coreLanguageSQL,$Query);
 		$maxOrder = $Row[0]+1;
 		
-		$insert="";
+		$insert = array();
 		$insert[$core_tb_staff."_groupid"] = "'".changeQuot($valUserGID)."'";
 		$insert[$core_tb_staff."_username"] = "'".changeQuot($valUserName)."'";
 		$insert[$core_tb_staff."_password"] = "'".encodeStr(changeQuot($valUserPass))."'";
@@ -103,16 +103,16 @@ include("config.php");
 		$insert[$core_tb_staff."_order"] = "'".$maxOrder."'";
 		$insert[$core_tb_staff."_typemini"] = "'1'";
 		$sql="INSERT INTO ".$core_tb_staff."(".implode(",",array_keys($insert)).") VALUES (".implode(",",array_values($insert)).")";
-		$Query=mysql_query($sql);	
-		$valStaffID=mysql_insert_id();
+		$Query=wewebQueryDB($coreLanguageSQL,$sql);	
+		$valStaffID=wewebInsertID($coreLanguageSQL);
 		
 		/* ################### End Insert Username&Password ####################*/
 
 		/* ################### Start Update Unit ####################*/
-		$update="";
+		$update = array();
 		$update[]=$mod_tb_root."_memid  	='".changeQuot($valStaffID)."'";
 		$sql="UPDATE ".$mod_tb_root." SET ".implode(",",$update)." WHERE ".$mod_tb_root."_id='".$contantID."' ";
-		$Query=mysql_query($sql);	
+		$Query=wewebQueryDB($coreLanguageSQL,$sql);	
 		/* ################### Start Update Unit ####################*/
 
 		 logs_access('3','Insert');

@@ -44,8 +44,8 @@ $valLinkNav1="../core/index.php";
 			".$mod_tb_root."_oldurl   "; 
 			
 			$sql .= " FROM ".$mod_tb_root." WHERE ".$mod_tb_root."_masterkey='".$_REQUEST["masterkey"]."'  AND  ".$mod_tb_root."_id='".$_REQUEST['valEditID']."' ";
-			$Query=mysql_query($sql);
-			$Row=mysql_fetch_array($Query);
+			$Query=wewebQueryDB($coreLanguageSQL,$sql);
+			$Row=wewebFetchArrayDB($coreLanguageSQL,$Query);
 			$valID=$Row[0];
 			$valUrlminisite=loadGetURLMinisiteByType($coreTypeUrlMini,$Row[1],$core_full_path);
 			$valCredate=DateFormat($Row[2]);

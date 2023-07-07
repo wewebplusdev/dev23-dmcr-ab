@@ -9,8 +9,8 @@ include("config.php");
 		/* ################### Start Minisite ####################*/
 		$sqlMiniID = "SELECT ".$mod_tb_root."_id  FROM ".$mod_tb_root;
 		$sqlMiniID = $sqlMiniID."  WHERE ".$mod_tb_root."_masterkey ='mit' ORDER BY ".$mod_tb_root."_id DESC  ";
-		$queryMiniID=mysql_query($sqlMiniID);
-		while($rowMiniID=mysql_fetch_array($queryMiniID)) {
+		$queryMiniID=wewebQueryDB($coreLanguageSQL,$sqlMiniID);
+		while($rowMiniID=wewebFetchArrayDB($coreLanguageSQL,$queryMiniID)) {
 			$permissionArray = array();
 			$contantID =$rowMiniID[0];
 			/* ################### Start Insert Menu Group Unit ####################*/
@@ -19,8 +19,8 @@ include("config.php");
 			
 			$sqlParentID = "SELECT ".$core_tb_menu."_parentid, ".$core_tb_menu."_id FROM ".$core_tb_menu;
 			$sqlParentID = $sqlParentID."  WHERE   ".$core_tb_menu."_siteid ='".$contantID."' ORDER BY ".$core_tb_menu."_id ASC LIMIT 0,1  ";
-			$queryParentID=mysql_query($sqlParentID);
-			while($rowParentID=mysql_fetch_array($queryParentID)) {
+			$queryParentID=wewebQueryDB($coreLanguageSQL,$sqlParentID);
+			while($rowParentID=wewebFetchArrayDB($coreLanguageSQL,$queryParentID)) {
 				$valMenuParentID =$rowParentID[0];
 				$valMenuID =$rowParentID[1];
 				array_push($permissionArray, $valMenuParentID);
@@ -59,14 +59,14 @@ include("config.php");
 			
 					$sql="INSERT INTO ".$core_tb_menu."(".implode(",",array_keys($insert)).") VALUES (".implode(",",array_values($insert)).")";
 					$Query=wewebQueryDB($coreLanguageSQL,$sql);		
-					$valMenuSubID=mysql_insert_id();
+					$valMenuSubID=wewebInsertID($coreLanguageSQL);
 					array_push($permissionArray, $valMenuSubID);
 					/* ################### Eng Insert Menu Banner ####################*/
 				
 					$sqlPermissionID = "SELECT ".$core_tb_permission."_perid  FROM ".$core_tb_permission;
 				 	$sqlPermissionID = $sqlPermissionID."  WHERE ".$core_tb_permission."_menuid ='".$valMenuID."' AND ".$core_tb_permission."_perid !='1' ORDER BY ".$core_tb_permission."_menuid ASC LIMIT 0,1   ";
-					$queryPermissionID=mysql_query($sqlPermissionID);
-					$rowPermissionID=mysql_fetch_array($queryPermissionID);
+					$queryPermissionID=wewebQueryDB($coreLanguageSQL,$sqlPermissionID);
+					$rowPermissionID=wewebFetchArrayDB($coreLanguageSQL,$queryPermissionID);
 					$permissionID =$rowPermissionID[0];
 					
 					

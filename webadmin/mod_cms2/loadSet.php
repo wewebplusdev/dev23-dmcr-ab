@@ -14,11 +14,11 @@ $valLinkNav1="../core/index.php";
 
 			
 			$sqlCheck = "SELECT ".$mod_tb_set."_id   FROM ".$mod_tb_set." WHERE ".$mod_tb_set."_masterkey='".$_REQUEST["masterkey"]."'  ";
-			$queryCheck=mysql_query($sqlCheck);
-			$countNumCheck=mysql_num_rows($queryCheck);
+			$queryCheck=wewebQueryDB($coreLanguageSQL,$sqlCheck);
+			$countNumCheck=wewebNumRowsDB($coreLanguageSQL,$queryCheck);
 			if($countNumCheck<=0){
 				
-				$insert="";
+				$insert = array();
 				$insert[$mod_tb_set."_language"] = "'".$_SESSION[$valSiteManage.'core_session_language']."'";
 				$insert[$mod_tb_set."_masterkey"] = "'".$_REQUEST["masterkey"]."'";
 				$insert[$mod_tb_set."_crebyid"] = "'".$_SESSION[$valSiteManage.'core_session_id']."'";
@@ -28,14 +28,14 @@ $valLinkNav1="../core/index.php";
 				$insert[$mod_tb_set."_lastdate"]="NOW()";
 				$insert[$mod_tb_set."_credate"]="NOW()";
 				$sqlInsert="INSERT INTO ".$mod_tb_set."(".implode(",",array_keys($insert)).") VALUES (".implode(",",array_values($insert)).")";
-				$queryInsert=mysql_query($sqlInsert);	
+				$queryInsert=wewebQueryDB($coreLanguageSQL,$sqlInsert);	
 	
 			}
 			
 			
 			$sql = "SELECT ".$mod_tb_set."_id, ".$mod_tb_set."_credate , ".$mod_tb_set."_crebyid, ".$mod_tb_set."_lastdate,   ".$mod_tb_set."_lastbyid FROM ".$mod_tb_set." WHERE ".$mod_tb_set."_masterkey='".$_REQUEST["masterkey"]."'  ";
-			$Query=mysql_query($sql);
-			$Row=mysql_fetch_array($Query);
+			$Query=wewebQueryDB($coreLanguageSQL,$sql);
+			$Row=wewebFetchArrayDB($coreLanguageSQL,$Query);
 			$valID=$Row[0];
 			$valCredate=DateFormat($Row[1]);
 			$valCreby=$Row[2];
@@ -147,11 +147,11 @@ $valLinkNav1="../core/index.php";
     </tr>
   <?
 $sql = "SELECT ".$mod_tb_root_email."_email,".$mod_tb_root_email."_id FROM ".$mod_tb_root_email."  WHERE  ".$mod_tb_root_email."_masterkey='".$_REQUEST["masterkey"]."'  ORDER BY ".$mod_tb_root_email."_id ASC ";
-$query=mysql_query($sql);
-$numRowCount=mysql_num_rows($query);
+$query=wewebQueryDB($coreLanguageSQL,$sql);
+$numRowCount=wewebNumRowsDB($coreLanguageSQL,$query);
 if($numRowCount>=1){
 $num_email=0;
-while($row=mysql_fetch_array($query)) {
+while($row=wewebFetchArrayDB($coreLanguageSQL,$query)) {
 $num_email++;
 $valEmailNew=rechangeQuot($row[0]);
 ?>

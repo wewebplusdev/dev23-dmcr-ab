@@ -39,8 +39,8 @@ $valLinkNav1="../core/index.php";
 			}
 
 			$sql .= " , ".$mod_tb_root."_picshow, ".$mod_tb_root."_cid, ".$mod_tb_root."_votetus FROM ".$mod_tb_root." WHERE ".$mod_tb_root."_masterkey='".$_REQUEST["masterkey"]."'  AND  ".$mod_tb_root."_id='".$_REQUEST['valEditID']."' ";
-			$Query=mysql_query($sql);
-			$Row=mysql_fetch_array($Query);
+			$Query=wewebQueryDB($coreLanguageSQL,$sql);
+			$Row=wewebFetchArrayDB($coreLanguageSQL,$Query);
 			$valID=$Row[0];
 			$valCredate=DateFormat($Row[1]);
 			$valCreby=$Row[2];
@@ -173,8 +173,8 @@ $valLinkNav1="../core/index.php";
 			}
 
 			$sql_group .= "  FROM ".$mod_tb_root_group." WHERE  ".$mod_tb_root_group."_id='".$valGid."'  ORDER BY ".$mod_tb_root_group."_order DESC ";
-		$query_group=mysql_query($sql_group);
-		$row_group=mysql_fetch_array($query_group);
+		$query_group=wewebQueryDB($coreLanguageSQL,$sql_group);
+		$row_group=wewebFetchArrayDB($coreLanguageSQL,$query_group);
 		$row_groupid=$row_group[0];
 	echo 	$row_groupname=$row_group[1];
 		?>
@@ -196,8 +196,8 @@ $valLinkNav1="../core/index.php";
 								}
 
 								$sql_group .= "  FROM " . $mod_tb_root_subgroup . " WHERE  " . $mod_tb_root_subgroup . "_id ='" . $valSGid . "'    ";
-								$query_group = mysql_query($sql_group);
-								$row_group = mysql_fetch_array($query_group);
+								$query_group = wewebQueryDB($coreLanguageSQL,$sql_group);
+								$row_group = wewebFetchArrayDB($coreLanguageSQL,$query_group);
 										$row_groupid = $row_group[0];
 										echo $row_groupname = $row_group[1];
 							}
@@ -263,11 +263,11 @@ $valLinkNav1="../core/index.php";
     <td width="82%" colspan="6" align="left"  valign="top"  class="formRightContantTb" ><div class="formDivView">
    <?
    			 $sql_filetemp="SELECT  ".$mod_tb_root_album."_id,".$mod_tb_root_album."_filename,".$mod_tb_root_album."_name,".$mod_tb_root_album."_download  FROM ".$mod_tb_root_album." WHERE ".$mod_tb_root_album."_contantid 	='".$_REQUEST['valEditID']."'   ORDER BY ".$mod_tb_root_album."_id ASC";
-			$query_filetemp=mysql_query($sql_filetemp);
-		 	$number_filetemp=mysql_num_rows($query_filetemp);
+			$query_filetemp=wewebQueryDB($coreLanguageSQL,$sql_filetemp);
+		 	$number_filetemp=wewebNumRowsDB($coreLanguageSQL,$query_filetemp);
 			if($number_filetemp>=1){
 			$valAlbum="";
-			while($row_filetemp=mysql_fetch_array($query_filetemp)){
+			while($row_filetemp=wewebFetchArrayDB($coreLanguageSQL,$query_filetemp)){
 			$linkRelativePath = $mod_path_album."/".$row_filetemp[1];
 			$downloadFile = $row_filetemp[1];
 			$downloadID = $row_filetemp[0];
@@ -334,11 +334,11 @@ $valLinkNav1="../core/index.php";
     <td width="82%" colspan="6" align="left"  valign="top"  class="formRightContantTb" ><div class="formDivView">
     <?
 			$sql="SELECT ".$mod_tb_file."_id,".$mod_tb_file."_filename,".$mod_tb_file."_name,".$mod_tb_file."_download FROM ".$mod_tb_file." WHERE ".$mod_tb_file."_contantid 	='".$valID."'  ORDER BY ".$mod_tb_file."_id ASC";
-			$query_file=mysql_query($sql);
-			$number_row=mysql_num_rows($query_file);
+			$query_file=wewebQueryDB($coreLanguageSQL,$sql);
+			$number_row=wewebNumRowsDB($coreLanguageSQL,$query_file);
 			if($number_row>=1){
 			$txtFile="";
-			while($row_file=mysql_fetch_array($query_file)){
+			while($row_file=wewebFetchArrayDB($coreLanguageSQL,$query_file)){
 			$linkRelativePath = $mod_path_file."/".$row_file[1];
 			$downloadFile = $row_file[1];
 			$downloadID = $row_file[0];

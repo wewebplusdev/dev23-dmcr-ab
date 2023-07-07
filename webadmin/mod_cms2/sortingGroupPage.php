@@ -16,7 +16,7 @@ $valSortArray=explode("&listItem[]=","&".$_POST['inputSort']);
 		$valOrder = $valSortCount-$i;
 		if($valSort>=1){
 			 $sql = "UPDATE ".$mod_tb_root_group." SET ".$mod_tb_root_group."_order_".$_POST['inputGh']." = $valOrder WHERE ".$mod_tb_root_group."_id = $valSort";
-			$query=mysql_query($sql);
+			$query=wewebQueryDB($coreLanguageSQL,$sql);
 		}
 			
 	}

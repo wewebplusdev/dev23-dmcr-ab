@@ -17,7 +17,7 @@ include("../lib/checkMember.php");
 		}
 		
 		
-		$update="";
+		$update = array();
 		$update[]=$core_tb_menu."_target  	='".changeQuot($_REQUEST['inputmenutarget'])."'";
 		$update[]=$core_tb_menu."_icon  	='".changeQuot($_REQUEST['inputIconName'])."'";
 		$update[]=$core_tb_menu."_namethai  ='".changeQuot($_REQUEST['inputmenuname'])."'";

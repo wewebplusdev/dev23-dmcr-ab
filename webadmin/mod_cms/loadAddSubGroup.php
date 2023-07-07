@@ -138,8 +138,8 @@ $sql_group = "SELECT ";
 		}
 
 		$sql_group .= "  FROM ".$mod_tb_root_group." WHERE  ".$mod_tb_root_group."_masterkey ='".$_REQUEST['masterkey']."'   ORDER BY ".$mod_tb_root_group."_order DESC ";
-	$query_group=mysql_query($sql_group);
-	while($row_group=mysql_fetch_array($query_group)) {
+	$query_group=wewebQueryDB($coreLanguageSQL,$sql_group);
+	while($row_group=wewebFetchArrayDB($coreLanguageSQL,$query_group)) {
 	$row_groupid=$row_group[0];
 	$row_groupname=$row_group[1];
 	?>

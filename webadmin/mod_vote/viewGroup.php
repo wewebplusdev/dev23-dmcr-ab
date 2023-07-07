@@ -35,8 +35,8 @@ $sql .= "
 			   ";
 
  $sql .= " FROM " . $mod_tb_root_group . " WHERE " . $mod_tb_root_group . "_masterkey='" . $_REQUEST["masterkey"] . "'  AND  " . $mod_tb_root_group . "_id='" . $_REQUEST['valEditID'] . "' ";
-$Query = mysql_query($sql);
-$Row = mysql_fetch_array($Query);
+$Query = wewebQueryDB($coreLanguageSQL,$sql);
+$Row = wewebFetchArrayDB($coreLanguageSQL,$Query);
 $valID = $Row[0];
 $valCredate = DateFormat($Row[1]);
 $valCreby = $Row[2];
@@ -73,11 +73,11 @@ if ($_REQUEST['inputLt'] == "Thai") {
 }
 $sql .= "" . $mod_tb_ans . "_count";
 $sql .= " FROM " . $mod_tb_ans . " WHERE " . $mod_tb_ans . "_qid='" . $_POST["valEditID"] . "' ORDER BY " . $mod_tb_ans . "_order ASC";
-$Query = mysql_query($sql);
-$count_record = mysql_num_rows($Query);
+$Query = wewebQueryDB($coreLanguageSQL,$sql);
+$count_record = wewebNumRowsDB($coreLanguageSQL,$Query);
 $index = 1;
 while ($index < $count_record + 1) {
-    $Rows = mysql_fetch_array($Query);
+    $Rows = wewebFetchArrayDB($coreLanguageSQL,$Query);
     $inputAns[$index] = $Rows[0];
     $inputResult[$index] = $Rows[1];
     $index++;

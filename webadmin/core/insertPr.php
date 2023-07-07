@@ -12,7 +12,7 @@ include("../lib/checkMember.php");
 		$Row=wewebFetchArrayDB($coreLanguageSQL,$Query);
 		$maxOrder = $Row[0]+1;
 		
-		$insert="";
+		$insert = array();
 		$insert[$core_tb_group."_name"] = "'".changeQuot($_REQUEST['inputnamegroup']) ."'";
 		$insert[$core_tb_group."_lv"] = "'".changeQuot($_REQUEST['inputaccess'])."'";
 		$insert[$core_tb_group."_crebyid"] = "'".$_SESSION[$valSiteManage.'core_session_id']."'";
@@ -31,7 +31,7 @@ include("../lib/checkMember.php");
 			for($i=0;$i<count($cutTxtPermissionArray);$i++){
 					$txtPermission=explode(":",$cutTxtPermissionArray[$i]);
 					
-					$insert="";
+					$insert = array();
 					$insert[$core_tb_permission."_perid"] = "'".$permissionID."'";
 					$insert[$core_tb_permission."_menuid"] = "'".$txtPermission[0]."'";
 					$insert[$core_tb_permission."_permission"] = "'".$txtPermission[1]."'";

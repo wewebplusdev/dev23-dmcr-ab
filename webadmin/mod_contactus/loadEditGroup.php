@@ -21,8 +21,8 @@ if ($_REQUEST['inputLt'] == "Thai") {
 }
 
 $sql .= " 	FROM " . $mod_tb_root_group . " WHERE " . $mod_tb_root_group . "_masterkey='" . $_POST["masterkey"] . "' AND  " . $mod_tb_root_group . "_id 	='" . $_POST["valEditID"] . "'";
-$Query = mysql_query($sql);
-$Row = mysql_fetch_array($Query);
+$Query = wewebQueryDB($coreLanguageSQL,$sql);
+$Row = wewebFetchArrayDB($coreLanguageSQL,$Query);
 $valid = $Row[0];
 $valcredate = DateFormat($Row[1]);
 $valcreby = $Row[2];
@@ -182,11 +182,11 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
                                                     <table width="96%" border="0" cellspacing="0" cellpadding="0" align="center">
                                                         <?
                                                         $sql = "SELECT " . $mod_tb_root_email . "_email," . $mod_tb_root_email . "_id FROM " . $mod_tb_root_email . "  WHERE  " . $mod_tb_root_email . "_masterkey='" . $_REQUEST["masterkey"] . "' AND   " . $mod_tb_root_email . "_gid='" . $_REQUEST['valEditID'] . "'   ORDER BY " . $mod_tb_root_email . "_id ASC ";
-                                                        $query = mysql_query($sql);
-                                                        $numRowCount = mysql_num_rows($query);
+                                                        $query = wewebQueryDB($coreLanguageSQL,$sql);
+                                                        $numRowCount = wewebNumRowsDB($coreLanguageSQL,$query);
                                                         if ($numRowCount >= 1) {
                                                             $num_email = 0;
-                                                            while ($row = mysql_fetch_array($query)) {
+                                                            while ($row = wewebFetchArrayDB($coreLanguageSQL,$query)) {
                                                                 $num_email++;
                                                                 $valEmailNew = rechangeQuot($row[0]);
                                                                 $valEmailID = $row[1];

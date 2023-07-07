@@ -184,8 +184,8 @@ jQuery(document).ready(function(){
 			}
 
 			$sql_group .= "  FROM ".$mod_tb_root_group." WHERE  ".$mod_tb_root_group."_masterkey ='".$_REQUEST['masterkey']."'   ORDER BY ".$mod_tb_root_group."_order DESC ";
-		$query_group=mysql_query($sql_group);
-		while($row_group=mysql_fetch_array($query_group)) {
+		$query_group=wewebQueryDB($coreLanguageSQL,$sql_group);
+		while($row_group=wewebFetchArrayDB($coreLanguageSQL,$query_group)) {
 		$row_groupid=$row_group[0];
 		$row_groupname=$row_group[1];
 		?>
@@ -209,8 +209,8 @@ jQuery(document).ready(function(){
 				$sql_cat .= "  FROM ".$mod_tb_root_subgroup." WHERE  ".$mod_tb_root_subgroup."_masterkey ='".$_REQUEST['masterkey']."'    ";
 				$sql_cat = $sql_cat."  AND ".$mod_tb_root_subgroup."_gid ='".$_REQUEST['inputGh']."'   ";
 				$sql_cat = $sql_cat."  ORDER BY ".$mod_tb_root_subgroup."_order DESC  ";
-				$query_cat=mysql_query($sql_cat);
-				while($row_cat=mysql_fetch_array($query_cat)) {
+				$query_cat=wewebQueryDB($coreLanguageSQL,$sql_cat);
+				while($row_cat=wewebFetchArrayDB($coreLanguageSQL,$query_cat)) {
 				$row_catid=$row_cat[0];
 				$valNamecShow=$row_cat[1];
 				?>
@@ -231,9 +231,9 @@ jQuery(document).ready(function(){
                                     $sql_province = "SELECT ".$other_tb_province."_ID, ".$other_tb_province."_NAME 	 FROM ".$other_tb_province." 
                                     WHERE  1 ";
 									$sql_province.="  ORDER BY ".$other_tb_province."_NAME ASC ";
-                                    $query_province=mysql_query($sql_province) ;
-                                    $txt_count_province=mysql_num_rows($query_province);
-                                    while($row_province=mysql_fetch_array($query_province)) {
+                                    $query_province=wewebQueryDB($coreLanguageSQL,$sql_province) ;
+                                    $txt_count_province=wewebNumRowsDB($coreLanguageSQL,$query_province);
+                                    while($row_province=wewebFetchArrayDB($coreLanguageSQL,$query_province)) {
                                     $txt_province_id=$row_province[0];
                                     $txt_province_subject=$row_province[1];
                                     ?> 

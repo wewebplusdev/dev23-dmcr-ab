@@ -85,14 +85,14 @@ include("config.php");
             $update[] = $mod_tb_root . "_edate  	='" . DateFormatInsert($edateInput) . "'";
 
             $sql = "UPDATE " . $mod_tb_root . " SET " . implode(",", $update) . " WHERE " . $mod_tb_root . "_id='" . $_POST["valEditID"] . "' ";
-            $Query = mysql_query($sql);
+            $Query = wewebQueryDB($coreLanguageSQL,$sql);
 
 
-//		$update="";
+//		$update = array();
 //		$update[]=$mod_tb_root."_subjectcn='".changeQuot($_POST['inputSubject'])."'";
 //		$update[]=$mod_tb_root."_titlecn='".changeQuot($_POST['inputDescription'])."'";
 //		$sql="UPDATE ".$mod_tb_root." SET ".implode(",",$update)." WHERE 1=1 ";
-//		$Query=mysql_query($sql);
+//		$Query=wewebQueryDB($coreLanguageSQL,$sql);
 
             logs_access('3', 'Update');
 
@@ -125,7 +125,7 @@ include("config.php");
             $updateSch[] = $core_tb_search . "_edate  	='" . DateFormatInsert($_REQUEST['edateInput']) . "'";
 
             $sqlSch = "UPDATE " . $core_tb_search . " SET " . implode(",", $updateSch) . " WHERE " . $core_tb_search . "_contantid='" . $_POST["valEditID"] . "'  AND " . $core_tb_search . "_masterkey='" . $_POST["masterkey"] . "' ";
-            $querySch = mysql_query($sqlSch);
+            $querySch = wewebQueryDB($coreLanguageSQL,$sqlSch);
 
             //include("../lib/incRss.php");
             ?>

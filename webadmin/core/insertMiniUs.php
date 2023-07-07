@@ -16,7 +16,7 @@ include("../lib/checkMember.php");
 			$_REQUEST['inputTypeApprove']="0";
 		}
 		
-		$insert="";
+		$insert = array();
 		$insert[$core_tb_staff."_groupid"] = "'".changeQuot($_REQUEST['inputgroupid'])."'";
 		$insert[$core_tb_staff."_unitid"] = "'".changeQuot($_REQUEST['inputUnitID'])."'";
 		$insert[$core_tb_staff."_username"] = "'".changeQuot($_REQUEST['inputUserName'])."'";

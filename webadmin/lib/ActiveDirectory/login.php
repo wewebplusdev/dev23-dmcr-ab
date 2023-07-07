@@ -61,7 +61,7 @@ if ($obj->status == true) {
         $queryLog=wewebQueryDB($coreLanguageSQL,$sqlLog);
 
         // start 21/01/64
-        $update="";
+        $update = array();
         $update[]=$core_tb_staff."_storeid      ='".$valLnameADuserStoreid."'";
         $update[]=$core_tb_staff."_prefix   ='".$valLnameADuserPrefix."'";
         $update[]=$core_tb_staff."_gender   ='".$valLnameADuserGender."'";

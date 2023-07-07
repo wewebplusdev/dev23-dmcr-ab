@@ -57,13 +57,13 @@ include("config.php");
 			$h = $sizeHeightAlbumOff;
 			$thumbnail = resize($imgReal, $w, $h, $newfilename);
 
-		$insert="";
+		$insert = array();
 		$insert[$mod_tb_root_album."_contantid"] = "'".$_REQUEST['myID']."'";
 		$insert[$mod_tb_root_album."_filename"] = "'".$picname."'";
 		$insert[$mod_tb_root_album."_language"]="'".$_REQUEST['langt']."'";
 		
 		$sql="INSERT INTO ".$mod_tb_root_album."(".implode(",",array_keys($insert)).") VALUES (".implode(",",array_values($insert)).")";
-		$Query=mysql_query($sql);	
+		$Query=wewebQueryDB($coreLanguageSQL,$sql);	
 		
 		}
 		

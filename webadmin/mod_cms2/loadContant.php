@@ -165,9 +165,9 @@ if($_REQUEST['inputYearID']!="") {
                                     $sql_province = "SELECT ".$other_tb_province."_ID, ".$other_tb_province."_NAME 	 FROM ".$other_tb_province." 
                                     WHERE  1 ";
 									$sql_province.="  ORDER BY ".$other_tb_province."_NAME ASC ";
-                                    $query_province=mysql_query($sql_province) ;
-                                    $txt_count_province=mysql_num_rows($query_province);
-                                    while($row_province=mysql_fetch_array($query_province)) {
+                                    $query_province=wewebQueryDB($coreLanguageSQL,$sql_province) ;
+                                    $txt_count_province=wewebNumRowsDB($coreLanguageSQL,$query_province);
+                                    while($row_province=wewebFetchArrayDB($coreLanguageSQL,$query_province)) {
                                     $txt_province_id=$row_province[0];
                                     $txt_province_subject=$row_province[1];
                                     ?> 
@@ -280,8 +280,8 @@ if($inputgroupID>=1) {
 
 
 // echo $sql;
-$query=mysql_query($sql);
-$count_totalrecord=mysql_num_rows($query);
+$query=wewebQueryDB($coreLanguageSQL,$sql);
+$count_totalrecord=wewebNumRowsDB($coreLanguageSQL,$query);
 
 // Find max page size #########################
 if($count_totalrecord>$module_pagesize) {
@@ -298,14 +298,14 @@ $recordstart = ($module_pageshow-1)*$module_pagesize;
 
   $sql .= " ORDER BY $module_orderby $module_adesc LIMIT $recordstart , $module_pagesize ";
 // print_pre($sql);
-$query=mysql_query($sql);
-$count_record=mysql_num_rows($query);
+$query=wewebQueryDB($coreLanguageSQL,$sql);
+$count_record=wewebNumRowsDB($coreLanguageSQL,$query);
 
 $index=1;
 $valDivTr="divSubOverTb";
 if($count_record>0) {
 	while($index<$count_record+1) {
-		$row=mysql_fetch_array($query);
+		$row=wewebFetchArrayDB($coreLanguageSQL,$query);
 		$valID=$row[0];
 		$valName=rechangeQuot($row[1]);
 	 	$valDateCredate = dateFormatReal($row[2]);

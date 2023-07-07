@@ -78,10 +78,10 @@ include("../lib/function.php");
 				@chmod($core_pathname_crupload."/".$picname,0777);
 			}
 			
-		$update="";
+		$update = array();
 		$update[]=$core_tb_setting."_bg  	='".$picname."'";
 		$sql="UPDATE ".$core_tb_setting." SET ".implode(",",$update)." WHERE ".$core_tb_setting."_id='".$_REQUEST["myID"]."'  ";
-		$Query=mysql_query($sql);
+		$Query=wewebQueryDB($coreLanguageSQL,$sql);
 
 		
 		$msg .= "<img src=\"".$core_pathname_crupload."/".$picname."\"  style=\"float:left;border:#c8c7cc solid 1px;max-width:600px;\"   />";

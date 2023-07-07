@@ -7,8 +7,8 @@ include("../lib/checkMember.php");
 include("../core/incLang.php");
 $sqlChk = "SELECT ".$core_tb_menu."_id,".$core_tb_menu."_linkpath FROM ".$core_tb_menu;
 $sqlChk = $sqlChk."  WHERE ".$core_tb_menu."_masterkey ='".$_REQUEST['masterkey']."'";
-$queryChk=mysql_query($sqlChk);
-$rowChk=mysql_fetch_array($queryChk);
+$queryChk=wewebQueryDB($coreLanguageSQL,$sqlChk);
+$rowChk=wewebFetchArrayDB($coreLanguageSQL,$queryChk);
 $pathArr = explode("/",$rowChk[1]);
 
 include("../".$pathArr[1]."/incModLang.php");
@@ -16,13 +16,13 @@ include("../".$pathArr[1]."/config.php");
 
 $sql = "SELECT ".$mod_tb_root."_id,".$mod_tb_root."_subject,".$mod_tb_root."_lastdate,".$mod_tb_root."_status,".$mod_tb_root."_subjecten  FROM ".$mod_tb_root;
 $sql = $sql."  WHERE ".$mod_tb_root."_masterkey ='".$_REQUEST['masterkey']."'  ORDER BY ".$mod_tb_root."_order DESC  LIMIT 0,5";
-	$query=mysql_query($sql) ;
-	$recordCount=mysql_num_rows($query);
+	$query=wewebQueryDB($coreLanguageSQL,$sql) ;
+	$recordCount=wewebNumRowsDB($coreLanguageSQL,$query);
 	if($recordCount>=1){
 	?>
     <table width="100%" border="0" cellspacing="0" cellpadding="0">
 	<?
-    while($row=mysql_fetch_array($query)) {
+    while($row=wewebFetchArrayDB($coreLanguageSQL,$query)) {
 		$valID=$row[0];
 		$valName=$row[1];
 	 	$valDateCredate = dateFormatReal($row[2]);

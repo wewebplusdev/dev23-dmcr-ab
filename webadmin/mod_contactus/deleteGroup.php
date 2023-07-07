@@ -13,11 +13,11 @@ for($i=1;$i<=$_REQUEST['TotalCheckBoxID'];$i++) {
 	if(strlen($myVar)>=1) {
 	$permissionID=$myVar;
 			$sql="DELETE FROM ".$mod_tb_root_email." WHERE ".$mod_tb_root_email."_gid=".$permissionID." ";
-			$Query=mysql_query($sql);
+			$Query=wewebQueryDB($coreLanguageSQL,$sql);
 		
 
 			$sql="DELETE FROM ".$mod_tb_root_group." WHERE ".$mod_tb_root_group."_id=".$permissionID." ";
-			$Query=mysql_query($sql);
+			$Query=wewebQueryDB($coreLanguageSQL,$sql);
 		
 		}}
 		 logs_access('3','Delete Group');

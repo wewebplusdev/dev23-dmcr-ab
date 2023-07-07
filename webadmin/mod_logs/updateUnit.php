@@ -19,7 +19,7 @@ include("config.php");
 		if(!is_dir($core_pathname_upload."/".$masterkey)) { mkdir($core_pathname_upload."/".$masterkey,0777); }
 		if(!is_dir($mod_path_html)) { mkdir($mod_path_html,0777); }
 		
-		$update="";
+		$update = array();
 		$update[]=$mod_tb_root."_subject='".changeQuot($_POST['inputSubject'])."'";
 		$update[]=$mod_tb_root."_subjecten='".changeQuot($_POST['inputSubjectEn'])."'";
 		$update[]=$mod_tb_root."_address='".changeQuot($_POST['inputAddress'])."'";
@@ -56,7 +56,7 @@ include("config.php");
 		$update[]=$mod_tb_root."_lastdate=NOW()";
 
 		 $sql="UPDATE ".$mod_tb_root." SET ".implode(",",$update)." WHERE ".$mod_tb_root."_id='".$_POST["valEditID"]."' ";
-		$Query=mysql_query($sql);
+		$Query=wewebQueryDB($coreLanguageSQL,$sql);
 		
 
 		logs_access('3','Update');

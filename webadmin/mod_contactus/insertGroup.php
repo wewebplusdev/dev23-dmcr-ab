@@ -9,11 +9,11 @@ include("config.php");
 	if($_REQUEST['execute']=="insert"){
 
 		$sql = "SELECT MAX(".$mod_tb_root_group."_order) FROM ".$mod_tb_root_group;
-		$Query=mysql_query($sql);
-		$Row=mysql_fetch_array($Query);
+		$Query=wewebQueryDB($coreLanguageSQL,$sql);
+		$Row=wewebFetchArrayDB($coreLanguageSQL,$Query);
 		$maxOrder = $Row[0]+1;
 		
-		$insert="";
+		$insert = array();
 		$insert[$mod_tb_root_group."_language"] = "'".$_SESSION[$valSiteManage.'core_session_language']."'";
 		$insert[$mod_tb_root_group."_masterkey"] = "'".$_REQUEST["masterkey"]."'";
 		$insert[$mod_tb_root_group."_subject"] = "'".changeQuot($_REQUEST['inputSubject'])."'";
@@ -27,8 +27,8 @@ include("config.php");
 		$insert[$mod_tb_root_group."_status"] = "'Disable'";
 		$insert[$mod_tb_root_group."_order"] = "'".$maxOrder."'";
 		$sql="INSERT INTO ".$mod_tb_root_group."(".implode(",",array_keys($insert)).") VALUES (".implode(",",array_values($insert)).")";
-		$Query=mysql_query($sql);			
-		$contantID=mysql_insert_id();
+		$Query=wewebQueryDB($coreLanguageSQL,$sql);			
+		$contantID=wewebInsertID($coreLanguageSQL);
 		
 		
 

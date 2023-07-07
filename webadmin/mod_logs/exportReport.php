@@ -45,12 +45,12 @@ logs_access('3', 'Export');
 
                 <?
 $sql = str_replaceExport($_POST['sql_export'],"0");
-$query=mysql_query($sql) ;
-$count_record=mysql_num_rows($query);
+$query=wewebQueryDB($coreLanguageSQL,$sql) ;
+$count_record=wewebNumRowsDB($coreLanguageSQL,$query);
 $date_print=DateFormat(date("Y-m-d H:i:s"));
 			if($count_record>=1){
 			$index=$count_record;
-			while($row=mysql_fetch_array($query)) {
+			while($row=wewebFetchArrayDB($coreLanguageSQL,$query)) {
                                         $valStatus = $row[0];
 										$valSessionId = rechangeQuot($row[1]);
                                         $valSid = rechangeQuot($row[2]);

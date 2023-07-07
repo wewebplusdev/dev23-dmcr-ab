@@ -12,11 +12,11 @@ $valClassNav = 2;
 $valNav1 = $langTxt["nav:home2"];
 $valLinkNav1 = "../core/index.php";
 
-$update = "";
+$update = array();
 $update[] = $mod_tb_root . "_status  	='Read'";
 
 $sql = "UPDATE " . $mod_tb_root . " SET " . implode(",", $update) . " WHERE " . $mod_tb_root . "_id='" . $_POST["valEditID"] . "'  ";
-$Query = mysql_query($sql);
+$Query = wewebQueryDB($coreLanguageSQL,$sql);
 
 // print_pre($_SESSION);
 $sql = "SELECT ".$mod_tb_root."_id 
@@ -61,8 +61,8 @@ $sql = "SELECT ".$mod_tb_root."_id
                 
 			
     // echo $sql;
-    $Query = mysql_query($sql);
-    $Row = mysql_fetch_array($Query);
+    $Query = wewebQueryDB($coreLanguageSQL,$sql);
+    $Row = wewebFetchArrayDB($coreLanguageSQL,$Query);
 
             $row_id = $Row[0];
 			$row_subject=rechangeQuot($Row[1]);
@@ -252,8 +252,8 @@ logs_access('3', 'View');
 		                            <? 
 		                                $sql_group = "SELECT ".$mod_tb_root_group."_subject  FROM ".$mod_tb_root_group." WHERE ".$mod_tb_root_group."_status='Enable' AND  ".$mod_tb_root_group."_language='".$_SESSION['ab_core_session_language']."'   AND   ".$mod_tb_root_group."_id='".$row_gid."' ";
                                         // echo $sql_group
-                                        $query_group=mysql_query($sql_group);
-		                                $row_group=mysql_fetch_array($query_group);
+                                        $query_group=wewebQueryDB($coreLanguageSQL,$sql_group);
+		                                $row_group=wewebFetchArrayDB($coreLanguageSQL,$query_group);
 		                                $row_groupname=rechangeQuot($row_group[0]);
 		                                echo $row_groupname;
 		                             ?>           
@@ -304,11 +304,11 @@ logs_access('3', 'View');
                          	     <?
                          	 			$sql="SELECT ".$mod_tb_file."_id,".$mod_tb_file."_filename,".$mod_tb_file."_name,".$mod_tb_file."_download FROM ".$mod_tb_file." WHERE ".$mod_tb_file."_contantid 	='".$_POST["valEditID"]."' AND ".$mod_tb_file."_language = 'P'  ORDER BY ".$mod_tb_file."_id ASC";
  
-                                        $query_file=mysql_query($sql);
-                         	 			$number_row=mysql_num_rows($query_file);
+                                        $query_file=wewebQueryDB($coreLanguageSQL,$sql);
+                         	 			$number_row=wewebNumRowsDB($coreLanguageSQL,$query_file);
                          	 			if($number_row>=1){
                                             $txtFile="";
-                                            while($row_file=mysql_fetch_array($query_file)){
+                                            while($row_file=wewebFetchArrayDB($coreLanguageSQL,$query_file)){
                                                 $linkRelativePath = $mod_path_file."/".$row_file[1];
                                                 $downloadFile = $row_file[1];
                                                 $downloadID = $row_file[0];
@@ -336,11 +336,11 @@ logs_access('3', 'View');
                          	     <?
                          	 			$sql="SELECT ".$mod_tb_file."_id,".$mod_tb_file."_filename,".$mod_tb_file."_name,".$mod_tb_file."_download FROM ".$mod_tb_file." WHERE ".$mod_tb_file."_contantid 	='".$_POST["valEditID"]."' AND ".$mod_tb_file."_language = 'A'  ORDER BY ".$mod_tb_file."_id ASC";
  
-                                        $query_file=mysql_query($sql);
-                         	 			$number_row=mysql_num_rows($query_file);
+                                        $query_file=wewebQueryDB($coreLanguageSQL,$sql);
+                         	 			$number_row=wewebNumRowsDB($coreLanguageSQL,$query_file);
                          	 			if($number_row>=1){
                                             $txtFile="";
-                                            while($row_file=mysql_fetch_array($query_file)){
+                                            while($row_file=wewebFetchArrayDB($coreLanguageSQL,$query_file)){
                                                 $linkRelativePath = $mod_path_file."/".$row_file[1];
                                                 $downloadFile = $row_file[1];
                                                 $downloadID = $row_file[0];
@@ -367,11 +367,11 @@ logs_access('3', 'View');
                          	     <?
                          	 			$sql="SELECT ".$mod_tb_file."_id,".$mod_tb_file."_filename,".$mod_tb_file."_name,".$mod_tb_file."_download FROM ".$mod_tb_file." WHERE ".$mod_tb_file."_contantid 	='".$_POST["valEditID"]."' AND ".$mod_tb_file."_language = 'F'  ORDER BY ".$mod_tb_file."_id ASC";
  
-                                        $query_file=mysql_query($sql);
-                         	 			$number_row=mysql_num_rows($query_file);
+                                        $query_file=wewebQueryDB($coreLanguageSQL,$sql);
+                         	 			$number_row=wewebNumRowsDB($coreLanguageSQL,$query_file);
                          	 			if($number_row>=1){
                                             $txtFile="";
-                                            while($row_file=mysql_fetch_array($query_file)){
+                                            while($row_file=wewebFetchArrayDB($coreLanguageSQL,$query_file)){
                                                 $linkRelativePath = $mod_path_file."/".$row_file[1];
                                                 $downloadFile = $row_file[1];
                                                 $downloadID = $row_file[0];

@@ -15,7 +15,7 @@ include("config.php");
 <?
 	if($execute=="update"){
 
-		$update="";
+		$update = array();
 		if($_REQUEST['inputLt']=="Thai"){
 		$update[]=$mod_tb_root_group."_subject='".changeQuot($_POST['inputSubject'])."'";
 		}else if($_REQUEST['inputLt']=="Eng"){
@@ -33,15 +33,15 @@ include("config.php");
 		$update[]=$mod_tb_root_group."_sdate  	='".DateFormatInsert($sdateInput)."'";
 		$update[]=$mod_tb_root_group."_edate  	='".DateFormatInsert($edateInput)."'";
 		$sql="UPDATE ".$mod_tb_root_group." SET ".implode(",",$update)." WHERE ".$mod_tb_root_group."_id='".$_POST["valEditID"]."' ";
-		$Query=mysql_query($sql);
+		$Query=wewebQueryDB($coreLanguageSQL,$sql);
 		
 		$contantID=$_POST["valEditID"];
 		if($contantID!=""){
 			for($i=1;$i<=5;$i++){
 				if(trim($_POST["inputAns".$i])!=""){
 					$sql="SELECT * FROM ".$mod_tb_ans." WHERE ".$mod_tb_ans."_qid='".$contantID."' AND ".$mod_tb_ans."_order='".$i."'";
-					$Query=mysql_query($sql);
-					$Row=mysql_fetch_array($Query);
+					$Query=wewebQueryDB($coreLanguageSQL,$sql);
+					$Row=wewebFetchArrayDB($coreLanguageSQL,$Query);
 					if($Row[$mod_tb_ans."_id"]==""){
 						$insert=array();
 						if($_REQUEST['inputLt']=="Thai"){
@@ -54,7 +54,7 @@ include("config.php");
 						$insert[$mod_tb_ans."_qid"] = "'".$contantID."'";
 						$insert[$mod_tb_ans."_order"] = "'".$i."'";
 						$sql="INSERT INTO ".$mod_tb_ans."(".implode(",",array_keys($insert)).") VALUES (".implode(",",array_values($insert)).")";
-						$Query=mysql_query($sql);
+						$Query=wewebQueryDB($coreLanguageSQL,$sql);
 					}else{
 						$update=array();
 						if($_REQUEST['inputLt']=="Thai"){
@@ -63,11 +63,11 @@ include("config.php");
 						$update[] = $mod_tb_ans."_nameen='".changeQuot($_POST["inputAns".$i])."'";
 						}
 						$sql="UPDATE ".$mod_tb_ans." SET ".implode(",",$update)." WHERE ".$mod_tb_ans."_id='".$Row[$mod_tb_ans."_id"]."'";
-						$Query=mysql_query($sql);
+						$Query=wewebQueryDB($coreLanguageSQL,$sql);
 					}
 				}else{
 					$sql="DELETE FROM ".$mod_tb_ans." WHERE ".$mod_tb_ans."_qid='".$contantID."' AND ".$mod_tb_ans."_order='".$i."'";
-					$Query=mysql_query($sql);
+					$Query=wewebQueryDB($coreLanguageSQL,$sql);
 				}
 			}
 		}

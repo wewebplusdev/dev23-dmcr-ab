@@ -22,7 +22,7 @@ $inputstatusname="Enable";
 
      	$sql = "UPDATE ".$tablename." SET "
 		.$tablename."_status= '$inputstatusname'  WHERE ".$tablename."_id='". $statusid."'";
-		$Query=mysql_query($sql);		
+		$Query=wewebQueryDB($coreLanguageSQL,$sql);		
 		
 		
 	?>

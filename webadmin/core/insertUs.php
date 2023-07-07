@@ -12,7 +12,7 @@ include("../lib/checkMember.php");
 		$Row=wewebFetchArrayDB($coreLanguageSQL,$Query);
 		$maxOrder = $Row[0]+1;
 		
-		$insert="";
+		$insert = array();
 		$insert[$core_tb_staff."_groupid"] = "'".changeQuot($_REQUEST['inputgroupid'])."'";
 		$insert[$core_tb_staff."_username"] = "'".changeQuot($_REQUEST['inputUserName'])."'";
 		$insert[$core_tb_staff."_password"] = "'".encodeStr(changeQuot($_REQUEST['inputPassword']))."'";

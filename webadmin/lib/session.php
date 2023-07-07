@@ -112,7 +112,7 @@ if (!empty($_SESSION[$valSiteManage . "core_session_id"])) {
 //    } else {
 //        $valResultConnect = mysql_connect($valHost, $valUser, $valPass);
 //        $charset = "SET NAMES 'utf8'";
-//        $valResultConnect = mysql_query($charset);
+//        $valResultConnect = wewebQueryDB($coreLanguageSQL,$charset);
 //    }
 //    return $valResultConnect;
 //}

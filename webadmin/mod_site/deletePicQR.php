@@ -19,10 +19,10 @@ include("config.php");
 		@unlink($mod_path_real."/".$_REQUEST['picQR']);
 	}
 
-		$update="";
+		$update = array();
 		$update[]=$mod_tb_root."_qr  	=''";
 		$sql="UPDATE ".$mod_tb_root." SET ".implode(",",$update)." WHERE ".$mod_tb_root."_id='".$_REQUEST["valEditID"]."'  ";
-		$Query=mysql_query($sql);
+		$Query=wewebQueryDB($coreLanguageSQL,$sql);
 
 
 include("../lib/disconnect.php");

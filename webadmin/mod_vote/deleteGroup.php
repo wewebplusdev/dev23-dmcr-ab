@@ -15,7 +15,7 @@ for($i=1;$i<=$_REQUEST['TotalCheckBoxID'];$i++) {
 		
 
 			$sql="DELETE FROM ".$mod_tb_root_group." WHERE ".$mod_tb_root_group."_id=".$permissionID." ";
-			$Query=mysql_query($sql);
+			$Query=wewebQueryDB($coreLanguageSQL,$sql);
 		
 		}}
 		 logs_access('3','Delete Group');

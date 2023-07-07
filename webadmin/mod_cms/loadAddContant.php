@@ -172,8 +172,8 @@ jQuery(document).ready(function(){
 			}
 
 			$sql_group .= "  FROM ".$mod_tb_root_group." WHERE  ".$mod_tb_root_group."_masterkey ='".$_REQUEST['masterkey']."'   ORDER BY ".$mod_tb_root_group."_order DESC ";
-		$query_group=mysql_query($sql_group);
-		while($row_group=mysql_fetch_array($query_group)) {
+		$query_group=wewebQueryDB($coreLanguageSQL,$sql_group);
+		while($row_group=wewebFetchArrayDB($coreLanguageSQL,$query_group)) {
 		$row_groupid=$row_group[0];
 		$row_groupname=$row_group[1];
 		?>
@@ -197,8 +197,8 @@ jQuery(document).ready(function(){
 				$sql_cat .= "  FROM ".$mod_tb_root_subgroup." WHERE  ".$mod_tb_root_subgroup."_masterkey ='".$_REQUEST['masterkey']."'    ";
 				$sql_cat = $sql_cat."  AND ".$mod_tb_root_subgroup."_gid ='".$_REQUEST['inputGh']."'   ";
 				$sql_cat = $sql_cat."  ORDER BY ".$mod_tb_root_subgroup."_order DESC  ";
-				$query_cat=mysql_query($sql_cat);
-				while($row_cat=mysql_fetch_array($query_cat)) {
+				$query_cat=wewebQueryDB($coreLanguageSQL,$sql_cat);
+				while($row_cat=wewebFetchArrayDB($coreLanguageSQL,$query_cat)) {
 				$row_catid=$row_cat[0];
 				$valNamecShow=$row_cat[1];
 				?>

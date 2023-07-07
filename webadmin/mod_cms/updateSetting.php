@@ -16,7 +16,7 @@ include("config.php");
 
 $sql = "DELETE FROM " . $mod_tb_permisGroup . " where " . $mod_tb_permisGroup . "." . $mod_tb_permisGroup . "_masterkey = '" . $_POST['masterkey'] . "'";
 //print_pre($sql);
-$Query = mysql_query($sql);
+$Query = wewebQueryDB($coreLanguageSQL,$sql);
 
 $dbConnect->execute("ALTER TABLE $mod_tb_permisGroup AUTO_INCREMENT = 1");
 
@@ -30,7 +30,7 @@ foreach ($_POST['permis'] as $idG => $valuePermis) {
 
         $sql = "INSERT INTO " . $mod_tb_permisGroup . "(" . implode(",", array_keys($insert)) . ") VALUES (" . implode(",", array_values($insert)) . ")";
         //print_pre($sql);
-        $Query = mysql_query($sql);
+        $Query = wewebQueryDB($coreLanguageSQL,$sql);
     }
 }
 

@@ -8,19 +8,19 @@ include("config.php");
 			
 
 		$sql = "SELECT ".$mod_tb_root_email."_email FROM ".$mod_tb_root_email."  WHERE  ".$mod_tb_root_email."_masterkey='".$_REQUEST["masterkey"]."'  AND   ".$mod_tb_root_email."_email='".$_REQUEST['inputEmail']."'  AND   ".$mod_tb_root_email."_gid='".$_REQUEST['valEditID']."'";
-		$query=mysql_query($sql);
-		$count_record=mysql_num_rows($query);
+		$query=wewebQueryDB($coreLanguageSQL,$sql);
+		$count_record=wewebNumRowsDB($coreLanguageSQL,$query);
 
 
 		if($count_record<=0){
 		
-		$insert="";
+		$insert = array();
 		$insert[$mod_tb_root_email."_gid"] = "'".$_REQUEST['valEditID']."'";
 		$insert[$mod_tb_root_email."_masterkey"] = "'".$_REQUEST['masterkey']."'";
 		$insert[$mod_tb_root_email."_email"] = "'".changeQuot($_REQUEST['inputEmail'])."'";
 
 		$sql="INSERT INTO ".$mod_tb_root_email."(".implode(",",array_keys($insert)).") VALUES (".implode(",",array_values($insert)).")";
-		$Query=mysql_query($sql);	
+		$Query=wewebQueryDB($coreLanguageSQL,$sql);	
 		
 
 		}else{
@@ -38,11 +38,11 @@ include("config.php");
 <table width="96%" border="0" cellspacing="0" cellpadding="0" align="center">
           <?
 $sql = "SELECT ".$mod_tb_root_email."_email,".$mod_tb_root_email."_id FROM ".$mod_tb_root_email."  WHERE  ".$mod_tb_root_email."_masterkey='".$_REQUEST["masterkey"]."' AND   ".$mod_tb_root_email."_gid='".$_REQUEST['valEditID']."' ORDER BY ".$mod_tb_root_email."_id ASC ";
-$query=mysql_query($sql);
-$numRowCount=mysql_num_rows($query);
+$query=wewebQueryDB($coreLanguageSQL,$sql);
+$numRowCount=wewebNumRowsDB($coreLanguageSQL,$query);
 if($numRowCount>=1){
 $num_email=0;
-while($row=mysql_fetch_array($query)) {
+while($row=wewebFetchArrayDB($coreLanguageSQL,$query)) {
 $num_email++;
 $valEmailNew=rechangeQuot($row[0]);
 $valEmailID=$row[1];

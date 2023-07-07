@@ -71,10 +71,10 @@ include("config.php");
 				@chmod($mod_path_vdo."/".$filenamedoc,0777);
 			}
 			
-		$update="";
+		$update = array();
 		$update[]=$mod_tb_root."_filevdo  	='".$filenamedoc."'";
 		$sql="UPDATE ".$mod_tb_root." SET ".implode(",",$update)." WHERE ".$mod_tb_root."_id='".$_REQUEST["myID"]."'  ";
-		$Query=mysql_query($sql);
+		$Query=wewebQueryDB($coreLanguageSQL,$sql);
 
 
 			$linkRelativePath = $mod_path_vdo."/".$filenamedoc;

@@ -13,8 +13,8 @@ $filestatus=$_POST['Valuefilestatus'];
 $menukeyid=7;
 		if($tablename==$mod_tb_root){
 			$sqlSch = "SELECT ".$tablename."_masterkey  FROM ".$tablename." WHERE  ".$tablename."_id='".$statusid."' ";
-			$querySch=mysql_query($sqlSch);
-			$rowSch=mysql_fetch_array($querySch);
+			$querySch=wewebQueryDB($coreLanguageSQL,$sqlSch);
+			$rowSch=wewebFetchArrayDB($coreLanguageSQL,$querySch);
 			$valMasterkey=$rowSch[0];
 		}
 $masterkey=$valMasterkey;
@@ -33,13 +33,13 @@ $inputstatusname="Enable";
 
      	$sql = "UPDATE ".$tablename." SET "
 		.$tablename."_status= '$inputstatusname'  WHERE ".$tablename."_id='". $statusid."'";
-		$Query=mysql_query($sql);
+		$Query=wewebQueryDB($coreLanguageSQL,$sql);
 		if($tablename==$mod_tb_root){
 
-		$updateSch="";
+		$updateSch = array();
 			$updateSch[]=$core_tb_search."_status  	='$inputstatusname'";
 			$sqlUpdateSch="UPDATE ".$core_tb_search." SET ".implode(",",$updateSch)." WHERE ".$core_tb_search."_contantid='".$statusid."'  AND  ".$core_tb_search."_masterkey 	='".$valMasterkey."'";
-			$querylUpdateSch=mysql_query($sqlUpdateSch);
+			$querylUpdateSch=wewebQueryDB($coreLanguageSQL,$sqlUpdateSch);
 		}
 
 	?>

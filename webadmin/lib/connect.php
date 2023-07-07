@@ -26,8 +26,8 @@ wewebConnect($coreLanguageSQL, $core_db_hostname, $core_db_username, $core_db_pa
 //############################################
 //    global $coreLanguageSQL;
 //    $sql_pic = "SELECT " . $valField . "  FROM " . $valTable . " WHERE   " . $valTable . "_masterkey 	='" . $valMasterKey . "'";
-//    $query_pic = mysql_query($sql_pic);
-//    $row_pic = mysql_fetch_array($query_pic);
+//    $query_pic = wewebQueryDB($coreLanguageSQL,$sql_pic);
+//    $row_pic = wewebFetchArrayDB($coreLanguageSQL,$query_pic);
 //    $txt_pic_funtion = $row_pic[0];
 //
 //    return $txt_pic_funtion;

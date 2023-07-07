@@ -71,7 +71,7 @@ function wewebNow($valCoreDB) {
 
 ################## Wewebplus Insert Last ID DB ##########################
 
-function wewebInsertID($valCoreDB, $valTable, $valTableF) {
+function wewebInsertID($valCoreDB, $valTable=null, $valTableF=null) {
 ################## Set Up Function ###############################
 global $connectWeweb,$dbConnect;
     if ($valCoreDB == "mssql") {

@@ -23,11 +23,11 @@ if ($_SESSION[$valSiteManage . "core_session_level"] == "SuperAdmin" || $_SESSIO
 	$sqlLogsWhere = " AND ".$core_tb_log."_id 	>=1";
 }else if ($_SESSION[$valSiteManage . "core_session_level"] == "staff" && $_SESSION[$valSiteManage . "core_session_groupid"] == "11" && $_SESSION[$valSiteManage . "core_session_typeusermini"] == 0 ){
 	$sqlStf="SELECT ".$core_tb_staff."_id  FROM ".$core_tb_staff." WHERE   ".$core_tb_staff."_typeusermini 	='".$_SESSION[$valSiteManage.'core_session_id']."' ";
-	$queryStf=mysql_query($sqlStf);
-	$numStf=mysql_num_rows($queryStf);
+	$queryStf=wewebQueryDB($coreLanguageSQL,$sqlStf);
+	$numStf=wewebNumRowsDB($coreLanguageSQL,$queryStf);
 	if($numStf>=1){
 		$sqlLogsWhere = " AND (".$core_tb_log."_sid 	='".$_SESSION[$valSiteManage.'core_session_id']."'   ";
-		while($rowStf=mysql_fetch_array($queryStf)){
+		while($rowStf=wewebFetchArrayDB($coreLanguageSQL,$queryStf)){
 		$valStfIdUserMini=rechangeQuot($rowStf[0]);
 		$sqlLogsWhere .= " OR ".$core_tb_log."_sid 	='".$valStfIdUserMini."'  ";
 		}

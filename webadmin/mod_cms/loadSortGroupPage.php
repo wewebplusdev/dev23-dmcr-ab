@@ -106,13 +106,13 @@ $valPermission = getUserPermissionOnMenu($_SESSION[$valSiteManage . "core_sessio
 
                                          
 
-                                        $query = mysql_query($sql);
-                                        $recordCount = mysql_num_rows($query);
+                                        $query = wewebQueryDB($coreLanguageSQL,$sql);
+                                        $recordCount = wewebNumRowsDB($coreLanguageSQL,$query);
                                         if ($recordCount >= 1) {
                                             ?>
                                             <ul id="boxPermissionSort"  >
                                                 <?
-                                                while ($row = mysql_fetch_array($query)) {
+                                                while ($row = wewebFetchArrayDB($coreLanguageSQL,$query)) {
                                                     $valID = $row[0];
                                                     $valName = $row[1];
                                                     $valDateCredate = dateFormatReal($row[2]);

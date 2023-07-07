@@ -8,7 +8,7 @@ include("../lib/checkMember.php");
 	if($_REQUEST['execute']=="update"){
 		
 		
-		$update="";
+		$update = array();
 		$update[]=$core_tb_setting."_lang  	='".changeQuot($_REQUEST['inputLang'])."'";
 		$update[]=$core_tb_setting."_type  	='".changeQuot($_REQUEST['inputType'])."'";
 		$update[]=$core_tb_setting."_subject  	='".changeQuot($_REQUEST['inputSubject'])."'";

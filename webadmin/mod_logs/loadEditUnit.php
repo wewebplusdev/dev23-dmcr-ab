@@ -46,8 +46,8 @@ $valLinkNav1="../core/index.php";
 			".$mod_tb_root."_oldurl ";
 
 			$sql .= " 	FROM ".$mod_tb_root." WHERE ".$mod_tb_root."_masterkey='".$_POST["masterkey"]."' AND  ".$mod_tb_root."_id 	='".$_POST["valEditID"]."'";
-			$Query=mysql_query($sql);
-			$Row=mysql_fetch_array($Query);
+			$Query=wewebQueryDB($coreLanguageSQL,$sql);
+			$Row=wewebFetchArrayDB($coreLanguageSQL,$Query);
 			$valid=$Row[0];
 			$valUrlminisite=$Row[1];
 			$valcredate=DateFormatInsertRe($Row[2]);
@@ -90,8 +90,8 @@ $valLinkNav1="../core/index.php";
 			$valOldWebsite=$Row[26];
 			$valOldWebsiteUrl=rechangeQuot($Row[27]);
 		$sqlUser = "SELECT ".$core_tb_staff."_username ,".$core_tb_staff."_password   FROM ".$core_tb_staff." WHERE ".$core_tb_staff."_id='".$valMemberId."'  ";
-		$QueryUser=mysql_query($sqlUser);
-		$RowUser=mysql_fetch_array($QueryUser);
+		$QueryUser=wewebQueryDB($coreLanguageSQL,$sqlUser);
+		$RowUser=wewebFetchArrayDB($coreLanguageSQL,$QueryUser);
 		$valUsername=$RowUser[0];
 		$valPassword=decodeStr($RowUser[1]);
 

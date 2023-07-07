@@ -2102,7 +2102,7 @@ function loadGetURLMinisiteByMod($valTypeUrl,$valWebsite,$valMenuID,$valLang,$va
 
 
 ###########################################
-function loadGetURLByMod($valWebsite,$valLang,$valFolder,$valID,$valGID){ // หา ID Hotel ของ Webservices
+function loadGetURLByMod($valWebsite,$valLang,$valFolder,$valID,$valGID=null){ // หา ID Hotel ของ Webservices
     ############################################
     $valWebsiteArray =explode("://", $valWebsite);
     if($valID==""){
