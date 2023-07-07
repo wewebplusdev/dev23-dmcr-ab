@@ -1,6 +1,7 @@
 
 <base href="{$base}">
-<title>{$seo.title|default:$settingWeb.metatitle}</title>
+<!-- <title>{$seo.title|default:$settingWeb.metatitle}</title> -->
+<title>DMCR AB</title>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 {* <meta http-equiv="Content-Security-Policy" content="*"> *}
@@ -33,8 +34,8 @@
 <meta name="twitter:image:src" content="">
 
 <!-- ICONS -->
-{* <link rel="shortcut icon" href="{$template}/assets/favicon/favicon.ico" type="image/x-icon"/> *}
-{* <link rel="apple-touch-icon" sizes="57x57" href="{$template}/assets/favicon/apple-icon-57x57.png">
+<link rel="shortcut icon" href="{$template}/assets/favicon/favicon.ico" type="image/x-icon"/> 
+<link rel="apple-touch-icon" sizes="57x57" href="{$template}/assets/favicon/apple-icon-57x57.png">
 <link rel="apple-touch-icon" sizes="60x60" href="{$template}/assets/favicon/apple-icon-60x60.png">
 <link rel="apple-touch-icon" sizes="72x72" href="{$template}/assets/favicon/apple-icon-72x72.png">
 <link rel="apple-touch-icon" sizes="76x76" href="{$template}/assets/favicon/apple-icon-76x76.png">
@@ -42,13 +43,8 @@
 <link rel="apple-touch-icon" sizes="120x120" href="{$template}/assets/favicon/apple-icon-120x120.png">
 <link rel="apple-touch-icon" sizes="144x144" href="{$template}/assets/favicon/apple-icon-144x144.png">
 <link rel="apple-touch-icon" sizes="152x152" href="{$template}/assets/favicon/apple-icon-152x152.png">
-<link rel="apple-touch-icon" sizes="180x180" href="{$template}/assets/favicon/apple-icon-180x180.png"> *}
-<link rel='shortcut icon' href='{$template}/assets/favicon/seilogo.ico' type='image/x-icon'/>
-<link rel="icon" href="{$template}/assets/favicon/seilogo.ico" type="image/x-icon"/>
-<link rel="icon" type="image/png" href="{$template}/assets/favicon/seilogo.png" sizes="16x16">
-<link rel="icon" type="image/png" href="{$template}/assets/favicon/seilogo.png" sizes="32x32">
-<link rel="icon" type="image/png" href="{$template}/assets/favicon/seilogo.png" sizes="96x96">
-<link rel="icon" type="image/png" href="{$template}/assets/favicon/seilogo.png" sizes="192x192">
+<link rel="apple-touch-icon" sizes="180x180" href="{$template}/assets/favicon/apple-icon-180x180.png"> 
+
 
 
 
