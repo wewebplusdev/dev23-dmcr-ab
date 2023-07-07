@@ -1,5 +1,5 @@
 <?php
-$menuActive = "home";
+$menuActive = "homes";
 Seo($lang['seo']['title'], $lang['seo']['desc'], $lang['seo']['keyword']);
 $listcss[] = '<link rel="stylesheet" type="text/css" href="front/template/default/public/css/front-qa-new.css'."?u=".date("YdmHis").'" />';
 

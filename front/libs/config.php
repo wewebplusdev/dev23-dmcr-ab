@@ -90,7 +90,7 @@ $lang_default = "th";
 
 ## url ##
 $url_show_lang = false;
-$url_show_default = "home";
+$url_show_default = "homes";
 
 ## config path system ##
 $path_template = array(
