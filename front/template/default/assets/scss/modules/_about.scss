@@ -1,0 +1,136 @@
+.wg-overview{
+    margin-top: 100px;
+    .cover{
+        box-shadow: var(--box-shadow-lg);
+    }
+    .content{ margin-left: 50px;
+        &.-II{margin-left: 0; margin-right: 50px;}
+        .title{
+            margin-top: 20px;
+            font-size: var(--typo-xl);
+            font-weight: var(--fw-normal);
+            color: var(--color-primary);
+        }
+        .desc{
+            margin-top: 20px;
+            font-size: var(--typo-default);
+        }
+        .action{
+            margin-top: 30px;
+        }
+    }
+}
+
+
+.wg-about{
+    margin-top: 40px;
+    padding: 70px 0;
+    min-height: 720px;
+    background: url('../img/background/wg-about.png') center no-repeat;
+    .content{
+        max-width: 500px;
+        .title{
+            margin-top: 20px;
+            font-size: var(--typo-xl);
+            font-weight: var(--fw-normal);
+            color: var(--color-primary);
+        }
+        .desc{
+            margin-top: 20px;
+            font-size: var(--typo-default);
+        }
+        .action{
+            margin-top: 30px;
+        }
+    }
+}
+
+
+.detail-page{
+    .main{
+        .wg-overview{margin-top: 75px;
+            .cover{padding: 0; margin: 0;}
+            &:last-child{margin-bottom: 120px;}
+        }
+    }
+}
+
+.about-nav-slider{width: calc(300px*3); margin: 0 auto; position: relative;
+    .swiper-button-next,
+    .swiper-button-prev{width: 30px; height: 30px; border: 1px solid var(--color-secondary); border-radius: 50%;
+        top: 0; bottom: 0; margin: auto; transition: var(--transition); color: var(--color-primary);
+    }
+    .swiper-button-next:hover,
+    .swiper-button-prev:hover{background-color: var(--color-secondary); color: var(--color-light);}
+    .swiper-button-next{right: -190px;}
+    .swiper-button-prev{left: -190px;}
+    .swiper-button-next:after,
+    .swiper-button-prev:after{font-size: 10px;}
+    .swiper-slide{opacity: 0; transition: var(--transition);
+        +.swiper-slide-active,
+        +.swiper-slide-next{border-left: 2px solid var(--color-darkgray);}
+        &.swiper-slide-prev,
+        &.swiper-slide-active,
+        &.swiper-slide-next{opacity: 1;}
+    }
+    .swiper-slide-thumb-active{
+        .link{color: var(--color-secondary);}
+    }
+    .link{display: block; text-align: center; font-size: var(--typo-md); font-weight: var(--fw-bold); 
+        color: var(--color-darklight); line-height: 46px;
+        &:hover{color: var(--color-primary);}
+    }
+}
+.about-thumb-slider{
+    .swiper-slide{opacity: 0; transition: var(--transition);
+        &.swiper-slide-active{opacity: 1;}
+    }
+}
+
+
+// breakpoints
+@media (max-width: 1600px) {
+}
+
+@media (max-width: 1440px) {
+
+}
+@media (max-width: 1280px) {
+    .about-nav-slider .swiper-button-prev {left: -170px;}
+    .about-nav-slider .swiper-button-next {right: -170px;}
+}
+
+@media (max-width: 1199px) {
+    .wg-overview {margin-top: 80px;}
+    .wg-overview .content .logo{width: 150px;}
+    .wg-overview .content .title{font-size: var(--typo-lg);}
+
+    .about-nav-slider{width:100%;}
+    .about-nav-slider .swiper-button-prev {left:0;}
+    .about-nav-slider .swiper-button-next {right:0;}
+}
+
+@media (max-width: 991px) {
+    .wg-overview .cover img{width: 100%; max-width: inherit;}
+    .wg-overview .content {margin-left: 0;margin-top: 30px;}
+    .wg-overview .content.-II{margin-right: 0;}
+
+    .wg-about {min-height: 600px; background-position:-170px 0px;}
+}
+
+@media (max-width: 767px) {
+    .wg-overview {margin-top: 40px;}
+    .wg-overview .content .title{font-size: var(--typo-md);}
+    .wg-overview .content .desc{font-size: var(--typo-sm);}
+
+    .wg-about {min-height: auto; background-position: left;padding: 30px 0;}
+    .wg-about .content .title{font-size: var(--typo-md);}
+    .wg-about .content .desc{font-size: var(--typo-sm);}
+
+    .about-nav-slider .swiper-slide.swiper-slide-prev{opacity: 0;}
+    .about-nav-slider .swiper-slide + .swiper-slide-active{border-left: 0;}
+    .about-nav-slider .link{font-size: var(--typo-sm); line-height: 26px;}
+
+    .detail-page .main .wg-overview {margin-top: 15px;}
+    .detail-page .main .wg-overview:last-child {margin-bottom: 50px;}
+}

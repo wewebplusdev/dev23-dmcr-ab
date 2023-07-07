@@ -1,0 +1,138 @@
+.select-control{width: 100%;}
+.select-control:focus{outline: none;}
+.select2-selection:focus{outline: none;}
+.select2-container .select2-selection--single{
+    height: 56px;
+}
+.select2-container--default .select2-selection--single{
+    background-color: #fff;
+    border: 1px solid #DEDEDE;
+    border-radius: 0;
+}
+.select2-container--default .select2-selection--single .select2-selection__rendered{
+    padding-left: 16px;
+    line-height: 54px; 
+    font-size: var(--typo-sm); 
+    color: var(--color-default);
+    text-transform: uppercase;
+}
+.select2-container--default .select2-selection--single .select2-selection__arrow{
+    top: 0; 
+    right: 10px;
+}
+.select2-container--default .select2-selection--single .select2-selection__arrow b{
+    left: auto;
+    right: 2px;
+    top: 0;
+    margin: 0;
+    width: 24px;
+    height: 56px;
+    line-height: 56px;
+    font-size: var(--typo-md); 
+    color: var(--color-default);
+    border: none;
+    text-align: center; 
+    font-weight: normal;
+}
+.select2-container--default .select2-selection--single .select2-selection__arrow b:before{
+    font-family: 'feather'; 
+    content: '\e842';
+}
+.select2-container--default.select2-container--open .select2-selection--single .select2-selection__arrow b:before{
+    content: '\e845';
+}
+.select2-container--default .select2-results__group{
+    font-size: var(--typo-md); 
+    padding: 8px 20px; 
+    color: var(--color-default);
+    font-weight: var(--fw-bold);
+}
+.select2-container--default .select2-results__option .select2-results__option:hover{
+    background-color: #f2f2f2;
+}
+.select2-container--default .select2-results__option--highlighted[aria-selected]:hover{
+    background-color: #5897fb;
+}
+.select2-container--default .select2-search--dropdown .select2-search__field{
+    border-color: #DEDEDE; 
+    padding: 4px 10px; 
+    font-size: var(--typo-md);
+    font-weight: var(--fw-bold);
+    border-radius: 0;
+    color: var(--color-default);
+    &:focus{
+        outline: none;
+        box-shadow: none;
+    }
+}
+.select2-search--dropdown{
+    padding: 6px;
+}
+.select2-results__option{
+    padding: 12px 15px; 
+    font-size: var(--typo-md);
+    color: var(--color-default);
+    font-weight: var(--fw-medium);
+}
+.select2-dropdown{
+    background-color: #fff;
+    border-color: #DEDEDE;
+    border-radius: 0;
+}
+.select2-container .select2-selection--multiple{
+    min-height: 44px;
+    overflow: auto;
+}
+.select2-container--default .select2-selection--multiple .select2-selection__rendered{
+    padding: 0 6px;
+}
+.select2-container--default .select2-selection--multiple .select2-selection__choice{
+    height: 30px;
+    margin-top: 6px;
+    margin-right: 6px;
+    padding: 0 6px;
+    border-color: #E1E1E1;
+    background-color: #f5f5f5;
+    font-size: 16px;
+    line-height: 28px;
+}
+.select2-container--default .select2-search--inline .select2-search__field{
+    margin-top: 0;
+    line-height: 42px;
+    font-size: 18px;
+    color: var(--color-default);
+    font-weight: 300;
+    padding: 0 9px;
+    width: 100% !important;
+}
+.select2-container--default .select2-selection--multiple .select2-selection__choice__remove{
+    margin-right: 4px;
+}
+.select2-container--default .select2-results__option--selected{
+    background-color: #f5f5f5;
+}
+.select2-container .select2-selection--multiple .select2-selection__rendered{
+    display: flex;
+    overflow: visible;
+}
+.select2-container--default .select2-selection--single .select2-selection__placeholder{
+    color: var(--color-default);
+}
+.select2-container--default .select2-results__option[aria-selected="true"]{
+    background-color: #eee;
+}
+.select2-container--default .select2-results__option--highlighted[aria-selected],
+.select2-container--default .select2-results__option--highlighted[aria-selected]:hover{
+    background-color: var(--color-primary);
+}
+
+.select2-results__message{
+    text-align: center;
+}
+
+
+@media (max-width: 767px) {
+    .select2-container .select2-selection--single{height: 50px;}
+    .select2-container--default .select2-selection--single .select2-selection__rendered{line-height: 48px;}
+    .select2-container--default .select2-selection--single .select2-selection__arrow b{line-height: 48px; height: 50px;}
+}

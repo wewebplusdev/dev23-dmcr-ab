@@ -1,0 +1,58 @@
+
+CREATE TABLE md_cue (
+  md_cue_id int(11) NOT NULL auto_increment,
+  md_cue_gid int(11) NOT NULL default '0',
+  md_cue_email varchar(255) NOT NULL,
+  md_cue_masterkey varchar(150) NOT NULL,
+  PRIMARY KEY  (md_cue_id)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+-- 
+-- โครงสร้างตาราง 'md_cug'
+-- 
+
+CREATE TABLE md_cug (
+  md_cug_id int(11) NOT NULL auto_increment,
+  md_cug_masterkey varchar(20) NOT NULL,
+  md_cug_language varchar(50) NOT NULL,
+  md_cug_subject varchar(200) NOT NULL,
+  md_cug_title text NOT NULL,
+  md_cug_crebyid int(11) NOT NULL default '0',
+  md_cug_creby varchar(100) NOT NULL,
+  md_cug_credate datetime NOT NULL default '0000-00-00 00:00:00',
+  md_cug_lastdate datetime NOT NULL default '0000-00-00 00:00:00',
+  md_cug_status varchar(50) NOT NULL,
+  md_cug_order int(11) NOT NULL default '0',
+  md_cug_subjecten varchar(255) NOT NULL,
+  md_cug_titleen text NOT NULL,
+  md_cug_lastbyid int(11) NOT NULL,
+  md_cug_lastby varchar(255) NOT NULL,
+  PRIMARY KEY  (md_cug_id),
+  UNIQUE KEY md_cug_id (md_cug_id),
+  KEY md_cug_id_2 (md_cug_id)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+-- 
+-- โครงสร้างตาราง 'md_cus'
+-- 
+
+CREATE TABLE md_cus (
+  md_cus_id int(11) NOT NULL auto_increment,
+  md_cus_gid int(11) NOT NULL default '0',
+  md_cus_masterkey varchar(20) NOT NULL,
+  md_cus_language varchar(50) NOT NULL,
+  md_cus_name varchar(200) NOT NULL,
+  md_cus_email varchar(255) NOT NULL,
+  md_cus_subject varchar(255) NOT NULL,
+  md_cus_address text NOT NULL,
+  md_cus_message text NOT NULL,
+  md_cus_credate datetime NOT NULL default '0000-00-00 00:00:00',
+  md_cus_status varchar(50) NOT NULL,
+  md_cus_tel varchar(25) NOT NULL,
+  md_cus_ip varchar(100) NOT NULL,
+  PRIMARY KEY  (md_cus_id)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;

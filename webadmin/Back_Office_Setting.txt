@@ -1,0 +1,49 @@
+Folder ที่ต้องมีใน Back Office
+
+=======================================
+ckeditor
+ส่วนที่ต้องแก้ไข 
+- ckupload.php แก้ไข $urlSite="/neomate2016/ckeditor/"; ให้เป็น   $urlSite="/Project/ckeditor/";
+- upload/files ลบข้อมูลใน Folder files ทั้งหมด
+=======================================
+fileman
+ส่วนที่ต้องแก้ไข 
+- conf.json  แก้ไข "FILES_ROOT":          "/neomate2016/ckeditor/upload/files", ให้เป็น  "FILES_ROOT":          "/Project/ckeditor/upload/files", 
+=======================================
+logs 
+- สร้างเองเลย Folder
+=======================================
+upload 
+- สร้างเองเลย Folder
+=======================================
+ weadmin 
+- สร้างเองเลย Folder
+- Copy File ดังนี้ index.php, core, css, img, js และ lib
+ ส่วนที่ต้องแก้ไข 
+- lib/config.php
+$core_pathname_folderlocal = "/Project"; ชื่อโปรเจคที่ทำ
+$coreLanguageSQL = "mysql"; ฐานข้อมูลที่ใช้
+$core_db_hostname = "localhost"; ชื่อ Server
+$core_db_username = "weplaza_DMneom"; ชื่อผู้ใช้งานฐานข้อมูล
+$core_db_password = "DMneom";รหัสผู้ใช้งานฐานข้อมูล
+$core_db_name = "weplaza_DMneom";ชื่อฐานข้อมูล
+$core_send_email = "sales@thaifast.co.th"; อีเมลที่ใช้ส่งหาลูกค้า
+$core_goto_email = "sales@thaifast.co.th"; อีเมลที่ใช้รับข้อมูลจากลูกค้า
+
+- lib/session.php
+ ส่วนที่ต้องแก้ไข 
+$valSiteManage="proj"."_"; ชื่อ Project แบบย่อ
+
+- js/scriptCoreWeweb.js
+ส่วนที่ต้องแก้ไข 
+var roxyFileman = '/Project/fileman/index.html'; 
+
+- _DB/core.txt
+Copy ไป Run SQL ในฐานข้อมูล
+
+=======================================
+เข้าสู่ระบบจัดการเว็บไซต์
+- http://127.0.0.1/project/weadmin
+Superadmin
+User: WewebAdmin
+Pass: Superadmin

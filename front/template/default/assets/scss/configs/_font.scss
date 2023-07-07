@@ -1,0 +1,66 @@
+// @font-face {
+//     font-family: 'MyWebFont';
+//     src:  url('myfont.woff2') format('woff2'),
+//           url('myfont.woff') format('woff');
+//     unicode-range: U+00-FF;
+// }
+
+@font-face {
+    font-family: 'gotham';
+    src: url('../font/gothambook-webfont.woff2') format('woff2'),
+         url('../font/gothambook-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'gotham';
+    src: url('../font/gothammedium-webfont.woff2') format('woff2'),
+         url('../font/gothammedium-webfont.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'gotham';
+    src: url('../font/gothambold-webfont.woff2') format('woff2'),
+         url('../font/gothambold-webfont.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+// @font-face {
+//     font-family: 'gothamlight';
+//     src: url('../font/gotham-light-webfont.woff2') format('woff2'),
+//          url('../font/gotham-light-webfont.woff') format('woff');
+//     font-weight: normal;
+//     font-style: normal;
+// }
+// @font-face {
+//     font-family: 'gothamthin';
+//     src: url('../font/gotham-thin-webfont.woff2') format('woff2'),
+//          url('../font/gotham-thin-webfont.woff') format('woff');
+//     font-weight: normal;
+//     font-style: normal;
+// }
+
+
+@font-face {
+    font-family: 'quark';
+    src: url('../font/quark-light-webfont.woff2') format('woff2'),
+         url('../font/quark-light-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'quark';
+    src: url('../font/quark-bold-webfont.woff2') format('woff2'),
+         url('../font/quark-bold-webfont.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'quark';
+    src: url('../font/quark-bold-webfont.woff2') format('woff2'),
+         url('../font/quark-bold-webfont.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}

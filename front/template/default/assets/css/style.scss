@@ -1,0 +1,37 @@
+@import '../scss/lib/_bootstrap.min';
+@import '../scss/lib/_normalize.min';
+@import '../scss/lib/_animate.min';
+@import '../scss/lib/_swiper-bundle.min';
+@import '../scss/lib/_select2.min';
+
+@import '../scss/configs/_variable';
+@import '../scss/configs/_font';
+@import '../scss/configs/_feather';
+@import '../scss/configs/_fontawesome-all';
+@import '../scss/configs/_base';
+
+@import '../scss/components/_breadcrumb';
+@import '../scss/components/_button';
+@import '../scss/components/_editor-content';
+@import '../scss/components/_form';
+@import '../scss/components/_pagination';
+@import '../scss/components/_whead';
+@import '../scss/components/_modal';
+@import '../scss/components/_swiper';
+@import '../scss/components/_select2';
+
+@import '../scss/layouts/_header';
+@import '../scss/layouts/_footer';
+ 
+@import '../scss/modules/_default';
+@import '../scss/modules/_detail';
+@import '../scss/modules/_herobanner';
+@import '../scss/modules/_product';
+@import '../scss/modules/_about';
+@import '../scss/modules/_company';
+@import '../scss/modules/_news';
+@import '../scss/modules/_career';
+@import '../scss/modules/_contact';
+@import '../scss/modules/_cookiepolicy.scss';
+
+@import '../scss/layouts/_breakpoints';

@@ -1,0 +1,90 @@
+-- phpMyAdmin SQL Dump
+-- version 4.7.0
+-- https://www.phpmyadmin.net/
+--
+-- Host: localhost
+-- Generation Time: Nov 12, 2018 at 04:39 AM
+-- Server version: 5.5.41-MariaDB-log
+-- PHP Version: 5.6.30
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+--
+-- Database: `weplaza_dgr2018`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `md_sit`
+--
+
+CREATE TABLE `md_sit` (
+  `md_sit_id` int(11) NOT NULL,
+  `md_sit_masterkey` varchar(20) NOT NULL,
+  `md_sit_language` varchar(50) NOT NULL,
+  `md_sit_crebyid` int(11) NOT NULL DEFAULT '0',
+  `md_sit_creby` varchar(100) NOT NULL,
+  `md_sit_credate` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `md_sit_lastdate` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `md_sit_lastbyid` int(11) NOT NULL,
+  `md_sit_lastby` varchar(255) NOT NULL,
+  `md_sit_description` text NOT NULL,
+  `md_sit_keywords` text NOT NULL,
+  `md_sit_metatitle` text NOT NULL,
+  `md_sit_subject` varchar(255) NOT NULL,
+  `md_sit_title` varchar(255) NOT NULL,
+  `md_sit_titleen` varchar(255) NOT NULL,
+  `md_sit_subjectsm` varchar(255) NOT NULL,
+  `md_sit_titlesm` varchar(255) NOT NULL,
+  `md_sit_social` text,
+  `md_sit_config` text,
+  `md_sit_addresspic` text,
+  `md_sit_hotline` varchar(255) DEFAULT NULL,
+  `md_sit_subjectoffice` varchar(150) NOT NULL,
+  `md_sit_titleoffice` varchar(150) NOT NULL,
+  `md_sit_keywordsen` varchar(255) DEFAULT NULL,
+  `md_sit_descriptionen` varchar(255) DEFAULT NULL,
+  `md_sit_metatitleen` varchar(255) DEFAULT NULL,
+  `md_sit_subjecten` varchar(255) DEFAULT NULL,
+  `md_sit_subjectofficeen` varchar(150) NOT NULL,
+  `md_sit_qr` varchar(255) DEFAULT NULL,
+  `md_sit_hotlinepic` varchar(255) DEFAULT NULL,
+  `md_sit_pic` varchar(255) DEFAULT NULL,
+  `md_sit_slogan` text NOT NULL,
+  `md_sit_sloganen` text NOT NULL,
+  `md_sit_fac` text NOT NULL,
+  `md_sit_about1` text NOT NULL,
+  `md_sit_about2` text NOT NULL,
+  `md_sit_about3` text NOT NULL,
+  `md_sit_issn` text NOT NULL,
+  `md_sit_suggestion1` text NOT NULL,
+  `md_sit_suggestion2` text NOT NULL,
+  `md_sit_journalth` varchar(255) NOT NULL,
+  `md_sit_journalen` varchar(255) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `md_sit`
+--
+ALTER TABLE `md_sit`
+  ADD PRIMARY KEY (`md_sit_id`),
+  ADD UNIQUE KEY `md_sit_id` (`md_sit_id`),
+  ADD KEY `md_sit_id_2` (`md_sit_id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `md_sit`
+--
+ALTER TABLE `md_sit`
+  MODIFY `md_sit_id` int(11) NOT NULL AUTO_INCREMENT;COMMIT;
