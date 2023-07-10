@@ -1,0 +1,97 @@
+$--swiper-gap: calc(1920px - 1280px);
+.default-swiper {
+    &.swiper-horizontal {
+        padding-left: $--swiper-gap;
+        padding-right: $--swiper-gap;
+        margin-left: -$--swiper-gap;
+        margin-right: -$--swiper-gap;
+        .swiper-button-prev,
+        .swiper-rtl .swiper-button-next {
+            left: calc($--swiper-gap - 80px);
+        }
+        .swiper-button-next,
+        .swiper-rtl .swiper-button-prev {
+            right: calc($--swiper-gap - 80px);
+        }
+    }
+    .swiper-pagination-bullet {
+        position: relative;
+        width: 10px;
+        height: 10px;
+        background-color: var(--color-primary);
+        opacity: 1;
+    }
+    .swiper-pagination-bullets {
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    .swiper-pagination-bullet::before {
+        position: absolute;
+        content: "";
+        width: 18px;
+        height: 18px;
+        top: calc(50% - 9px);
+        left: calc(50% - 9px);
+        border-radius: 50%;
+        border: 1px solid transparent;
+        transition: var(--transition-200);
+    }
+    .swiper-pagination-bullet-active::before,
+    .swiper-pagination-bullets .swiper-pagination-bullet-active-main::before {
+        border-color: var(--color-primary);
+    }
+    .swiper-button-next,
+    .swiper-button-prev {
+        width: 60px;
+        height: 60px;
+        color: var(--color-primary);
+        background-color: transparent;
+        border: 2px solid var(--color-primary);
+        border-radius: 50%;
+        overflow: hidden;
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--gradient-primary);
+            z-index: -1;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition-200);
+        }
+        &:hover,
+        &:active,
+        &:focus {
+            border: none;
+            color: var(--color-light);
+            &::before {
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+    }
+    .swiper-button-next:after,
+    .swiper-button-prev:after {
+        font-size: 30px;
+        position: relative;
+    }
+    .swiper-button-prev:after,
+    .swiper-rtl .swiper-button-next:after {
+        left: -2px;
+    }
+    .swiper-button-next:after, .swiper-rtl .swiper-button-prev:after{
+        right: -2px;
+    }
+    .swiper-slide {
+        transition: var(--transition-200);
+        opacity: 0;
+    }
+    .swiper-slide.swiper-slide-active,
+    .swiper-slide.swiper-slide-next,
+    .swiper-slide.swiper-slide-next + .swiper-slide {
+        opacity: 1;
+    }
+}

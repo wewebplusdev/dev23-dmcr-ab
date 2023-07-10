@@ -1,0 +1,102 @@
+.step-progress {
+    position: relative;
+    margin-bottom: 3rem;
+    .progress {
+        position: absolute;
+        top: calc(124px / 2);
+        left: 0;
+        right: 0;
+        height: 3px;
+        margin: 0 150px;
+        border-radius: 0;
+    }
+    &.-step-progress-i {
+        .-step-i {
+            .hexagon-wrapper {
+                .hexagon-inner .hexagon {
+                    background: var(--gradient-primary);
+                }
+                .hexagon-outer {
+                    background-color: var(--color-primary);
+                }
+            }
+            .title {
+                color: var(--color-primary);
+            }
+        }
+    }
+    &.-step-progress-ii {
+        .progress .progress-bar {
+            width: 100% !important;
+        }
+        .step {
+            .hexagon-wrapper {
+                .hexagon-inner .hexagon {
+                    background: var(--gradient-primary);
+                }
+                .hexagon-outer {
+                    background-color: var(--color-primary);
+                }
+            }
+            .title {
+                color: var(--color-primary);
+            }
+        }
+    }
+}
+.steps {
+    display: flex;
+    justify-content: space-between;
+    .step {
+        width: 180px;
+        text-align: center;
+        .title {
+            font-size: var(--typo-md);
+            font-weight: var(--fw-medium);
+            margin-top: 1rem;
+        }
+        .hexagon-wrapper {
+            .hexagon-inner .hexagon {
+                background-color: var(--color-gray-200);
+            }
+            .hexagon-outer {
+                background-color: var(--color-border);
+            }
+        }
+        &.active {
+        }
+    }
+}
+
+@media (max-width: 1600px) {
+}
+@media (max-width: 1440px) {
+}
+@media (max-width: 1199px) {
+}
+@media (max-width: 991px) {
+}
+@media (max-width: 767px) {
+    .step-progress .hexagon-wrapper .hexagon-outer {
+        width: 90px;
+        height: 90px;
+    }
+    .step-progress .hexagon-wrapper .hexagon-inner .hexagon {
+        width: 72px;
+        height: 72px;
+    }
+    .step-progress .hexagon-wrapper .hexagon-outer {
+        position: absolute;
+        top: calc(50% - 90px / 2);
+        left: calc(50% - 90px / 2);
+    }
+    .steps .step {
+        width: 150px;
+    }
+    .step-progress .progress {
+        top: 54px;
+        margin: 0 120px;
+    }
+}
+@media (max-width: 575px) {
+}

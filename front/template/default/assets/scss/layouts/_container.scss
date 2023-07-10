@@ -1,0 +1,30 @@
+.layout-container {
+    margin-top: 150px;
+}
+
+@media (max-width: 1600px) {
+}
+@media (max-width: 1440px) {
+    .layout-container {
+        margin-top: 140px;
+    }
+}
+@media (max-width: 1199px) {
+    .layout-container {
+        margin-top: 136px;
+    }
+}
+@media (max-width: 991px) {
+    .layout-container {
+        margin-top: 114px;
+    }
+}
+@media (max-width: 767px) {
+
+
+}
+@media (max-width: 575px) {
+    .layout-container {
+        margin-top: 107px;
+    }
+}

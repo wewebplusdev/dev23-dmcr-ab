@@ -1,0 +1,134 @@
+:root {
+    --hexagon-outer-attach-w: 72px;
+    --hexagon-outer-attach-h: 72px;
+}
+.attachment-list {
+    padding-top: 100px;
+    .attach-swiper .swiper-slide.swiper-slide-next + .swiper-slide {
+        opacity: 0;
+    }
+    .attach-swiper {
+        padding-bottom: 60px;
+        .swiper-pagination-bullet {
+            background-color: var(--color-light);
+        }
+        .swiper-pagination-bullets {
+            margin-bottom: 10px;
+        }
+        .swiper-pagination-bullet-active::before,
+        .swiper-pagination-bullets .swiper-pagination-bullet-active-main::before {
+            border-color: var(--color-light);
+        }
+    }
+}
+.attach-item {
+    color: var(--color-default);
+    .hexagon-wrapper {
+        padding-left: 0.46rem;
+        padding-right: 0.46rem;
+    }
+    .hexagon-wrapper .hexagon-outer {
+        top: calc(50% - var(--hexagon-outer-attach-h) / 2);
+        left: calc(50% - var(--hexagon-outer-attach-w) / 2);
+    }
+    .hexagon-outer {
+        width: var(--hexagon-outer-attach-w);
+        height: var(--hexagon-outer-attach-h);
+    }
+    .hexagon-wrapper .icon-wrapper {
+        width: calc(var(--hexagon-outer-attach-w) - 18px);
+        height: calc(var(--hexagon-outer-attach-h) - 18px);
+    }
+    .inner {
+        // padding-left: 1rem;
+        .title {
+            margin-bottom: 0.25rem;
+        }
+        .desc {
+            font-size: var(--typo-xs);
+            > div {
+                position: relative;
+            }
+            > div + div ::before {
+                content: "";
+                position: absolute;
+                width: 1px;
+                // height: 100%;
+                top: 0.25em;
+                bottom: 0.25em;
+                left: -0.5rem;
+                background: var(--color-primary);
+            }
+        }
+    }
+}
+
+@media (max-width: 1600px) {
+}
+@media (max-width: 1440px) {
+    :root {
+        --hexagon-outer-attach-w: 64px;
+        --hexagon-outer-attach-h: 64px;
+    }
+    .attach-item {
+        .hexagon-wrapper {
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+        .hexagon-wrapper .hexagon-outer {
+            top: calc(50% - var(--hexagon-outer-attach-h) / 2);
+            left: calc(50% - var(--hexagon-outer-attach-w) / 2);
+        }
+        .hexagon-outer {
+            width: var(--hexagon-outer-attach-w);
+            height: var(--hexagon-outer-attach-h);
+        }
+        .hexagon-wrapper .icon-wrapper {
+            width: calc(var(--hexagon-outer-attach-w) - 18px);
+            height: calc(var(--hexagon-outer-attach-h) - 18px);
+        }
+    }
+}
+@media (max-width: 1400px) {
+    .attach-item .action {
+        padding-left: 75px;
+    }
+}
+@media (max-width: 1199px) {
+    .attachment-list {
+        padding-top: 60px;
+    }
+}
+@media (max-width: 991px) {
+    .attach-item {
+        .inner .desc {
+            flex-direction: column;
+            align-items: start;
+            gap: 0.5rem !important;
+            margin-bottom: 1rem;
+            > div + div ::before {
+                display: none;
+            }
+        }
+    }
+    .attachment-list {
+        padding-top: 40px;
+    }
+}
+@media (max-width: 767px) {
+}
+@media (max-width: 575px) {
+    .attachment-list {
+        padding-top: 0;
+    }
+    .attach-item .hexagon-wrapper {
+        width: 60px;
+        margin-bottom: 0.25rem;
+    }
+    .attach-item .action {
+        padding-left: 0;
+    }
+    .attach-item .action .btn {
+        width: 100%;
+    }
+}

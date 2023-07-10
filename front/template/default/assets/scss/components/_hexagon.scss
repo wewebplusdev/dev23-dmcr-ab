@@ -1,0 +1,122 @@
+.hexagon {
+    -webkit-clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%);
+    clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%);
+}
+.hexagon-outer {
+    position: relative;
+    height: var(--hexagon-outer-h);
+    width: var(--hexagon-outer-w);
+    background: black;
+}
+.hexagon-outer:before {
+    position: absolute;
+    content: "";
+}
+.hexagon-outer:before {
+    top: 2px; /* border width */
+    left: 2px; /* border width */
+    height: calc(100% - 4px); /* 100% - (2 * border width) */
+    width: calc(100% - 4px); /* 100% - (2 * border width) */
+    background: #fff;
+}
+.hexagon-outer,
+.hexagon-outer:before {
+    -webkit-clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%);
+    clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%);
+}
+
+.hexagon-wrapper {
+    position: relative;
+    padding: 18px 0;
+    .hexagon-inner {
+        position: relative;
+        z-index: 1;
+        filter: drop-shadow(0px 0.75rem 1.25rem rgba(0, 0, 0, 0.16));
+    }
+    .hexagon,
+    .hexagon-outer {
+        transform: rotate(90deg);
+    }
+    .hexagon {
+        transform: rotate(-90deg);
+    }
+    .hexagon-outer {
+        position: absolute;
+        top: calc(50% - var(--hexagon-outer-h) / 2);
+        left: calc(50% - var(--hexagon-outer-w) / 2);
+        z-index: 0;
+    }
+    .txt-wrapper .txt {
+        color: var(--color-light);
+        font-size: var(--typo-xl);
+        font-weight: var(--fw-bold);
+    }
+    .icon-wrapper .icon {
+        width: 50%;
+        height: 50%;
+    }
+    .image-wrapper .image {
+        width: 100%;
+        height: 100%;
+    }
+    .txt-wrapper .txt,
+    .icon-wrapper .icon,
+    .image-wrapper .image {
+        transform: rotate(90deg);
+    }
+    .txt-wrapper,
+    .icon-wrapper,
+    .image-wrapper {
+        position: relative;
+        margin: 0 auto;
+        width: 96px;
+        height: 96px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("/../img/static/hexagon-inner-shadow.svg") no-repeat center;
+            background-size: cover;
+            transform: rotate(90deg);
+        }
+    }
+}
+
+.theme-orange .hexagon-wrapper {
+    .hexagon-inner .hexagon {
+        background: linear-gradient(45deg, #f76a00 0%, #f7cc02 100%);
+    }
+    .hexagon-outer {
+        background: var(--color-orange);
+    }
+}
+.theme-green .hexagon-wrapper {
+    .hexagon-inner .hexagon {
+        background: linear-gradient(45deg, #58db00 0%, #4da412 100%);
+    }
+    .hexagon-outer {
+        background: var(--color-green);
+    }
+}
+.theme-blue .hexagon-wrapper {
+    .hexagon-inner .hexagon {
+        background: linear-gradient(45deg, #004ac9 0%, #0b8bf6 100%);
+    }
+    .hexagon-outer {
+        background: var(--color-blue);
+    }
+}
+.theme-purple .hexagon-wrapper {
+    .hexagon-inner .hexagon {
+        background: linear-gradient(45deg, #9b0af7 0%, #ff2c66 100%);
+    }
+    .hexagon-outer {
+        background: var(--color-purple);
+    }
+}

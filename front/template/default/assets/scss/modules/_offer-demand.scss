@@ -1,0 +1,72 @@
+.wg-offer-demand {
+    .content {
+        position: relative;
+        z-index: 2;
+        padding: 0 2.5rem;
+    }
+    .bg {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+    }
+    .whead {
+        .h-title {
+            margin-bottom: 0.5rem;
+        }
+        .desc {
+            margin-bottom: 1.75rem;
+        }
+    }
+    .action {
+        margin-top: 3rem;
+        .btn {
+            min-width: 180px;
+        }
+    }
+}
+.row > div {
+    .wg-offer-demand {
+        .bg {
+            width: 50%;
+        }
+    }
+}
+
+.form-offer-demand {
+    .form-head {
+        font-size: var(--typo-md);
+        color: var(--color-light);
+        background: var(--gradient-secondary);
+        padding: 1.25rem;
+    }
+}
+
+@media (max-width: 1600px) {
+}
+@media (max-width: 1440px) {
+}
+@media (max-width: 1199px) {
+    .wg-offer-demand .action {
+        margin-top: 2rem;
+    }
+}
+@media (max-width: 991px) {
+    .wg-offer-demand {
+        position: relative;
+    }
+    .wg-offer-demand .content {
+        padding: 3rem 1rem;
+    }
+    .row > div .wg-offer-demand .bg {
+        width: 100%;
+    }
+}
+@media (max-width: 767px) {
+    .form-offer-demand .form-head {
+        padding: 1rem;
+    }
+}
+@media (max-width: 575px) {
+}

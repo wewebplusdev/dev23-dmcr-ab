@@ -1,0 +1,75 @@
+.wg-vote-poll {
+    .content {
+        position: relative;
+        z-index: 2;
+        padding: 0 2.5rem;
+    }
+    .bg {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        right: 0;
+        bottom: 0;
+    }
+    .whead {
+        .h-title {
+            margin-bottom: 0.5rem;
+        }
+        .desc {
+            margin-bottom: 1.75rem;
+        }
+    }
+    .action {
+        margin-top: 3rem;
+        .btn + .btn {
+            margin-left: 20px;
+        }
+    }
+    .form-default {
+        .default-radio {
+            padding-left: 12rem;
+        }
+    }
+}
+.row > div {
+    .wg-vote-poll {
+        .bg {
+            width: 50%;
+        }
+    }
+}
+
+@media (max-width: 1600px) {
+}
+@media (max-width: 1440px) {
+}
+@media (max-width: 1199px) {
+    .wg-vote-poll .form-default .default-radio {
+        padding-left: 6.5rem;
+    }
+    .wg-vote-poll .action {
+        margin-top: 2rem;
+    }
+}
+@media (max-width: 991px) {
+    .wg-vote-poll {
+        position: relative;
+    }
+    .wg-vote-poll .content {
+        padding: 3rem 1rem;
+    }
+    .wg-vote-poll .form-default .default-radio {
+        padding-left: 0;
+        width: fit-content;
+        margin: 0 auto;
+    }
+    .row > div .wg-vote-poll .bg {
+        // right: -15px;
+        // left: -15px;
+        width: 100%;
+    }
+}
+@media (max-width: 767px) {
+}
+@media (max-width: 575px) {
+}

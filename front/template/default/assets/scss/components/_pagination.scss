@@ -1,0 +1,106 @@
+.pagination-block {
+    margin-top: 40px;
+    // display: flex;
+    // justify-content: center;
+}
+
+.pagination {
+    margin: 0;
+    .page-link {
+        display: block;
+        min-width: 40px;
+        height: 40px;
+        padding: 0 5px;
+        text-align: center;
+        line-height: 40px;
+        border-radius: 50%;
+        background-color: var(--color-light);
+        font-weight: var(--fw-normal);
+        font-size: var(--typo-default);
+        color: var(--color-primary);
+        border-color: var(--color-primary);
+        &:hover {
+            color: var(--color-primary);
+        }
+        span {
+            position: relative;
+            line-height: 40px;
+            // font-size: 26px;
+        }
+        &.link-text {
+            border-color: transparent;
+            background-color: transparent;
+            &:hover {
+                border-color: transparent;
+                background-color: transparent;
+            }
+        }
+    }
+    .page-item {
+        position: relative;
+        &.active {
+            .page-link {
+                border: none;
+                color: var(--color-light);
+                background: var(--gradient-primary);
+            }
+        }
+        &:not(.active) {
+            .page-link:hover {
+                color: var(--color-light);
+                border-color: var(--color-primary);
+                background-color: var(--color-primary);
+            }
+        }
+        &:first-child .page-link,
+        &:last-child .page-link {
+            border-radius: 50%;
+        }
+    }
+    li {
+        display: inline-block;
+        vertical-align: middle;
+        &.active {
+            .link {
+                color: var(--color-light);
+                border-color: transparent;
+                background: none;
+                background-color: var(--color-primary);
+            }
+        }
+    }
+    li + li {
+        margin-left: 10px;
+    }
+}
+
+@media (max-width: 1600px) {
+}
+@media (max-width: 1440px) {
+}
+@media (max-width: 1199px) {
+}
+@media (max-width: 991px) {
+}
+@media (max-width: 767px) {
+    .pagination-label {
+        text-align: center;
+        margin-bottom: 1.25rem;
+    }
+    .pagination {
+        justify-content: center;
+    }
+}
+@media (max-width: 575px) {
+    .pagination li + li {
+        margin-left: 8px;
+    }
+    .pagination .page-link {
+        min-width: 32px;
+        height: 32px;
+        line-height: 32px;
+    }
+    .pagination .page-link span {
+        line-height: 32px;
+    }
+}

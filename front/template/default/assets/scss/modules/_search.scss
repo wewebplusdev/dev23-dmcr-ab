@@ -1,0 +1,98 @@
+.wg-search {
+    color: var(--color-light);
+    margin-top: 1rem;
+    margin-bottom: 5rem;
+    .whead {
+        .title {
+            margin-bottom: 1rem;
+        }
+        .desc {
+            margin-bottom: 1.75rem;
+        }
+    }
+}
+.wg-search-filter {
+    .action {
+        .btn {
+            min-width: 180px;
+        }
+    }
+}
+.search-result-head {
+    margin-bottom: 1.5rem;
+}
+.search-result-list {
+    .list-group-item {
+        padding: 1.25rem 0;
+        border: none;
+        + .list-group-item {
+            border-top: 1px solid var(--color-border);
+        }
+    }
+    .wrapper {
+        color: var(--color-default);
+        .title {
+            font-size: var(--typo-md);
+            font-weight: var(--fw-bold);
+            color: var(--color-primary);
+            line-height: var(--line-height-1-4);
+            margin-bottom: 0.75rem;
+        }
+        .desc {
+            transition:  var(--transition-200);
+            margin-bottom: 1.25rem;
+        }
+        .linkto{
+            transition:  var(--transition-200);
+        }
+    }
+    .link {
+        &:hover {
+            .wrapper {
+                .desc {
+                    color: var(--color-primary);
+                }
+                .linkto {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1600px) {
+}
+@media (max-width: 1440px) {
+}
+@media (max-width: 1199px) {
+    .wg-search {
+        margin-bottom: 4rem;
+    }
+}
+@media (max-width: 991px) {
+    .wg-search-filter .action .btn {
+        min-width: 120px;
+    }
+    .wg-search {
+        margin-bottom: 3rem;
+    }
+}
+@media (max-width: 767px) {
+    .wg-search-filter .action .btn {
+        width: 100%;
+        min-width: 100%;
+    }
+    .wg-search {
+        margin-top: 0;
+        margin-bottom: 2rem;
+    }
+    .search-result-head {
+        margin-bottom: 0.25rem;
+    }
+    .search-result-head .title {
+        margin-top: 0.5rem;
+        margin-bottom: 1.25rem;
+    }
+}
+@media (max-width: 575px) {
+}

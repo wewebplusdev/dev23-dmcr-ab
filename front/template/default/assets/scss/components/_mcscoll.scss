@@ -1,0 +1,33 @@
+:root {
+    --mcscroll-w: 8px;
+}
+.mcscroll {
+    .mCSB_inside > .mCSB_container {
+        margin-right: 18px;
+    }
+    .mCSB_scrollTools {
+        width: var(--mcscroll-w);
+        top: 5px;
+        right: 5px;
+        bottom: 5px;
+        border-radius: 5px;
+        overflow: hidden;
+        background-color: #c5c5c5;
+    }
+    .mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar,
+    .mCSB_scrollTools .mCSB_dragger:hover .mCSB_dragger_bar,
+    .mCS-dark.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar,
+    .mCS-dark.mCSB_scrollTools .mCSB_dragger:hover .mCSB_dragger_bar {
+        background-color: var(--color-secondary);
+    }
+    .mCSB_scrollTools .mCSB_dragger.mCSB_dragger_onDrag .mCSB_dragger_bar,
+    .mCS-dark.mCSB_scrollTools .mCSB_dragger.mCSB_dragger_onDrag .mCSB_dragger_bar {
+        background-color: var(--color-secondary);
+    }
+    .mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
+        width: var(--mcscroll-w);
+    }
+    .mCSB_scrollTools .mCSB_draggerRail {
+        width: var(--mcscroll-w);
+    }
+}

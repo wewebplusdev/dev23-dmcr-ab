@@ -1,0 +1,137 @@
+:root {
+    --color-primary: #004ac9;
+    --color-secondary: #f76a00;
+    --color-success: #28a745;
+    --color-info: #17a2b8;
+    --color-warning: #ffc107;
+    --color-danger: #dc3545;
+    --color-gray: #6c757d;
+    --color-gray-100: #ececec;
+    --color-gray-200: #C5C5C5;
+    --color-orange: #f76a00;
+    --color-blue: #004ac9;
+    --color-purple: #9b0af7;
+    --color-green: #4da412;
+    --color-light: #fff;
+    --color-dark: #4d4d4d;
+    --color-black: #000;
+    --color-default: #8b8b8b;
+
+    // --color-border: #666;
+    --color-border: #ececec;
+    --color-border-100: #dddddd;
+
+    --gradient-primary: linear-gradient(#004ac9 0%, #0b8bf6 100%);
+    --gradient-secondary: linear-gradient(#f76a00 0%, #f7cc02 100%);
+    --gradient-purple: linear-gradient(#9b0af7 0%, #ff2c66 100%);
+    --gradient-green: linear-gradient(#58db00 0%, #4da412 100%);
+
+    --fw-light: 100;
+    --fw-normal: 300;
+    --fw-medium: 600;
+    --fw-bold: bold;
+
+    --typo-xs: 14px;
+    --typo-sm: 16px;
+    --typo-md: 22px;
+    --typo-lg: 26px;
+    --typo-xl: 30px;
+    --typo-xxl: 34px;
+    --typo-default: 18px;
+
+    --line-height-1-4: 1.4em;
+    --line-height-1-5: 1.5em;
+
+    --border-radius-xs: 0.28rem;
+    --border-radius-sm: 0.5rem;
+
+    --transition-100: all 100ms ease;
+    --transition-200: all 200ms ease;
+    --transition-300: all 300ms ease;
+
+    --box-shadow: 0 0.625rem 1.25rem rgba(0, 0, 0, 0.16);
+
+    $--nav-tabs-h: 80px;
+}
+
+.text-primary {
+    color: var(--color-primary) !important;
+}
+.text-secondary {
+    color: var(--color-secondary) !important;
+}
+.text-success {
+    color: var(--color-success) !important;
+}
+.text-info {
+    color: var(--color-info) !important;
+}
+.text-warning {
+    color: var(--color-warning) !important;
+}
+.text-danger {
+    color: var(--color-danger) !important;
+}
+.text-gray {
+    color: var(--color-gray) !important;
+}
+.text-light {
+    color: var(--color-light) !important;
+}
+.text-dark {
+    color: var(--color-dark) !important;
+}
+.text-default {
+    color: var(--color-default) !important;
+}
+
+.fw-light {
+    font-weight: var(--fw-light);
+}
+.fw-normal {
+    font-weight: var(--fw-normal);
+}
+.fw-medium {
+    font-weight: var(--fw-medium);
+}
+.fw-bold {
+    font-weight: var(--fw-bold);
+}
+
+.typo-xs {
+    font-size: var(--typo-xs);
+}
+.typo-sm {
+    font-size: var(--typo-sm);
+}
+.typo-md {
+    font-size: var(--typo-md);
+}
+.typo-lg {
+    font-size: var(--typo-lg);
+}
+.typo-xl {
+    font-size: var(--typo-xl);
+}
+.typo-default {
+    font-size: var(--typo-default);
+}
+
+.border-primary {
+    border-color: var(--color-primary) !important;
+}
+.border-secondary {
+    border-color: var(--color-secondary) !important;
+}
+.border-success {
+    border-color: var(--color-success) !important;
+}
+.border-danger {
+    border-color: var(--color-danger) !important;
+}
+.border-warning {
+    border-color: var(--color-warning) !important;
+}
+.border-transparent {
+    border-color: transparent;
+}
