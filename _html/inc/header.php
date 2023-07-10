@@ -46,7 +46,9 @@
 								<span class="fa-solid fa-magnifying-glass"></span>
 							</button>
 						</div>
-						<?php include('components/search.php'); ?>
+						<div class="d-lg-block d-none">
+							<?php include('components/search.php'); ?>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -57,7 +59,7 @@
 			<a href="/" class="navbar-brand">
 				<img alt="DMCR logo" src="<?php echo $core_template; ?>assets/img/static/logo.png" decoding="async" data-nimg="fill" class="d-inline-block align-top" style="position:absolute;height:100%;width:100%;left:0;top:0;right:0;bottom:0;color:transparent">
 			</a>
-			<button aria-controls="basic-navbar-nav" type="button" aria-label="Toggle navigation" class="navbar-toggler collapsed">
+			<button type="button" class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#basic-navbar-nav" aria-controls="basic-navbar-nav" aria-label="Toggle navigation">
 				<div>
 					<span class="bar active"></span>
 					<span class="bar active"></span>

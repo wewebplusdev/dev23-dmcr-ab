@@ -20552,6 +20552,10 @@ div.swal2-html-container {
   -webkit-transition: var(--transition-200);
   transition: var(--transition-200);
 }
+.layout-header .middle-bar .row.overflow-hidden {
+  padding-bottom: 1rem;
+  margin-bottom: -1rem;
+}
 .layout-header .navbar {
   padding: 0;
   background: rgba(255, 255, 255, 0.6);

@@ -1,4 +1,4 @@
-<div class="search-input position-absolute hide">
+<div class="search-input hide">
     <form action="/search" class="form-default">
         <div class="input-group">
             <label class="floating-label form-label">
