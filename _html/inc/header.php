@@ -10,7 +10,8 @@
 								<div class="hstack">
 									<a id="theme-style-1" title="ขนาดอักษรเล็ก" class="nav-size-small fzSmall" target="_self" href="/">ก</a>
 									<a id="theme-style-2" title="ขนาดอักษรกลาง" class="nav-size-medium fzMedium active" target="_self" href="/">ก</a>
-									<a id="theme-style-3" title="ขนาดอักษรใหญ่" class="nav-size-large fzLarge" target="_self" href="/">ก</a></div>
+									<a id="theme-style-3" title="ขนาดอักษรใหญ่" class="nav-size-large fzLarge" target="_self" href="/">ก</a>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -21,7 +22,8 @@
 							<div class="col">
 								<div class="hstack">
 									<a title="TH" class="nav-lang-th active" target="_self" href="/">TH</a>
-									<a title="EN" class="nav-lang-en" target="_self" href="/">EN</a></div>
+									<a title="EN" class="nav-lang-en" target="_self" href="/">EN</a>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -64,7 +66,11 @@
 		</div>
 	</div>
 	<nav class="navbar navbar-expand-lg navbar-light">
-		<div class="container-lg"><a href="/" class="navbar-brand"><img alt="DMCR logo" src="/_next/static/media/logo.52c3c0d9.png" decoding="async" data-nimg="fill" class="d-inline-block align-top" style="position:absolute;height:100%;width:100%;left:0;top:0;right:0;bottom:0;color:transparent"></a><button aria-controls="basic-navbar-nav" type="button" aria-label="Toggle navigation" class="navbar-toggler collapsed">
+		<div class="container-lg">
+			<a href="/" class="navbar-brand">
+				<img alt="DMCR logo" src="<?php echo $core_template; ?>assets/img/static/logo.png" decoding="async" data-nimg="fill" class="d-inline-block align-top" style="position:absolute;height:100%;width:100%;left:0;top:0;right:0;bottom:0;color:transparent">
+			</a>
+			<button aria-controls="basic-navbar-nav" type="button" aria-label="Toggle navigation" class="navbar-toggler collapsed">
 				<div>
 					<span class="bar active"></span>
 					<span class="bar active"></span>
