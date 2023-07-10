@@ -16,7 +16,7 @@ $--nav-tabs-h: 80px;
     }
     .default-body {
         padding: 3.75rem 0;
-        background-image: url("/../img/background/bg-section-iii.jpg");
+        background-image: url("../img/background/bg-section-iii.jpg");
         background-position: center top 200px;
         background-size: cover;
         background-repeat: no-repeat;
@@ -117,12 +117,12 @@ $--nav-tabs-h: 80px;
             background-repeat: no-repeat;
         }
         .object-i {
-            background-image: url("/../img/static/section-object-i.png");
+            background-image: url("../img/static/section-object-i.png");
             background-position-x: -80px;
             background-position-y: -80px;
         }
         .object-ii {
-            background-image: url("/../img/static/section-object-ii.png");
+            background-image: url("../img/static/section-object-ii.png");
             background-position-x: 1200px;
             background-position-y: -320px;
         }
@@ -180,7 +180,7 @@ $--nav-tabs-h: 80px;
 .section-ii {
     min-height: 800px;
     background: linear-gradient(#0b8bf6 0%, rgba(0, 74, 201, 0) 100%),
-        url("/../img/background/bg-section-ii.png") no-repeat;
+        url("../img/background/bg-section-ii.png") no-repeat;
     background-size: cover;
     padding-bottom: 14rem;
     .select-control {
@@ -191,7 +191,7 @@ $--nav-tabs-h: 80px;
     }
 }
 .section-iii {
-    // background: url("/../img/background/bg-section-iii.jpg") no-repeat;
+    // background: url("../img/background/bg-section-iii.jpg") no-repeat;
     // background-position: top center;
     // background-size: cover;
 }
@@ -200,7 +200,7 @@ $--nav-tabs-h: 80px;
     background: transparent;
 }
 .section-v {
-    background: url("/../img/background/bg-section-v.png") no-repeat bottom;
+    background: url("../img/background/bg-section-v.png") no-repeat bottom;
     // background-size: ;
 }
 .section-vi {
