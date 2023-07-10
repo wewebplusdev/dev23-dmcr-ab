@@ -20687,8 +20687,7 @@ div.swal2-html-container {
   min-width: unset;
 }
 .layout-header .search-input .form-control {
-  padding-left: 50px;
-  padding-right: 50px;
+  padding: 5px 50px;
   border-radius: var(--border-radius-xs) !important;
 }
 .layout-header .search-input .form-label {

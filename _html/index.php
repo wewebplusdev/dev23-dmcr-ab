@@ -20,5 +20,9 @@
 
 	<?php include('inc/loadscript.php'); ?>
 
+    <script>
+        // swal("Hello world!");
+    </script>
+
 </body>
 </html>
