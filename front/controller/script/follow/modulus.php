@@ -1,6 +1,6 @@
 <?php
 class followPage {
-    function callFollow($masterkey , $province = null , $year = null ,$keyword = null,$page = 1, $limit = 20){
+    function callFollow($masterkey ,$page = 1, $limit = 12){
     global $db, $config, $url;
     
 
@@ -30,21 +30,21 @@ class followPage {
     (TO_DAYS(" . $config['cms']['db'] . "." . $config['cms']['db'] . "_sdate)<=TO_DAYS(NOW()) AND
     TO_DAYS(" . $config['cms']['db'] . "." . $config['cms']['db'] . "_edate)>=TO_DAYS(NOW())  ))";
 
-    if(!empty($province)){
-        $sql .= "
-        AND " . $config['cms']['db'] . "." . $config['cms']['db'] . "_gid = $province
-        ";
-    }
-    if(!empty($year)){
-        $sql .= "
-        AND " . $config['cms']['db'] . "." . $config['cms']['db'] . "_year = $year
-        ";
-    }
-    if(!empty($keyword)){
-        $sql .= "
-        AND " . $config['cms']['db'] . "." . $config['cms']['db'] . "_subject LIKE LIKE '%$keyword%'
-        ";
-    }
+    // if(!empty($province)){
+    //     $sql .= "
+    //     AND " . $config['cms']['db'] . "." . $config['cms']['db'] . "_gid = $province
+    //     ";
+    // }
+    // if(!empty($year)){
+    //     $sql .= "
+    //     AND " . $config['cms']['db'] . "." . $config['cms']['db'] . "_year = $year
+    //     ";
+    // }
+    // if(!empty($keyword)){
+    //     $sql .= "
+    //     AND " . $config['cms']['db'] . "." . $config['cms']['db'] . "_subject LIKE LIKE '%$keyword%'
+    //     ";
+    // }
     
     $sql .= " ORDER BY  " . $config['cms']['db'] . "." . $config['cms']['db'] . "_order DESC ";
     $result = $db->pageexecute($sql, $limit, $page);
@@ -92,5 +92,26 @@ class followPage {
         $result = $db->execute($sql);
         return $result;
         }
+
+        function callProvince($id){
+            global $db, $config, $url;
+            
+        
+            $sql = "SELECT
+            " . $config['province']['db'] . "." . $config['province']['db'] . "_id as id,
+            " . $config['province']['db'] . "." . $config['province']['db'] . "_name as name
+            FROM
+            " . $config['province']['db'] . "
+            WHERE
+            " . $config['province']['db'] . "." . $config['province']['db'] . "_id = '".$id."' 
+           ";
+        
+    
+    
+            
+            // print_pre($sql);
+            $result = $db->execute($sql);
+            return $result;
+            }
 }
 ?>

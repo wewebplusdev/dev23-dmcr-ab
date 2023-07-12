@@ -2,15 +2,20 @@
 
 $config['system']['setting'] = "md_site";
 $config['system']['setting:key'] = "site";
-$lang['site']['name'] = "กรมทรัพยากรทางทะเลและชายฝั่ง Department of Marine and Coastal Resources, Thailand";
+$lang['site']['name'] = "ฐานข้อมูลปะการังเทียมและทุ่นในทะเล กรมทรัพยากรทางทะเลและชายฝั่ง";
 #tgp
 $config['tgp']['db'] = "md_tgp";
 $config['tgp']['masterkey'] = "tgp";
 
 
 $config['province']['db'] = "ot_pro";
+
 $config['cms']['db'] = "md_cms";
+$config['cms']['file'] = "md_cmf";
+$config['cms']['album'] = "md_cma";
+
 $config['activity']['masterkey'] = "1n";
+
 $config['follow']['coral']['masterkey'] = "1f";
 $config['follow']['buoy']['masterkey'] = "2f";
 $config['follow']['sinkpoint']['masterkey'] = "3f";

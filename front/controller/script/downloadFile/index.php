@@ -3,8 +3,9 @@
 if (!empty($url->uri['file'])) {
 
     $fileDecode = decodeStr($url->uri['file']);
-    $tableDownload = decodeStr($url->uri['t']);
+    $tableDownload = $config['cms']['file'];
     $idFile = decodeStr($url->uri['id']);
+    // print_pre($idFile);die;
     $filename = explode(".", $fileDecode);
     $dataFile = explode("/", $filename[0]);
     $file_extension = $filename[count($filename) - 1];
@@ -17,7 +18,7 @@ if (!empty($url->uri['file'])) {
     if($url->uri['type'] == 'download'){
         ###### DOWNLOAD ######
         
-        // print_pre(end($dataFile));
+        
 
         
 
@@ -38,6 +39,7 @@ if (!empty($url->uri['file'])) {
               $rs = $db->execute($sql);
               $record[$tableDownload . "_download"] = $rs->fields[$tableDownload . "_download"] + 1;
               $updateSQL = $db->GetUpdateSQL($rs, $record);
+              
               $rsUpdate = $db->execute($updateSQL);      
           }
           $file_extension = $filename[count($filename) - 1];

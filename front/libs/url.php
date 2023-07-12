@@ -47,7 +47,7 @@ class url
             } else {
                 $this->pagelang = $lang_set[$lang_default];
                 $urlNewDirect = str_replace('//', '/', "/" . $this->onFolder . "/" . $this->pagelang[2]);
-				$urlNewDirect ="/th";
+				// $urlNewDirect ="/th";
                header("Location:" . $urlNewDirect);
                // exit();
             }

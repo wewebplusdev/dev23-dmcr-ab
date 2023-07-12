@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+    {include file="inc-metatag.tpl" title=title}
     {include file="inc-style.tpl" title=title}
 </head>
 <body>
