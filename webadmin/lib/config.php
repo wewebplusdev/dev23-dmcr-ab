@@ -84,7 +84,8 @@ if ($coreLanguageSQL == "mssql") {
 	// $core_db_name     = "arb";
 
     //DEV
-    $core_db_hostname = "localhost";
+    // $core_db_hostname = "localhost";
+    $core_db_hostname = "192.168.1.129";
 	$core_db_username = "root";
 	$core_db_password = "IySY?Pk7!!mH";
 	$core_db_name     = "2023_dmcr_ab";

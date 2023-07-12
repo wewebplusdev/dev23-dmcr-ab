@@ -8,17 +8,21 @@ $config['tgp']['db'] = "md_tgp";
 $config['tgp']['masterkey'] = "tgp";
 
 
-$config['about']['policy'] = "md_ab";
-$config['about']['policyfile'] = "md_abf";
-
-$config['masterkey']['policy']['secure'] = "pl1";
-$config['masterkey']['policy']['site'] = "pl2";
-$config['masterkey']['policy']['protect'] = "pl3";
-
-$config['popup']['db'] = "md_int";
-$config['popup']['masterkey'] = "popup";
+$config['province']['db'] = "ot_pro";
+$config['cms']['db'] = "md_cms";
+$config['activity']['masterkey'] = "1n";
+$config['follow']['coral']['masterkey'] = "1f";
+$config['follow']['buoy']['masterkey'] = "2f";
+$config['follow']['sinkpoint']['masterkey'] = "3f";
 
 
-$config['menu']['db'] = "md_mn";
-$config['menu']['group'] = "md_mng";
-$config['menu']['masterkey'] = "mn";
+$config['vote']['main']['db'] = "md_vte";
+$config['vote']['ans']['db'] = "md_vta";
+$config['vote']['masterkey'] = "1v";
+
+
+$config['contact']['main']['db'] = "md_cus";
+$config['contact']['group']['db'] = "md_cug";
+$config['contact']['email']['db'] = "md_cue";
+$config['contact']['masterkey'] = "1c";
+

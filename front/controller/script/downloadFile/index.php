@@ -26,7 +26,7 @@ if (!empty($url->uri['file'])) {
         //     $functionSave = FALSE;
         // } else {
         //     setcookie("DOWNLOAD" . end($dataFile), true, time() + 100);
-            $functionSave = ture;
+            $functionSave = true;
         // }
 
 
@@ -77,7 +77,7 @@ if (!empty($url->uri['file'])) {
         //     $functionSave = FALSE;
         // } else {
         //     setcookie("DOWNLOAD" . end($dataFile), true, time() + 100);
-        $functionSave = ture;
+        $functionSave = true;
         // }
 
         if (!empty($functionSave)) {
