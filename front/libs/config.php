@@ -58,17 +58,15 @@ $core_db_password = "CqtJ!6CD";
 $core_db_name = "register";
 */
 
-//prod
-$core_db_hostname = "61.19.55.239";
-$core_db_username = "root";
-$core_db_password = "May@1984";
-$core_db_name = "register";
 
 //dev
-// $core_db_hostname = "192.168.101.129";
-// $core_db_username = "root";
-// $core_db_password = "IySY?Pk7!!mH";
-// $core_db_name = "2022_dmcr_register";
+$core_db_hostname = "192.168.1.129";
+	$core_db_username = "root";
+	$core_db_password = "IySY?Pk7!!mH";
+	$core_db_name     = "2023_dmcr_ab";
+
+
+
 
 $core_db_charecter_set = array('charset' => "utf8", 'collation' => "utf8_general_ci");
 
@@ -90,7 +88,7 @@ $lang_default = "th";
 
 ## url ##
 $url_show_lang = false;
-$url_show_default = "homes";
+$url_show_default = "home";
 
 ## config path system ##
 $path_template = array(

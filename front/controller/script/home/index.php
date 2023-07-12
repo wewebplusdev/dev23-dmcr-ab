@@ -1,0 +1,81 @@
+<?php
+$menuActive = "home";
+$listcss[] = '<link rel="stylesheet" type="text/css" href="front/template/default/public/css/front-qa-new.css' . "?u=" . date("YdmHis") . '" />';
+$homePage = new homePage;
+################# Start get count RSS #####################
+$rssSet = array();
+$rssSet['Coral']['NavLv1'] = 'ฐานข้อมูลปะการังเทียม';
+$rssSet['Coral']['valTxtTitle'] = 'ฐานข้อมูลปะการังเทียม';
+$rssCoral = simplexml_load_file('http://marinegiscenter.dmcr.go.th/admmapph2/php/summary_data.php?layer=coral_artificial&type=count');
+$rssSet['Coral']['count'] = (int) $rssCoral->channel->item[0]->count;
+
+$rssSet['floating']['NavLv1'] = 'ฐานข้อมูลทุ่นในทะเล';
+$rssSet['floating']['valTxtTitle'] = 'ทุ่นในทะเล';
+$rssfloating = simplexml_load_file('http://marinegiscenter.dmcr.go.th/admmapph2/php/summary_data.php?layer=floating&type=count');
+$rssSet['floating']['count'] = (int) $rssfloating->channel->item[0]->count;
+
+$rssSet['sinkship']['NavLv1'] = 'ฐานข้อมูลจุดวางเรือ(อุทยานใต้ทะเล)';
+$rssSet['sinkship']['valTxtTitle'] = 'จุดวางเรือ';
+$rsssinkship = simplexml_load_file('http://marinegiscenter.dmcr.go.th/admmapph2/php/summary_data.php?layer=sinkship&type=count');
+$rssSet['sinkship']['count'] = (int) $rsssinkship->channel->item[0]->count;
+
+$smarty->assign("rss", $rssSet);
+################# End get count RSS #####################
+
+################# Start get RSS Prov #####################
+$rssProv = array();
+$rssProv['Coral']['NavLv1'] = "ฐานข้อมูลปะการังเทียม";
+$rssProv['Coral']['valTxtTitle'] = 'ปะการังเทียม';
+$rssc = simplexml_load_file('http://marinegiscenter.dmcr.go.th/admmapph2/php/summary_data.php?layer=coral_artificial&type=prov');
+foreach ($rssc->xpath('/rss/channel/item') as $KeyRssc => $valueRssc){
+    $rssProv['Coral']['item'][$KeyRssc]['prov_th'] = empty((String) $valueRssc->prov_th) ? "ไม่ระบุจังหวัด" : (String) $valueRssc->prov_th;
+    $rssProv['Coral']['item'][$KeyRssc]['count'] = (int) $valueRssc->count;
+    $rssProv['Coral']['item'][$KeyRssc]['link'] = (String) $valueRssc->link;
+    $rssProv['Coral']['item'][$KeyRssc]['linkmap'] = (String) $valueRssc->linkmap;
+}
+
+$rssProv['floating']['NavLv1'] = "ฐานข้อมูลทุ่นในทะเล";
+$rssProv['floating']['valTxtTitle'] = 'ทุ่นในทะเล';
+$rssf = simplexml_load_file('http://marinegiscenter.dmcr.go.th/admmapph2/php/summary_data.php?layer=floating&type=prov');
+foreach ($rssf->xpath('/rss/channel/item') as $KeyRssc => $valueRssc){
+    $rssProv['floating']['item'][$KeyRssc]['prov_th'] = empty((String) $valueRssc->prov_th) ? "ไม่ระบุจังหวัด" : (String) $valueRssc->prov_th;
+    $rssProv['floating']['item'][$KeyRssc]['count'] = (int) $valueRssc->count;
+    $rssProv['floating']['item'][$KeyRssc]['link'] = (String) $valueRssc->link;
+    $rssProv['floating']['item'][$KeyRssc]['linkmap'] = (String) $valueRssc->linkmap;
+}
+$rssProv['sinkship']['NavLv1'] = "ฐานข้อมูลจุดจมเรือ(อุทยานใต้ทะเล)";
+$rssProv['sinkship']['valTxtTitle'] = 'จุดจมเรือ(อุทยานใต้ทะเล)';
+$rsss = simplexml_load_file('http://marinegiscenter.dmcr.go.th/admmapph2/php/summary_data.php?layer=sinkship&type=prov');
+foreach ($rsss->xpath('/rss/channel/item') as $KeyRssc => $valueRssc){
+    $rssProv['sinkship']['item'][$KeyRssc]['prov_th'] = empty((String) $valueRssc->prov_th) ? "ไม่ระบุจังหวัด" : (String) $valueRssc->prov_th;
+    $rssProv['sinkship']['item'][$KeyRssc]['count'] = (int) $valueRssc->count;
+    $rssProv['sinkship']['item'][$KeyRssc]['link'] = (String) $valueRssc->link;
+    $rssProv['sinkship']['item'][$KeyRssc]['linkmap'] = (String) $valueRssc->linkmap;
+}
+$smarty->assign("rssProv", $rssProv);
+################# End get RSS Prov #####################
+
+    #### call activity ####
+    $ActivityLaist = $homePage->callActivity($config['activity']['masterkey']);
+    $smarty->assign("ActivityLaist", $ActivityLaist);
+
+     #### call vote ####
+    $vote = $homePage->callVote($config['vote']['masterkey']);
+    $smarty->assign("vote", $vote);
+    if(!empty($vote)){
+        $voteAns = $homePage->callVoteAns($config['vote']['masterkey'],$vote->fields['id']);
+    }
+    $smarty->assign("voteAns", $voteAns);
+
+$settingPage = array(
+    "page" => $menuActive,
+    "template" => "index.tpl",
+    "display" => "page"
+);
+
+
+$smarty->assign("pagination", $pagination);
+$smarty->assign("menu_home", true);
+$smarty->assign("fileInclude", $settingPage);
+$smarty->assign("header", "inc-header.tpl");
+$smarty->assign("footer", "inc-footer.tpl");

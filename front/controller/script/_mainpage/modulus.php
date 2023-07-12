@@ -1,54 +1,17 @@
 <?php
 // recaptcha v2
-$sitekey = '6LeZ0OQeAAAAAIY6RetHSCs9To8U_ewnPafgMllU';
-$secretkey = '6LeZ0OQeAAAAAD3lb4O6IHJIDeZLq8hGc-5UQvpM';
+// $sitekey = '6LeZ0OQeAAAAAIY6RetHSCs9To8U_ewnPafgMllU';
+// $secretkey = '6LeZ0OQeAAAAAD3lb4O6IHJIDeZLq8hGc-5UQvpM';
 // // recaptcha v3
 // $sitekey = '6LfH7xkeAAAAAPFz-fYiFvAIIVZP0aMQU6CCCdX6';
 // $secretkey = '6LfH7xkeAAAAALzFVzS3VPGR4xAle6rfqX9U8a7v';
-$smarty->assign("sitekey", $sitekey);
-$smarty->assign("secretkey", $resultSetting->fields);
+// $smarty->assign("sitekey", $sitekey);
+// $smarty->assign("secretkey", $resultSetting->fields);
 
-// if (!empty($memberLogin)) {
-// // $profileMember = callProfileMember($config['member']['masterkey'],$memberID['member_info']['id']);
-// // $smarty->assign("listProfile",$profileMember);
-//     // print_pre($url);
-//     $sql = "SELECT
-//   " . $config['member']['db'] . "." . $config['member']['db'] . "_id,
-//   " . $config['member']['db'] . "." . $config['member']['db'] . "_masterkey,
-//   " . $config['member']['db'] . "." . $config['member']['db'] . "_fname,
-//   " . $config['member']['db'] . "." . $config['member']['db'] . "_lname,
-//   " . $config['member']['db'] . "." . $config['member']['db'] . "_email,
-//   " . $config['member']['db'] . "." . $config['member']['db'] . "_date,
-//   " . $config['member']['db'] . "." . $config['member']['db'] . "_month,
-//   " . $config['member']['db'] . "." . $config['member']['db'] . "_year,
-//   " . $config['member']['db'] . "." . $config['member']['db'] . "_credate,
-//   " . $config['member']['db'] . "." . $config['member']['db'] . "_logindate,
-//   " . $config['member']['db'] . "." . $config['member']['db'] . "_status,
-//   " . $config['member']['db'] . "." . $config['member']['db'] . "_pic,
-//   " . $config['member']['db'] . "." . $config['member']['db'] . "_tel,
-//   " . $config['member']['db'] . "." . $config['member']['db'] . "_sex,
-//   " . $config['member']['db'] . "." . $config['member']['db'] . "_type,
-//   " . $config['member']['db'] . "." . $config['member']['db'] . "_address,
-//   " . $config['member']['db'] . "." . $config['member']['db'] . "_lastdate
-//
-// FROM
-//   " . $config['member']['db'] . "
-// WHERE
-//   " . $config['member']['db'] . "." . $config['member']['db'] . "_masterkey = 'mem' and
-//   " . $config['member']['db'] . "." . $config['member']['db'] . "_status = 'Enable' and
-//   " . $config['member']['db'] . "." . $config['member']['db'] . "_id = $memberID['member_info']['id']
-//   ";
-//
-//
-//
-//
-// //print_pre($sql);
-//
-//     $result = $db->execute($sql);
-//     return $result;
-//
-// print_pre($result);
-// }
+$modify="?v=".date('Ymd').time();
+$smarty->assign("modify", $modify);
+
+
 $sqlSetting = "SELECT
    " . $config['system']['setting'] . "." . $config['system']['setting'] . "_subject as subject,
    " . $config['system']['setting'] . "." . $config['system']['setting'] . "_title as title,
@@ -70,125 +33,7 @@ $sqlSetting = "SELECT
 //print_pre($resultSetting);
  $smarty->assign("settingpage", $resultSetting->fields);
 // // print_pre($resultSetting->fields);
-//
-// $sqlRelatelink = "SELECT
-// " . $config['banner']['db'] . "." . $config['banner']['db'] . "_id,
-// " . $config['banner']['db'] . "." . $config['banner']['db'] . "_masterkey,
-// " . $config['banner']['db'] . "." . $config['banner']['db'] . "_subject,
-// " . $config['banner']['db'] . "." . $config['banner']['db'] . "_title,
-// " . $config['banner']['db'] . "." . $config['banner']['db'] . "_pic,
-// " . $config['banner']['db'] . "." . $config['banner']['db'] . "_url
-//
-// FROM
-// " . $config['banner']['db'] . "
-// WHERE
-// " . $config['banner']['db'] . "." . $config['banner']['db'] . "_masterkey = '".$config['banner']['masterkey'] ."' and
-// " . $config['banner']['db'] . "." . $config['banner']['db'] . "_status = 'Home'
-//
-// ";
-//   $sql .= "
-// ORDER  BY " . $config['banner']['db'] . "." . $config['banner']['db'] . "_order DESC
-// ";
-// $resultRelatelink = $db->execute($sqlRelatelink);
-// $smarty->assign("listrelatelink", $resultRelatelink);
-//
-//
-// $langenews = $url->pagelang[3];
-// function callGroupEnews($id){
-// global $config, $db, $url;
-//   $sqlenewsgroup = "SELECT
-//   " . $config['e-news-group']['db'] . "." . $config['e-news-group']['db'] . "_id,
-//   " . $config['e-news-group']['db'] . "." . $config['e-news-group']['db'] . "_masterkey,
-//   " . $config['e-news-group']['db'] . "." . $config['e-news-group']['db'] . "_subject$langenews
-//
-//   FROM
-//   " . $config['e-news-group']['db'] . "
-//   WHERE
-//   " . $config['e-news-group']['db'] . "." . $config['e-news-group']['db'] . "_masterkey = '".$config['e-news']['masterkey'] ."'
-//   ";
-//   if (!empty($id)) {
-//     $sqlenewsgroup .= " AND " . $config['e-news-group']['db'] . "." . $config['e-news-group']['db'] . "_id = $id ";
-//   }
-//     $sqlenewsgroup .= "
-//   ORDER  BY " . $config['e-news-group']['db'] . "." . $config['e-news-group']['db'] . "_order DESC
-//   ";
-//   $resultenewsgroup = $db->execute($sqlenewsgroup);
-//   return $resultenewsgroup;
-// }
-// $resultgenews = callGroupEnews();
-// $smarty->assign("listenewsgroup", $resultgenews);
-// // print_pre($resultenewsgroup);
-//
-//
-// # setting modulus _mainpage
-// $contact = array();
-//
-// // print_pre($resultSetting);
-//
-// $contact['contact'] = unserialize($resultSetting->fields['7']);
-// // print_pre($contact['contact']);
-// // $smarty->assign("contactinfo", $contact);
-// # setting social _mainpage
-// $contact['social'] = unserialize($resultSetting->fields['6']);
-// # setting slogan _mainpage
-// // $contact['slogan'] = unserialize($resultSetting->fields['14']);
-// // $contact['fac'] = unserialize($resultSetting->fields['15']);
-// // print_pre($contact['fac']);
-// // $contact['addresspic'] = $resultSetting->fields['8'];
-// // $listDataDetail= array();
-// // foreach ($contact['fac'] as $titleKey => $value){
-// //   foreach ($value as $key => $valueDetail){
-// //     $listDataDetail[$key][$titleKey] =  $valueDetail;
-// //   }
-// //
-// // }
-//
-// // $contact['fac'] = $listDataDetail;
-// $smarty->assign("contactinfo", $contact);
-// // print_pre($contact);
-//
-// // $urlYoutubeHome = explode("v=",$contact['contact']['LinkVdo']);
-// // $smarty->assign("urlYoutubeHome",$urlYoutubeHome[1]);
-//
-//
-//
-#function assign seo & title page
 
-// function Seo($title, $desc, $keyword) {
-//     global $smarty, $resultSetting;
-//     $list = array();
-//     if (!empty($title)) {
-//
-//         if (!empty($resultSetting->fields['3'])) {
-//             $list_last = $resultSetting->fields['3'];
-//         } else {
-//             $list_last = $resultSetting->fields['5'];
-//         }
-//
-//
-//         $list['title'] = trim($title) . " - " . $list_last;
-//     } else {
-//         if (!empty($resultSetting->fields['3'])) {
-//             $list['title'] = $resultSetting->fields['3'];
-//         } else {
-//             $list['title'] = $resultSetting->fields['5'];
-//         }
-//     }
-//
-//     if (!empty($desc)) {
-//         $list['desc'] = trim($desc);
-//     } else {
-//         $list['desc'] = $resultSetting->fields['1'];
-//     }
-//
-//     if (!empty($keyword)) {
-//         $list['keyword'] = trim($keyword);
-//     } else {
-//         $list['keyword'] = $resultSetting->fields['2'];
-//     }
-//     // print_pre($list);
-//     $smarty->assign("seo", $list);
-// }
 
 function Seo($title, $desc, $keyword) {
     global $smarty, $lang;
