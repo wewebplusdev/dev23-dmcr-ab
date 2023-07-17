@@ -7,6 +7,8 @@
 <script src="<?php echo $core_template; ?>assets/js/libs/popper.min.js"></script>
 <script src="<?php echo $core_template; ?>assets/js/libs/sweetalert.min.js"></script>
 <script src="<?php echo $core_template; ?>assets/js/libs/validator.min.js"></script>
+<script src="<?php echo $core_template; ?>assets/js/libs/swiper-bundle.min.js"></script>
+<!-- <script src="<?php echo $core_template; ?>assets/js/libs/swiper-bundle.min.mjs"></script> -->
 
 <!-- Custom -->
 <script src="<?php echo $core_template; ?>assets/js/main.js<?=$modify?>"></script>
