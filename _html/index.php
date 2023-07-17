@@ -191,72 +191,81 @@
                                                 </tr>
                                             </thead>
                                         </table>
-                                        <div class="mcscroll">
-                                            <table class="table-tbody table table-light table-hover">
-                                                <tbody>
-                                                    <tr>
-                                                        <td style="width:34%" class="text-dark">กระบี่</td>
-                                                        <td style="width:22%" class="text-center">5</td>
-                                                        <td style="width:22%" class="text-center">6</td>
-                                                        <td style="width:22%" class="text-center">10</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td style="width:34%" class="text-dark">ชลบุรี</td>
-                                                        <td style="width:22%" class="text-center">5</td>
-                                                        <td style="width:22%" class="text-center">6</td>
-                                                        <td style="width:22%" class="text-center">10</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td style="width:34%" class="text-dark">พังงา</td>
-                                                        <td style="width:22%" class="text-center">5</td>
-                                                        <td style="width:22%" class="text-center">6</td>
-                                                        <td style="width:22%" class="text-center">10</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td style="width:34%" class="text-dark">ตราด</td>
-                                                        <td style="width:22%" class="text-center">5</td>
-                                                        <td style="width:22%" class="text-center">6</td>
-                                                        <td style="width:22%" class="text-center">10</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td style="width:34%" class="text-dark">สุราษฎร์ธานี</td>
-                                                        <td style="width:22%" class="text-center">5</td>
-                                                        <td style="width:22%" class="text-center">6</td>
-                                                        <td style="width:22%" class="text-center">10</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td style="width:34%" class="text-dark">ชุมพร</td>
-                                                        <td style="width:22%" class="text-center">5</td>
-                                                        <td style="width:22%" class="text-center">6</td>
-                                                        <td style="width:22%" class="text-center">10</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td style="width:34%" class="text-dark">ชุมพร</td>
-                                                        <td style="width:22%" class="text-center">5</td>
-                                                        <td style="width:22%" class="text-center">6</td>
-                                                        <td style="width:22%" class="text-center">10</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td style="width:34%" class="text-dark">ชุมพร</td>
-                                                        <td style="width:22%" class="text-center">5</td>
-                                                        <td style="width:22%" class="text-center">6</td>
-                                                        <td style="width:22%" class="text-center">10</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td style="width:34%" class="text-dark">ชุมพร</td>
-                                                        <td style="width:22%" class="text-center">5</td>
-                                                        <td style="width:22%" class="text-center">6</td>
-                                                        <td style="width:22%" class="text-center">10</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td style="width:34%" class="text-dark">ชุมพร</td>
-                                                        <td style="width:22%" class="text-center">5</td>
-                                                        <td style="width:22%" class="text-center">6</td>
-                                                        <td style="width:22%" class="text-center">10</td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
+                                        <!-- <div class="mcscroll"> -->
+                                        <div class="scroll-wrapper">
+                                            <div class="swiper scroll-swiper">
+                                                <div class="swiper-wrapper">
+                                                    <div class="swiper-slide">
+                                                        <table class="table-tbody table table-light table-hover">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td style="width:34%" class="text-dark">กระบี่</td>
+                                                                    <td style="width:22%" class="text-center">5</td>
+                                                                    <td style="width:22%" class="text-center">6</td>
+                                                                    <td style="width:22%" class="text-center">10</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="width:34%" class="text-dark">ชลบุรี</td>
+                                                                    <td style="width:22%" class="text-center">5</td>
+                                                                    <td style="width:22%" class="text-center">6</td>
+                                                                    <td style="width:22%" class="text-center">10</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="width:34%" class="text-dark">พังงา</td>
+                                                                    <td style="width:22%" class="text-center">5</td>
+                                                                    <td style="width:22%" class="text-center">6</td>
+                                                                    <td style="width:22%" class="text-center">10</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="width:34%" class="text-dark">ตราด</td>
+                                                                    <td style="width:22%" class="text-center">5</td>
+                                                                    <td style="width:22%" class="text-center">6</td>
+                                                                    <td style="width:22%" class="text-center">10</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="width:34%" class="text-dark">สุราษฎร์ธานี</td>
+                                                                    <td style="width:22%" class="text-center">5</td>
+                                                                    <td style="width:22%" class="text-center">6</td>
+                                                                    <td style="width:22%" class="text-center">10</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="width:34%" class="text-dark">ชุมพร</td>
+                                                                    <td style="width:22%" class="text-center">5</td>
+                                                                    <td style="width:22%" class="text-center">6</td>
+                                                                    <td style="width:22%" class="text-center">10</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="width:34%" class="text-dark">ชุมพร</td>
+                                                                    <td style="width:22%" class="text-center">5</td>
+                                                                    <td style="width:22%" class="text-center">6</td>
+                                                                    <td style="width:22%" class="text-center">10</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="width:34%" class="text-dark">ชุมพร</td>
+                                                                    <td style="width:22%" class="text-center">5</td>
+                                                                    <td style="width:22%" class="text-center">6</td>
+                                                                    <td style="width:22%" class="text-center">10</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="width:34%" class="text-dark">ชุมพร</td>
+                                                                    <td style="width:22%" class="text-center">5</td>
+                                                                    <td style="width:22%" class="text-center">6</td>
+                                                                    <td style="width:22%" class="text-center">10</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="width:34%" class="text-dark">ชุมพร</td>
+                                                                    <td style="width:22%" class="text-center">5</td>
+                                                                    <td style="width:22%" class="text-center">6</td>
+                                                                    <td style="width:22%" class="text-center">10</td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                                <div class="swiper-scrollbar"></div>
+                                            </div>
                                         </div>
+                                        <!-- </div> -->
                                     </div>
                                 </div>
                             </div>

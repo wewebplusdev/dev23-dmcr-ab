@@ -3,9 +3,15 @@ $--report-height: 400px;
     .card {
         min-height: $--report-height;
     }
+    .default-table .scroll-wrapper {
+        height: calc($--report-height - 50px);
+    }
     .default-table .mcscroll {
         height: calc($--report-height - 50px);
     }
+    // .scroll-swiper .swiper-slide {
+    //     height: calc($--report-height - 50px);
+    // }
 }
 .wg-charts-report {
     .card {
@@ -48,12 +54,12 @@ $--report-height: 400px;
 @media (max-width: 1199px) {
 }
 @media (max-width: 991px) {
-    .wg-charts-report{
+    .wg-charts-report {
         margin-top: 4rem;
     }
 }
 @media (max-width: 767px) {
-    .wg-charts-report{
+    .wg-charts-report {
         margin-top: 3rem;
     }
 }

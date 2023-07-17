@@ -53,6 +53,16 @@ $(document).ready(function () {
         // },
     });
 
+    var scrollSwiper = new Swiper(".scroll-swiper", {
+        direction: "vertical",
+        slidesPerView: "auto",
+        freeMode: true,
+        scrollbar: {
+            el: ".swiper-scrollbar",
+        },
+        mousewheel: true,
+    });
+
     // START: Chart.js set defaults
     Chart.defaults.font.size = 16;
     Chart.defaults.font.family = 'db_helvethaica';
