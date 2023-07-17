@@ -1,6 +1,6 @@
 <?php
 $menuActive = "home";
-$listcss[] = '<link rel="stylesheet" type="text/css" href="front/template/default/public/css/front-qa-new.css' . "?u=" . date("YdmHis") . '" />';
+$listjs[] = '<script type="text/javascript" src="front/controller/script/'.$menuActive.'/js/script.js'."?u=".date("ydmhis").'"></script>';
 $homePage = new homePage;
 ################# Start get count RSS #####################
 $rssSet = array();
@@ -66,6 +66,14 @@ $smarty->assign("rssProv", $rssProv);
         $voteAns = $homePage->callVoteAns($config['vote']['masterkey'],$vote->fields['id']);
     }
     $smarty->assign("voteAns", $voteAns);
+
+    #### call follow ####
+    $FollowCoral = $homePage->callFollow($config['follow']['coral']['masterkey']);
+    $smarty->assign("FollowCoral", $FollowCoral);
+    $Followfloating = $homePage->callFollow($config['follow']['buoy']['masterkey']);
+    $smarty->assign("Followfloating", $Followfloating);
+    $Followsinkship = $homePage->callFollow($config['follow']['sinkpoint']['masterkey']);
+    $smarty->assign("Followsinkship", $Followsinkship);
 
 $settingPage = array(
     "page" => $menuActive,

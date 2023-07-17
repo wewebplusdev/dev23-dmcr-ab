@@ -118,10 +118,11 @@ $smarty->assign("viewport",$_SESSION['viewport']);
 
 ##  lang ##
 $lang = array();
-require_once _DIR . '/front/libs/lang/' . $lang_default . '.php'; #load url
-if ($lang_default != $url->pagelang[2]) {
-    require_once _DIR . '/front/libs/lang/' . $url->pagelang[2] . '.php'; #load url
-}
+require_once _DIR . '/front/libs/lang/' . $url->pagelang[2] . '.php'; #load url
+// if ($lang_default != $url->pagelang[2]) {
+//     require_once _DIR . '/front/libs/lang/' . $url->pagelang[2] . '.php'; #load url
+// }
+
 
 
 ## addon page ##

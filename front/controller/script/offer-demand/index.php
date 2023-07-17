@@ -5,12 +5,10 @@ $contentID = $url->segment[2];
 switch ($url->segment[1]) {
     default:
         
-        $followList = $followPage->callFollow($config['follow']['coral']['masterkey']);
-        // print_pre($followList);
 
         /*## Start SEO #####*/
         $seo_desc = "";
-        $seo_title = "follow";
+        $seo_title = $lang["nav"]["offer"] ;
         $seo_keyword = "";
         Seo($seo_title, $seo_desc, $seo_keyword, $seo_pic);
         /*## End SEO #####*/
@@ -27,7 +25,7 @@ switch ($url->segment[1]) {
 
         /*## Start SEO #####*/
         $seo_desc = "";
-        $seo_title = "follow";
+        $seo_title = $lang["nav"]["offer"] ;
         $seo_keyword = "";
         Seo($seo_title, $seo_desc, $seo_keyword, $seo_pic);
         /*## End SEO #####*/

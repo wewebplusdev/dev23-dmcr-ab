@@ -607,6 +607,15 @@ function checkStartEnd($dbname, $namestart = "_sdate", $nameend = "_edate") {
 
 ##############################################
 
+function DateYearThai($strYear, $lang = "th") {
+    if($lang == 'th'){
+        $Year = $strYear + 543;
+    }else{
+        $Year = $strYear;
+    }
+    return $Year;
+}
+
 function DateThai($strDate, $function = null, $lang = "th", $type = "shot") {
 
     global $strMonthCut, $url;
@@ -620,12 +629,14 @@ function DateThai($strDate, $function = null, $lang = "th", $type = "shot") {
     $strYear2 = date("Y", strtotime($strDate));
     $strYear_mini = substr($strYear, 2, 4);
     $strMonth = date("n", strtotime($strDate));
+    $strMonth_full = date("n", strtotime($strDate));
     $strDay = date("j", strtotime($strDate));
     $strHour = date("H", strtotime($strDate));
     $strMinute = date("i", strtotime($strDate));
     $strSeconds = date("s", strtotime($strDate));
 
     $strMonth = $strMonthCut[$type][$lang][$strMonth];
+    $strMonth_full = $strMonthCut['full'][$lang][$strMonth_full];
     // print_pre($strMonth);
     if (!empty($strDate)) {
         switch ($function) {
@@ -653,6 +664,8 @@ function DateThai($strDate, $function = null, $lang = "th", $type = "shot") {
             case '11': $day =  "$strDay $strMonth $strYear | $strHour:$strMinute:$strSeconds ";
                 break;
             case '12': $day = "$strDay $strMonth $strYear_mini , $strHour:$strMinute น. ";
+                break;
+                case '13': $day = "$strDay $strMonth_full $strYear";
                 break;
             default:
                 break;

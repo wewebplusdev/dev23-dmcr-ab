@@ -8,6 +8,9 @@
 // $smarty->assign("sitekey", $sitekey);
 // $smarty->assign("secretkey", $resultSetting->fields);
 
+$menuactive = $url->segment[0];
+$smarty->assign("menuactive", $menuactive);
+
 $modify="?v=".date('Ymd').time();
 $smarty->assign("modify", $modify);
 
@@ -39,12 +42,6 @@ function Seo($title, $desc, $keyword) {
     global $smarty, $lang;
     $list = array();
     if (!empty($title)) {
-        //
-        // if (!empty($resultSetting->fields['3'])) {
-        //     $list_last = $resultSetting->fields['3'];
-        // } else {
-            // $list_last = $resultSetting->fields['5'];
-        // }
 
         $list_last = $lang['site']['name'];
         $list['title'] = trim($title) . " - " . $list_last;
@@ -67,212 +64,75 @@ function Seo($title, $desc, $keyword) {
     } else {
         $list['keyword'] = $resultSetting->fields['2'];
     }
-    // print_pre($list);
     $smarty->assign("seo", $list);
 }
 
 
 
-function callTopgraphic(){
-  global $config, $db, $url;
+function Call_File($id,$table)
+    {
+        global $config, $db, $url;
+        $lang = $url->pagelang[3];
+        $langFull = $url->pagelang[4];
 
-  $sql = "SELECT
-  " . $config['tgp']['db'] . "." . $config['tgp']['db'] . "_id as id,
-  " . $config['tgp']['db'] . "." . $config['tgp']['db'] . "_masterkey as masterkey,
-  " . $config['tgp']['db'] . "." . $config['tgp']['db'] . "_subject as subject,
-  " . $config['tgp']['db'] . "." . $config['tgp']['db'] . "_title as title,
-  " . $config['tgp']['db'] . "." . $config['tgp']['db'] . "_pic as pic,
-  " . $config['tgp']['db'] . "." . $config['tgp']['db'] . "_url as url,
-  " . $config['tgp']['db'] . "." . $config['tgp']['db'] . "_target as target,
-  " . $config['tgp']['db'] . "." . $config['tgp']['db'] . "_credate as credate
-
-  FROM
-  " . $config['tgp']['db'] . "
-  WHERE
-  " . $config['tgp']['db'] . "." . $config['tgp']['db'] . "_masterkey = '".$config['tgp']['masterkey']."' and
-  " . $config['tgp']['db'] . "." . $config['tgp']['db'] . "_status = 'Enable' and
-  ((" . $config['tgp']['db'] . "." . $config['tgp']['db'] . "_sdate='0000-00-00 00:00:00' AND
-  " . $config['tgp']['db'] . "." . $config['tgp']['db'] . "_edate='0000-00-00 00:00:00')   OR
-  (" . $config['tgp']['db'] . "." . $config['tgp']['db'] . "_sdate='0000-00-00 00:00:00' AND
-  TO_DAYS(" . $config['tgp']['db'] . "." . $config['tgp']['db'] . "_edate)>=TO_DAYS(NOW()) ) OR
-  (TO_DAYS(" . $config['tgp']['db'] . "." . $config['tgp']['db'] . "_sdate)<=TO_DAYS(NOW()) AND
-  " . $config['tgp']['db'] . "." . $config['tgp']['db'] . "_edate='0000-00-00 00:00:00' )  OR
-  (TO_DAYS(" . $config['tgp']['db'] . "." . $config['tgp']['db'] . "_sdate)<=TO_DAYS(NOW()) AND
-  TO_DAYS(" . $config['tgp']['db'] . "." . $config['tgp']['db'] . "_edate)>=TO_DAYS(NOW())  ))
-
-  ";
-
-
-  $sql .= "
-  ORDER  BY " . $config['tgp']['db'] . "." . $config['tgp']['db'] . "_order DESC
-  ";
-
-// print_pre($sql);
-  $result = $db->execute($sql);
-  return $result;
-}
-
-
-
-$callTGP = callTopgraphic();
-$smarty->assign("callTGP",$callTGP);
-
-
-function callPolicy($masterkey){
-  global $config, $db, $url;
-
-  $sql = "SELECT
-  " . $config['about']['policy'] . "." . $config['about']['policy'] . "_id,
-  " . $config['about']['policy'] . "." . $config['about']['policy'] . "_masterkey,
-  " . $config['about']['policy'] . "." . $config['about']['policy'] . "_htmlfilename,
-  " . $config['about']['policy'] . "." . $config['about']['policy'] . "_description,
-  " . $config['about']['policy'] . "." . $config['about']['policy'] . "_keywords,
-  " . $config['about']['policy'] . "." . $config['about']['policy'] . "_metatitle
-
-  FROM
-  " . $config['about']['policy'] . "
-  WHERE
-  " . $config['about']['policy'] . "." . $config['about']['policy'] . "_masterkey = '".$masterkey."' and
-  " . $config['about']['policy'] . "." . $config['about']['policy'] . "_status = 'Enable' 
-
-  ";
-
-// print_pre($sql);
-  $result = $db->execute($sql);
-  return $result;
-}
-
-// print_pre($config['about']['policyfile']);
- function callAboutPolicyFile($id) {
-     global $config, $db, $url;
-     $sql = "SELECT
-    *,
-    '" . $config['about']['policyfile'] . "' as td
-  FROM
-    " . $config['about']['policyfile'] . "
-  WHERE
-    " . $config['about']['policyfile'] . "." . $config['about']['policyfile'] . "_contantid = $id
+        $sql = "SELECT 
+            " . $table . "." . $table . "_id                AS id,
+            " . $table . "." . $table . "_contantid         AS contantid,
+            " . $table . "." . $table . "_filename          AS filename,
+            " . $table . "." . $table . "_name              AS name,
+            " . $table . "." . $table . "_download          AS download
+    FROM " . $table . "  
+    WHERE 1=1 
+    AND " . $table . "." . $table . "_contantid = '" . $id . "'
+    AND " . $table . "." . $table . "_language = '" . $langFull . "'
     ";
-// print_pre($sql);
-     $result = $db->execute($sql);
-     return $result;
- }
- 
 
-$callPolicyP1 = callPolicy($config['masterkey']['policy']['secure']);
-$callPolicyP2 = callPolicy($config['masterkey']['policy']['site']);
-$callPolicyP3 = callPolicy($config['masterkey']['policy']['protect']);
-$smarty->assign("callPolicyP1",$callPolicyP1);
-$smarty->assign("callPolicyP2",$callPolicyP2);
-$smarty->assign("callPolicyP3",$callPolicyP3);
 
-$infoPolicyFileP1 = callAboutPolicyFile($callPolicyP1->fields[0]);
-$infoPolicyFileP2 = callAboutPolicyFile($callPolicyP2->fields[0]);
-$infoPolicyFileP3 = callAboutPolicyFile($callPolicyP3->fields[0]);
-$smarty->assign("infoPolicyFileP1",$infoPolicyFileP1);
-$smarty->assign("infoPolicyFileP2",$infoPolicyFileP2);
-$smarty->assign("infoPolicyFileP3",$infoPolicyFileP3);
+        $sql .= " ORDER BY " . $table . "." . $table . "_id ASC ";
+        $result = $db->execute($sql);
+        return $result;
+    }
 
-// print_pre($callPolicyP2);
-  $smarty->assign("masterkeyPl1",$config['masterkey']['policy']['secure']);
-  $smarty->assign("masterkeyPl2",$config['masterkey']['policy']['site']);
-  $smarty->assign("masterkeyPl3",$config['masterkey']['policy']['protect']);
-  
-  
-  
-  //POPUP
-  
-  function callPopup($masterkey){
-  global $config, $db, $url;
+function Call_Album($id, $table)
+    {
+        global $config, $db, $url;
+        $lang = $url->pagelang[3];
+        $langFull = $url->pagelang[4];
 
-  $sql = "SELECT
-  " . $config['popup']['db'] . "." . $config['popup']['db'] . "_id as id,
-  " . $config['popup']['db'] . "." . $config['popup']['db'] . "_masterkey as masterkey,
-  " . $config['popup']['db'] . "." . $config['popup']['db'] . "_subject as subject,
-  " . $config['popup']['db'] . "." . $config['popup']['db'] . "_file as file,
-  " . $config['popup']['db'] . "." . $config['popup']['db'] . "_url as url,
-  " . $config['popup']['db'] . "." . $config['popup']['db'] . "_target as target
+        $sql = "SELECT 
+            " . $table . "." . $table . "_id                AS id,
+            " . $table . "." . $table . "_contantid         AS contantid,
+            " . $table . "." . $table . "_filename          AS filename,
+            " . $table . "." . $table . "_name              AS name,
+            " . $table . "." . $table . "_download          AS download
+    FROM " . $table . "  
+    WHERE 1=1 AND
+    " . $table . "." . $table . "_contantid = '" . $id . "'
+    AND " . $table . "." . $table . "_language = '" . $langFull . "'
+    ";
 
-  FROM
-  " . $config['popup']['db'] . "
-  WHERE
-  " . $config['popup']['db'] . "." . $config['popup']['db'] . "_masterkey = '".$masterkey."' and
-  " . $config['popup']['db'] . "." . $config['popup']['db'] . "_status = 'Enable' and
-  ((" . $config['popup']['db'] . "." . $config['popup']['db'] . "_sdate='0000-00-00 00:00:00' AND
-  " . $config['popup']['db'] . "." . $config['popup']['db'] . "_edate='0000-00-00 00:00:00')   OR
-  (" . $config['popup']['db'] . "." . $config['popup']['db'] . "_sdate='0000-00-00 00:00:00' AND
-  TO_DAYS(" . $config['popup']['db'] . "." . $config['popup']['db'] . "_edate)>=TO_DAYS(NOW()) ) OR
-  (TO_DAYS(" . $config['popup']['db'] . "." . $config['popup']['db'] . "_sdate)<=TO_DAYS(NOW()) AND
-  " . $config['popup']['db'] . "." . $config['popup']['db'] . "_edate='0000-00-00 00:00:00' )  OR
-  (TO_DAYS(" . $config['popup']['db'] . "." . $config['popup']['db'] . "_sdate)<=TO_DAYS(NOW()) AND
-  TO_DAYS(" . $config['popup']['db'] . "." . $config['popup']['db'] . "_edate)>=TO_DAYS(NOW())  ))
+        $sql .= " ORDER BY " . $table . "." . $table . "_id ASC ";
+        // print_pre($sql);
+        $result = $db->execute($sql);
+        return $result;
+    }
 
-  ";
-
-// print_pre($sql);
-  $result = $db->execute($sql);
-  return $result;
-}
-
-$infoPopup = callPopup($config['popup']['masterkey']);
-$smarty->assign('infoPopup',$infoPopup);
-
-/**Call Menu */
-function callMenuGroup($masterkey=null){
-  global $config, $db, $url;
-
-  $sql = "SELECT
-  " . $config['menu']['group'] . "." . $config['menu']['group'] . "_id as id,
-  " . $config['menu']['group'] . "." . $config['menu']['group'] . "_masterkey as masterkey,
-  " . $config['menu']['group'] . "." . $config['menu']['group'] . "_subject as subject,
-  " . $config['menu']['group'] . "." . $config['menu']['group'] . "_title as title,
-  " . $config['menu']['group'] . "." . $config['menu']['group'] . "_pic as pic,
-  " . $config['menu']['group'] . "." . $config['menu']['group'] . "_url as url,
-  " . $config['menu']['group'] . "." . $config['menu']['group'] . "_target as target,
-  " . $config['menu']['group'] . "." . $config['menu']['group'] . "_column as columns
-  FROM
-  " . $config['menu']['group'] . "
-  WHERE
-  " . $config['menu']['group'] . "." . $config['menu']['group'] . "_masterkey = '$masterkey' and
-  " . $config['menu']['group'] . "." . $config['menu']['group'] . "_status != 'Disable'
-";
-
-  $sql .= "
-   ORDER  BY " . $config['menu']['group'] . "." . $config['menu']['group'] . "_order DESC
-   ";
-
-  // echo $sql;
-  $result = $db->execute($sql);
-  return $result;
-}
-
-$infoMenuGroup= callMenuGroup($config['menu']['masterkey']);
-$smarty->assign('infoMenuGroup',$infoMenuGroup);
-
-function callMenu($masterkey=null,$gid=null){
-  global $config, $db, $url;
-
-  $sql = "SELECT
-  " . $config['menu']['db'] . "." . $config['menu']['db'] . "_id as id,
-  " . $config['menu']['db'] . "." . $config['menu']['db'] . "_masterkey as masterkey,
-  " . $config['menu']['db'] . "." . $config['menu']['db'] . "_groupProoject as gid,
-  " . $config['menu']['db'] . "." . $config['menu']['db'] . "_subject as subject,
-  " . $config['menu']['db'] . "." . $config['menu']['db'] . "_title as title,
-  " . $config['menu']['db'] . "." . $config['menu']['db'] . "_url as url,
-  " . $config['menu']['db'] . "." . $config['menu']['db'] . "_target as target
-  FROM
-  " . $config['menu']['db'] . "
-  WHERE
-  " . $config['menu']['db'] . "." . $config['menu']['db'] . "_masterkey = '$masterkey' and
-  " . $config['menu']['db'] . "." . $config['menu']['db'] . "_groupProoject = '$gid' and
-  " . $config['menu']['db'] . "." . $config['menu']['db'] . "_status = 'Enable'
-";
-
-  $sql .= "
-   ORDER  BY " . $config['menu']['db'] . "." . $config['menu']['db'] . "_order DESC
-   ";
-
-  // print_pre($sql);
-  $result = $db->execute($sql);
-  return $result;
-}
+    function updateView($id, $masterkey) {
+        global $config, $db, $url;
+     
+        $sql = "SELECT
+          " . $config['cms']['db'] . "." . $config['cms']['db'] . "_view
+      FROM
+        " . $config['cms']['db'] . "
+      WHERE
+      " . $config['cms']['db'] . "." . $config['cms']['db'] . "_id = $id ";
+     
+        $result = $db->execute($sql);
+     
+        $view = $result->fields[0] + 1;
+     
+        $listView[$config['cms']['db'] . '_view'] = $view;
+        $updateView = sqlupdate($listView, $config['cms']['db'], $config['cms']['db'] . "_id", $id);
+     
+     // print_pre($updateView);
+     }
