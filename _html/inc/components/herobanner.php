@@ -4,7 +4,11 @@
             <?php for ($i = 1; $i <= 5; $i++) { ?>
                 <div class="swiper-slide">
                     <figure class="cover">
-                        <img alt="boats harbour lerici liguria italy" src="<?php echo $core_template; ?>assets/img/upload/boats-harbour-lerici-liguria-italy.png" loading="lazy">
+                        <img alt="boats harbour lerici liguria italy" 
+                            src="<?php echo $core_template; ?>assets/img/upload/boats-harbour-lerici-liguria-italy-lowQuality.png" 
+                            data-src="<?php echo $core_template; ?>assets/img/upload/boats-harbour-lerici-liguria-italy.png" 
+                            class="lazy"
+                            >
                     </figure>
                     <div class="hero-banner-content">
                         <div class="wrapper">

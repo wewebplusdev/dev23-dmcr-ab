@@ -1,5 +1,24 @@
+window.onload = function () {
+    $(".preload").delay(400).fadeOut("200", function () {
+        $('#preload').addClass('move');
+        $('#preload').fadeOut(200);
+    });
+};
+
 $(document).ready(function () {
     // console.log( "ready!" );
+
+    $(function () {
+        AOS.init({
+            duration: 2000,
+            once: true,
+            offset: 0,
+        });
+    });
+
+
+    var lazyLoadInstance = new LazyLoad();
+    // lazyLoadInstance.update();\
 
     $('.layout-header .btn-search').click(function () {
         $('.search-input').removeClass('hide');
@@ -33,5 +52,19 @@ $(document).ready(function () {
         //     el: '.swiper-scrollbar',
         // },
     });
+
+    // START: Chart.js set defaults
+    Chart.defaults.font.size = 16;
+    Chart.defaults.font.family = 'db_helvethaica';
+    Chart.defaults.font.lineHeight = '1.2em'
+    // END: Chart.js set defaults
+
+    $('.select-control').select2({
+        minimumResultsForSearch: -1,
+        placeholder: function () {
+            $(this).data('placeholder');
+        }
+    });
+
 
 });

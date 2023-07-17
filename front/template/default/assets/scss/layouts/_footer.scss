@@ -2,7 +2,9 @@
     padding-top: 2.5rem;
     padding-bottom: 3rem;
     color: var(--color-light);
-    background: url("../img/background/bg-footer.png") center no-repeat;
+    // background: url("../img/background/bg-footer.png") center no-repeat;
+    background-position: center;
+    background-repeat: no-repeat;
     background-size: cover;
     font-size: var(--typo-sm);
     .brand {
