@@ -11,7 +11,7 @@
 <!-- Custom -->
 <script src="{$template}/assets/js/main.js{$modify}"></script>
 <script type="text/javascript">var raf = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;</script>
-
+<script src="https://code.highcharts.com/highcharts.js"></script>
 {strip}
     {if {$assignjs|default:null}}
         {foreach $assignjs as $addAssetScript}
