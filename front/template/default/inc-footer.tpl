@@ -1,6 +1,5 @@
 
 <footer class="layout-footer lazy" data-bg="{$template}/assets/img/background/bg-footer.png">
-
     <div class="container-lg">
         <div class="vstack gap-3">
             <div class="no-gutters row">
@@ -123,28 +122,28 @@
                                 <div class="social-list">
                                     <div class="hstack gap-sm-2 gap-1">
                                         <a class="link rounded-circle fb" title="Facebook" target="_blank" rel="nofollow" href="https://www.facebook.com/DMCRTH">
-                                            <div class="icon"><img alt="Facebook" src="{$template}/assets/img/icon/social-fb.png{$setVersionTemp}" class="lazy"></div>
+                                            <div class="icon"><img alt="Facebook" data-src="{$template}/assets/img/icon/social-fb.png{$setVersionTemp}" class="lazy"></div>
                                         </a>
                                         <a class="link rounded-circle tw" title="Twitter" target="_blank" rel="nofollow" href="https://twitter.com/dmcrth">
-                                            <div class="icon"><img alt="Twitter" src="{$template}/assets/img/icon/social-tw.png{$setVersionTemp}" class="lazy"></div>
+                                            <div class="icon"><img alt="Twitter" data-src="{$template}/assets/img/icon/social-tw.png{$setVersionTemp}" class="lazy"></div>
                                         </a>
                                         <a class="link rounded-circle ig" title="Instagram" target="_blank" rel="nofollow" href="https://www.instagram.com/dmcrth/">
-                                            <div class="icon"><img alt="Instagram" src="{$template}/assets/img/icon/social-ig.png{$setVersionTemp}" class="lazy"></div>
+                                            <div class="icon"><img alt="Instagram" data-src="{$template}/assets/img/icon/social-ig.png{$setVersionTemp}" class="lazy"></div>
                                         </a>
                                         <a class="link rounded-circle yt" title="Youtube" target="_blank" href="https://www.youtube.com/channel/UC4_fXOSelonvCzuv0jc4qbg">
-                                            <div class="icon"><img alt="Youtube" src="{$template}/assets/img/icon/social-yt.png{$setVersionTemp}" class="lazy"></div>
+                                            <div class="icon"><img alt="Youtube" data-src="{$template}/assets/img/icon/social-yt.png{$setVersionTemp}" class="lazy"></div>
                                         </a>
                                         <a class="link rounded-circle line" title="Line" target="_blank" rel="nofollow" href="https://line.me/ti/p/~@DMCRTH">
-                                            <div class="icon"><img alt="Line" src="{$template}/assets/img/icon/social-li.png{$setVersionTemp}" class="lazy"></div>
+                                            <div class="icon"><img alt="Line" data-src="{$template}/assets/img/icon/social-li.png{$setVersionTemp}" class="lazy"></div>
                                         </a>
                                         <a class="link rounded-circle tt" title="Tiktok" target="_blank" rel="nofollow" href="https://www.tiktok.com/@dmcrth">
-                                            <div class="icon"><img alt="Tiktok" src="{$template}/assets/img/icon/social-tt.png{$setVersionTemp}" class="lazy"></div>
+                                            <div class="icon"><img alt="Tiktok" data-src="{$template}/assets/img/icon/social-tt.png{$setVersionTemp}" class="lazy"></div>
                                         </a>
                                         <a class="link rounded-circle back-office" title="Back Office" target="_blank" rel="nofollow" href="{$ul}/weadmin">
-                                            <div class="icon"><img alt="Back Office" src="{$template}/assets/img/icon/icon-back-office.svg{$setVersionTemp}" class="lazy"></div>
+                                            <div class="icon"><img alt="Back Office" data-src="{$template}/assets/img/icon/icon-back-office.svg{$setVersionTemp}" class="lazy"></div>
                                         </a>
                                         <a class="link rounded-circle one-account" title="One Account" target="_blank" rel="nofollow" href="https://oneaccount.dmcr.go.th/weadmin/">
-                                            <div class="icon"><img alt="One Account" src="{$template}/assets/img/icon/social-login.png{$setVersionTemp}" class="lazy"></div>
+                                            <div class="icon"><img alt="One Account" data-src="{$template}/assets/img/icon/social-login.png{$setVersionTemp}" class="lazy"></div>
                                         </a>
                                     </div>
                                 </div>
@@ -157,7 +156,7 @@
                 <div class="col-md-auto col-12">
                     <div class="policies">
                         <div class="policy-list hstack gap-3" id="get_menu_policy">
-                            <button type="button" class="link btn btn-link"><span>นโยบายการคุ้มครองข้อมูลส่วนบุคคล</span></button>
+                            <button type="button" class="link btn btn-link" data-bs-toggle="modal" data-bs-target="#policyModal1"><span>นโยบายการคุ้มครองข้อมูลส่วนบุคคล</span></button>
                             <button type="button" class="link btn btn-link"><span>นโยบายเว็บไซต์</span></button>
                             <button type="button" class="link btn btn-link"><span>นโยบายการรักษาความมั่นคงปลอดภัยเว็บไซต์</span></button>
                         </div>
@@ -347,6 +346,10 @@
 	</a>
 
 </footer>
+
+{* Include Modals *}
+{include file="inc-modal.tpl" title=title}
+{* Include Modals *}
 
 <!-- popup -->
 {include file="popup.tpl" title=title}

@@ -310,7 +310,20 @@
     .select2-selection--single .select2-selection__arrow b {
         display: none;
     }
+    .select2-dropdown {
+        border-color: var(--color-border);
+    }
+    .select2-results__option {
+        padding: 10px 10px;
+    }
+    .select2-results__option--highlighted.select2-results__option--selectable {
+        background-color: var(--color-secondary);
+        &.select2-results__option--selected {
+            background-color: var(--color-primary);
+        }
+    }
 }
+
 
 .sort-options {
     .form-label {

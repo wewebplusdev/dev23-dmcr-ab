@@ -16,7 +16,8 @@ $--tabs-overlapse: 164px;
         height: 100%;
         top: $--tabs-overlapse;
         left: 0;
-        z-index: -1;
+        // z-index: -1;
+        pointer-events: none;
     }
     .whead .title {
         color: var(--color-light);
@@ -26,7 +27,9 @@ $--tabs-overlapse: 164px;
     .head-title .h-title {
         color: var(--color-primary);
     }
-    
+    .scroll-wrapper {
+        height: 540px;
+    }
     .mcscroll {
         height: 530px;
     }
@@ -64,5 +67,4 @@ $--tabs-overlapse: 164px;
     }
 }
 @media (max-width: 575px) {
-   
 }

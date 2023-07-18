@@ -1,32 +1,32 @@
 <?php
-/* Smarty version 3.1.30, created on 2023-07-18 16:24:21
+/* Smarty version 3.1.30, created on 2023-07-18 16:42:11
   from "/Applications/XAMPP/xamppfiles/htdocs/dev23-dmcr-ab/front/template/default/inc-footer.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_64b65a45967083_84358980',
+  'unifunc' => 'content_64b65e734c2bc7_43444868',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '2951c0612d31576a1317c07c984bab0c6d1d2ceb' => 
     array (
       0 => '/Applications/XAMPP/xamppfiles/htdocs/dev23-dmcr-ab/front/template/default/inc-footer.tpl',
-      1 => 1689672257,
+      1 => 1689673326,
       2 => 'file',
     ),
   ),
   'includes' => 
   array (
+    'file:inc-modal.tpl' => 1,
     'file:popup.tpl' => 1,
   ),
 ),false)) {
-function content_64b65a45967083_84358980 (Smarty_Internal_Template $_smarty_tpl) {
+function content_64b65e734c2bc7_43444868 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 
 <footer class="layout-footer lazy" data-bg="<?php echo $_smarty_tpl->tpl_vars['template']->value;?>
 /assets/img/background/bg-footer.png">
-
     <div class="container-lg">
         <div class="vstack gap-3">
             <div class="no-gutters row">
@@ -153,43 +153,43 @@ function content_64b65a45967083_84358980 (Smarty_Internal_Template $_smarty_tpl)
                                 <div class="social-list">
                                     <div class="hstack gap-sm-2 gap-1">
                                         <a class="link rounded-circle fb" title="Facebook" target="_blank" rel="nofollow" href="https://www.facebook.com/DMCRTH">
-                                            <div class="icon"><img alt="Facebook" src="<?php echo $_smarty_tpl->tpl_vars['template']->value;?>
+                                            <div class="icon"><img alt="Facebook" data-src="<?php echo $_smarty_tpl->tpl_vars['template']->value;?>
 /assets/img/icon/social-fb.png<?php echo $_smarty_tpl->tpl_vars['setVersionTemp']->value;?>
 " class="lazy"></div>
                                         </a>
                                         <a class="link rounded-circle tw" title="Twitter" target="_blank" rel="nofollow" href="https://twitter.com/dmcrth">
-                                            <div class="icon"><img alt="Twitter" src="<?php echo $_smarty_tpl->tpl_vars['template']->value;?>
+                                            <div class="icon"><img alt="Twitter" data-src="<?php echo $_smarty_tpl->tpl_vars['template']->value;?>
 /assets/img/icon/social-tw.png<?php echo $_smarty_tpl->tpl_vars['setVersionTemp']->value;?>
 " class="lazy"></div>
                                         </a>
                                         <a class="link rounded-circle ig" title="Instagram" target="_blank" rel="nofollow" href="https://www.instagram.com/dmcrth/">
-                                            <div class="icon"><img alt="Instagram" src="<?php echo $_smarty_tpl->tpl_vars['template']->value;?>
+                                            <div class="icon"><img alt="Instagram" data-src="<?php echo $_smarty_tpl->tpl_vars['template']->value;?>
 /assets/img/icon/social-ig.png<?php echo $_smarty_tpl->tpl_vars['setVersionTemp']->value;?>
 " class="lazy"></div>
                                         </a>
                                         <a class="link rounded-circle yt" title="Youtube" target="_blank" href="https://www.youtube.com/channel/UC4_fXOSelonvCzuv0jc4qbg">
-                                            <div class="icon"><img alt="Youtube" src="<?php echo $_smarty_tpl->tpl_vars['template']->value;?>
+                                            <div class="icon"><img alt="Youtube" data-src="<?php echo $_smarty_tpl->tpl_vars['template']->value;?>
 /assets/img/icon/social-yt.png<?php echo $_smarty_tpl->tpl_vars['setVersionTemp']->value;?>
 " class="lazy"></div>
                                         </a>
                                         <a class="link rounded-circle line" title="Line" target="_blank" rel="nofollow" href="https://line.me/ti/p/~@DMCRTH">
-                                            <div class="icon"><img alt="Line" src="<?php echo $_smarty_tpl->tpl_vars['template']->value;?>
+                                            <div class="icon"><img alt="Line" data-src="<?php echo $_smarty_tpl->tpl_vars['template']->value;?>
 /assets/img/icon/social-li.png<?php echo $_smarty_tpl->tpl_vars['setVersionTemp']->value;?>
 " class="lazy"></div>
                                         </a>
                                         <a class="link rounded-circle tt" title="Tiktok" target="_blank" rel="nofollow" href="https://www.tiktok.com/@dmcrth">
-                                            <div class="icon"><img alt="Tiktok" src="<?php echo $_smarty_tpl->tpl_vars['template']->value;?>
+                                            <div class="icon"><img alt="Tiktok" data-src="<?php echo $_smarty_tpl->tpl_vars['template']->value;?>
 /assets/img/icon/social-tt.png<?php echo $_smarty_tpl->tpl_vars['setVersionTemp']->value;?>
 " class="lazy"></div>
                                         </a>
                                         <a class="link rounded-circle back-office" title="Back Office" target="_blank" rel="nofollow" href="<?php echo $_smarty_tpl->tpl_vars['ul']->value;?>
 /weadmin">
-                                            <div class="icon"><img alt="Back Office" src="<?php echo $_smarty_tpl->tpl_vars['template']->value;?>
+                                            <div class="icon"><img alt="Back Office" data-src="<?php echo $_smarty_tpl->tpl_vars['template']->value;?>
 /assets/img/icon/icon-back-office.svg<?php echo $_smarty_tpl->tpl_vars['setVersionTemp']->value;?>
 " class="lazy"></div>
                                         </a>
                                         <a class="link rounded-circle one-account" title="One Account" target="_blank" rel="nofollow" href="https://oneaccount.dmcr.go.th/weadmin/">
-                                            <div class="icon"><img alt="One Account" src="<?php echo $_smarty_tpl->tpl_vars['template']->value;?>
+                                            <div class="icon"><img alt="One Account" data-src="<?php echo $_smarty_tpl->tpl_vars['template']->value;?>
 /assets/img/icon/social-login.png<?php echo $_smarty_tpl->tpl_vars['setVersionTemp']->value;?>
 " class="lazy"></div>
                                         </a>
@@ -204,7 +204,7 @@ function content_64b65a45967083_84358980 (Smarty_Internal_Template $_smarty_tpl)
                 <div class="col-md-auto col-12">
                     <div class="policies">
                         <div class="policy-list hstack gap-3" id="get_menu_policy">
-                            <button type="button" class="link btn btn-link"><span>นโยบายการคุ้มครองข้อมูลส่วนบุคคล</span></button>
+                            <button type="button" class="link btn btn-link" data-bs-toggle="modal" data-bs-target="#policyModal1"><span>นโยบายการคุ้มครองข้อมูลส่วนบุคคล</span></button>
                             <button type="button" class="link btn btn-link"><span>นโยบายเว็บไซต์</span></button>
                             <button type="button" class="link btn btn-link"><span>นโยบายการรักษาความมั่นคงปลอดภัยเว็บไซต์</span></button>
                         </div>
@@ -423,6 +423,12 @@ viewport=desktop"<?php }?> class="alert alert-dismissible fade in boxdestopsite"
 	</a>
 
 </footer>
+
+
+<?php $_smarty_tpl->_subTemplateRender("file:inc-modal.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('title'=>'title'), 0, false);
+?>
+
+
 
 <!-- popup -->
 <?php $_smarty_tpl->_subTemplateRender("file:popup.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('title'=>'title'), 0, false);

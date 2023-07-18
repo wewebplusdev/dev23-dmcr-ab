@@ -53,6 +53,43 @@ $(document).ready(function () {
         // },
     });
 
+    const utSwiper = new Swiper('.wg-utilization-tracking .swiper', {
+        // Optional parameters
+        slidesPerView: 3,
+        spaceBetween: 40,
+        // loop: true,
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        breakpoints: {
+            0: {
+                slidesPerView: 1,
+                spaceBetween: 15,
+                navigation: false
+            },
+            578: {
+                slidesPerView: 2,
+                spaceBetween: 20,
+            },
+            992: {
+                slidesPerView: 3,
+                spaceBetween: 20,
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+            },
+            1199: {
+                spaceBetween: 40
+            }
+        }
+    });
+
     var scrollSwiper = new Swiper(".scroll-swiper", {
         direction: "vertical",
         slidesPerView: "auto",

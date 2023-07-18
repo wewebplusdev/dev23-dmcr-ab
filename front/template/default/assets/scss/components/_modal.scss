@@ -1,5 +1,5 @@
-.modal {
-}
+// .modal {
+// }
 .modal-header {
     padding-left: 0;
     padding-right: 0;
@@ -25,4 +25,8 @@
     min-height: 100px;
     background: url("../img/background/bg-popup.png") center top no-repeat;
     background-size: cover;
+}
+
+@media (max-width: 575px) {
+    .modal-header .btn-close {right: 2px;}
 }
