@@ -7,12 +7,14 @@
 <body>
 	
     <div class="global-container">
+
         {include file="$header" title=title}
 
-        <section class="site-container" style="margin-top: 150px;">
+        <section class="layout-container" style="margin-top: 150px;">
             {include file="{$fileInclude|templateInclude:$settemplate}" title=pageContent}
         </section>
 
+        {include file="$footer" title=title}
         
     </div>
 
