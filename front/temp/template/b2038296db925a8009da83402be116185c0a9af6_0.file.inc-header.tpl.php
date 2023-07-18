@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2023-07-18 13:36:32
+/* Smarty version 3.1.30, created on 2023-07-18 13:46:51
   from "/Applications/XAMPP/xamppfiles/htdocs/dev23-dmcr-ab/front/template/default/inc-header.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_64b632f07eee49_21105081',
+  'unifunc' => 'content_64b6355b40b6e4_91487449',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'b2038296db925a8009da83402be116185c0a9af6' => 
     array (
       0 => '/Applications/XAMPP/xamppfiles/htdocs/dev23-dmcr-ab/front/template/default/inc-header.tpl',
-      1 => 1689612713,
+      1 => 1689662732,
       2 => 'file',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:inc-search.tpl' => 2,
   ),
 ),false)) {
-function content_64b632f07eee49_21105081 (Smarty_Internal_Template $_smarty_tpl) {
+function content_64b6355b40b6e4_91487449 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <header class="layout-header">
 	<div class="top-bar">
@@ -30,7 +30,9 @@ function content_64b632f07eee49_21105081 (Smarty_Internal_Template $_smarty_tpl)
 				<div class="col-auto">
 					<div class="nav-size" data-aos="fade-left">
 						<div class="row align-items-center no-gutters">
-							<div class="col-auto"><label class="control-label">ขนาด</label></div>
+							<div class="col-auto">
+								<label class="control-label">ขนาด</label>
+							</div>
 							<div class="col">
 								<div class="hstack">
 									<a id="theme-style-1" title="ขนาดอักษรเล็ก" class="nav-size-small fzSmall" target="_self" href="javascript:void(0);">ก</a>
@@ -85,9 +87,10 @@ function content_64b632f07eee49_21105081 (Smarty_Internal_Template $_smarty_tpl)
 	</div>
 	<nav class="navbar navbar-expand-lg navbar-light">
 		<div class="container-lg">
-			<a href="/" class="navbar-brand">
+			<a href="<?php echo $_smarty_tpl->tpl_vars['ul']->value;?>
+/home" class="navbar-brand">
 				<img alt="DMCR logo" src="<?php echo $_smarty_tpl->tpl_vars['template']->value;?>
-/assets/img/static/logo.png" decoding="async" data-nimg="fill" class="d-inline-block align-top" style="position:absolute;height:100%;width:100%;left:0;top:0;right:0;bottom:0;color:transparent">
+/assets/img/static/logo.png" class="d-inline-block align-top" style="position:absolute;height:100%;width:100%;left:0;top:0;right:0;bottom:0;color:transparent">
 			</a>
 			<button type="button" class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#basic-navbar-nav" aria-controls="basic-navbar-nav" aria-label="Toggle navigation">
 				<div>

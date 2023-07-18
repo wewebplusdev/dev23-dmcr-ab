@@ -7,6 +7,11 @@
 <script src="{$template}/assets/js/libs/popper.min.js"></script>
 <script src="{$template}/assets/js/libs/sweetalert.min.js"></script>
 <script src="{$template}/assets/js/libs/validator.min.js"></script>
+<script src="{$template}/assets/js/libs/swiper-bundle.min.js"></script>
+<script src="{$template}/assets/js/libs/chart.js"></script>
+<script src="{$template}/assets/js/libs/select2.min.js"></script>
+<script src="{$template}/assets/js/libs/aos.js"></script>
+<script src="{$template}/assets/js/libs/lazyload.min.js"></script>
 
 <!-- Custom -->
 <script src="{$template}/assets/js/main.js{$modify}"></script>

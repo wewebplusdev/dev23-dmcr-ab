@@ -116,4 +116,79 @@ $(document).ready(function () {
         });
 
     });
+
+    // START: Chart.js
+    var charts = ['ปะการังเทียม', 'ทุ่นในทะเล', 'จุดวางเรือ']
+
+    var data1 = [680, 693, 66, 253, 95, 55];
+    var data2 = [210, 693, 6, 63, 59, 500];
+    var labels = ["กระบี่", "ชลบุรี", "พังงา", "ตราด", "สุราษฎร์ธานี", "ชุมพร"];
+
+    var colorPrimary = '#004AC9'
+    var colorSecondary = '#F76A00'
+
+    var ctx = document.getElementById("myChart");
+    var myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: labels,
+            datasets: [{
+                label: "ทรัพยากรทางทะเลและชายฝั่ง ",
+                data: data1,
+                backgroundColor: colorPrimary
+            }, {
+                label: "อื่นๆ ",
+                data: data2,
+                backgroundColor: colorSecondary
+            }],
+        },
+        options: {
+            plugins: {
+                title: {
+                    display: true,
+                    text: "ปะการังเทียม",
+                    font: {
+                        size: 18,
+                        weight: 'normal'
+                    },
+                    align: 'start',
+                    padding: {
+                        top: 10,
+                        bottom: 30
+                    }
+                },
+                legend: {
+                    display: true,
+                    position: 'bottom',
+                    align: 'center',
+                    labels: {
+                        usePointStyle: true,
+                        // pointStyle: 'rectRounded'
+                    },
+                },
+            },
+            layout: {
+                padding: {
+                    left: 10,
+                    right: 30
+                }
+            },
+            indexAxis: 'y',
+            responsive: true,
+            scales: {
+                x: {
+                    grid: {
+                        display: false,
+                    }
+                },
+                y: {
+                    grid: {
+                        display: false,
+                    }
+                },
+            },
+            maintainAspectRatio: false
+        },
+    });
+    // END: Chart.js
 });

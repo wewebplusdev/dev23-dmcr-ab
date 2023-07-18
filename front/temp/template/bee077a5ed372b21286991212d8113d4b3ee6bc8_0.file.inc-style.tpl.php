@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2023-07-18 13:36:32
+/* Smarty version 3.1.30, created on 2023-07-18 13:46:51
   from "/Applications/XAMPP/xamppfiles/htdocs/dev23-dmcr-ab/front/template/default/inc-style.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_64b632f07dc7a3_44330662',
+  'unifunc' => 'content_64b6355b3ebfb1_47657367',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'bee077a5ed372b21286991212d8113d4b3ee6bc8' => 
     array (
       0 => '/Applications/XAMPP/xamppfiles/htdocs/dev23-dmcr-ab/front/template/default/inc-style.tpl',
-      1 => 1689159175,
+      1 => 1689662760,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_64b632f07dc7a3_44330662 (Smarty_Internal_Template $_smarty_tpl) {
+function content_64b6355b3ebfb1_47657367 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!-- Core -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/brands.min.css" integrity="sha512-9YHSK59/rjvhtDcY/b+4rdnl0V4LPDWdkKceBl8ZLF5TB6745ml1AfluEU6dFWqwDw9lPvnauxFgpKvJqp7jiQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />

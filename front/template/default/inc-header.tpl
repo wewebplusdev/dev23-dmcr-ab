@@ -5,7 +5,9 @@
 				<div class="col-auto">
 					<div class="nav-size" data-aos="fade-left">
 						<div class="row align-items-center no-gutters">
-							<div class="col-auto"><label class="control-label">ขนาด</label></div>
+							<div class="col-auto">
+								<label class="control-label">ขนาด</label>
+							</div>
 							<div class="col">
 								<div class="hstack">
 									<a id="theme-style-1" title="ขนาดอักษรเล็ก" class="nav-size-small fzSmall" target="_self" href="javascript:void(0);">ก</a>
@@ -56,8 +58,8 @@
 	</div>
 	<nav class="navbar navbar-expand-lg navbar-light">
 		<div class="container-lg">
-			<a href="/" class="navbar-brand">
-				<img alt="DMCR logo" src="{$template}/assets/img/static/logo.png" decoding="async" data-nimg="fill" class="d-inline-block align-top" style="position:absolute;height:100%;width:100%;left:0;top:0;right:0;bottom:0;color:transparent">
+			<a href="{$ul}/home" class="navbar-brand">
+				<img alt="DMCR logo" src="{$template}/assets/img/static/logo.png" class="d-inline-block align-top" style="position:absolute;height:100%;width:100%;left:0;top:0;right:0;bottom:0;color:transparent">
 			</a>
 			<button type="button" class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#basic-navbar-nav" aria-controls="basic-navbar-nav" aria-label="Toggle navigation">
 				<div>
