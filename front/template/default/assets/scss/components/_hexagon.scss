@@ -52,6 +52,8 @@
         font-weight: var(--fw-bold);
     }
     .icon-wrapper .icon {
+        display: flex;
+        align-items: center;
         width: 50%;
         height: 50%;
     }

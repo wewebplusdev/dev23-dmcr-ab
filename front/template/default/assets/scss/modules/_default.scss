@@ -179,8 +179,8 @@ $--nav-tabs-h: 80px;
 }
 .section-ii {
     min-height: 800px;
-    background: linear-gradient(#0b8bf6 0%, rgba(0, 74, 201, 0) 100%),
-        url("../img/background/bg-section-ii.png") no-repeat;
+    // background: linear-gradient(#0b8bf6 0%, rgba(0, 74, 201, 0) 100%), url("../img/background/bg-section-ii.png") no-repeat;
+    background-repeat: no-repeat;
     background-size: cover;
     padding-bottom: 14rem;
     .select-control {

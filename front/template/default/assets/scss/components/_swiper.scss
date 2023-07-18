@@ -82,7 +82,8 @@ $--swiper-gap: calc(1920px - 1280px);
     .swiper-rtl .swiper-button-next:after {
         left: -2px;
     }
-    .swiper-button-next:after, .swiper-rtl .swiper-button-prev:after{
+    .swiper-button-next:after,
+    .swiper-rtl .swiper-button-prev:after {
         right: -2px;
     }
     .swiper-slide {
@@ -93,5 +94,32 @@ $--swiper-gap: calc(1920px - 1280px);
     .swiper-slide.swiper-slide-next,
     .swiper-slide.swiper-slide-next + .swiper-slide {
         opacity: 1;
+    }
+}
+
+.scroll-swiper {
+    width: 100%;
+    height: 100%;
+    .swiper-slide {
+        height: auto;
+    }
+}
+
+:root {
+    --mcscroll-w: 8px;
+}
+.scroll-swiper {
+    .swiper-scrollbar.swiper-scrollbar-vertical,
+    .swiper-vertical > .swiper-scrollbar {
+        width: var(--mcscroll-w);
+        top: 5px;
+        right: 5px;
+        bottom: 5px;
+        border-radius: 5px;
+        overflow: hidden;
+        background-color: #c5c5c5;
+    }
+    .swiper-scrollbar-drag {
+        background-color: var(--color-secondary);
     }
 }

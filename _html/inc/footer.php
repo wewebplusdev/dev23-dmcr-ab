@@ -1,1 +1,1 @@
-<footer class="site-footer">Footer</footer>
+<footer class="layout-footer lazy" data-bg="<?php echo $core_template; ?>assets/img/background/bg-footer.png">Footer</footer>
