@@ -114,7 +114,8 @@
 </div>
 
 <div class="section section-ii lazy" data-bg-multi="linear-gradient(#0b8bf6 0%, rgba(0, 74, 201, 0) 100%), 
-                                                    url({$template}/assets/img/background/bg-section-ii.png)" style="overflow:hidden">
+                                                    url({$template}/assets/img/background/bg-section-ii.png)"
+    style="overflow:hidden">
     <div class="container-lg">
         <div class="wg-search">
             <div class="text-center">
@@ -194,7 +195,6 @@
                                     </tr>
                                 </thead>
                             </table>
-                            <!-- <div class="mcscroll"> -->
                             <div class="scroll-wrapper">
                                 <div class="swiper scroll-swiper">
                                     <div class="swiper-wrapper">
@@ -268,7 +268,6 @@
                                     <div class="swiper-scrollbar"></div>
                                 </div>
                             </div>
-                            <!-- </div> -->
                         </div>
                     </div>
                 </div>
@@ -500,7 +499,7 @@
     </div>
 </div>
 
-<div class="row">
+{* <div class="row">
     <div class="col-md-10 col-md-offset-1">
         <div class="panel panel-default">
             <div class="panel-heading">Chart</div>
@@ -509,4 +508,4 @@
             </div>
         </div>
     </div>
-</div>
+</div> *}
