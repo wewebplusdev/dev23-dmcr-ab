@@ -37,6 +37,11 @@
             }
         }
     }
+    .social-list .link {
+        &:hover {
+            transform: translateY(-5px);
+        }
+    }
 }
 .contact {
     .icon {

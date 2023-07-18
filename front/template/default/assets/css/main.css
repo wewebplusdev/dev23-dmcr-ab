@@ -21188,18 +21188,28 @@ textarea {
   }
 }
 .social-list .icon {
-  width: 1.9448em;
-  height: 1.9448em;
+  width: 35px;
+  height: 35px;
+}
+.social-list .icon > img {
+  width: 100%;
+  height: 100%;
 }
 .social-list .link {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 1.9448em;
-  height: 1.9448em;
+  width: 35px;
+  height: 35px;
   overflow: hidden;
 }
 
+@media (max-width: 575px) {
+  .social-list .icon {
+    width: 32px;
+    height: 32px;
+  }
+}
 .step-progress {
   position: relative;
   margin-bottom: 3rem;
@@ -22230,6 +22240,9 @@ div.swal2-html-container {
 .layout-footer .link:hover span {
   opacity: 0.65;
   transition: var(--transition-200);
+}
+.layout-footer .social-list .link:hover {
+  transform: translateY(-5px);
 }
 
 .contact .icon {

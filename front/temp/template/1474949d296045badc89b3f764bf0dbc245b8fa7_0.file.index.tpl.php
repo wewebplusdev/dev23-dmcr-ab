@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2023-07-18 14:09:00
+/* Smarty version 3.1.30, created on 2023-07-18 15:27:29
   from "/Applications/XAMPP/xamppfiles/htdocs/dev23-dmcr-ab/front/controller/script/home/template/index.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_64b63a8c00e2c8_11166820',
+  'unifunc' => 'content_64b64cf1befbb7_04590461',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '1474949d296045badc89b3f764bf0dbc245b8fa7' => 
     array (
       0 => '/Applications/XAMPP/xamppfiles/htdocs/dev23-dmcr-ab/front/controller/script/home/template/index.tpl',
-      1 => 1689664137,
+      1 => 1689668832,
       2 => 'file',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:front/template/default/herobanner.tpl' => 1,
   ),
 ),false)) {
-function content_64b63a8c00e2c8_11166820 (Smarty_Internal_Template $_smarty_tpl) {
+function content_64b64cf1befbb7_04590461 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:front/template/default/herobanner.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('title'=>'title'), 0, false);
 ?>
 
@@ -144,7 +144,8 @@ $_smarty_tpl->_subTemplateRender("file:front/template/default/herobanner.tpl", $
 
 <div class="section section-ii lazy" data-bg-multi="linear-gradient(#0b8bf6 0%, rgba(0, 74, 201, 0) 100%), 
                                                     url(<?php echo $_smarty_tpl->tpl_vars['template']->value;?>
-/assets/img/background/bg-section-ii.png)" style="overflow:hidden">
+/assets/img/background/bg-section-ii.png)"
+    style="overflow:hidden">
     <div class="container-lg">
         <div class="wg-search">
             <div class="text-center">
@@ -224,7 +225,6 @@ $_smarty_tpl->_subTemplateRender("file:front/template/default/herobanner.tpl", $
                                     </tr>
                                 </thead>
                             </table>
-                            <!-- <div class="mcscroll"> -->
                             <div class="scroll-wrapper">
                                 <div class="swiper scroll-swiper">
                                     <div class="swiper-wrapper">
@@ -298,7 +298,6 @@ $_smarty_tpl->_subTemplateRender("file:front/template/default/herobanner.tpl", $
                                     <div class="swiper-scrollbar"></div>
                                 </div>
                             </div>
-                            <!-- </div> -->
                         </div>
                     </div>
                 </div>
@@ -530,14 +529,5 @@ $_smarty_tpl->_subTemplateRender("file:front/template/default/herobanner.tpl", $
     </div>
 </div>
 
-<div class="row">
-    <div class="col-md-10 col-md-offset-1">
-        <div class="panel panel-default">
-            <div class="panel-heading">Chart</div>
-            <div class="panel-body">
-                <div id="container"></div>
-            </div>
-        </div>
-    </div>
-</div><?php }
+<?php }
 }
