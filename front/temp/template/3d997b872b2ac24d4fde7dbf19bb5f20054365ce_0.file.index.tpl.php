@@ -1,4 +1,30 @@
-{include file="front/template/default/inc-herobanner.tpl" title=title}
+<?php
+/* Smarty version 3.1.30, created on 2023-07-21 18:59:14
+  from "/Applications/XAMPP/xamppfiles/htdocs/dev23-dmcr-ab/front/controller/script/about/template/index.tpl" */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.30',
+  'unifunc' => 'content_64ba73120ad965_99191062',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    '3d997b872b2ac24d4fde7dbf19bb5f20054365ce' => 
+    array (
+      0 => '/Applications/XAMPP/xamppfiles/htdocs/dev23-dmcr-ab/front/controller/script/about/template/index.tpl',
+      1 => 1689940751,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+    'file:front/template/default/inc-herobanner.tpl' => 1,
+  ),
+),false)) {
+function content_64ba73120ad965_99191062 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->_subTemplateRender("file:front/template/default/inc-herobanner.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('title'=>'title'), 0, false);
+?>
+
 
 <div class="default-page about-page" style="position:relative;z-index:1;overflow:hidden">
     <div class="default-head">
@@ -28,7 +54,8 @@
                                         <div class="icon-wrapper hexagon">
                                             <div class="icon">
                                                 <img alt="ปะการังเทียม"
-                                                    src="{$template}/assets/img/icon/artificial-coral.svg" class="lazy">
+                                                    src="<?php echo $_smarty_tpl->tpl_vars['template']->value;?>
+/assets/img/icon/artificial-coral.svg" class="lazy">
                                             </div>
                                         </div>
                                     </div>
@@ -50,7 +77,8 @@
                                         <div class="icon-wrapper hexagon">
                                             <div class="icon">
                                                 <img alt="ทุ่นในทะเล"
-                                                    src="{$template}/assets/img/icon/buoy.d3df3036.svg" class="lazy">
+                                                    src="<?php echo $_smarty_tpl->tpl_vars['template']->value;?>
+/assets/img/icon/buoy.d3df3036.svg" class="lazy">
                                             </div>
                                         </div>
                                     </div>
@@ -72,7 +100,8 @@
                                         <div class="icon-wrapper hexagon">
                                             <div class="icon">
                                                 <img alt="จุดวางเรือ"
-                                                    src="{$template}/assets/img/icon/boat.4708dd8b.svg" class="lazy">
+                                                    src="<?php echo $_smarty_tpl->tpl_vars['template']->value;?>
+/assets/img/icon/boat.4708dd8b.svg" class="lazy">
                                             </div>
                                         </div>
                                     </div>
@@ -200,7 +229,8 @@
                                                                 <div class="icon-wrapper hexagon">
                                                                     <div class="icon">
                                                                         <img alt=""
-                                                                            src="{$template}/assets/img/icon/icon-attachment.8ed09766.svg"
+                                                                            src="<?php echo $_smarty_tpl->tpl_vars['template']->value;?>
+/assets/img/icon/icon-attachment.8ed09766.svg"
                                                                             class="lazy">
                                                                     </div>
                                                                 </div>
@@ -263,9 +293,11 @@
             </div>
             <div class="graphic graphic-inner-page-bottom">
                 <div class="bg" style="z-index:0">
-                    <img alt="" src="{$template}/assets/img/background/bg-inner-page-bottom.de22dd25.png" class="lazy">
+                    <img alt="" src="<?php echo $_smarty_tpl->tpl_vars['template']->value;?>
+/assets/img/background/bg-inner-page-bottom.de22dd25.png" class="lazy">
                 </div>
             </div>
         </div>
     </div>
-</div>
+</div><?php }
+}
