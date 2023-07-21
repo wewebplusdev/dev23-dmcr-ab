@@ -12,7 +12,7 @@
                                     <div class="icon-wrapper hexagon">
                                         <div class="icon">
                                             <img alt="ปะการังเทียม"
-                                                src="{$template}/assets/img/icon/artificial-coral.svg" class="lazy">
+                                                data-src="{$template}/assets/img/icon/artificial-coral.svg" class="lazy">
                                         </div>
                                     </div>
                                 </div>
@@ -33,7 +33,7 @@
                                 <div class="hexagon-inner">
                                     <div class="icon-wrapper hexagon">
                                         <div class="icon">
-                                            <img alt="ทุ่นในทะเล" src="{$template}/assets/img/icon/buoy.svg"
+                                            <img alt="ทุ่นในทะเล" data-src="{$template}/assets/img/icon/buoy.svg"
                                                 class="lazy">
                                         </div>
                                     </div>
@@ -55,7 +55,7 @@
                                 <div class="hexagon-inner">
                                     <div class="icon-wrapper hexagon">
                                         <div class="icon">
-                                            <img alt="จุดวางเรือ" src="{$template}/assets/img/icon/boat.svg"
+                                            <img alt="จุดวางเรือ" data-src="{$template}/assets/img/icon/boat.svg"
                                                 class="lazy">
                                         </div>
                                     </div>
@@ -607,7 +607,7 @@
                                         <div class="overflow-hidden card">
                                             <div class="thumbnail">
                                                 <figure class="cover" style="padding-top:75%">
-                                                    <img alt="" src="{$template}/assets/img/upload/beautiful-beach-sea.jpg" class="img-cover lazy">
+                                                    <img alt="" data-src="{$template}/assets/img/upload/beautiful-beach-sea.jpg" class="img-cover lazy">
                                                 </figure>
                                             </div>
                                             <div class="card-body">
@@ -643,7 +643,7 @@
                                                                             <div class="col-sm-auto">
                                                                                 <div class="thumbnail">
                                                                                     <figure class="cover" style="padding-top:75%">
-                                                                                        <img alt="" src="{$template}/assets/img/upload/beautiful-beach-sea.jpg" class="img-cover lazy rounded">
+                                                                                        <img alt="" data-src="{$template}/assets/img/upload/beautiful-beach-sea.jpg" class="img-cover lazy rounded">
                                                                                     </figure>
                                                                                 </div>
                                                                             </div>
@@ -708,7 +708,7 @@
                                 <div class="overflow-hidden card">
                                     <div class="thumbnail">
                                         <figure class="cover" style="padding-top:75%">
-                                            <img alt="" src="{$template}/assets/img/upload/beautiful-beach-sea.jpg" class="img-cover lazy">
+                                            <img alt="" data-src="{$template}/assets/img/upload/beautiful-beach-sea.jpg" class="img-cover lazy">
                                         </figure>
                                     </div>
                                     <div class="card-body">
@@ -754,7 +754,261 @@
                 <img alt="wg-about-style.png" data-src="{$template}/assets/img/static/wg-about-style.png" class="prevent-select lazy" style="color:transparent">
             </div>
             <div class="bg">
-                <img alt="" data-src="{$template}/assets/img/background/bg-wg-about.png" class="lazy">
+                <img alt="" data-src="{$template}/assets/img/background/bg-wg-about.png" class="lazy" style="position:absolute;height:100%;width:100%;left:0;top:0;right:0;bottom:0;object-fit:cover;color:transparent">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="section section-v lazy" style="overflow:hidden" data-bg="{$template}/assets/img/background/bg-section-v.png">
+    <div class="container-lg">
+        <div class="wg-about-project">
+            <div class="whead text-center">
+                <h2 class="title text-primary">เกี่ยวกับโครงการ</h2>
+            </div>
+            <div class="apj-list">
+                <div class="swiper apj-swiper default-swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide item">
+                            <a class="link" title="" href="/">
+                                <div class="default-card theme-blue card">
+                                    <div class="card-body">
+                                        <div class="thumbnail">
+                                            <div class="hexagon-wrapper">
+                                                <div class="hexagon-inner">
+                                                    <div class="image-wrapper hexagon">
+                                                        <div class="image">
+                                                            <img alt="wg-about-pj-01" data-src="{$template}/assets/img/upload/wg-about-pj-01.png" class="lazy">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="hexagon-outer"></div>
+                                            </div>
+                                        </div>
+                                        <div class="inner">
+                                            <h3 class="title">ที่มาโครงการ</h3>
+                                            <div class="desc">แสดงข้อมูลกรณีผู้ประกอบการที่สนใจ ต้องการทราบรายละเอียดเพิ่มเติม และหน่วยงาน</div>
+                                            <div class="action">
+                                                <div class="btn btn-outline-blue">อ่านต่อ</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="swiper-slide item">
+                            <a class="link" title="" href="/">
+                                <div class="default-card theme-purple card">
+                                    <div class="card-body">
+                                        <div class="thumbnail">
+                                            <div class="hexagon-wrapper">
+                                                <div class="hexagon-inner">
+                                                    <div class="image-wrapper hexagon">
+                                                        <div class="image">
+                                                            <img alt="wg-about-pj-02" data-src="{$template}/assets/img/upload/wg-about-pj-02.png" class="lazy">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="hexagon-outer"></div>
+                                            </div>
+                                        </div>
+                                        <div class="inner">
+                                            <h3 class="title">ที่มาโครงการ</h3>
+                                            <div class="desc">แสดงข้อมูลกรณีผู้ประกอบการที่สนใจ ต้องการทราบรายละเอียดเพิ่มเติม และหน่วยงาน</div>
+                                            <div class="action">
+                                                <div class="btn btn-outline-purple">อ่านต่อ</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="swiper-slide item">
+                            <a class="link" title="" href="/">
+                                <div class="default-card theme-green card">
+                                    <div class="card-body">
+                                        <div class="thumbnail">
+                                            <div class="hexagon-wrapper">
+                                                <div class="hexagon-inner">
+                                                    <div class="image-wrapper hexagon">
+                                                        <div class="image">
+                                                            <img alt="wg-about-pj-03" data-src="{$template}/assets/img/upload/wg-about-pj-03.png" class="lazy">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="hexagon-outer"></div>
+                                            </div>
+                                        </div>
+                                        <div class="inner">
+                                            <h3 class="title">ที่มาโครงการ</h3>
+                                            <div class="desc">แสดงข้อมูลกรณีผู้ประกอบการที่สนใจ ต้องการทราบรายละเอียดเพิ่มเติม และหน่วยงาน </div>
+                                            <div class="action">
+                                                <div class="btn btn-outline-green">อ่านต่อ</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="swiper-slide item">
+                            <a class="link" title="" href="/">
+                                <div class="default-card theme-orange card">
+                                    <div class="card-body">
+                                        <div class="thumbnail">
+                                            <div class="hexagon-wrapper">
+                                                <div class="hexagon-inner">
+                                                    <div class="image-wrapper hexagon">
+                                                        <div class="image">
+                                                            <img alt="wg-about-pj-04" data-src="{$template}/assets/img/upload/wg-about-pj-04.png" class="lazy">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="hexagon-outer"></div>
+                                            </div>
+                                        </div>
+                                        <div class="inner">
+                                            <h3 class="title">ที่มาโครงการ</h3>
+                                            <div class="desc">แสดงข้อมูลกรณีผู้ประกอบการที่สนใจ ต้องการทราบรายละเอียดเพิ่มเติม และหน่วยงาน </div>
+                                            <div class="action">
+                                                <div class="btn btn-outline-orange">อ่านต่อ</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="section section-vi p-0" style="overflow:hidden">
+    <div class="container-lg">
+        <div class="row align-items-center height">
+            <div class="col-lg-6">
+                <div class="wg-offer-demand">
+                    <div class="content" style="color:var(--color-default)">
+                        <div class="text-center">
+                            <div class="whead">
+                                <h2 class="h-title text-primary">เสนอความต้องการ</h2>
+                                <p class="desc">เป็นศูนย์รวบรวมข้อมูลปะการังเทียมจากหน่วยงานที่เกี่ยวข้อง โดยดำเนินการ จัดเก็บข้อมูลเป็นหมวดหมู่และเป็นระเบียบ เพื่อสะดวกในการใช้งานสำหรับนักวิชาการ และผู้ที่สนใจทั่วไป</p>
+                            </div>
+                            <div class="action">
+                                <a class="btn btn-secondary" title="อ่านต่อ" href="/offer-demand">อ่านต่อ</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg">
+                        <img alt="" data-src="{$template}/assets/img/background/bg-wg-offer-demand.png" class="lazy">
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="wg-vote-poll">
+                    <div class="content" style="color:#fff">
+                        <div class="text-center">
+                            <div class="whead">
+                                <h2 class="h-title text-uppercase">VOTE &amp; POLL</h2>
+                                <p class="desc">แบบสำรวจความพึงพอใจในการใช้งานฐานข้อมูลปะการังเทียมและทุ่นในทะเล</p>
+                            </div>
+                            <form class="form-default">
+                                <div class="default-radio radio-light mb-3">
+                                    <div class="form-check">
+                                        <input name="votePoll" type="radio" id="vp05" class="form-check-input" checked="">
+                                        <label title="" for="vp05" class="form-check-label">พึงพอใจมากที่สุด</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input name="votePoll" type="radio" id="vp04" class="form-check-input">
+                                        <label title="" for="vp04" class="form-check-label">พึงพอใจมาก</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input name="votePoll" type="radio" id="vp03" class="form-check-input">
+                                        <label title="" for="vp03" class="form-check-label">พึงพอใจปานกลาง</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input name="votePoll" type="radio" id="vp02" class="form-check-input">
+                                        <label title="" for="vp02" class="form-check-label">พึงพอใจน้อย</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input name="votePoll" type="radio" id="vp01" class="form-check-input">
+                                        <label title="" for="vp01" class="form-check-label">พึงพอใจน้อยที่สุด</label>
+                                    </div>
+                                </div>
+                                <div class="action">
+                                    <button type="button" class="btn btn-secondary">โหวต</button>
+                                    <button type="button" class="link btn btn-outline-orange"><span>แสดงผลโหวต</span></button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="bg">
+                        <img alt="" data-src="{$template}/assets/img/background/bg-wg-vote-poll.png" class="lazy">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="section section-vii " style="overflow:hidden">
+    <div class="container-lg">
+        <div class="wg-weblinks">
+            <div class="weblink-list">
+                <div class="swiper weblink-swiper default-swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide item">
+                            <a class="link" title="" href="/">
+                                <div class="thumbnail">
+                                    <figure class="cover">
+                                        <img alt="thumbnail-weblink" data-src="{$template}/assets/img/upload/thumbnail-weblink.jpg" class="img-cover lazy">
+                                    </figure>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="swiper-slide item">
+                            <a class="link" title="" href="/">
+                                <div class="thumbnail">
+                                    <figure class="cover">
+                                        <img alt="thumbnail-weblink" data-src="{$template}/assets/img/upload/thumbnail-weblink.jpg" class="img-cover lazy">
+                                    </figure>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="swiper-slide item">
+                            <a class="link" title="" href="/">
+                                <div class="thumbnail">
+                                    <figure class="cover">
+                                        <img alt="thumbnail-weblink" data-src="{$template}/assets/img/upload/thumbnail-weblink.jpg" class="img-cover lazy">
+                                    </figure>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="swiper-slide item">
+                            <a class="link" title="" href="/">
+                                <div class="thumbnail">
+                                    <figure class="cover">
+                                        <img alt="thumbnail-weblink" data-src="{$template}/assets/img/upload/thumbnail-weblink.jpg" class="img-cover lazy">
+                                    </figure>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="swiper-slide item">
+                            <a class="link" title="" href="/">
+                                <div class="thumbnail">
+                                    <figure class="cover">
+                                        <img alt="thumbnail-weblink" data-src="{$template}/assets/img/upload/thumbnail-weblink.jpg" class="img-cover lazy">
+                                    </figure>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
             </div>
         </div>
     </div>

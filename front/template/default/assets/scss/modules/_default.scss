@@ -201,13 +201,26 @@ $--nav-tabs-h: 80px;
     background: transparent;
 }
 .section-v {
-    background: url("../img/background/bg-section-v.png") no-repeat bottom;
-    // background-size: ;
+    // background: url("../img/background/bg-section-v.png") no-repeat bottom;
+    background-repeat: no-repeat;
+    background-position: center bottom;
 }
 .section-vi {
     .height {
         height: 530px;
     }
+}
+
+.bg > img {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    object-fit: cover;
+    color: transparent;
 }
 
 .card {

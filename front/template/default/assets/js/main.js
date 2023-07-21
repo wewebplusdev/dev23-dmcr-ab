@@ -27,6 +27,29 @@ $(document).ready(function () {
         $('.search-input').addClass('hide');
     });
 
+    var scrollSwiper = new Swiper(".scroll-swiper", {
+        direction: "vertical",
+        slidesPerView: "auto",
+        freeMode: true,
+        scrollbar: {
+            el: ".swiper-scrollbar",
+        },
+        mousewheel: true,
+    });
+
+    // START: Chart.js set defaults
+    Chart.defaults.font.size = 16;
+    Chart.defaults.font.family = 'db_helvethaica';
+    Chart.defaults.font.lineHeight = '1.2em'
+    // END: Chart.js set defaults
+
+    $('.select-control').select2({
+        minimumResultsForSearch: -1,
+        placeholder: function () {
+            $(this).data('placeholder');
+        }
+    });
+
     const herobannerSwiper = new Swiper('.hero-banner-swiper', {
         // Optional parameters
         slidesPerView: 1,
@@ -90,28 +113,60 @@ $(document).ready(function () {
         }
     });
 
-    var scrollSwiper = new Swiper(".scroll-swiper", {
-        direction: "vertical",
-        slidesPerView: "auto",
-        freeMode: true,
-        scrollbar: {
-            el: ".swiper-scrollbar",
+    const apjSwiper = new Swiper('.apj-swiper', {
+        // Optional parameters
+        slidesPerView: 4,
+        spaceBetween: 40,
+        // loop: true,
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
         },
-        mousewheel: true,
-    });
-
-    // START: Chart.js set defaults
-    Chart.defaults.font.size = 16;
-    Chart.defaults.font.family = 'db_helvethaica';
-    Chart.defaults.font.lineHeight = '1.2em'
-    // END: Chart.js set defaults
-
-    $('.select-control').select2({
-        minimumResultsForSearch: -1,
-        placeholder: function () {
-            $(this).data('placeholder');
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        breakpoints: {
+            0: {
+                slidesPerView: 2,
+                spaceBetween: 10,
+            },
+            578: {
+                slidesPerView: 3,
+                spaceBetween: 15,
+            },
+            1199: {
+                spaceBetween: 40
+            }
         }
     });
 
+    const weblinkSwiper = new Swiper('.weblink-swiper', {
+        // Optional parameters
+        slidesPerView: 4,
+        spaceBetween: 40,
+        // loop: true,
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+        // navigation: {
+        //     nextEl: '.swiper-button-next',
+        //     prevEl: '.swiper-button-prev',
+        // },
+        breakpoints: {
+            0: {
+                slidesPerView: 2,
+                spaceBetween: 15,
+            },
+            578: {
+                slidesPerView: 3,
+                spaceBetween: 20,
+            },
+            1199:{
+                spaceBetween: 40
+            }
+        }
+    });
 
 });
