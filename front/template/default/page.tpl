@@ -10,7 +10,7 @@
 
         {include file="$header" title=title}
 
-        <section class="layout-container" style="margin-top: 150px;">
+        <section class="layout-container">
             {include file="{$fileInclude|templateInclude:$settemplate}" title=pageContent}
         </section>
 

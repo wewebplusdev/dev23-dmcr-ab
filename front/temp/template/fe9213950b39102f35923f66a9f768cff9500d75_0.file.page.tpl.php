@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2023-07-18 15:29:20
+/* Smarty version 3.1.30, created on 2023-07-21 18:38:29
   from "/Applications/XAMPP/xamppfiles/htdocs/dev23-dmcr-ab/front/template/default/page.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_64b64d60215500_97450846',
+  'unifunc' => 'content_64ba6e35d378a6_94845138',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'fe9213950b39102f35923f66a9f768cff9500d75' => 
     array (
       0 => '/Applications/XAMPP/xamppfiles/htdocs/dev23-dmcr-ab/front/template/default/page.tpl',
-      1 => 1689668955,
+      1 => 1689939504,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:inc-loadscript.tpl' => 1,
   ),
 ),false)) {
-function content_64b64d60215500_97450846 (Smarty_Internal_Template $_smarty_tpl) {
+function content_64ba6e35d378a6_94845138 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html>
@@ -43,7 +43,7 @@ function content_64b64d60215500_97450846 (Smarty_Internal_Template $_smarty_tpl)
 ?>
 
 
-        <section class="layout-container" style="margin-top: 150px;">
+        <section class="layout-container">
             <?php ob_start();
 echo templateInclude($_smarty_tpl->tpl_vars['fileInclude']->value,$_smarty_tpl->tpl_vars['settemplate']->value);
 $_prefixVariable1=ob_get_clean();
