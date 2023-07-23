@@ -12,6 +12,7 @@
 <script src="{$template}/assets/js/libs/select2.min.js"></script>
 <script src="{$template}/assets/js/libs/aos.js"></script>
 <script src="{$template}/assets/js/libs/lazyload.min.js"></script>
+<script src="{$template}/assets/js/libs/fancybox.umd.js"></script>
 
 <!-- Custom -->
 <script src="{$template}/assets/js/main.js{$modify}"></script>
