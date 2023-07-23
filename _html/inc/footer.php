@@ -43,6 +43,7 @@
                                             <a class="d-block" href="tel:+66 2141 1300">
                                                 <span>+66 2141 1300</span>
                                             </a>
+                                            <br>
                                         </p>
                                     </div>
                                 </div>
@@ -116,38 +117,30 @@
                         <div class="mt-lg-0 mt-3 col-auto order-lg-2 order-1">
                             <div class="wg-social">
                                 <div class="social-list">
-                                    <div class="hstack gap-2">
-                                        <a class="link rounded-circle fb" title="Facebook" target="_blank" style="background:#1877F2" href="https://www.facebook.com/DMCRTH">
-
+                                    <div class="hstack gap-sm-2 gap-1">
+                                        <a class="link rounded-circle fb" title="Facebook" target="_blank" rel="nofollow" href="https://www.facebook.com/DMCRTH">
+                                            <div class="icon"><img alt="Facebook" data-src="<?php echo $core_template; ?>assets/img/icon/social-fb.png" class="lazy"></div>
                                         </a>
-                                        <a class="link rounded-circle tw" title="Twitter" target="_blank" style="background:#1DA1F2" href="https://twitter.com/dmcrth">
-
+                                        <a class="link rounded-circle tw" title="Twitter" target="_blank" rel="nofollow" href="https://twitter.com/dmcrth">
+                                            <div class="icon"><img alt="Twitter" data-src="<?php echo $core_template; ?>assets/img/icon/social-tw.png" class="lazy"></div>
                                         </a>
-                                        <a class="link rounded-circle ig" title="Instagram" target="_blank" style="background:radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%)" href="https://www.instagram.com/dmcrth/">
-
+                                        <a class="link rounded-circle ig" title="Instagram" target="_blank" rel="nofollow" href="https://www.instagram.com/dmcrth/">
+                                            <div class="icon"><img alt="Instagram" data-src="<?php echo $core_template; ?>assets/img/icon/social-ig.png" class="lazy"></div>
                                         </a>
-                                        <a class="link rounded-circle yt" title="Youtube" target="_blank" style="background:#FF0000" href="https://www.youtube.com/channel/UC4_fXOSelonvCzuv0jc4qbg">
-                                       
+                                        <a class="link rounded-circle yt" title="Youtube" target="_blank" href="https://www.youtube.com/channel/UC4_fXOSelonvCzuv0jc4qbg">
+                                            <div class="icon"><img alt="Youtube" data-src="<?php echo $core_template; ?>assets/img/icon/social-yt.png" class="lazy"></div>
                                         </a>
-                                        <a class="link rounded-circle line" title="Line" target="_blank" href="https://line.me/ti/p/~@DMCRTH">
-                                            <div class="icon">
-                                                <img alt="Line" src="<?php echo $core_template; ?>assets/img/icon/icon-line.png" class="lazy">
-                                            </div>
+                                        <a class="link rounded-circle line" title="Line" target="_blank" rel="nofollow" href="https://line.me/ti/p/~@DMCRTH">
+                                            <div class="icon"><img alt="Line" data-src="<?php echo $core_template; ?>assets/img/icon/social-li.png" class="lazy"></div>
                                         </a>
-                                        <a class="tt" title="Tiktok" target="_blank" href="https://www.tiktok.com/@dmcrth">
-                                            <div class="icon">
-                                                <img alt="Tiktok" src="<?php echo $core_template; ?>assets/img/icon/icon-tiktok.png" class="lazy">
-                                            </div>
+                                        <a class="link rounded-circle tt" title="Tiktok" target="_blank" rel="nofollow" href="https://www.tiktok.com/@dmcrth">
+                                            <div class="icon"><img alt="Tiktok" data-src="<?php echo $core_template; ?>assets/img/icon/social-tt.png" class="lazy"></div>
                                         </a>
-                                        <a class="link rounded-circle back-office" title="Back Office" target="_blank" href="/weadmin">
-                                            <div class="icon">
-                                                <img alt="Back Office" src="<?php echo $core_template; ?>assets/img/icon/icon-back-office.svg" class="lazy">
-                                            </div>
+                                        <a class="link rounded-circle back-office" title="Back Office" target="_blank" rel="nofollow" href="{$ul}/weadmin">
+                                            <div class="icon"><img alt="Back Office" data-src="<?php echo $core_template; ?>assets/img/icon/icon-back-office.svg" class="lazy"></div>
                                         </a>
-                                        <a class="link rounded-circle one-account" title="One Account" target="_blank" href="https://oneaccount.dmcr.go.th/weadmin/">
-                                            <div class="icon">
-                                                <img alt="One Account" src="<?php echo $core_template; ?>assets/img/icon/social-login.png" class="lazy">
-                                            </div>
+                                        <a class="link rounded-circle one-account" title="One Account" target="_blank" rel="nofollow" href="https://oneaccount.dmcr.go.th/weadmin/">
+                                            <div class="icon"><img alt="One Account" data-src="<?php echo $core_template; ?>assets/img/icon/social-login.png" class="lazy"></div>
                                         </a>
                                     </div>
                                 </div>
@@ -159,8 +152,10 @@
             <div class="justify-content-md-between mt-3 row row-cols-auto">
                 <div class="col-md-auto col-12">
                     <div class="policies">
-                        <div class="policy-list hstack gap-3">
-                            <button type="button" class="link btn btn-link"><span>นโยบายการคุ้มครองข้อมูลส่วนบุคคล</span></button><button type="button" class="link btn btn-link"><span>นโยบายเว็บไซต์</span></button><button type="button" class="link btn btn-link"><span>นโยบายการรักษาความมั่นคงปลอดภัยเว็บไซต์</span></button>
+                        <div class="policy-list hstack gap-3" id="get_menu_policy">
+                            <button type="button" class="link btn btn-link" data-bs-toggle="modal" data-bs-target="#policyModal1"><span>นโยบายการคุ้มครองข้อมูลส่วนบุคคล</span></button>
+                            <button type="button" class="link btn btn-link"><span>นโยบายเว็บไซต์</span></button>
+                            <button type="button" class="link btn btn-link"><span>นโยบายการรักษาความมั่นคงปลอดภัยเว็บไซต์</span></button>
                         </div>
                     </div>
                 </div>
