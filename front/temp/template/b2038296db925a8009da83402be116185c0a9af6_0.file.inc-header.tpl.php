@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2023-07-18 13:46:51
+/* Smarty version 3.1.30, created on 2023-07-24 03:00:08
   from "/Applications/XAMPP/xamppfiles/htdocs/dev23-dmcr-ab/front/template/default/inc-header.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_64b6355b40b6e4_91487449',
+  'unifunc' => 'content_64bd86c8591322_07127130',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'b2038296db925a8009da83402be116185c0a9af6' => 
     array (
       0 => '/Applications/XAMPP/xamppfiles/htdocs/dev23-dmcr-ab/front/template/default/inc-header.tpl',
-      1 => 1689662732,
+      1 => 1690142407,
       2 => 'file',
     ),
   ),
@@ -21,9 +21,9 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:inc-search.tpl' => 2,
   ),
 ),false)) {
-function content_64b6355b40b6e4_91487449 (Smarty_Internal_Template $_smarty_tpl) {
+function content_64bd86c8591322_07127130 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
-<header class="layout-header">
+<header class="layout-header" data-aos="fade-down">
 	<div class="top-bar">
 		<div class="container-lg">
 			<div class="row justify-content-end align-items-center no-gutters">
