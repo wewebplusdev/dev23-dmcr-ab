@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2023-07-24 03:57:51
+/* Smarty version 3.1.30, created on 2023-07-24 04:15:13
   from "/Applications/XAMPP/xamppfiles/htdocs/dev23-dmcr-ab/front/template/default/pagination.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_64bd944fa2c986_97036200',
+  'unifunc' => 'content_64bd9861264cf5_07258987',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '4cdb370db08c075df05065f4373bc89c34b8b20c' => 
     array (
       0 => '/Applications/XAMPP/xamppfiles/htdocs/dev23-dmcr-ab/front/template/default/pagination.tpl',
-      1 => 1690145869,
+      1 => 1690146909,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_64bd944fa2c986_97036200 (Smarty_Internal_Template $_smarty_tpl) {
+function content_64bd9861264cf5_07258987 (Smarty_Internal_Template $_smarty_tpl) {
 if ((($tmp = @$_smarty_tpl->tpl_vars['pagination']->value)===null||$tmp==='' ? null : $tmp)) {?>
     <div class="pagination-block" data-aos="fade-up">
         <div class="align-items-center row">
@@ -110,7 +110,29 @@ echo $_smarty_tpl->tpl_vars['current']->value;?>
 }
 ?>
 
-                    
+                    <li class="page-item pagination-jumpPage">
+                        <select class="select-control" onchange="window.location = $(this).val()" style="width:95px">
+                            <option value="javascript:void(0)">ไปหน้า</option>
+                            <?php
+$_smarty_tpl->tpl_vars['current'] = new Smarty_Variable(null, $_smarty_tpl->isRenderingCache);$_smarty_tpl->tpl_vars['current']->step = 1;$_smarty_tpl->tpl_vars['current']->total = (int) ceil(($_smarty_tpl->tpl_vars['current']->step > 0 ? $_smarty_tpl->tpl_vars['pagination']->value['totalpage']+1 - (1) : 1-($_smarty_tpl->tpl_vars['pagination']->value['totalpage'])+1)/abs($_smarty_tpl->tpl_vars['current']->step));
+if ($_smarty_tpl->tpl_vars['current']->total > 0) {
+for ($_smarty_tpl->tpl_vars['current']->value = 1, $_smarty_tpl->tpl_vars['current']->iteration = 1;$_smarty_tpl->tpl_vars['current']->iteration <= $_smarty_tpl->tpl_vars['current']->total;$_smarty_tpl->tpl_vars['current']->value += $_smarty_tpl->tpl_vars['current']->step, $_smarty_tpl->tpl_vars['current']->iteration++) {
+$_smarty_tpl->tpl_vars['current']->first = $_smarty_tpl->tpl_vars['current']->iteration == 1;$_smarty_tpl->tpl_vars['current']->last = $_smarty_tpl->tpl_vars['current']->iteration == $_smarty_tpl->tpl_vars['current']->total;?>
+                                <option value="<?php echo $_smarty_tpl->tpl_vars['ul']->value;?>
+/<?php echo $_smarty_tpl->tpl_vars['pagination']->value['method']['page'];
+echo $_smarty_tpl->tpl_vars['pagination']->value['method']['parambefor'];
+echo $_smarty_tpl->tpl_vars['pagination']->value['method']['parameter'];
+echo $_smarty_tpl->tpl_vars['current']->value;?>
+">
+                                    <?php echo $_smarty_tpl->tpl_vars['current']->value;?>
+
+                                </option>
+                            <?php }
+}
+?>
+
+                        </select>
+                    </li>
                     <?php if ($_smarty_tpl->tpl_vars['pagination']->value['curent']+1 < $_smarty_tpl->tpl_vars['pagination']->value['totalpage']) {?>
                         <li class="page-item">
                             <a class="page-link" role="button" tabindex="0" href="<?php echo $_smarty_tpl->tpl_vars['ul']->value;?>

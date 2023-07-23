@@ -45,8 +45,8 @@
                             <a class="page-link" role="button" tabindex="0" href="{$ul}/{$pagination.method.page}{$pagination.method.parambefor}{$pagination.method.parameter}{$current}" title="{$txtLang['tools:page']} {$current}">{$current}</a>
                         </li>
                     {/for}
-                    {* <li class="page-item pagination-jumpPage">
-                        <select class="select-control" onchange="window.location = $(this).val()">
+                    <li class="page-item pagination-jumpPage">
+                        <select class="select-control" onchange="window.location = $(this).val()" style="width:95px">
                             <option value="javascript:void(0)">ไปหน้า</option>
                             {for $current=1 to $pagination.totalpage}
                                 <option value="{$ul}/{$pagination.method.page}{$pagination.method.parambefor}{$pagination.method.parameter}{$current}">
@@ -54,7 +54,7 @@
                                 </option>
                             {/for}
                         </select>
-                    </li> *}
+                    </li>
                     {if $pagination.curent+1 < $pagination.totalpage}
                         <li class="page-item">
                             <a class="page-link" role="button" tabindex="0" href="{$ul}/{$pagination.method.page}{$pagination.method.parambefor}{$pagination.method.parameter}{$pagination.curent+1}">
