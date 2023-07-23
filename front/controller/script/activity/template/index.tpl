@@ -25,9 +25,9 @@
                     <h2 class="title">กิจกรรมที่เกี่ยวข้อง</h2>
                 </div>
                 <div class="default-tabs">
-                    <ul class="nav nav-tabs nav-fill" role="tablist" data-aos="fade-up" data-aos-delay="300">
+                    <ul class="nav nav-tabs nav-fill" data-aos="fade-up" data-aos-delay="300">
                         <li class="nav-item" role="presentation">
-                            <button type="button" id="tab-News1" data-bs-toggle="tab" data-bs-target="#tabpane-News1" role="tab" data-rr-ui-event-key="News1" aria-controls="tabpane-News1" aria-selected="true" class="nav-link active">
+                            <a href="" class="nav-link active">
                                 <div class="icon">
                                     <div class="justify-content-center align-items-center row row-cols-auto">
                                         <div class="col">
@@ -47,10 +47,10 @@
                                         <div class="col">ปะการังเทียม</div>
                                     </div>
                                 </div>
-                            </button>
+                            </a>
                         </li>
                         <li class="nav-item" role="presentation">
-                            <button type="button" id="tab-News2" data-bs-toggle="tab" data-bs-target="#tabpane-News2" role="tab" data-rr-ui-event-key="News2" aria-controls="tabpane-News2" aria-selected="false" tabindex="-1" class="nav-link">
+                            <a href="" class="nav-link">
                                 <div class="icon">
                                     <div class="justify-content-center align-items-center row row-cols-auto">
                                         <div class="col">
@@ -79,10 +79,10 @@
                                         <div class="col">ปะการังเทียม</div>
                                     </div>
                                 </div>
-                            </button>
+                            </a>
                         </li>
                         <li class="nav-item" role="presentation">
-                            <button type="button" id="tab-News3" data-bs-toggle="tab" data-bs-target="#tabpane-News3" role="tab" data-rr-ui-event-key="News3" aria-controls="tabpane-News3" aria-selected="false" tabindex="-1" class="nav-link">
+                            <a href="" class="nav-link">
                                 <div class="icon">
                                     <div class="justify-content-center align-items-center row row-cols-auto">
                                         <div class="col">
@@ -102,42 +102,90 @@
                                         <div class="col">ปะการังเทียม</div>
                                     </div>
                                 </div>
-                            </button>
+                            </a>
                         </li>
                     </ul>
                     <div class="tab-content">
-                        <div role="tabpanel" id="tabpane-News1" aria-labelledby="tab-News1" class="tab-pane fade active show">
-                            <div class="default-content">
-                                <div class="news-head">
-                                    <div class="align-items-center justify-content-end row">
-                                        <div class="col-lg-3 col-md-4 col-12">
-                                            <div class="sort-options">
-                                                <div class="form-group">
-                                                    <label class="form-label" for="years">จัดเรียง</label>
-                                                    <select class="select-control" name="filter" style="width: 100%;">
-                                                        <option value="0">ตาม ก-ฮ</option>
-                                                        <option value="1">ตาม ฮ-ก</option>
-                                                    </select>
-                                                </div>
+                        <div class="default-content">
+                            <div class="news-head" data-aos="fade-up">
+                                <div class="align-items-center justify-content-end row">
+                                    <div class="col-lg-3 col-md-4 col-12">
+                                        <div class="sort-options">
+                                            <div class="form-group">
+                                                <label class="form-label" for="years">จัดเรียง</label>
+                                                <select class="select-control" name="filter" style="width: 100%;">
+                                                    <option value="0">ตาม ก-ฮ</option>
+                                                    <option value="1">ตาม ฮ-ก</option>
+                                                </select>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="news-highlights">
-                                    <div class="gutters-xl-40 row">
-                                        <div class="col-md-6 col-12" data-aos="fade-up">
-                                            <a class="link link-card -vertical" title="เก็บขยะใต้ทะเล แนวปะการังเทียมบ้านเกาะแต้วเจอเศษอวน" href="/activity/detail">
+                            </div>
+                            <div class="news-highlights">
+                                <div class="gutters-xl-40 row">
+                                    <div class="col-md-6 col-12" data-aos="fade-up">
+                                        <a class="link link-card -vertical" title="เก็บขยะใต้ทะเล แนวปะการังเทียมบ้านเกาะแต้วเจอเศษอวน" href="/activity/detail">
+                                            <div class="overflow-hidden card">
+                                                <div class="thumbnail">
+                                                    <figure class="cover">
+                                                        <img alt="" data-src="{$template}/assets/img/upload/beautiful-beach-sea.jpg" class="img-cover lazy">
+                                                    </figure>
+                                                </div>
+                                                <div class="card-body">
+                                                    <div class="inner">
+                                                        <div class="date">23 มิถุนายน 2560</div>
+                                                        <h4 class="title">เก็บขยะใต้ทะเล แนวปะการังเทียมบ้านเกาะแต้วเจอเศษอวน</h4>
+                                                        <p class="desc">เป็นศูนย์รวบรวมข้อมูลปะการังเทียมจากหน่วยงานที่เกี่ยวข้อง โดยดำเนินการจัดเก็บข้อมูลเป็นหมวดหมู่และเป็นระเบียบเพื่อสะดวกในเป็นศูนย์รวบรวมข้อมูลปะการังเทียมจากหน่วยงานที่เกี่ยวข้อง โดยดำเนินการจัดเก็บข้อมูลเป็นหมวดหมู่และเป็นระเบียบเพื่อสะดวกใน...</p>
+                                                        <div class="action">
+                                                            <div class="btn btn-outline-primary" title="อ่านต่อ">อ่านต่อ</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="col-md-6 col-12" data-aos="fade-up">
+                                        <a class="link link-card -vertical" title="เก็บขยะใต้ทะเล แนวปะการังเทียมบ้านเกาะแต้วเจอเศษอวน" href="/activity/detail">
+                                            <div class="overflow-hidden card">
+                                                <div class="thumbnail">
+                                                    <figure class="cover">
+                                                        <img alt="" data-src="{$template}/assets/img/upload/beautiful-beach-sea.jpg" class="img-cover lazy">
+                                                    </figure>
+                                                </div>
+                                                <div class="card-body">
+                                                    <div class="inner">
+                                                        <div class="date">23 มิถุนายน 2560</div>
+                                                        <h4 class="title">เก็บขยะใต้ทะเล แนวปะการังเทียมบ้านเกาะแต้วเจอเศษอวน</h4>
+                                                        <p class="desc">เป็นศูนย์รวบรวมข้อมูลปะการังเทียมจากหน่วยงานที่เกี่ยวข้อง โดยดำเนินการจัดเก็บข้อมูลเป็นหมวดหมู่และเป็นระเบียบเพื่อสะดวกในเป็นศูนย์รวบรวมข้อมูลปะการังเทียมจากหน่วยงานที่เกี่ยวข้อง โดยดำเนินการจัดเก็บข้อมูลเป็นหมวดหมู่และเป็นระเบียบเพื่อสะดวกใน...</p>
+                                                        <div class="action">
+                                                            <div class="btn btn-outline-primary" title="อ่านต่อ">อ่านต่อ</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="news-list">
+                                <div class="row gutters-xl-40">
+                                    {foreach $ActivityList as $KeyActivityList => $valueActivityList}
+                                        <div class="col-lg-4 col-sm-6 col-12" data-aos="fade-up">
+                                            <a class="link link-card -vertical" title="{$valueActivityList.credate|DateThai:'13':{$langon}:'shot'}" href="{$ul}/activity/detail/{$valueActivityList.id}">
                                                 <div class="overflow-hidden card">
                                                     <div class="thumbnail">
                                                         <figure class="cover">
-                                                            <img alt="" data-src="{$template}/assets/img/upload/beautiful-beach-sea.jpg" class="img-cover lazy">
+                                                            <img alt="" 
+                                                                src="{$valueActivityList.6|fileinclude:"office":{$valueActivityList.1}:"link"}" 
+                                                                data-src="{$valueActivityList.6|fileinclude:"pictures":{$valueActivityList.1}:"link"}" class="img-cover lazy">
                                                         </figure>
                                                     </div>
                                                     <div class="card-body">
                                                         <div class="inner">
-                                                            <div class="date">23 มิถุนายน 2560</div>
-                                                            <h4 class="title">เก็บขยะใต้ทะเล แนวปะการังเทียมบ้านเกาะแต้วเจอเศษอวน</h4>
-                                                            <p class="desc">เป็นศูนย์รวบรวมข้อมูลปะการังเทียมจากหน่วยงานที่เกี่ยวข้อง โดยดำเนินการจัดเก็บข้อมูลเป็นหมวดหมู่และเป็นระเบียบเพื่อสะดวกในเป็นศูนย์รวบรวมข้อมูลปะการังเทียมจากหน่วยงานที่เกี่ยวข้อง โดยดำเนินการจัดเก็บข้อมูลเป็นหมวดหมู่และเป็นระเบียบเพื่อสะดวกใน...</p>
+                                                            <div class="date">{$valueActivityList.credate|DateThai:'13':{$langon}:'shot'}</div>
+                                                            <h4 class="title">{$valueActivityList.subject}</h4>
+                                                            <p class="desc">{$valueActivityList.title}</p>
                                                             <div class="action">
                                                                 <div class="btn btn-outline-primary" title="อ่านต่อ">อ่านต่อ</div>
                                                             </div>
@@ -146,65 +194,9 @@
                                                 </div>
                                             </a>
                                         </div>
-                                        <div class="col-md-6 col-12" data-aos="fade-up">
-                                            <a class="link link-card -vertical" title="เก็บขยะใต้ทะเล แนวปะการังเทียมบ้านเกาะแต้วเจอเศษอวน" href="/activity/detail">
-                                                <div class="overflow-hidden card">
-                                                    <div class="thumbnail">
-                                                        <figure class="cover">
-                                                            <img alt="" data-src="{$template}/assets/img/upload/beautiful-beach-sea.jpg" class="img-cover lazy">
-                                                        </figure>
-                                                    </div>
-                                                    <div class="card-body">
-                                                        <div class="inner">
-                                                            <div class="date">23 มิถุนายน 2560</div>
-                                                            <h4 class="title">เก็บขยะใต้ทะเล แนวปะการังเทียมบ้านเกาะแต้วเจอเศษอวน</h4>
-                                                            <p class="desc">เป็นศูนย์รวบรวมข้อมูลปะการังเทียมจากหน่วยงานที่เกี่ยวข้อง โดยดำเนินการจัดเก็บข้อมูลเป็นหมวดหมู่และเป็นระเบียบเพื่อสะดวกในเป็นศูนย์รวบรวมข้อมูลปะการังเทียมจากหน่วยงานที่เกี่ยวข้อง โดยดำเนินการจัดเก็บข้อมูลเป็นหมวดหมู่และเป็นระเบียบเพื่อสะดวกใน...</p>
-                                                            <div class="action">
-                                                                <div class="btn btn-outline-primary" title="อ่านต่อ">อ่านต่อ</div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="news-list">
-                                    <div class="row gutters-xl-40">
-                                        {foreach $ActivityList as $KeyActivityList => $valueActivityList}
-                                            <div class="col-lg-4 col-sm-6 col-12" data-aos="fade-up">
-                                                <a class="link link-card -vertical" title="{$valueActivityList.credate|DateThai:'13':{$langon}:'shot'}" href="{$ul}/activity/detail/{$valueActivityList.id}">
-                                                    <div class="overflow-hidden card">
-                                                        <div class="thumbnail">
-                                                            <figure class="cover">
-                                                                <img alt="" src="{$valueActivityList.6|fileinclude:"office":{$valueActivityList.1}:"link"}" data-src="{$valueActivityList.6|fileinclude:"pictures":{$valueActivityList.1}:"link"}" class="img-cover lazy">
-                                                            </figure>
-                                                        </div>
-                                                        <div class="card-body">
-                                                            <div class="inner">
-                                                                <div class="date">{$valueActivityList.credate|DateThai:'13':{$langon}:'shot'}</div>
-                                                                <h4 class="title">{$valueActivityList.subject}</h4>
-                                                                <p class="desc">{$valueActivityList.title}</p>
-                                                                <div class="action">
-                                                                    <div class="btn btn-outline-primary" title="อ่านต่อ">อ่านต่อ</div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                        {/foreach}
-                                    </div>
+                                    {/foreach}
                                 </div>
                             </div>
-                        </div>
-                        <div role="tabpanel" id="tabpane-News2" aria-labelledby="tab-News2" class="tab-pane fade">
-                            <div>
-                                <div class="default-content">Tab content for 2</div>
-                            </div>
-                        </div>
-                        <div role="tabpanel" id="tabpane-News3" aria-labelledby="tab-News3" class="tab-pane fade">
-                            <div class="default-content">Tab content for 3</div>
                         </div>
                     </div>
                 </div>
