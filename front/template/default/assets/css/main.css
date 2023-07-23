@@ -25909,6 +25909,9 @@ div.swal2-html-container {
 .default-page .action.-back-2-prevoius {
   padding-top: 2.5rem;
 }
+.default-page .action.-back-2-prevoius .btn span {
+  margin-right: 10px;
+}
 .default-page .graphic-inner-page-bottom {
   height: 510px;
   z-index: 0;

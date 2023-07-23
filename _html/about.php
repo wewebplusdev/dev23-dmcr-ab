@@ -16,7 +16,7 @@
             <?php include('inc/components/herobanner.php'); ?>
 
             <div class="default-page about-page" style="position:relative;z-index:1;overflow:hidden">
-                <div class="default-head">
+                <div class="default-head" data-aos="fade-up">
                     <div class="container-lg">
                         <div class="breadcrumb-block">
                             <nav aria-label="breadcrumb">
@@ -31,12 +31,12 @@
                 <div class="default-body">
                     <div class="container-lg">
                         <div class="body-content">
-                            <div class="whead page-title">
+                            <div class="whead page-title" data-aos="fade-left">
                                 <h2 class="title">เกี่ยวกับเรา</h2>
                             </div>
                             <div class="about-list">
                                 <div class="row">
-                                    <div class="item theme-purple active col-sm-4">
+                                    <div class="item theme-purple active col-sm-4" data-aos="fade-up">
                                         <div class="thumbnail">
                                             <div class="hexagon-wrapper">
                                                 <div class="hexagon-inner">
@@ -55,7 +55,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="item theme-orange  col-sm-4">
+                                    <div class="item theme-orange col-sm-4" data-aos="fade-up">
                                         <div class="thumbnail">
                                             <div class="hexagon-wrapper">
                                                 <div class="hexagon-inner">
@@ -74,7 +74,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="item theme-blue  col-sm-4">
+                                    <div class="item theme-blue col-sm-4" data-aos="fade-up">
                                         <div class="thumbnail">
                                             <div class="hexagon-wrapper">
                                                 <div class="hexagon-inner">
@@ -95,19 +95,19 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="editor-content">
+                            <div class="editor-content" data-aos="fade-up">
                                 <p>This is Editor Content</p>
                                 <p>Commodo adipisicing anim non minim fugiat amet laborum minim aute. Anim irure quis Lorem fugiat
                                     veniam deserunt anim nostrud irure Lorem ipsum duis fugiat do. Officia ea deserunt dolor ad
                                     mollit aliqua cillum do velit. Anim minim dolore ut occaecat magna cupidatat amet incididunt
                                     consectetur laboris.</p>
                             </div>
-                            <div class="gallery-list">
-                                <div class="whead">
+                            <div class="gallery-list" data-aos="fade-up" id="trigger-video-player">
+                                <div class="whead" data-aos="fade-left">
                                     <div class="subtitle">รูปประกอบ</div>
                                 </div>
                                 <div>
-                                    <div class="swiper gallery-swiper default-swiper">
+                                    <div class="swiper gallery-swiper default-swiper" data-aos="fade-up">
                                         <div class="swiper-wrapper">
                                             <div class="swiper-slide">
                                                 <a data-fancybox="gallery" href="https://lipsum.app/id/60/1600x1200">
@@ -163,7 +163,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="video-player">
+                            <div class="video-player" data-aos="fade-up" data-aos-anchor="#trigger-video-player" data-aos-anchor-placement="top-top" id="trigger-attach">
                                 <div class="ratio ratio-16x9">
                                     <video>
                                         <source src="<?php echo $core_template; ?>assets/video/istockphoto-1305339327-640_adpp_is.mp4" type="video/mp4">
@@ -176,7 +176,7 @@
                                     </button>
                                 </div>
                             </div>
-                            <div class="attachment-list">
+                            <div class="attachment-list" data-aos="fade-up" data-aos-anchor="#trigger-attach" data-aos-anchor-placement="top-bottom" id="trigger-action">
                                 <div class="whead">
                                     <div class="subtitle">เอกสารแนบ</div>
                                 </div>
@@ -236,9 +236,11 @@
                                 </div>
                             </div>
                             <div class="action -back-2-prevoius" style="border-top:1px solid #fff">
-                                <div class="justify-content-end row">
+                                <div class="row justify-content-end">
                                     <div class="col-auto">
-                                        <button type="button" class="btn btn-gray-light"><span class="fa-solid fa-chevron-left"></span>กลับ</button>
+                                        <button type="button" class="btn btn-gray-light">
+                                            <span class="fa-solid fa-chevron-left"></span>กลับ
+                                        </button>
                                     </div>
                                 </div>
                             </div>

@@ -1,3 +1,12 @@
+$(function () {
+    AOS.init({
+        duration: 1000,
+        once: true,
+        offset: 0,
+        anchorPlacement: 'top-bottom', 
+    });
+});
+
 window.onload = function () {
     $(".preload").delay(400).fadeOut("200", function () {
         $('#preload').addClass('move');
@@ -5,16 +14,10 @@ window.onload = function () {
     });
 };
 
+
 $(document).ready(function () {
     // console.log( "ready!" );
 
-    $(function () {
-        AOS.init({
-            duration: 2000,
-            once: true,
-            offset: 0,
-        });
-    });
 
 
     var lazyLoadInstance = new LazyLoad();

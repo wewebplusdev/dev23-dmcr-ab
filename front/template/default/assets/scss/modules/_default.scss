@@ -35,6 +35,11 @@ $--nav-tabs-h: 80px;
         &.-back-2-prevoius {
             // margin-top: 3rem;
             padding-top: 2.5rem;
+            .btn {
+                span {
+                    margin-right: 10px;
+                }
+            }
         }
     }
     .graphic-inner-page-bottom {

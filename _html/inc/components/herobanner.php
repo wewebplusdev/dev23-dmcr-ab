@@ -1,4 +1,4 @@
-<div class="hero-banner">
+<div class="hero-banner" data-aos="fade-up">
     <div class="hero-banner-swiper swiper">
         <div class="swiper-wrapper">
             <?php for ($i = 1; $i <= 5; $i++) { ?>

@@ -20,7 +20,7 @@
                     <div class="wg-overview">
                         <div class="ov-list">
                             <div class="row">
-                                <div class="ov-item theme-purple col-sm-4">
+                                <div class="ov-item theme-purple col-sm-4" data-aos="fade-up">
                                     <div class="thumbnail">
                                         <div class="hexagon-wrapper">
                                             <div class="hexagon-inner">
@@ -41,7 +41,7 @@
                                         <div class="measure">จุด</div>
                                     </div>
                                 </div>
-                                <div class="ov-item theme-orange col-sm-4">
+                                <div class="ov-item theme-orange col-sm-4" data-aos="fade-up">
                                     <div class="thumbnail">
                                         <div class="hexagon-wrapper">
                                             <div class="hexagon-inner">
@@ -62,7 +62,7 @@
                                         <div class="measure">จุด</div>
                                     </div>
                                 </div>
-                                <div class="ov-item theme-blue col-sm-4">
+                                <div class="ov-item theme-blue col-sm-4" data-aos="fade-up">
                                     <div class="thumbnail">
                                         <div class="hexagon-wrapper">
                                             <div class="hexagon-inner">
@@ -87,14 +87,14 @@
                         </div>
                     </div>
                     <div class="graphic">
-                        <div class="object-i" style="z-index:3"></div>
-                        <div class="object-ii" style="z-index:2"></div>
-                        <div class="wave-i" style="z-index:-1">
+                        <div class="object-i" style="z-index:3" data-aos="fade-up-right" data-aos-delay="300" data-aos-duration="1500"></div>
+                        <div class="object-ii" style="z-index:2" data-aos="fade-up-left"></div>
+                        <div class="wave-i" style="z-index:-1" data-aos="fade-up" data-aos-delay="300" data-aos-duration="2000">
                             <svg data-name="wave-i" xmlns="http://www.w3.org/2000/svg" width="1771.15" height="563.473" viewBox="0 0 1771.15 563.473">
                                 <path d="M0,634.874S81.364,614.5,244.455,642.71c170.224,29.447,260.251-56.424,405.127-57.992,149.091-1.612,333.707,65.437,445.29,48.588,83.28-12.575,164.56-55.5,282.323-53.877,112.636,1.554,190.783,61.888,276.082,69.937,49.882,4.707,117.872-20.762,117.872-20.762v514.253H0Z" transform="translate(0 -579.384)" fill="#e8f4ff"></path>
                             </svg>
                         </div>
-                        <div class="wave-ii" style="z-index:2">
+                        <div class="wave-ii" style="z-index:2" data-aos="fade-up" data-aos-duration="2000">
                             <svg data-name="wave-ii" xmlns="http://www.w3.org/2000/svg" width="2142.258" height="386.187" viewBox="0 0 2142.258 386.187">
                                 <path d="M17859.258,16026.653s-204.309-54.487-413.18,0-520.367,44-726.822,0-546.377-70.835-706.205,16.346-296.051-41.773-296.051-41.773v370.517h2142.258Z" transform="translate(-15717 -15985.556)" fill="#c6e5ff"></path>
                             </svg>
@@ -104,7 +104,7 @@
                                 <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
                             </svg>
                         </div>
-                        <div class="wave-iv" style="z-index:4">
+                        <div class="wave-iv" style="z-index:4" data-aos="fade-up">
                             <svg data-name="wave-iv" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
                                 <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
                             </svg>
@@ -116,7 +116,7 @@
             <div class="section section-ii lazy" data-bg-multi="linear-gradient(#0b8bf6 0%, rgba(0, 74, 201, 0) 100%),
                                     url(<?php echo $core_template; ?>assets/img/background/bg-section-ii.png)" style="overflow:hidden">
                 <div class="container-lg">
-                    <div class="wg-search">
+                    <div class="wg-search" data-aos="fade-up">
                         <div class="text-center">
                             <div class="whead">
                                 <h2 class="title">ค้นหา</h2>
@@ -166,7 +166,7 @@
                         </div>
                     </div>
                     <div class="gutters-40 row">
-                        <div class="col-lg-6">
+                        <div class="col-lg-6" data-aos="fade-right">
                             <div class="wg-province-report">
                                 <div class="head-title">
                                     <div class="align-items-center row">
@@ -270,7 +270,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-6">
+                        <div class="col-lg-6" data-aos="fade-left">
                             <div class="wg-charts-report">
                                 <div class="head-title">
                                     <div class="align-items-center row">
@@ -390,9 +390,9 @@
 
             <div class="section section-iii pt-0" style="overflow:hidden">
                 <div class="container-lg">
-                    <div class="wg-activities">
+                    <div class="wg-activities" data-aos="fade-down">
                         <div class="content">
-                            <div class="whead text-center">
+                            <div class="whead text-center" data-aos="fade-up">
                                 <h2 class="title">กิจกรรมที่เกี่ยวข้อง</h2>
                             </div>
                             <div class="default-tabs">
@@ -630,7 +630,7 @@
             <div class="section section-iv p-0" style="overflow:hidden">
                 <div class="container-lg">
                     <div class="wg-about">
-                        <div class="content" style="color:#fff">
+                        <div class="content" style="color:#fff" data-aos="fade-up">
                             <div class="whead">
                                 <h2 class="h-title">เกี่ยวกับเรา</h2>
                                 <p class="desc">เป็นศูนย์รวบรวมข้อมูลปะการังเทียมจากหน่วยงานที่เกี่ยวข้อง โดยดำเนินการจัดเก็บข้อมูลเป็น หมวดหมู่และเป็นระเบียบ เพื่อสะดวกในการใช้งานสำหรับนักวิชาการและผู้ที่สนใจทั่วไป</p>
@@ -639,10 +639,10 @@
                                 <a class="btn btn-secondary" title="อ่านต่อ" href="/about">อ่านต่อ</a>
                             </div>
                         </div>
-                        <div class="style-about">
-                            <img alt="wg-about-style.png" data-src="<?php echo $core_template; ?>assets/img/static/wg-about-style.png" class="prevent-select lazy" style="color:transparent">
+                        <div class="style-about" data-aos="fade-up" data-aos-duration="2000">
+                            <img alt="wg-about-style.png" src="<?php echo $core_template; ?>assets/img/static/wg-about-style-small.png" data-src="<?php echo $core_template; ?>assets/img/static/wg-about-style.png" class="prevent-select lazy" style="color:transparent">
                         </div>
-                        <div class="bg">
+                        <div class="bg" data-aos="fade-up" data-aos-duration="1500">
                             <img alt="" data-src="<?php echo $core_template; ?>assets/img/background/bg-wg-about.png" class="lazy" style="position:absolute;height:100%;width:100%;left:0;top:0;right:0;bottom:0;object-fit:cover;color:transparent">
                         </div>
                     </div>
@@ -652,7 +652,7 @@
             <div class="section section-v" style="overflow:hidden">
                 <div class="container-lg">
                     <div class="wg-about-project">
-                        <div class="whead text-center">
+                        <div class="whead text-center" data-aos="fade-down">
                             <h2 class="title text-primary">เกี่ยวกับโครงการ</h2>
                         </div>
                         <div class="apj-list">
@@ -660,7 +660,7 @@
                                 <div class="swiper-wrapper">
                                     <div class="swiper-slide item">
                                         <a class="link" title="" href="/">
-                                            <div class="default-card theme-blue card">
+                                            <div class="default-card theme-blue card" data-aos="fade-up">
                                                 <div class="card-body">
                                                     <div class="thumbnail">
                                                         <div class="hexagon-wrapper">
@@ -687,7 +687,7 @@
                                     </div>
                                     <div class="swiper-slide item">
                                         <a class="link" title="" href="/">
-                                            <div class="default-card theme-purple card">
+                                            <div class="default-card theme-purple card" data-aos="fade-up">
                                                 <div class="card-body">
                                                     <div class="thumbnail">
                                                         <div class="hexagon-wrapper">
@@ -714,7 +714,7 @@
                                     </div>
                                     <div class="swiper-slide item">
                                         <a class="link" title="" href="/">
-                                            <div class="default-card theme-green card">
+                                            <div class="default-card theme-green card" data-aos="fade-up">
                                                 <div class="card-body">
                                                     <div class="thumbnail">
                                                         <div class="hexagon-wrapper">
@@ -741,7 +741,7 @@
                                     </div>
                                     <div class="swiper-slide item">
                                         <a class="link" title="" href="/">
-                                            <div class="default-card theme-orange card">
+                                            <div class="default-card theme-orange card" data-aos="fade-up">
                                                 <div class="card-body">
                                                     <div class="thumbnail">
                                                         <div class="hexagon-wrapper">
@@ -781,7 +781,7 @@
                     <div class="row align-items-center height">
                         <div class="col-lg-6">
                             <div class="wg-offer-demand">
-                                <div class="content" style="color:var(--color-default)">
+                                <div class="content" style="color:var(--color-default)" data-aos="fade-right">
                                     <div class="text-center">
                                         <div class="whead">
                                             <h2 class="h-title text-primary">เสนอความต้องการ</h2>
@@ -799,7 +799,7 @@
                         </div>
                         <div class="col-lg-6">
                             <div class="wg-vote-poll">
-                                <div class="content" style="color:#fff">
+                                <div class="content" style="color:#fff" data-aos="fade-left">
                                     <div class="text-center">
                                         <div class="whead">
                                             <h2 class="h-title text-uppercase">VOTE &amp; POLL</h2>
@@ -844,9 +844,9 @@
                 </div>
             </div>
 
-            <div class="section section-vii " style="overflow:hidden">
+            <div class="section section-vii" style="overflow:hidden">
                 <div class="container-lg">
-                    <div class="wg-weblinks">
+                    <div class="wg-weblinks" data-aos="fade-up">
                         <div class="weblink-list">
                             <div class="swiper weblink-swiper default-swiper">
                                 <div class="swiper-wrapper">
