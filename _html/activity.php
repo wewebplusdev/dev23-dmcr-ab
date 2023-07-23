@@ -16,7 +16,7 @@
             <?php include('inc/components/herobanner.php'); ?>
 
             <div class="default-page news-page" style="position:relative;z-index:1;overflow:hidden">
-                <div class="default-head">
+                <div class="default-head" data-aos="fade-up">
                     <div class="container-lg">
                         <div class="breadcrumb-block">
                             <nav aria-label="breadcrumb">
@@ -30,17 +30,17 @@
                 </div>
                 <div class="default-body">
                     <div class="container-lg">
-                        <div class="graphic graphic-inner-page-top">
+                        <div class="graphic graphic-inner-page-top" data-aos="fade-up" data-aos-delay="300">
                             <div class="bg" style="z-index:0">
                                 <img alt="" data-src="<?php echo $core_template; ?>assets/img/background/bg-inner-page-top.png" class="lazy">
                             </div>
                         </div>
                         <div class="body-content">
-                            <div class="whead page-title">
+                            <div class="whead page-title" data-aos="fade-left">
                                 <h2 class="title">กิจกรรมที่เกี่ยวข้อง</h2>
                             </div>
                             <div class="default-tabs">
-                                <ul class="nav nav-tabs nav-fill" role="tablist">
+                                <ul class="nav nav-tabs nav-fill" role="tablist" data-aos="fade-up" data-aos-delay="300">
                                     <li class="nav-item" role="presentation">
                                         <button type="button" id="tab-News1" data-bs-toggle="tab" data-bs-target="#tabpane-News1" role="tab" data-rr-ui-event-key="News1" aria-controls="tabpane-News1" aria-selected="true" class="nav-link active">
                                             <div class="icon">
@@ -140,7 +140,7 @@
                                             </div>
                                             <div class="news-highlights">
                                                 <div class="gutters-xl-40 row">
-                                                    <div class="col-md-6 col-12">
+                                                    <div class="col-md-6 col-12" data-aos="fade-up">
                                                         <a class="link link-card -vertical" title="เก็บขยะใต้ทะเล แนวปะการังเทียมบ้านเกาะแต้วเจอเศษอวน" href="/activity/detail">
                                                             <div class="overflow-hidden card">
                                                                 <div class="thumbnail">
@@ -161,7 +161,7 @@
                                                             </div>
                                                         </a>
                                                     </div>
-                                                    <div class="col-md-6 col-12">
+                                                    <div class="col-md-6 col-12" data-aos="fade-up">
                                                         <a class="link link-card -vertical" title="เก็บขยะใต้ทะเล แนวปะการังเทียมบ้านเกาะแต้วเจอเศษอวน" href="/activity/detail">
                                                             <div class="overflow-hidden card">
                                                                 <div class="thumbnail">
@@ -186,7 +186,7 @@
                                             </div>
                                             <div class="news-list">
                                                 <div class="gutters-xl-40 row">
-                                                    <div class="col-lg-4 col-sm-6 col-12">
+                                                    <div class="col-lg-4 col-sm-6 col-12" data-aos="fade-up">
                                                         <a class="link link-card -vertical" title="เก็บขยะใต้ทะเล แนวปะการังเทียมบ้านเกาะแต้วเจอเศษอวน" href="/activity/detail">
                                                             <div class="overflow-hidden card">
                                                                 <div class="thumbnail">

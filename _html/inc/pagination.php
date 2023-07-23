@@ -1,4 +1,4 @@
-<div class="pagination-block">
+<div class="pagination-block" data-aos="fade-up">
     <div class="align-items-center row">
         <div class="col">
             <div class="pagination-label">จำนวนทั้งหมด <span class="text-primary">20</span> รายการ</div>
