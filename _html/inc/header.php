@@ -72,8 +72,8 @@
 					<div class="d-lg-none d-block navbar-nav">
 						<?php include('components/search.php'); ?>
 					</div>
-					<a href="/" title="หน้าหลัก" data-rr-ui-event-key="/" class="active nav-link">หน้าหลัก</a>
-					<a href="/about" title="เกี่ยวกับเรา" data-rr-ui-event-key="/about" class="nav-link">เกี่ยวกับเรา</a>
+					<a href="index.php" title="หน้าหลัก" data-rr-ui-event-key="/" class="active nav-link">หน้าหลัก</a>
+					<a href="about.php" title="เกี่ยวกับเรา" data-rr-ui-event-key="/about" class="nav-link">เกี่ยวกับเรา</a>
 					<a href="/activity" title="กิจกรรมที่เกี่ยวข้อง" data-rr-ui-event-key="/activity" class="nav-link">กิจกรรมที่เกี่ยวข้อง</a>
 					<a href="/follow" title="การติดตามการใช้ประโยชน์" data-rr-ui-event-key="/follow" class="nav-link">การติดตามการใช้ประโยชน์</a>
 					<a href="/report" title="รายงานสรุป" data-rr-ui-event-key="/report" class="nav-link">รายงานสรุป</a>

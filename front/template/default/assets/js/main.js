@@ -163,10 +163,74 @@ $(document).ready(function () {
                 slidesPerView: 3,
                 spaceBetween: 20,
             },
-            1199:{
+            1199: {
                 spaceBetween: 40
             }
         }
     });
+
+    const gallerySwiper = new Swiper('.gallery-swiper', {
+        // Optional parameters
+        slidesPerView: 5,
+        spaceBetween: 30,
+        // loop: true,
+        pagination: {
+            el: '.swiper-pagination',
+            dynamicBullets: true,
+            clickable: true
+        },
+        breakpoints: {
+            0: {
+                slidesPerView: 3,
+                spaceBetween: 15,
+            },
+            991: {
+                slidesPerView: 4,
+                spaceBetween: 20,
+            },
+            1199: {
+                slidesPerView: 5,
+                spaceBetween: 30,
+            }
+        }
+    });
+
+    const attachSwiper = new Swiper('.attach-swiper', {
+        // Optional parameters
+        slidesPerView: 2,
+        spaceBetween: 40,
+        // loop: true,
+        pagination: {
+            el: '.swiper-pagination',
+            dynamicBullets: true,
+            clickable: true
+        },
+        breakpoints: {
+            0: {
+                slidesPerView: 1,
+                spaceBetween: 15,
+            },
+            767: {
+                slidesPerView: 2,
+                spaceBetween: 15,
+            },
+            991: {
+                spaceBetween: 30,
+            },
+            1440: {
+                spaceBetween: 40,
+            }
+        }
+    });
+
+    Fancybox.bind('[data-fancybox="gallery"]', {
+        // Your custom options
+    });
+
+    $('.btn-play').on('click', function () {
+        $(this).hide();
+        $('.video-player video').attr('controls', 'true')
+        $('.video-player video').attr('autoplay', 'true')
+    })
 
 });
