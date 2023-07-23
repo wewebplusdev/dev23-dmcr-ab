@@ -42,7 +42,7 @@
                             <div class="default-tabs">
                                 <ul class="nav nav-tabs nav-fill" role="tablist">
                                     <li class="nav-item" role="presentation">
-                                        <button type="button" id="tab-News1" role="tab" data-rr-ui-event-key="News1" aria-controls="tabpane-News1" aria-selected="true" class="nav-link active">
+                                        <button type="button" id="tab-News1" data-bs-toggle="tab" data-bs-target="#tabpane-News1" role="tab" data-rr-ui-event-key="News1" aria-controls="tabpane-News1" aria-selected="true" class="nav-link active">
                                             <div class="icon">
                                                 <div class="justify-content-center align-items-center row row-cols-auto">
                                                     <div class="col">
@@ -65,7 +65,7 @@
                                         </button>
                                     </li>
                                     <li class="nav-item" role="presentation">
-                                        <button type="button" id="tab-News2" role="tab" data-rr-ui-event-key="News2" aria-controls="tabpane-News2" aria-selected="false" tabindex="-1" class="nav-link">
+                                        <button type="button" id="tab-News2" data-bs-toggle="tab" data-bs-target="#tabpane-News2" role="tab" data-rr-ui-event-key="News2" aria-controls="tabpane-News2" aria-selected="false" tabindex="-1" class="nav-link">
                                             <div class="icon">
                                                 <div class="justify-content-center align-items-center row row-cols-auto">
                                                     <div class="col">
@@ -96,7 +96,8 @@
                                             </div>
                                         </button>
                                     </li>
-                                    <li class="nav-item" role="presentation"><button type="button" id="tab-News3" role="tab" data-rr-ui-event-key="News3" aria-controls="tabpane-News3" aria-selected="false" tabindex="-1" class="nav-link">
+                                    <li class="nav-item" role="presentation">
+                                        <button type="button" id="tab-News3" data-bs-toggle="tab" data-bs-target="#tabpane-News3" role="tab" data-rr-ui-event-key="News3" aria-controls="tabpane-News3" aria-selected="false" tabindex="-1" class="nav-link">
                                             <div class="icon">
                                                 <div class="justify-content-center align-items-center row row-cols-auto">
                                                     <div class="col">
@@ -120,7 +121,7 @@
                                     </li>
                                 </ul>
                                 <div class="tab-content">
-                                    <div role="tabpanel" id="tabpane-News1" aria-labelledby="tab-News1" class="fade tab-pane active show">
+                                    <div role="tabpanel" id="tabpane-News1" aria-labelledby="tab-News1" class="tab-pane fade active show">
                                         <div class="default-content">
                                             <div class="news-head">
                                                 <div class="align-items-center justify-content-end row">
@@ -128,19 +129,10 @@
                                                         <div class="sort-options">
                                                             <div class="form-group">
                                                                 <label class="form-label" for="years">จัดเรียง</label>
-                                                                <div class="select-control css-b62m3t-container"><span id="react-select-2-live-region" class="css-7pg0cj-a11yText"></span><span aria-live="polite" aria-atomic="false" aria-relevant="additions text" class="css-7pg0cj-a11yText"></span>
-                                                                    <div class="select-control__control css-13cymwt-control">
-                                                                        <div class="select-control__value-container css-hlgwow">
-                                                                            <div class="select-control__placeholder css-1jqq78o-placeholder" id="react-select-2-placeholder"></div><input id="react-select-2-input" tabindex="0" inputmode="none" aria-autocomplete="list" aria-expanded="false" aria-haspopup="true" role="combobox" aria-readonly="true" aria-describedby="react-select-2-placeholder" class="css-1hac4vs-dummyInput" value="">
-                                                                        </div>
-                                                                        <div class="select-control__indicators css-1wy0on6"><span class="select-control__indicator-separator css-1u9des2-indicatorSeparator"></span>
-                                                                            <div class="select-control__indicator select-control__dropdown-indicator css-1xc3v61-indicatorContainer" aria-hidden="true"><svg height="20" width="20" viewBox="0 0 20 20" aria-hidden="true" focusable="false" class="css-8mmkcg">
-                                                                                    <path d="M4.516 7.548c0.436-0.446 1.043-0.481 1.576 0l3.908 3.747 3.908-3.747c0.533-0.481 1.141-0.446 1.574 0 0.436 0.445 0.408 1.197 0 1.615-0.406 0.418-4.695 4.502-4.695 4.502-0.217 0.223-0.502 0.335-0.787 0.335s-0.57-0.112-0.789-0.335c0 0-4.287-4.084-4.695-4.502s-0.436-1.17 0-1.615z"></path>
-                                                                                </svg></div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <input name="sort" type="hidden" value="">
-                                                                </div>
+                                                                <select class="select-control" name="filter" style="width: 100%;">
+                                                                    <option value="0">ตาม ก-ฮ</option>
+                                                                    <option value="1">ตาม ฮ-ก</option>
+                                                                </select>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -152,8 +144,8 @@
                                                         <a class="link link-card -vertical" title="เก็บขยะใต้ทะเล แนวปะการังเทียมบ้านเกาะแต้วเจอเศษอวน" href="/activity/detail">
                                                             <div class="overflow-hidden card">
                                                                 <div class="thumbnail">
-                                                                    <figure class="cover" style="padding-top:75%">
-                                                                        <img alt="" src="<?php echo $core_template; ?>assets/img/beautiful-beach-sea.180e6ebf.jpg" class="img-cover lazy">
+                                                                    <figure class="cover">
+                                                                        <img alt="" data-src="<?php echo $core_template; ?>assets/img/upload/beautiful-beach-sea.jpg" class="img-cover lazy">
                                                                     </figure>
                                                                 </div>
                                                                 <div class="card-body">
@@ -173,8 +165,8 @@
                                                         <a class="link link-card -vertical" title="เก็บขยะใต้ทะเล แนวปะการังเทียมบ้านเกาะแต้วเจอเศษอวน" href="/activity/detail">
                                                             <div class="overflow-hidden card">
                                                                 <div class="thumbnail">
-                                                                    <figure class="cover" style="padding-top:75%">
-                                                                        <img alt="" src="<?php echo $core_template; ?>assets/img/beautiful-beach-sea.180e6ebf.jpg" class="img-cover lazy">
+                                                                    <figure class="cover">
+                                                                        <img alt="" data-src="<?php echo $core_template; ?>assets/img/upload/beautiful-beach-sea.jpg" class="img-cover lazy">
                                                                     </figure>
                                                                 </div>
                                                                 <div class="card-body">
@@ -198,7 +190,9 @@
                                                         <a class="link link-card -vertical" title="เก็บขยะใต้ทะเล แนวปะการังเทียมบ้านเกาะแต้วเจอเศษอวน" href="/activity/detail">
                                                             <div class="overflow-hidden card">
                                                                 <div class="thumbnail">
-                                                                    <figure class="cover" style="padding-top:75%"><img alt="" src="<?php echo $core_template; ?>assets/img/beautiful-beach-sea.180e6ebf.jpg" class="img-cover lazy"></figure>
+                                                                    <figure class="cover">
+                                                                        <img alt="" data-src="<?php echo $core_template; ?>assets/img/upload/beautiful-beach-sea.jpg" class="img-cover lazy">
+                                                                    </figure>
                                                                 </div>
                                                                 <div class="card-body">
                                                                     <div class="inner">
@@ -217,12 +211,12 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div role="tabpanel" id="tabpane-News2" aria-labelledby="tab-News2" class="fade tab-pane">
+                                    <div role="tabpanel" id="tabpane-News2" aria-labelledby="tab-News2" class="tab-pane fade">
                                         <div>
                                             <div class="default-content">Tab content for 2</div>
                                         </div>
                                     </div>
-                                    <div role="tabpanel" id="tabpane-News3" aria-labelledby="tab-News3" class="fade tab-pane">
+                                    <div role="tabpanel" id="tabpane-News3" aria-labelledby="tab-News3" class="tab-pane fade">
                                         <div class="default-content">Tab content for 3</div>
                                     </div>
                                 </div>

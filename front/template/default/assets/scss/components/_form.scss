@@ -324,7 +324,6 @@
     }
 }
 
-
 .sort-options {
     .form-label {
         line-height: 40px;
@@ -345,6 +344,9 @@
         }
     }
     .select-control .select-control__value-container {
+        padding-left: calc(80px + 1rem);
+    }
+    .select2-container--default .select2-selection--single .select2-selection__rendered {
         padding-left: calc(80px + 1rem);
     }
 }

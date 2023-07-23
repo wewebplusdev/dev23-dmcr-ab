@@ -23863,6 +23863,9 @@ textarea {
 .sort-options .select-control .select-control__value-container {
   padding-left: calc(80px + 1rem);
 }
+.sort-options .select2-container--default .select2-selection--single .select2-selection__rendered {
+  padding-left: calc(80px + 1rem);
+}
 
 .form-default .invalid-feedback {
   margin-top: 0.5rem;
@@ -26687,6 +26690,11 @@ div.swal2-html-container {
 }
 .news-page .news-list > .row > div:not(:last-child) {
   margin-bottom: 40px;
+}
+
+.news-highlights .thumbnail .cover,
+.news-list .thumbnail .cover {
+  padding-top: 75%;
 }
 
 @media (max-width: 1199px) {
