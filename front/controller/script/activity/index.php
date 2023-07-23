@@ -5,7 +5,7 @@ $contentID = $url->segment[2];
 switch ($url->segment[1]) {
     default:
     #### call activity ####
-    $limit = 8;
+    $limit = 6;
     $ActivityList = $activityPage->callActivity($config['activity']['masterkey'],$page['on'],$limit);
     $smarty->assign("ActivityList", $ActivityList);
     
