@@ -174,7 +174,9 @@
                                             <h3 class="h-title">รายงานสรุปแยกตามจังหวัด</h3>
                                         </div>
                                         <div class="col-auto">
-                                            <div class="action"><a class="btn btn-light" title="ดูทั้งหมด" href="/">ดูทั้งหมด</a></div>
+                                            <div class="action">
+                                                <a class="btn btn-light" title="ดูทั้งหมด" href="/">ดูทั้งหมด</a>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -278,7 +280,9 @@
                                             <h3 class="h-title">รายงานสรุปตามหน่วยงาน</h3>
                                         </div>
                                         <div class="col-auto">
-                                            <div class="action"><a class="btn btn-light" title="ดูทั้งหมด" href="/">ดูทั้งหมด</a></div>
+                                            <div class="action">
+                                                <a class="btn btn-light" title="ดูทั้งหมด" href="/">ดูทั้งหมด</a>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -390,12 +394,12 @@
 
             <div class="section section-iii pt-0" style="overflow:hidden">
                 <div class="container-lg">
-                    <div class="wg-activities" data-aos="fade-down">
+                    <div class="wg-activities">
                         <div class="content">
                             <div class="whead text-center" data-aos="fade-up">
                                 <h2 class="title">กิจกรรมที่เกี่ยวข้อง</h2>
                             </div>
-                            <div class="default-tabs">
+                            <div class="default-tabs" data-aos="fade-up">
                                 <ul class="mb-md-5 mb-4 nav nav-tabs nav-fill" role="tablist">
                                     <li class="nav-item" role="presentation">
                                         <button type="button" id="tab-activity1" data-bs-toggle="tab" data-bs-target="#tabpane-activity1" role="tab" data-rr-ui-event-key="activity1" aria-controls="tabpane-activity1" aria-selected="true" class="nav-link active">
@@ -572,7 +576,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="bg">
+                        <div class="bg" data-aos="fade-up">
                             <img alt="" data-src="<?php echo $core_template; ?>assets/img/background/bg-section-iii.jpg" class="lazy">
                         </div>
                     </div>

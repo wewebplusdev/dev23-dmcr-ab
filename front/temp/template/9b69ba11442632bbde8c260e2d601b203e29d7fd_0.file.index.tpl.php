@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2023-07-24 00:35:46
+/* Smarty version 3.1.30, created on 2023-07-24 01:21:51
   from "C:\xampp\htdocs\dev23-dmcr-ab\front\controller\script\home\template\index.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_64bd64f2b9ac69_42313971',
+  'unifunc' => 'content_64bd6fbf9dd3b2_92913344',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '9b69ba11442632bbde8c260e2d601b203e29d7fd' => 
     array (
       0 => 'C:\\xampp\\htdocs\\dev23-dmcr-ab\\front\\controller\\script\\home\\template\\index.tpl',
-      1 => 1690133315,
+      1 => 1690136504,
       2 => 'file',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:front/template/default/inc-herobanner.tpl' => 1,
   ),
 ),false)) {
-function content_64bd64f2b9ac69_42313971 (Smarty_Internal_Template $_smarty_tpl) {
+function content_64bd6fbf9dd3b2_92913344 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:front/template/default/inc-herobanner.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('title'=>'title'), 0, false);
 ?>
 
@@ -31,14 +31,13 @@ $_smarty_tpl->_subTemplateRender("file:front/template/default/inc-herobanner.tpl
         <div class="wg-overview">
             <div class="ov-list">
                 <div class="row">
-                    <div class="ov-item theme-purple col-sm-4">
+                    <div class="ov-item theme-purple col-sm-4" data-aos="fade-up">
                         <div class="thumbnail">
                             <div class="hexagon-wrapper">
                                 <div class="hexagon-inner">
                                     <div class="icon-wrapper hexagon">
                                         <div class="icon">
-                                            <img alt="ปะการังเทียม"
-                                                data-src="<?php echo $_smarty_tpl->tpl_vars['template']->value;?>
+                                            <img alt="ปะการังเทียม" data-src="<?php echo $_smarty_tpl->tpl_vars['template']->value;?>
 /assets/img/icon/artificial-coral.svg" class="lazy">
                                         </div>
                                     </div>
@@ -54,15 +53,14 @@ $_smarty_tpl->_subTemplateRender("file:front/template/default/inc-herobanner.tpl
                             <div class="measure">จุด</div>
                         </div>
                     </div>
-                    <div class="ov-item theme-orange col-sm-4">
+                    <div class="ov-item theme-orange col-sm-4" data-aos="fade-up">
                         <div class="thumbnail">
                             <div class="hexagon-wrapper">
                                 <div class="hexagon-inner">
                                     <div class="icon-wrapper hexagon">
                                         <div class="icon">
                                             <img alt="ทุ่นในทะเล" data-src="<?php echo $_smarty_tpl->tpl_vars['template']->value;?>
-/assets/img/icon/buoy.svg"
-                                                class="lazy">
+/assets/img/icon/buoy.svg" class="lazy">
                                         </div>
                                     </div>
                                 </div>
@@ -77,15 +75,14 @@ $_smarty_tpl->_subTemplateRender("file:front/template/default/inc-herobanner.tpl
                             <div class="measure">จุด</div>
                         </div>
                     </div>
-                    <div class="ov-item theme-blue col-sm-4">
+                    <div class="ov-item theme-blue col-sm-4" data-aos="fade-up">
                         <div class="thumbnail">
                             <div class="hexagon-wrapper">
                                 <div class="hexagon-inner">
                                     <div class="icon-wrapper hexagon">
                                         <div class="icon">
                                             <img alt="จุดวางเรือ" data-src="<?php echo $_smarty_tpl->tpl_vars['template']->value;?>
-/assets/img/icon/boat.svg"
-                                                class="lazy">
+/assets/img/icon/boat.svg" class="lazy">
                                         </div>
                                     </div>
                                 </div>
@@ -104,9 +101,9 @@ $_smarty_tpl->_subTemplateRender("file:front/template/default/inc-herobanner.tpl
             </div>
         </div>
         <div class="graphic">
-            <div class="object-i" style="z-index:3"></div>
-            <div class="object-ii" style="z-index:2"></div>
-            <div class="wave-i" style="z-index:-1">
+            <div class="object-i" style="z-index:3" data-aos="fade-up-right" data-aos-delay="300" data-aos-duration="1500"></div>
+            <div class="object-ii" style="z-index:2" data-aos="fade-up-left"></div>
+            <div class="wave-i" style="z-index:-1" data-aos="fade-up" data-aos-delay="300" data-aos-duration="2000">
                 <svg data-name="wave-i" xmlns="http://www.w3.org/2000/svg" width="1771.15" height="563.473"
                     viewBox="0 0 1771.15 563.473">
                     <path
@@ -114,7 +111,7 @@ $_smarty_tpl->_subTemplateRender("file:front/template/default/inc-herobanner.tpl
                         transform="translate(0 -579.384)" fill="#e8f4ff"></path>
                 </svg>
             </div>
-            <div class="wave-ii" style="z-index:2">
+            <div class="wave-ii" style="z-index:2" data-aos="fade-up" data-aos-duration="2000">
                 <svg data-name="wave-ii" xmlns="http://www.w3.org/2000/svg" width="2142.258" height="386.187"
                     viewBox="0 0 2142.258 386.187">
                     <path
@@ -130,7 +127,7 @@ $_smarty_tpl->_subTemplateRender("file:front/template/default/inc-herobanner.tpl
                         class="shape-fill"></path>
                 </svg>
             </div>
-            <div class="wave-iv" style="z-index:4">
+            <div class="wave-iv" style="z-index:4" data-aos="fade-up">
                 <svg data-name="wave-iv" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
                     preserveAspectRatio="none">
                     <path
@@ -147,7 +144,7 @@ $_smarty_tpl->_subTemplateRender("file:front/template/default/inc-herobanner.tpl
 /assets/img/background/bg-section-ii.png)"
     style="overflow:hidden">
     <div class="container-lg">
-        <div class="wg-search">
+        <div class="wg-search" data-aos="fade-up">
             <div class="text-center">
                 <div class="whead">
                     <h2 class="title">ค้นหา</h2>
@@ -199,7 +196,7 @@ $_smarty_tpl->_subTemplateRender("file:front/template/default/inc-herobanner.tpl
             </div>
         </div>
         <div class="gutters-40 row">
-            <div class="col-lg-6">
+            <div class="col-lg-6" data-aos="fade-right">
                 <div class="wg-province-report">
                     <div class="head-title">
                         <div class="align-items-center row">
@@ -207,7 +204,8 @@ $_smarty_tpl->_subTemplateRender("file:front/template/default/inc-herobanner.tpl
                                 <h3 class="h-title">รายงานสรุปแยกตามจังหวัด</h3>
                             </div>
                             <div class="col-auto">
-                                <div class="action"><a class="btn btn-light" title="ดูทั้งหมด" href="/">ดูทั้งหมด</a>
+                                <div class="action">
+                                    <a class="btn btn-light" title="ดูทั้งหมด" href="/">ดูทั้งหมด</a>
                                 </div>
                             </div>
                         </div>
@@ -302,7 +300,7 @@ $_smarty_tpl->_subTemplateRender("file:front/template/default/inc-herobanner.tpl
                     </div>
                 </div>
             </div>
-            <div class="col-lg-6">
+            <div class="col-lg-6" data-aos="fade-left">
                 <div class="wg-charts-report">
                     <div class="head-title">
                         <div class="align-items-center row">
@@ -310,7 +308,8 @@ $_smarty_tpl->_subTemplateRender("file:front/template/default/inc-herobanner.tpl
                                 <h3 class="h-title">รายงานสรุปตามหน่วยงาน</h3>
                             </div>
                             <div class="col-auto">
-                                <div class="action"><a class="btn btn-light" title="ดูทั้งหมด" href="/">ดูทั้งหมด</a>
+                                <div class="action">
+                                    <a class="btn btn-light" title="ดูทั้งหมด" href="/">ดูทั้งหมด</a>
                                 </div>
                             </div>
                         </div>
@@ -533,10 +532,10 @@ $_smarty_tpl->_subTemplateRender("file:front/template/default/inc-herobanner.tpl
     <div class="container-lg">
         <div class="wg-activities">
             <div class="content">
-                <div class="whead text-center">
+                <div class="whead text-center" data-aos="fade-up">
                     <h2 class="title">กิจกรรมที่เกี่ยวข้อง</h2>
                 </div>
-                <div class="default-tabs">
+                <div class="default-tabs" data-aos="fade-up">
                     <ul class="mb-md-5 mb-4 nav nav-tabs nav-fill" role="tablist">
                         <li class="nav-item" role="presentation">
                             <button type="button" id="tab-activity1" data-bs-toggle="tab" data-bs-target="#tabpane-activity1" role="tab" data-rr-ui-event-key="activity1" aria-controls="tabpane-activity1" aria-selected="true" class="nav-link active">
@@ -722,7 +721,7 @@ $_smarty_tpl->tpl_vars['i']->first = $_smarty_tpl->tpl_vars['i']->iteration == 1
                     </div>
                 </div>
             </div>
-            <div class="bg">
+            <div class="bg" data-aos="fade-up">
                 <img alt="" data-src="<?php echo $_smarty_tpl->tpl_vars['template']->value;?>
 /assets/img/background/bg-section-iii.jpg" class="lazy">
             </div>
@@ -789,7 +788,7 @@ $_smarty_tpl->tpl_vars['i']->first = $_smarty_tpl->tpl_vars['i']->iteration == 1
 <div class="section section-iv p-0" style="overflow:hidden">
     <div class="container-lg">
         <div class="wg-about">
-            <div class="content" style="color:#fff">
+            <div class="content" style="color:#fff" data-aos="fade-up">
                 <div class="whead">
                     <h2 class="h-title">เกี่ยวกับเรา</h2>
                     <p class="desc">เป็นศูนย์รวบรวมข้อมูลปะการังเทียมจากหน่วยงานที่เกี่ยวข้อง โดยดำเนินการจัดเก็บข้อมูลเป็น หมวดหมู่และเป็นระเบียบ เพื่อสะดวกในการใช้งานสำหรับนักวิชาการและผู้ที่สนใจทั่วไป</p>
@@ -798,11 +797,12 @@ $_smarty_tpl->tpl_vars['i']->first = $_smarty_tpl->tpl_vars['i']->iteration == 1
                     <a class="btn btn-secondary" title="อ่านต่อ" href="/about">อ่านต่อ</a>
                 </div>
             </div>
-            <div class="style-about">
-                <img alt="wg-about-style.png" data-src="<?php echo $_smarty_tpl->tpl_vars['template']->value;?>
+            <div class="style-about" data-aos="fade-up" data-aos-duration="2000">
+                <img alt="wg-about-style" src="<?php echo $_smarty_tpl->tpl_vars['template']->value;?>
+/assets/img/static/wg-about-style-small.png" data-src="<?php echo $_smarty_tpl->tpl_vars['template']->value;?>
 /assets/img/static/wg-about-style.png" class="prevent-select lazy" style="color:transparent">
             </div>
-            <div class="bg">
+            <div class="bg" data-aos="fade-up" data-aos-duration="1500">
                 <img alt="" data-src="<?php echo $_smarty_tpl->tpl_vars['template']->value;?>
 /assets/img/background/bg-wg-about.png" class="lazy" style="position:absolute;height:100%;width:100%;left:0;top:0;right:0;bottom:0;object-fit:cover;color:transparent">
             </div>
@@ -814,7 +814,7 @@ $_smarty_tpl->tpl_vars['i']->first = $_smarty_tpl->tpl_vars['i']->iteration == 1
 /assets/img/background/bg-section-v.png">
     <div class="container-lg">
         <div class="wg-about-project">
-            <div class="whead text-center">
+            <div class="whead text-center" data-aos="fade-down">
                 <h2 class="title text-primary">เกี่ยวกับโครงการ</h2>
             </div>
             <div class="apj-list">
@@ -822,7 +822,7 @@ $_smarty_tpl->tpl_vars['i']->first = $_smarty_tpl->tpl_vars['i']->iteration == 1
                     <div class="swiper-wrapper">
                         <div class="swiper-slide item">
                             <a class="link" title="" href="/">
-                                <div class="default-card theme-blue card">
+                                <div class="default-card theme-blue card" data-aos="fade-up">
                                     <div class="card-body">
                                         <div class="thumbnail">
                                             <div class="hexagon-wrapper">
@@ -850,7 +850,7 @@ $_smarty_tpl->tpl_vars['i']->first = $_smarty_tpl->tpl_vars['i']->iteration == 1
                         </div>
                         <div class="swiper-slide item">
                             <a class="link" title="" href="/">
-                                <div class="default-card theme-purple card">
+                                <div class="default-card theme-purple card" data-aos="fade-up">
                                     <div class="card-body">
                                         <div class="thumbnail">
                                             <div class="hexagon-wrapper">
@@ -878,7 +878,7 @@ $_smarty_tpl->tpl_vars['i']->first = $_smarty_tpl->tpl_vars['i']->iteration == 1
                         </div>
                         <div class="swiper-slide item">
                             <a class="link" title="" href="/">
-                                <div class="default-card theme-green card">
+                                <div class="default-card theme-green card" data-aos="fade-up">
                                     <div class="card-body">
                                         <div class="thumbnail">
                                             <div class="hexagon-wrapper">
@@ -906,7 +906,7 @@ $_smarty_tpl->tpl_vars['i']->first = $_smarty_tpl->tpl_vars['i']->iteration == 1
                         </div>
                         <div class="swiper-slide item">
                             <a class="link" title="" href="/">
-                                <div class="default-card theme-orange card">
+                                <div class="default-card theme-orange card" data-aos="fade-up">
                                     <div class="card-body">
                                         <div class="thumbnail">
                                             <div class="hexagon-wrapper">
@@ -947,7 +947,7 @@ $_smarty_tpl->tpl_vars['i']->first = $_smarty_tpl->tpl_vars['i']->iteration == 1
         <div class="row align-items-center height">
             <div class="col-lg-6">
                 <div class="wg-offer-demand">
-                    <div class="content" style="color:var(--color-default)">
+                    <div class="content" style="color:var(--color-default)" data-aos="fade-right">
                         <div class="text-center">
                             <div class="whead">
                                 <h2 class="h-title text-primary">เสนอความต้องการ</h2>
@@ -966,7 +966,7 @@ $_smarty_tpl->tpl_vars['i']->first = $_smarty_tpl->tpl_vars['i']->iteration == 1
             </div>
             <div class="col-lg-6">
                 <div class="wg-vote-poll">
-                    <div class="content" style="color:#fff">
+                    <div class="content" style="color:#fff" data-aos="fade-left">
                         <div class="text-center">
                             <div class="whead">
                                 <h2 class="h-title text-uppercase">VOTE &amp; POLL</h2>
@@ -1012,9 +1012,9 @@ $_smarty_tpl->tpl_vars['i']->first = $_smarty_tpl->tpl_vars['i']->iteration == 1
     </div>
 </div>
 
-<div class="section section-vii " style="overflow:hidden">
+<div class="section section-vii" style="overflow:hidden">
     <div class="container-lg">
-        <div class="wg-weblinks">
+        <div class="wg-weblinks" data-aos="fade-up">
             <div class="weblink-list">
                 <div class="swiper weblink-swiper default-swiper">
                     <div class="swiper-wrapper">

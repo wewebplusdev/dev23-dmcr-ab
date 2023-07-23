@@ -1,4 +1,4 @@
-<header class="layout-header" data-aos="fade-down">
+<header class="layout-header">
 	<div class="top-bar">
 		<div class="container-lg">
 			<div class="row justify-content-end align-items-center no-gutters">

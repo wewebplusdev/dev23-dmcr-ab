@@ -3,9 +3,14 @@ $(function () {
         duration: 1000,
         once: true,
         offset: 0,
-        anchorPlacement: 'top-bottom', 
+        anchorPlacement: 'top-bottom',
     });
 });
+
+if ($(window).width() < 992) {
+    //  data-aos="fade-down"
+    $('.layout-header').removeAttr('data-aos');
+}
 
 window.onload = function () {
     $(".preload").delay(400).fadeOut("200", function () {
@@ -18,7 +23,14 @@ window.onload = function () {
 $(document).ready(function () {
     // console.log( "ready!" );
 
-
+    var topbar = $('.layout-header').height();
+    $(window).scroll(function () {
+        if ($(window).scrollTop() > topbar) {
+            $(".layout-header").addClass("tiny");
+        } else {
+            $(".layout-header").removeClass("tiny");
+        }
+    });
 
     var lazyLoadInstance = new LazyLoad();
     // lazyLoadInstance.update();\

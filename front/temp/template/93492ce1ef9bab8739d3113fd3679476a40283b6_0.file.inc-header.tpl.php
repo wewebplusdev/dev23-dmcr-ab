@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2023-07-24 00:35:46
+/* Smarty version 3.1.30, created on 2023-07-24 01:32:23
   from "C:\xampp\htdocs\dev23-dmcr-ab\front\template\default\inc-header.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_64bd64f24a4fa1_56865296',
+  'unifunc' => 'content_64bd72374d6df1_50594568',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '93492ce1ef9bab8739d3113fd3679476a40283b6' => 
     array (
       0 => 'C:\\xampp\\htdocs\\dev23-dmcr-ab\\front\\template\\default\\inc-header.tpl',
-      1 => 1690133316,
+      1 => 1690137047,
       2 => 'file',
     ),
   ),
@@ -21,9 +21,9 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:inc-search.tpl' => 2,
   ),
 ),false)) {
-function content_64bd64f24a4fa1_56865296 (Smarty_Internal_Template $_smarty_tpl) {
+function content_64bd72374d6df1_50594568 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
-<header class="layout-header">
+<header class="layout-header" data-aos="fade-down">
 	<div class="top-bar">
 		<div class="container-lg">
 			<div class="row justify-content-end align-items-center no-gutters">

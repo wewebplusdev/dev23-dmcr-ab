@@ -1,4 +1,30 @@
-{include file="front/template/default/inc-herobanner.tpl" title=title}
+<?php
+/* Smarty version 3.1.30, created on 2023-07-24 01:16:22
+  from "C:\xampp\htdocs\dev23-dmcr-ab\front\controller\script\about\template\index.tpl" */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.30',
+  'unifunc' => 'content_64bd6e7648ce00_92913636',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    '433f8cd795cc84dce82825a50aeead686734a66c' => 
+    array (
+      0 => 'C:\\xampp\\htdocs\\dev23-dmcr-ab\\front\\controller\\script\\about\\template\\index.tpl',
+      1 => 1690136178,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+    'file:front/template/default/inc-herobanner.tpl' => 1,
+  ),
+),false)) {
+function content_64bd6e7648ce00_92913636 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->_subTemplateRender("file:front/template/default/inc-herobanner.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('title'=>'title'), 0, false);
+?>
+
 
 <div class="default-page about-page" style="position:relative;z-index:1;overflow:hidden">
     <div class="default-head" data-aos="fade-up">
@@ -6,7 +32,8 @@
             <div class="breadcrumb-block">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item breadcrumb-home"><a href="{$ul}/home">หน้าหลัก</a></li>
+                        <li class="breadcrumb-item breadcrumb-home"><a href="<?php echo $_smarty_tpl->tpl_vars['ul']->value;?>
+/home">หน้าหลัก</a></li>
                         <li class="breadcrumb-item active" aria-current="page">เกี่ยวกับเรา</li>
                     </ol>
                 </nav>
@@ -27,7 +54,8 @@
                                     <div class="hexagon-inner">
                                         <div class="icon-wrapper hexagon">
                                             <div class="icon">
-                                                <img alt="ปะการังเทียม" data-src="{$template}/assets/img/icon/artificial-coral.svg" class="lazy">
+                                                <img alt="ปะการังเทียม" data-src="<?php echo $_smarty_tpl->tpl_vars['template']->value;?>
+/assets/img/icon/artificial-coral.svg" class="lazy">
                                             </div>
                                         </div>
                                     </div>
@@ -46,7 +74,8 @@
                                     <div class="hexagon-inner">
                                         <div class="icon-wrapper hexagon">
                                             <div class="icon">
-                                                <img alt="ทุ่นในทะเล" data-src="{$template}/assets/img/icon/buoy.svg" class="lazy">
+                                                <img alt="ทุ่นในทะเล" data-src="<?php echo $_smarty_tpl->tpl_vars['template']->value;?>
+/assets/img/icon/buoy.svg" class="lazy">
                                             </div>
                                         </div>
                                     </div>
@@ -65,7 +94,8 @@
                                     <div class="hexagon-inner">
                                         <div class="icon-wrapper hexagon">
                                             <div class="icon">
-                                                <img alt="จุดวางเรือ" data-src="{$template}/assets/img/icon/boat.svg" class="lazy">
+                                                <img alt="จุดวางเรือ" data-src="<?php echo $_smarty_tpl->tpl_vars['template']->value;?>
+/assets/img/icon/boat.svg" class="lazy">
                                             </div>
                                         </div>
                                     </div>
@@ -151,7 +181,8 @@
                 <div class="video-player" data-aos="fade-up" data-aos-anchor="#trigger-video-player" data-aos-anchor-placement="top-top" id="trigger-attach">
                     <div class="ratio ratio-16x9">
                         <video>
-                            <source src="{$template}/assets/video/istockphoto-1305339327-640_adpp_is.mp4" type="video/mp4">
+                            <source src="<?php echo $_smarty_tpl->tpl_vars['template']->value;?>
+/assets/video/istockphoto-1305339327-640_adpp_is.mp4" type="video/mp4">
                             Your browser does not support the video tag.
                         </video>
                     </div>
@@ -167,7 +198,11 @@
                     </div>
                     <div class="swiper attach-swiper default-swiper">
                         <div class="swiper-wrapper">
-                            {for $i=1 to 5}
+                            <?php
+$_smarty_tpl->tpl_vars['i'] = new Smarty_Variable(null, $_smarty_tpl->isRenderingCache);$_smarty_tpl->tpl_vars['i']->step = 1;$_smarty_tpl->tpl_vars['i']->total = (int) ceil(($_smarty_tpl->tpl_vars['i']->step > 0 ? 5+1 - (1) : 1-(5)+1)/abs($_smarty_tpl->tpl_vars['i']->step));
+if ($_smarty_tpl->tpl_vars['i']->total > 0) {
+for ($_smarty_tpl->tpl_vars['i']->value = 1, $_smarty_tpl->tpl_vars['i']->iteration = 1;$_smarty_tpl->tpl_vars['i']->iteration <= $_smarty_tpl->tpl_vars['i']->total;$_smarty_tpl->tpl_vars['i']->value += $_smarty_tpl->tpl_vars['i']->step, $_smarty_tpl->tpl_vars['i']->iteration++) {
+$_smarty_tpl->tpl_vars['i']->first = $_smarty_tpl->tpl_vars['i']->iteration == 1;$_smarty_tpl->tpl_vars['i']->last = $_smarty_tpl->tpl_vars['i']->iteration == $_smarty_tpl->tpl_vars['i']->total;?>
                                 <div class="swiper-slide">
                                     <a title="โครงการจุดวางเรือ" class="link attach-item" target="_blank" href="https://lipsum.app/id/60/1600x1200">
                                         <div class="default-card card">
@@ -179,7 +214,8 @@
                                                                 <div class="hexagon-inner">
                                                                     <div class="icon-wrapper hexagon">
                                                                         <div class="icon">
-                                                                            <img alt="" data-src="{$template}/assets/img/icon/icon-attachment.svg" class="lazy" style="position:absolute;height:100%;width:100%;left:0;top:0;right:0;bottom:0;color:transparent">
+                                                                            <img alt="" data-src="<?php echo $_smarty_tpl->tpl_vars['template']->value;?>
+/assets/img/icon/icon-attachment.svg" class="lazy" style="position:absolute;height:100%;width:100%;left:0;top:0;right:0;bottom:0;color:transparent">
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -215,7 +251,10 @@
                                         </div>
                                     </a>
                                 </div>
-                            {/for}
+                            <?php }
+}
+?>
+
                         </div>
                         <div class="swiper-pagination"></div>
                     </div>
@@ -232,9 +271,11 @@
             </div>
             <div class="graphic graphic-inner-page-bottom">
                 <div class="bg" style="z-index:0">
-                    <img alt="" data-src="{$template}/assets/img/background/bg-inner-page-bottom.png" class="lazy">
+                    <img alt="" data-src="<?php echo $_smarty_tpl->tpl_vars['template']->value;?>
+/assets/img/background/bg-inner-page-bottom.png" class="lazy">
                 </div>
             </div>
         </div>
     </div>
-</div>
+</div><?php }
+}
