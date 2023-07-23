@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2023-07-18 16:35:00
+/* Smarty version 3.1.30, created on 2023-07-24 04:46:32
   from "/Applications/XAMPP/xamppfiles/htdocs/dev23-dmcr-ab/front/template/default/inc-herobanner.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_64b65cc4dd6b76_59111880',
+  'unifunc' => 'content_64bd9fb89584f4_52585599',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'e853970590bcb9b56cc197ad2f762106eba100b2' => 
     array (
       0 => '/Applications/XAMPP/xamppfiles/htdocs/dev23-dmcr-ab/front/template/default/inc-herobanner.tpl',
-      1 => 1689663507,
+      1 => 1690148788,
       2 => 'file',
     ),
   ),
@@ -20,9 +20,9 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_64b65cc4dd6b76_59111880 (Smarty_Internal_Template $_smarty_tpl) {
+function content_64bd9fb89584f4_52585599 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
-<div class="hero-banner">
+<div class="hero-banner" data-aos="fade-up">
     <div class="hero-banner-swiper swiper">
         <div class="swiper-wrapper">
             <div class="swiper-slide">

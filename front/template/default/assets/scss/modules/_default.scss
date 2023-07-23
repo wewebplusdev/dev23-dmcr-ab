@@ -330,7 +330,13 @@ $--nav-tabs-h: 80px;
 }
 
 .default-tabs > {
+    .nav-tabs a.nav-link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
     .nav-tabs .nav-link {
+        cursor: pointer;
         border: none;
         height: $--nav-tabs-h;
         background-color: var(--color-gray-100);
