@@ -13,6 +13,7 @@
 <script src="<?php echo $core_template; ?>assets/js/libs/aos.js"></script>
 <script src="<?php echo $core_template; ?>assets/js/libs/lazyload.min.js"></script>
 <!-- <script src="<?php echo $core_template; ?>assets/js/libs/swiper-bundle.min.mjs"></script> -->
+<script src="<?php echo $core_template; ?>assets/js/libs/fancybox.umd.js"></script>
 
 <!-- Custom -->
 <script src="<?php echo $core_template; ?>assets/js/main.js<?=$modify?>"></script>
