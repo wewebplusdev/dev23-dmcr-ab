@@ -34,12 +34,12 @@
     <div class="modal-dialog modal-lg modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
-                <div class="modal-title h4">Vote Result Modal</div>
+                <div class="modal-title h4">ผลโหวต</div>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <div class="editor-content">
-                    Vote Result Modal
+                <div class="chart-container">
+                    <canvas id="voteChart"></canvas>
                 </div>
             </div>
         </div>
