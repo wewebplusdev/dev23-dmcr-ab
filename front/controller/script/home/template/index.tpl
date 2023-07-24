@@ -127,7 +127,7 @@
                         <div class="col-md col-sm-6 col-12">
                             <div class="form-group">
                                 <label class="d-none form-label" for="agencyName">ชื่อหน่วยงาน</label>
-                                <select class="select-control" name="agency" data-placeholder="ชื่อหน่วยงาน"
+                                <select class="select-control" name="agency" id="agencyName" data-placeholder="ชื่อหน่วยงาน"
                                     style="width: 100%;">
                                     <option></option>
                                     <option value="0">test</option>
@@ -138,7 +138,7 @@
                         <div class="col-md col-sm-6 col-12">
                             <div class="form-group">
                                 <label class="d-none form-label" for="province">จังหวัด</label>
-                                <select class="select-control" name="province" data-placeholder="จังหวัด"
+                                <select class="select-control" name="province" id="province" data-placeholder="จังหวัด"
                                     style="width: 100%;">
                                     <option></option>
                                     <option value="0">Alabama</option>
@@ -149,7 +149,7 @@
                         <div class="col-md col-sm-6 col-12">
                             <div class="form-group">
                                 <label class="d-none form-label" for="years">ปี</label>
-                                <select class="select-control" name="years" data-placeholder="ปี" style="width: 100%;">
+                                <select class="select-control" name="years" id="years" data-placeholder="ปี" style="width: 100%;">
                                     <option></option>
                                     <option value="0">2012</option>
                                     <option value="1">2014</option>
@@ -898,7 +898,7 @@
                                 <p class="desc">เป็นศูนย์รวบรวมข้อมูลปะการังเทียมจากหน่วยงานที่เกี่ยวข้อง โดยดำเนินการ จัดเก็บข้อมูลเป็นหมวดหมู่และเป็นระเบียบ เพื่อสะดวกในการใช้งานสำหรับนักวิชาการ และผู้ที่สนใจทั่วไป</p>
                             </div>
                             <div class="action">
-                                <a class="btn btn-secondary" title="อ่านต่อ" href="/offer-demand">อ่านต่อ</a>
+                                <a class="btn btn-secondary" title="อ่านต่อ" href="{$ul}/offer-demand">อ่านต่อ</a>
                             </div>
                         </div>
                     </div>
