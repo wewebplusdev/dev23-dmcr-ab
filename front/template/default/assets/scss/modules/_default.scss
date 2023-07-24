@@ -20,6 +20,7 @@ $--nav-tabs-h: 80px;
         background-position: center top 200px;
         background-size: cover;
         background-repeat: no-repeat;
+        min-height: 800px;
     }
     .video-player,
     .video-player-yt {
@@ -43,7 +44,7 @@ $--nav-tabs-h: 80px;
         }
     }
     .graphic-inner-page-bottom {
-        height: 510px;
+        height: 550px;
         z-index: 0;
         .bg {
             bottom: 0;

@@ -1,4 +1,30 @@
-{include file="front/template/default/inc-herobanner.tpl" title=title}
+<?php
+/* Smarty version 3.1.30, created on 2023-07-24 08:52:51
+  from "/Applications/XAMPP/xamppfiles/htdocs/dev23-dmcr-ab/front/controller/script/offer-demand/template/index.tpl" */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.30',
+  'unifunc' => 'content_64bdd97347d2f3_86275709',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    'e152475d2dc3dc98342513f493c8f15e92b147dd' => 
+    array (
+      0 => '/Applications/XAMPP/xamppfiles/htdocs/dev23-dmcr-ab/front/controller/script/offer-demand/template/index.tpl',
+      1 => 1690163562,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+    'file:front/template/default/inc-herobanner.tpl' => 1,
+  ),
+),false)) {
+function content_64bdd97347d2f3_86275709 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->_subTemplateRender("file:front/template/default/inc-herobanner.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('title'=>'title'), 0, false);
+?>
+
 
 <div class="default-page about-page" style="position:relative;z-index:1;overflow:hidden">
     <div class="default-head" data-aos="fade-up">
@@ -6,7 +32,8 @@
             <div class="breadcrumb-block">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item breadcrumb-home"><a href="{$ul}/home">หน้าหลัก</a></li>
+                        <li class="breadcrumb-item breadcrumb-home"><a href="<?php echo $_smarty_tpl->tpl_vars['ul']->value;?>
+/home">หน้าหลัก</a></li>
                         <li class="breadcrumb-item active" aria-current="page">เสนอความต้องการ</li>
                     </ol>
                 </nav>
@@ -256,7 +283,8 @@
                                                         <div class="col-sm-auto">
                                                             <div class="captcha d-flex gap-3">
                                                                 <div class="captcha-content">
-                                                                    <img alt="" data-src="{$template}/assets/img/static/captcha.png" class="lazy" style="color:transparent" width="94" height="41">
+                                                                    <img alt="" data-src="<?php echo $_smarty_tpl->tpl_vars['template']->value;?>
+/assets/img/static/captcha.png" class="lazy" style="color:transparent" width="94" height="41">
                                                                 </div>
                                                                 <div class="captcha-reload">
                                                                     <a href=""><span class="material-symbols-rounded">autorenew</span></a>
@@ -287,7 +315,8 @@
                                                 <div class="alert-heading h4">ยืนยันการเสนอความต้องการ</div>
                                                 <p>ขอบพระคุณที่ใช้บริการ</p>
                                             </div>
-                                            <div class="action"><a class="btn btn-secondary" href="{$ul}/home">กลับสู่หน้าหลัก</a></div>
+                                            <div class="action"><a class="btn btn-secondary" href="<?php echo $_smarty_tpl->tpl_vars['ul']->value;?>
+/home">กลับสู่หน้าหลัก</a></div>
                                         </div>
                                     </div>
                                 </div>
@@ -298,9 +327,11 @@
             </div>
             <div class="graphic graphic-inner-page-bottom">
                 <div class="bg" style="z-index:0">
-                    <img alt="" data-src="{$template}/assets/img/background/bg-inner-page-bottom.png" class="lazy">
+                    <img alt="" data-src="<?php echo $_smarty_tpl->tpl_vars['template']->value;?>
+/assets/img/background/bg-inner-page-bottom.png" class="lazy">
                 </div>
             </div>
         </div>
     </div>
-</div>
+</div><?php }
+}

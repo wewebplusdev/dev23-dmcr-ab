@@ -25903,6 +25903,7 @@ div.swal2-html-container {
   background-position: center top 200px;
   background-size: cover;
   background-repeat: no-repeat;
+  min-height: 800px;
 }
 .default-page .video-player,
 .default-page .video-player-yt {
@@ -25921,7 +25922,7 @@ div.swal2-html-container {
   margin-right: 10px;
 }
 .default-page .graphic-inner-page-bottom {
-  height: 510px;
+  height: 550px;
   z-index: 0;
 }
 .default-page .graphic-inner-page-bottom .bg {

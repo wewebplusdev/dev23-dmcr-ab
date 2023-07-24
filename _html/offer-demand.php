@@ -26,7 +26,7 @@
             <div class="default-body">
                 <div class="container-lg">
                     <div class="justify-content-center row">
-                        <div class="col-lg-5 col-md-8 col-sm-10 col-11">
+                        <div class="col-lg-5 col-md-8 col-sm-10 col-11" data-aos="fade-up">
                             <div class="step-progress -step-progress-i">
                                 <div class="progress">
                                     <div role="progressbar" class="progress-bar" style="width:2%" aria-valuemin="0" aria-valuemax="100"></div>
@@ -59,7 +59,7 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col">
+                        <div class="col" data-aos="fade-up">
                             <div class="content-step-i">
                                 <div class="form-offer-demand">
                                     <div class="default-card overflow-hidden card">
