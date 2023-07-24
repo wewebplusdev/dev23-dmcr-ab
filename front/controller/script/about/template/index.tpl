@@ -91,67 +91,65 @@
                     <div class="whead" data-aos="fade-left">
                         <div class="subtitle">รูปประกอบ</div>
                     </div>
-                    <div>
-                        <div class="swiper gallery-swiper default-swiper" data-aos="fade-up">
-                            <div class="swiper-wrapper">
-                                <div class="swiper-slide">
-                                    <a data-fancybox="gallery" href="https://lipsum.app/id/60/1600x1200">
-                                        <div class="ratio thumbnail ratio-1x1">
-                                            <img alt="Description of image is here image1" src="https://lipsum.app/id/60/1600x1200" class="rounded lazy">
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="swiper-slide swiper-slide-next">
-                                    <a data-fancybox="gallery" href="https://lipsum.app/id/61/1600x1200">
-                                        <div class="ratio thumbnail ratio-1x1">
-                                            <img alt="Description of image is here image2" src="https://lipsum.app/id/61/1600x1200" class="rounded lazy">
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="swiper-slide">
-                                    <a data-fancybox="gallery" href="https://lipsum.app/id/62/1600x1200">
-                                        <div class="ratio thumbnail ratio-1x1">
-                                            <img alt="Description of image is here image3" src="https://lipsum.app/id/62/1600x1200" class="rounded lazy">
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="swiper-slide">
-                                    <a data-fancybox="gallery" href="https://lipsum.app/id/63/1600x1200">
-                                        <div class="ratio thumbnail ratio-1x1">
-                                            <img alt="Description of image is here image4" src="https://lipsum.app/id/63/1600x1200" class="rounded lazy">
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="swiper-slide">
-                                    <a data-fancybox="gallery" href="https://lipsum.app/id/64/1600x1200">
-                                        <div class="ratio thumbnail ratio-1x1">
-                                            <img alt="Description of image is here image5" src="https://lipsum.app/id/64/1600x1200" class="rounded lazy">
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="swiper-slide">
-                                    <a data-fancybox="gallery" href="https://lipsum.app/id/65/1600x1200">
-                                        <div class="ratio thumbnail ratio-1x1">
-                                            <img alt="Description of image is here image6" src="https://lipsum.app/id/65/1600x1200" class="rounded lazy">
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="swiper-slide">
-                                    <a data-fancybox="gallery" href="https://lipsum.app/id/66/1600x1200">
-                                        <div class="ratio thumbnail ratio-1x1">
-                                            <img alt="Description of image is here image7" src="https://lipsum.app/id/66/1600x1200" class="rounded lazy">
-                                        </div>
-                                    </a>
-                                </div>
+                    <div class="swiper gallery-swiper default-swiper" data-aos="fade-up">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <a data-fancybox="gallery" href="https://lipsum.app/id/60/1600x1200">
+                                    <div class="ratio thumbnail ratio-1x1">
+                                        <img alt="Description of image is here image1" data-src="https://lipsum.app/id/60/1600x1200" class="rounded lazy">
+                                    </div>
+                                </a>
                             </div>
-                            <div class="swiper-pagination"></div>
+                            <div class="swiper-slide swiper-slide-next">
+                                <a data-fancybox="gallery" href="https://lipsum.app/id/61/1600x1200">
+                                    <div class="ratio thumbnail ratio-1x1">
+                                        <img alt="Description of image is here image2" data-src="https://lipsum.app/id/61/1600x1200" class="rounded lazy">
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a data-fancybox="gallery" href="https://lipsum.app/id/62/1600x1200">
+                                    <div class="ratio thumbnail ratio-1x1">
+                                        <img alt="Description of image is here image3" data-src="https://lipsum.app/id/62/1600x1200" class="rounded lazy">
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a data-fancybox="gallery" href="https://lipsum.app/id/63/1600x1200">
+                                    <div class="ratio thumbnail ratio-1x1">
+                                        <img alt="Description of image is here image4" data-src="https://lipsum.app/id/63/1600x1200" class="rounded lazy">
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a data-fancybox="gallery" href="https://lipsum.app/id/64/1600x1200">
+                                    <div class="ratio thumbnail ratio-1x1">
+                                        <img alt="Description of image is here image5" data-src="https://lipsum.app/id/64/1600x1200" class="rounded lazy">
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a data-fancybox="gallery" href="https://lipsum.app/id/65/1600x1200">
+                                    <div class="ratio thumbnail ratio-1x1">
+                                        <img alt="Description of image is here image6" data-src="https://lipsum.app/id/65/1600x1200" class="rounded lazy">
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a data-fancybox="gallery" href="https://lipsum.app/id/66/1600x1200">
+                                    <div class="ratio thumbnail ratio-1x1">
+                                        <img alt="Description of image is here image7" data-src="https://lipsum.app/id/66/1600x1200" class="rounded lazy">
+                                    </div>
+                                </a>
+                            </div>
                         </div>
+                        <div class="swiper-pagination"></div>
                     </div>
                 </div>
                 <div class="video-player" data-aos="fade-up" data-aos-anchor="#trigger-video-player" data-aos-anchor-placement="top-top" id="trigger-attach">
                     <div class="ratio ratio-16x9">
-                        <video>
-                            <source src="{$template}/assets/video/istockphoto-1305339327-640_adpp_is.mp4" type="video/mp4">
+                        <video class="lazy" data-src="{$template}/assets/video/istockphoto-1305339327-640_adpp_is.mp4">
+                            <source data-src="{$template}/assets/video/istockphoto-1305339327-640_adpp_is.mp4" type="video/mp4">
                             Your browser does not support the video tag.
                         </video>
                     </div>

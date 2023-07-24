@@ -71,6 +71,12 @@ $--nav-tabs-h: 80px;
         > div + div {
             margin-top: 1rem;
         }
+        @media (min-width: 768px) {
+            .province,
+            .year {
+                margin-top: 10px;
+            }
+        }
     }
 }
 

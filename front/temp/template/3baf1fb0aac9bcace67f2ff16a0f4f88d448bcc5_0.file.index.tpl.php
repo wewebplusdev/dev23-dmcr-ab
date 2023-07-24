@@ -1,4 +1,30 @@
-{include file="front/template/default/inc-herobanner.tpl" title=title}
+<?php
+/* Smarty version 3.1.30, created on 2023-07-24 05:15:34
+  from "/Applications/XAMPP/xamppfiles/htdocs/dev23-dmcr-ab/front/controller/script/report/template/index.tpl" */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.30',
+  'unifunc' => 'content_64bda686372876_77242291',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    '3baf1fb0aac9bcace67f2ff16a0f4f88d448bcc5' => 
+    array (
+      0 => '/Applications/XAMPP/xamppfiles/htdocs/dev23-dmcr-ab/front/controller/script/report/template/index.tpl',
+      1 => 1690150533,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+    'file:front/template/default/inc-herobanner.tpl' => 1,
+  ),
+),false)) {
+function content_64bda686372876_77242291 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->_subTemplateRender("file:front/template/default/inc-herobanner.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('title'=>'title'), 0, false);
+?>
+
 
 <div class="default-page news-page" style="position:relative;z-index:1;overflow:hidden">
     <div class="default-head" data-aos="fade-up">
@@ -6,7 +32,8 @@
             <div class="breadcrumb-block">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item breadcrumb-home"><a href="{$ul}/home">หน้าหลัก</a></li>
+                        <li class="breadcrumb-item breadcrumb-home"><a href="<?php echo $_smarty_tpl->tpl_vars['ul']->value;?>
+/home">หน้าหลัก</a></li>
                         <li class="breadcrumb-item active" aria-current="page">รายงานสรุป</li>
                     </ol>
                 </nav>
@@ -17,7 +44,8 @@
         <div class="container-lg">
             <div class="graphic graphic-inner-page-top" data-aos="fade-up" data-aos-delay="300">
                 <div class="bg" style="z-index:0">
-                    <img alt="" data-src="{$template}/assets/img/background/bg-inner-page-top.png" class="lazy">
+                    <img alt="" data-src="<?php echo $_smarty_tpl->tpl_vars['template']->value;?>
+/assets/img/background/bg-inner-page-top.png" class="lazy">
                 </div>
             </div>
             <div class="body-content">
@@ -27,7 +55,8 @@
                 <div class="default-tabs">
                     <ul class="nav nav-tabs nav-fill" data-aos="fade-up" data-aos-delay="300">
                         <li class="nav-item" role="presentation">
-                            <a href="{$ul}/follow?m=1f" class="nav-link active">
+                            <a href="<?php echo $_smarty_tpl->tpl_vars['ul']->value;?>
+/follow?m=1f" class="nav-link active">
                                 <div class="icon">
                                     <div class="justify-content-center align-items-center row row-cols-auto">
                                         <div class="col">
@@ -59,7 +88,8 @@
                             </a>
                         </li>
                         <li class="nav-item" role="presentation">
-                            <a href="{$ul}/follow?m=2f" class="nav-link">
+                            <a href="<?php echo $_smarty_tpl->tpl_vars['ul']->value;?>
+/follow?m=2f" class="nav-link">
                                 <div class="icon">
                                     <div class="justify-content-center align-items-center row row-cols-auto">
                                         <div class="col">
@@ -107,7 +137,8 @@
                             </a>
                         </li>
                         <li class="nav-item" role="presentation">
-                            <a href="{$ul}/follow?m=3f" class="nav-link">
+                            <a href="<?php echo $_smarty_tpl->tpl_vars['ul']->value;?>
+/follow?m=3f" class="nav-link">
                                 <div class="icon">
                                     <div class="justify-content-center align-items-center row row-cols-auto">
                                         <div class="col">
@@ -172,9 +203,7 @@
                                             <div class="row">
                                                 <div class="mx-auto col-lg-5 col-md-8 col-10">
                                                     <div class="chart-container">
-                                                        {* <canvas role="img"
-                                                            style="display: block; box-sizing: border-box; height: 509px; width: 509px;"
-                                                            width="1018" height="1018"></canvas> *}
+                                                        
                                                     </div>
                                                 </div>
                                             </div>
@@ -213,7 +242,8 @@
                                                                                         class="justify-content-center hstack gap-2">
                                                                                         <div class="icon">
                                                                                             <img alt="magnifying glass icon"
-                                                                                                src="{$template}/assets/img/icon/icon-magnifying-glass.svg"
+                                                                                                src="<?php echo $_smarty_tpl->tpl_vars['template']->value;?>
+/assets/img/icon/icon-magnifying-glass.svg"
                                                                                                 class="lazy">
                                                                                         </div>
                                                                                         <div class="txt">ดูรายละเอียด
@@ -228,7 +258,8 @@
                                                                                         class="justify-content-center hstack gap-2">
                                                                                         <div class="icon">
                                                                                             <img alt="pin maps icon"
-                                                                                                src="{$template}/assets/img/icon/icon-pin-maps.svg"
+                                                                                                src="<?php echo $_smarty_tpl->tpl_vars['template']->value;?>
+/assets/img/icon/icon-pin-maps.svg"
                                                                                                 class="lazy">
                                                                                         </div>
                                                                                         <div class="txt">ดูแผนที่</div>
@@ -250,7 +281,8 @@
                                                                                         class="justify-content-center hstack gap-2">
                                                                                         <div class="icon">
                                                                                             <img alt="magnifying glass icon"
-                                                                                                src="{$template}/assets/img/icon/icon-magnifying-glass.svg"
+                                                                                                src="<?php echo $_smarty_tpl->tpl_vars['template']->value;?>
+/assets/img/icon/icon-magnifying-glass.svg"
                                                                                                 class="lazy">
                                                                                         </div>
                                                                                         <div class="txt">ดูรายละเอียด
@@ -265,7 +297,8 @@
                                                                                         class="justify-content-center hstack gap-2">
                                                                                         <div class="icon">
                                                                                             <img alt="pin maps icon"
-                                                                                                src="{$template}/assets/img/icon/icon-pin-maps.svg"
+                                                                                                src="<?php echo $_smarty_tpl->tpl_vars['template']->value;?>
+/assets/img/icon/icon-pin-maps.svg"
                                                                                                 class="lazy">
                                                                                         </div>
                                                                                         <div class="txt">ดูแผนที่</div>
@@ -287,7 +320,8 @@
                                                                                         class="justify-content-center hstack gap-2">
                                                                                         <div class="icon">
                                                                                             <img alt="magnifying glass icon"
-                                                                                                src="{$template}/assets/img/icon/icon-magnifying-glass.svg"
+                                                                                                src="<?php echo $_smarty_tpl->tpl_vars['template']->value;?>
+/assets/img/icon/icon-magnifying-glass.svg"
                                                                                                 class="lazy">
                                                                                         </div>
                                                                                         <div class="txt">ดูรายละเอียด
@@ -302,7 +336,8 @@
                                                                                         class="justify-content-center hstack gap-2">
                                                                                         <div class="icon">
                                                                                             <img alt="pin maps icon"
-                                                                                                src="{$template}/assets/img/icon/icon-pin-maps.svg"
+                                                                                                src="<?php echo $_smarty_tpl->tpl_vars['template']->value;?>
+/assets/img/icon/icon-pin-maps.svg"
                                                                                                 class="lazy">
                                                                                         </div>
                                                                                         <div class="txt">ดูแผนที่</div>
@@ -324,7 +359,8 @@
                                                                                         class="justify-content-center hstack gap-2">
                                                                                         <div class="icon">
                                                                                             <img alt="magnifying glass icon"
-                                                                                                src="{$template}/assets/img/icon/icon-magnifying-glass.svg"
+                                                                                                src="<?php echo $_smarty_tpl->tpl_vars['template']->value;?>
+/assets/img/icon/icon-magnifying-glass.svg"
                                                                                                 class="lazy">
                                                                                         </div>
                                                                                         <div class="txt">ดูรายละเอียด
@@ -339,7 +375,8 @@
                                                                                         class="justify-content-center hstack gap-2">
                                                                                         <div class="icon">
                                                                                             <img alt="pin maps icon"
-                                                                                                src="{$template}/assets/img/icon/icon-pin-maps.svg"
+                                                                                                src="<?php echo $_smarty_tpl->tpl_vars['template']->value;?>
+/assets/img/icon/icon-pin-maps.svg"
                                                                                                 class="lazy">
                                                                                         </div>
                                                                                         <div class="txt">ดูแผนที่</div>
@@ -361,7 +398,8 @@
                                                                                         class="justify-content-center hstack gap-2">
                                                                                         <div class="icon">
                                                                                             <img alt="magnifying glass icon"
-                                                                                                src="{$template}/assets/img/icon/icon-magnifying-glass.svg"
+                                                                                                src="<?php echo $_smarty_tpl->tpl_vars['template']->value;?>
+/assets/img/icon/icon-magnifying-glass.svg"
                                                                                                 class="lazy">
                                                                                         </div>
                                                                                         <div class="txt">ดูรายละเอียด
@@ -376,7 +414,8 @@
                                                                                         class="justify-content-center hstack gap-2">
                                                                                         <div class="icon">
                                                                                             <img alt="pin maps icon"
-                                                                                                src="{$template}/assets/img/icon/icon-pin-maps.svg"
+                                                                                                src="<?php echo $_smarty_tpl->tpl_vars['template']->value;?>
+/assets/img/icon/icon-pin-maps.svg"
                                                                                                 class="lazy">
                                                                                         </div>
                                                                                         <div class="txt">ดูแผนที่</div>
@@ -398,7 +437,8 @@
                                                                                         class="justify-content-center hstack gap-2">
                                                                                         <div class="icon">
                                                                                             <img alt="magnifying glass icon"
-                                                                                                src="{$template}/assets/img/icon/icon-magnifying-glass.svg"
+                                                                                                src="<?php echo $_smarty_tpl->tpl_vars['template']->value;?>
+/assets/img/icon/icon-magnifying-glass.svg"
                                                                                                 class="lazy">
                                                                                         </div>
                                                                                         <div class="txt">ดูรายละเอียด
@@ -413,7 +453,8 @@
                                                                                         class="justify-content-center hstack gap-2">
                                                                                         <div class="icon">
                                                                                             <img alt="pin maps icon"
-                                                                                                src="{$template}/assets/img/icon/icon-pin-maps.svg"
+                                                                                                src="<?php echo $_smarty_tpl->tpl_vars['template']->value;?>
+/assets/img/icon/icon-pin-maps.svg"
                                                                                                 class="lazy">
                                                                                         </div>
                                                                                         <div class="txt">ดูแผนที่</div>
@@ -435,7 +476,8 @@
                                                                                         class="justify-content-center hstack gap-2">
                                                                                         <div class="icon">
                                                                                             <img alt="magnifying glass icon"
-                                                                                                src="{$template}/assets/img/icon/icon-magnifying-glass.svg"
+                                                                                                src="<?php echo $_smarty_tpl->tpl_vars['template']->value;?>
+/assets/img/icon/icon-magnifying-glass.svg"
                                                                                                 class="lazy">
                                                                                         </div>
                                                                                         <div class="txt">ดูรายละเอียด
@@ -450,7 +492,8 @@
                                                                                         class="justify-content-center hstack gap-2">
                                                                                         <div class="icon">
                                                                                             <img alt="pin maps icon"
-                                                                                                src="{$template}/assets/img/icon/icon-pin-maps.svg"
+                                                                                                src="<?php echo $_smarty_tpl->tpl_vars['template']->value;?>
+/assets/img/icon/icon-pin-maps.svg"
                                                                                                 class="lazy">
                                                                                         </div>
                                                                                         <div class="txt">ดูแผนที่</div>
@@ -472,7 +515,8 @@
                                                                                         class="justify-content-center hstack gap-2">
                                                                                         <div class="icon">
                                                                                             <img alt="magnifying glass icon"
-                                                                                                src="{$template}/assets/img/icon/icon-magnifying-glass.svg"
+                                                                                                src="<?php echo $_smarty_tpl->tpl_vars['template']->value;?>
+/assets/img/icon/icon-magnifying-glass.svg"
                                                                                                 class="lazy">
                                                                                         </div>
                                                                                         <div class="txt">ดูรายละเอียด
@@ -487,7 +531,8 @@
                                                                                         class="justify-content-center hstack gap-2">
                                                                                         <div class="icon">
                                                                                             <img alt="pin maps icon"
-                                                                                                src="{$template}/assets/img/icon/icon-pin-maps.svg"
+                                                                                                src="<?php echo $_smarty_tpl->tpl_vars['template']->value;?>
+/assets/img/icon/icon-pin-maps.svg"
                                                                                                 class="lazy">
                                                                                         </div>
                                                                                         <div class="txt">ดูแผนที่</div>
@@ -509,7 +554,8 @@
                                                                                         class="justify-content-center hstack gap-2">
                                                                                         <div class="icon">
                                                                                             <img alt="magnifying glass icon"
-                                                                                                src="{$template}/assets/img/icon/icon-magnifying-glass.svg"
+                                                                                                src="<?php echo $_smarty_tpl->tpl_vars['template']->value;?>
+/assets/img/icon/icon-magnifying-glass.svg"
                                                                                                 class="lazy">
                                                                                         </div>
                                                                                         <div class="txt">ดูรายละเอียด
@@ -524,7 +570,8 @@
                                                                                         class="justify-content-center hstack gap-2">
                                                                                         <div class="icon">
                                                                                             <img alt="pin maps icon"
-                                                                                                src="{$template}/assets/img/icon/icon-pin-maps.svg"
+                                                                                                src="<?php echo $_smarty_tpl->tpl_vars['template']->value;?>
+/assets/img/icon/icon-pin-maps.svg"
                                                                                                 class="lazy">
                                                                                         </div>
                                                                                         <div class="txt">ดูแผนที่</div>
@@ -546,7 +593,8 @@
                                                                                         class="justify-content-center hstack gap-2">
                                                                                         <div class="icon">
                                                                                             <img alt="magnifying glass icon"
-                                                                                                src="{$template}/assets/img/icon/icon-magnifying-glass.svg"
+                                                                                                src="<?php echo $_smarty_tpl->tpl_vars['template']->value;?>
+/assets/img/icon/icon-magnifying-glass.svg"
                                                                                                 class="lazy">
                                                                                         </div>
                                                                                         <div class="txt">ดูรายละเอียด
@@ -561,7 +609,8 @@
                                                                                         class="justify-content-center hstack gap-2">
                                                                                         <div class="icon">
                                                                                             <img alt="pin maps icon"
-                                                                                                src="{$template}/assets/img/icon/icon-pin-maps.svg"
+                                                                                                src="<?php echo $_smarty_tpl->tpl_vars['template']->value;?>
+/assets/img/icon/icon-pin-maps.svg"
                                                                                                 class="lazy">
                                                                                         </div>
                                                                                         <div class="txt">ดูแผนที่</div>
@@ -589,12 +638,7 @@
                                         <div class="chart-content -bar-chart">
                                             <div class="row">
                                                 <div class="mx-auto col">
-                                                    {* <div class="chart-container" style="height:400px">
-                                                    <canvas role="img"
-                                                            style="display: block; box-sizing: border-box; height: 0px; width: 0px;"
-                                                            width="0" height="0">
-                                                            </canvas>
-                                                            </div> *}
+                                                    
                                                 </div>
                                             </div>
                                         </div>
@@ -605,7 +649,8 @@
                     </div>
                 </div>
             </div>
-            {* {include file="pagination.tpl" title=title} *}
+            
         </div>
     </div>
-</div>
+</div><?php }
+}

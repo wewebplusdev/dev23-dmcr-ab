@@ -24948,6 +24948,10 @@ div.swal2-html-container {
 .default-table .mcscroll .mCSB_inside > .mCSB_container {
   margin-right: 0;
 }
+.default-table .scroll-wrapper {
+  background: var(--color-light);
+  height: 300px;
+}
 
 .video-player {
   position: relative;
@@ -25036,6 +25040,7 @@ div.swal2-html-container {
   z-index: 100;
   width: 100%;
   background: url("../img/background/bg-header.png") center no-repeat;
+  background-color: var(--color-primary);
   background-size: cover;
   color: var(--color-light);
   -webkit-transition: var(--transition-200);
@@ -25944,6 +25949,12 @@ div.swal2-html-container {
 }
 .default-page .detail-head > div + div {
   margin-top: 1rem;
+}
+@media (min-width: 768px) {
+  .default-page .detail-head .province,
+  .default-page .detail-head .year {
+    margin-top: 10px;
+  }
 }
 
 .graphic {
