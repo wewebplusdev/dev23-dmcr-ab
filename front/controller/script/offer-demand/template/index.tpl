@@ -276,7 +276,9 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="content-step-ii d-none">
+                        <div class="content-step-ii 
+                                    {* d-none *}
+                        ">
                             <div class="form-offer-demand">
                                 <div class="default-card overflow-hidden card">
                                     <div class="form-head">ส่งความต้องการ</div>
