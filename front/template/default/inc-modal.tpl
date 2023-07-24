@@ -1,4 +1,3 @@
-
 {* START: Policy Modal *}
 <div id="policyModal1" class="modal modal-policy fade" role="dialog" aria-modal="true" tabindex="-1">
     <div class="modal-dialog modal-lg modal-dialog-centered">
@@ -24,6 +23,24 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+{* END: Policy Modal *}
+
+{* START: Vote Result Modal *}
+<div id="voteResult" class="modal modal-vote fade" role="dialog" aria-modal="true" tabindex="-1">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="modal-title h4">Vote Result Modal</div>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="editor-content">
+                    Vote Result Modal
+                </div>
             </div>
         </div>
     </div>

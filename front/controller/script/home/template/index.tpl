@@ -940,7 +940,7 @@
                                 </div>
                                 <div class="action">
                                     <button type="button" class="btn btn-secondary">โหวต</button>
-                                    <button type="button" class="link btn btn-outline-orange"><span>แสดงผลโหวต</span></button>
+                                    <button type="button" class="link btn btn-outline-orange" data-bs-toggle="modal" data-bs-target="#voteResult"><span>แสดงผลโหวต</span></button>
                                 </div>
                             </form>
                         </div>

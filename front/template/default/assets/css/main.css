@@ -24347,6 +24347,10 @@ textarea {
   width: var(--mcscroll-w);
 }
 
+.modal-content {
+  border-radius: 0;
+}
+
 .modal-header {
   padding-left: 0;
   padding-right: 0;
