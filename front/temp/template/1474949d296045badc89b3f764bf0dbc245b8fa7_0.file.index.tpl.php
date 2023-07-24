@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2023-07-24 09:10:05
+/* Smarty version 3.1.30, created on 2023-07-24 18:32:20
   from "/Applications/XAMPP/xamppfiles/htdocs/dev23-dmcr-ab/front/controller/script/home/template/index.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_64bddd7d4cb9a1_99400411',
+  'unifunc' => 'content_64be6144eb7850_59848284',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '1474949d296045badc89b3f764bf0dbc245b8fa7' => 
     array (
       0 => '/Applications/XAMPP/xamppfiles/htdocs/dev23-dmcr-ab/front/controller/script/home/template/index.tpl',
-      1 => 1690164456,
+      1 => 1690198312,
       2 => 'file',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:front/template/default/inc-herobanner.tpl' => 1,
   ),
 ),false)) {
-function content_64bddd7d4cb9a1_99400411 (Smarty_Internal_Template $_smarty_tpl) {
+function content_64be6144eb7850_59848284 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:front/template/default/inc-herobanner.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('title'=>'title'), 0, false);
 ?>
 
@@ -156,7 +156,7 @@ $_smarty_tpl->_subTemplateRender("file:front/template/default/inc-herobanner.tpl
                     <div class="row">
                         <div class="col-md col-sm-6 col-12">
                             <div class="form-group">
-                                <label class="d-none form-label" for="agencyName">ชื่อหน่วยงาน</label>
+                                <label class="form-label visually-hidden" for="agencyName">ชื่อหน่วยงาน</label>
                                 <select class="select-control" name="agency" id="agencyName" data-placeholder="ชื่อหน่วยงาน"
                                     style="width: 100%;">
                                     <option></option>
@@ -167,7 +167,7 @@ $_smarty_tpl->_subTemplateRender("file:front/template/default/inc-herobanner.tpl
                         </div>
                         <div class="col-md col-sm-6 col-12">
                             <div class="form-group">
-                                <label class="d-none form-label" for="province">จังหวัด</label>
+                                <label class="form-label visually-hidden" for="province">จังหวัด</label>
                                 <select class="select-control" name="province" id="province" data-placeholder="จังหวัด"
                                     style="width: 100%;">
                                     <option></option>
@@ -178,7 +178,7 @@ $_smarty_tpl->_subTemplateRender("file:front/template/default/inc-herobanner.tpl
                         </div>
                         <div class="col-md col-sm-6 col-12">
                             <div class="form-group">
-                                <label class="d-none form-label" for="years">ปี</label>
+                                <label class="form-label visually-hidden" for="years">ปี</label>
                                 <select class="select-control" name="years" id="years" data-placeholder="ปี" style="width: 100%;">
                                     <option></option>
                                     <option value="0">2012</option>

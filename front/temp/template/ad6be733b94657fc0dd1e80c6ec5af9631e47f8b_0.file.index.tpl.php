@@ -1,4 +1,31 @@
-{include file="front/template/default/inc-herobanner.tpl" title=title}
+<?php
+/* Smarty version 3.1.30, created on 2023-07-24 19:09:49
+  from "/Applications/XAMPP/xamppfiles/htdocs/dev23-dmcr-ab/front/controller/script/search/template/index.tpl" */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.30',
+  'unifunc' => 'content_64be6a0da693d6_25852510',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    'ad6be733b94657fc0dd1e80c6ec5af9631e47f8b' => 
+    array (
+      0 => '/Applications/XAMPP/xamppfiles/htdocs/dev23-dmcr-ab/front/controller/script/search/template/index.tpl',
+      1 => 1690200571,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+    'file:front/template/default/inc-herobanner.tpl' => 1,
+    'file:pagination.tpl' => 1,
+  ),
+),false)) {
+function content_64be6a0da693d6_25852510 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->_subTemplateRender("file:front/template/default/inc-herobanner.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('title'=>'title'), 0, false);
+?>
+
 
 <div class="default-page about-page" style="position:relative;z-index:1;overflow:hidden">
     <div class="default-head" data-aos="fade-up">
@@ -6,7 +33,8 @@
             <div class="breadcrumb-block">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item breadcrumb-home"><a href="{$ul}/home">หน้าหลัก</a></li>
+                        <li class="breadcrumb-item breadcrumb-home"><a href="<?php echo $_smarty_tpl->tpl_vars['ul']->value;?>
+/home">หน้าหลัก</a></li>
                         <li class="breadcrumb-item active" aria-current="page">ค้นหา</li>
                     </ol>
                 </nav>
@@ -96,7 +124,11 @@
                         <div class="card" style="border:none">
                             <div class="card-body">
                                 <div class="list-group">
-                                    {for $i=1 to 5}
+                                    <?php
+$_smarty_tpl->tpl_vars['i'] = new Smarty_Variable(null, $_smarty_tpl->isRenderingCache);$_smarty_tpl->tpl_vars['i']->step = 1;$_smarty_tpl->tpl_vars['i']->total = (int) ceil(($_smarty_tpl->tpl_vars['i']->step > 0 ? 5+1 - (1) : 1-(5)+1)/abs($_smarty_tpl->tpl_vars['i']->step));
+if ($_smarty_tpl->tpl_vars['i']->total > 0) {
+for ($_smarty_tpl->tpl_vars['i']->value = 1, $_smarty_tpl->tpl_vars['i']->iteration = 1;$_smarty_tpl->tpl_vars['i']->iteration <= $_smarty_tpl->tpl_vars['i']->total;$_smarty_tpl->tpl_vars['i']->value += $_smarty_tpl->tpl_vars['i']->step, $_smarty_tpl->tpl_vars['i']->iteration++) {
+$_smarty_tpl->tpl_vars['i']->first = $_smarty_tpl->tpl_vars['i']->iteration == 1;$_smarty_tpl->tpl_vars['i']->last = $_smarty_tpl->tpl_vars['i']->iteration == $_smarty_tpl->tpl_vars['i']->total;?>
                                     <div class="list-group-item" data-aos="fade-up">
                                         <a class="link" href="/search">
                                             <div class="wrapper">
@@ -118,14 +150,21 @@
                                             </div>
                                         </a>
                                     </div>
-                                    {/for}      
+                                    <?php }
+}
+?>
+      
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            {include file="pagination.tpl" title=title}
+            <?php $_smarty_tpl->_subTemplateRender("file:pagination.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('title'=>'title'), 0, false);
+?>
+
+            <div class="">pagination</div>
         </div>
     </div>
-</div>
+</div><?php }
+}

@@ -156,7 +156,7 @@ $_smarty_tpl->_subTemplateRender("file:front/template/default/inc-herobanner.tpl
                     <div class="row">
                         <div class="col-md col-sm-6 col-12">
                             <div class="form-group">
-                                <label class="d-none form-label" for="agencyName">ชื่อหน่วยงาน</label>
+                                <label class="form-label visually-hidden" for="agencyName">ชื่อหน่วยงาน</label>
                                 <select class="select-control" name="agency" data-placeholder="ชื่อหน่วยงาน"
                                     style="width: 100%;">
                                     <option></option>
@@ -167,7 +167,7 @@ $_smarty_tpl->_subTemplateRender("file:front/template/default/inc-herobanner.tpl
                         </div>
                         <div class="col-md col-sm-6 col-12">
                             <div class="form-group">
-                                <label class="d-none form-label" for="province">จังหวัด</label>
+                                <label class="form-label visually-hidden" for="province">จังหวัด</label>
                                 <select class="select-control" name="province" data-placeholder="จังหวัด"
                                     style="width: 100%;">
                                     <option></option>
@@ -178,7 +178,7 @@ $_smarty_tpl->_subTemplateRender("file:front/template/default/inc-herobanner.tpl
                         </div>
                         <div class="col-md col-sm-6 col-12">
                             <div class="form-group">
-                                <label class="d-none form-label" for="years">ปี</label>
+                                <label class="form-label visually-hidden" for="years">ปี</label>
                                 <select class="select-control" name="years" data-placeholder="ปี" style="width: 100%;">
                                     <option></option>
                                     <option value="0">2012</option>

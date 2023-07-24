@@ -37,10 +37,11 @@
             color: var(--color-primary);
             line-height: var(--line-height-1-4);
             margin-bottom: 0.75rem;
+            transition:  var(--transition-200);
         }
         .desc {
-            transition:  var(--transition-200);
             margin-bottom: 1.25rem;
+            transition:  var(--transition-200);
         }
         .linkto{
             transition:  var(--transition-200);
@@ -49,6 +50,9 @@
     .link {
         &:hover {
             .wrapper {
+                .title {
+                    color: var(--color-secondary);
+                }
                 .desc {
                     color: var(--color-primary);
                 }

@@ -10,15 +10,16 @@
     line-height: 1.2em;
 }
 .form-default .form-control {
-    line-height: 1.2em;
-    padding: 0.513rem 1rem;
+    font-size: var(--typo-default);
+    font-weight: var(--color-default);
+    color: var(--color-default);
+    height: 40px;
+    line-height: 38px;
+    padding: 0 1rem;
     background-color: #fff;
     border: 1px solid var(--color-border);
     border-radius: var(--border-radius-xs);
     box-shadow: none;
-    font-size: var(--typo-default);
-    color: var(--color-default);
-    font-weight: var(--color-default);
     &::-webkit-input-placeholder {
         color: var(--color-gray);
         opacity: 1;
@@ -287,6 +288,8 @@
     }
     .select2-selection--single .select2-selection__rendered {
         line-height: 40px;
+        padding-left: 1rem;
+        padding-right: 2rem;
     }
     .select2-selection--single .select2-selection__arrow {
         width: 35px;
@@ -314,7 +317,7 @@
         border-color: var(--color-border);
     }
     .select2-results__option {
-        padding: 10px 10px;
+        padding: 0.524rem 1rem;
     }
     .select2-results__option--highlighted.select2-results__option--selectable {
         background-color: var(--color-secondary);

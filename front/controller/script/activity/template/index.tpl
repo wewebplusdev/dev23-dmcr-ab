@@ -112,8 +112,8 @@
                                     <div class="col-lg-3 col-md-4 col-12">
                                         <div class="sort-options">
                                             <div class="form-group">
-                                                <label class="form-label" for="years">จัดเรียง</label>
-                                                <select class="select-control" name="filter" style="width: 100%;">
+                                                <label class="form-label" for="filterOrder">จัดเรียง</label>
+                                                <select class="select-control" name="filter" id="filterOrder" style="width: 100%;">
                                                     <option value="0">ตาม ก-ฮ</option>
                                                     <option value="1">ตาม ฮ-ก</option>
                                                 </select>
