@@ -1,5 +1,5 @@
 <div class="search-input hide">
-    <form action="/search" class="form-default">
+    <form action="{$ul}/search" class="form-default">
         <div class="input-group">
             <label class="floating-label form-label">
                 <span class="fa-solid fa-magnifying-glass"></span>
