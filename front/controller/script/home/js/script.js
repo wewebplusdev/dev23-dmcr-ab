@@ -248,6 +248,9 @@ $(document).ready(function () {
                     },
                 });
 
+
+                $('#spinning').hide();
+
             },
             error: function () {
                 console.log("error");

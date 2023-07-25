@@ -21,7 +21,9 @@
                 </div>
                 <div class="about-list">
                     <div class="row">
-                        <div class="item theme-purple active col-sm-4" data-aos="fade-up">
+                        {foreach $callAboutGroup as $keyGroup => $valueGroup}
+                        {if $keyGroup eq 0}
+                        <div class="item theme-purple {if $contentID eq $valueGroup.0}active{/if} col-sm-4" data-aos="fade-up">
                             <div class="thumbnail">
                                 <div class="hexagon-wrapper">
                                     <div class="hexagon-inner">
@@ -36,11 +38,12 @@
                             </div>
                             <div class="inner">
                                 <div class="action">
-                                    <a class="btn btn-purple fluid" href="/about#">วัตถุประสงค์โครงการปะการังเทียม</a>
+                                    <a class="btn btn-purple fluid" href="{$ul}/about/{$valueGroup.0}">{$valueGroup.2}</a>
                                 </div>
                             </div>
                         </div>
-                        <div class="item theme-orange col-sm-4" data-aos="fade-up">
+                        {elseif $keyGroup eq 1}
+                        <div class="item theme-orange {if $contentID eq $valueGroup.0}active{/if} col-sm-4" data-aos="fade-up">
                             <div class="thumbnail">
                                 <div class="hexagon-wrapper">
                                     <div class="hexagon-inner">
@@ -55,11 +58,12 @@
                             </div>
                             <div class="inner">
                                 <div class="action">
-                                    <a class="btn btn-orange fluid" href="/about#">วัตถุประสงค์โครงการทุ่นในทะเล</a>
+                                    <a class="btn btn-orange fluid" href="{$ul}/about/{$valueGroup.0}">{$valueGroup.2}</a>
                                 </div>
                             </div>
                         </div>
-                        <div class="item theme-blue col-sm-4" data-aos="fade-up">
+                        {elseif $keyGroup eq 2}
+                        <div class="item theme-blue {if $contentID eq $valueGroup.0}active{/if} col-sm-4" data-aos="fade-up">
                             <div class="thumbnail">
                                 <div class="hexagon-wrapper">
                                     <div class="hexagon-inner">
@@ -74,10 +78,14 @@
                             </div>
                             <div class="inner">
                                 <div class="action">
-                                    <a class="btn btn-blue fluid" href="/about#">วัตถุประสงค์โครงการจุดวางเรือ</a>
+                                    <a class="btn btn-blue fluid" href="{$ul}/about/{$valueGroup.0}">{$valueGroup.2}</a>
                                 </div>
                             </div>
                         </div>
+                        {/if}
+                        {/foreach}
+                        
+                        
                     </div>
                 </div>
                 <div class="editor-content" data-aos="fade-up">

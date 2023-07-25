@@ -17,6 +17,8 @@ $config['cms']['album'] = "md_cma";
 $config['tgp']['db'] = "md_tgp";
 $config['tgp']['masterkey'] = "topg";
 
+$config['about']['masterkey'] = "about";
+
 $config['activity']['masterkey'] = "1n";
 
 $config['follow']['coral']['masterkey'] = "1f";

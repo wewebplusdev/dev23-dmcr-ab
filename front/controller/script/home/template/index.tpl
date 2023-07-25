@@ -127,8 +127,8 @@
                     <div class="row">
                         <div class="col-md col-sm-6 col-12">
                             <div class="form-group">
-                                <label class="form-label visually-hidden" for="typeName">ชื่อประเภท</label>
-                                <select class="select-control" name="layer" id="layer" data-placeholder="ชื่อประเภท"
+                                <label class="form-label visually-hidden" for="typeName">ชื่อประเภทฐานข้อมูล</label>
+                                <select class="select-control" name="layer" id="layer" data-placeholder="ชื่อประเภทฐานข้อมูล"
                                     style="width: 100%;">
                                     <option value=""></option>
                                     <option value="coral_artificial"  >ปะการังเทียม</option>
@@ -362,7 +362,11 @@
                             <div class="tab-content">
                                 <div role="tabpanel" id="tabpane-chartReport1" aria-labelledby="tab-chartReport1"
                                     class="tab-pane fade active show">
+                                    <div class="spinner-border text-primary" id="spinning" role="status">
+                                        <span class="visually-hidden">Loading...</span>
+                                      </div>
                                     <div class="chart-container">
+                                            
                                         <canvas id="myChart"></canvas>
                                     </div>
                                 </div>
@@ -392,7 +396,7 @@
         <div class="wg-activities">
             <div class="content">
                 <div class="whead text-center" data-aos="fade-up">
-                    <h2 class="title">กิจกรรมที่เกี่ยวข้อง</h2>
+                    <h2 class="title">การติดตามการใช้ประโยชน์</h2>
                 </div>
                 <div class="default-tabs" data-aos="fade-up">
                     <ul class="mb-md-5 mb-4 nav nav-tabs nav-fill" role="tablist">
@@ -446,13 +450,13 @@
                                                 </svg>
                                             </div>
                                         </div>
-                                        <div class="col">ปะการังเทียม</div>
+                                        <div class="col">ทุ่นในทะเล</div>
                                     </div>
                                 </div>
                             </button>
                         </li>
                         <li class="nav-item" role="presentation">
-                            <button type="button" id="tab-activity3" data-bs-toggle="tab" data-bs-target="#tabpane-activity3" role="tab" data-rr-ui-event-key="activity3" aria-controls="tabpane-activity3" aria-selected="false" tabindex="-1" aria-disabled="true" disabled="" class="nav-link disabled">
+                            <button type="button" id="tab-activity3" data-bs-toggle="tab" data-bs-target="#tabpane-activity3" role="tab" data-rr-ui-event-key="activity3" aria-controls="tabpane-activity3" aria-selected="false" tabindex="-1" class="nav-link">
                                 <div class="icon">
                                     <div class="justify-content-center align-items-center row row-cols-auto">
                                         <div class="col">
@@ -469,7 +473,7 @@
                                                 </svg>
                                             </div>
                                         </div>
-                                        <div class="col">ปะการังเทียม</div>
+                                        <div class="col">จุดวางเรือ</div>
                                     </div>
                                 </div>
                             </button>
@@ -480,33 +484,34 @@
                             <div class="head-title">
                                 <div class="align-items-center row">
                                     <div class="col">
-                                        <h3 class="h-title">กิจกรรมที่เกี่ยวข้องกับปะการังเทียม</h3>
+                                        <h3 class="h-title">การติดตามการใช้ประโยชน์ปะการังเทียม</h3>
                                     </div>
                                     <div class="col-auto">
                                         <div class="action">
-                                            <a class="btn btn-outline-primary" title="ดูทั้งหมด" href="/">ดูทั้งหมด</a>
+                                            <a class="btn btn-outline-primary" title="ดูทั้งหมด" href="{$ul}/follow">ดูทั้งหมด</a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                            {if $FollowCoral->_numOfRows>0}
                             <div class="gutters-40 row">
                                 <div class="col-lg-4 col-12 pb-lg-0 pb-md-5 pb-4">
-                                    <a class="link link-card -vertical" title="เก็บขยะใต้ทะเล แนวปะการังเทียมบ้านเกาะแต้วเจอเศษอวน" href="/activity/detail">
+                                    {foreach $FollowCoral as $keyValue => $valueData}
+                                    {if $keyValue eq '0'}
+                                    <a class="link link-card -vertical" title="{$valueData.2}" href="{$ul}/follow/detail/{$valueData.0}?m={$valueData.1}">
                                         <div class="overflow-hidden card">
                                             <div class="thumbnail">
                                                 <figure class="cover" style="padding-top:75%">
-                                                    <img alt="" data-src="{$template}/assets/img/upload/beautiful-beach-sea.jpg" class="img-cover lazy">
+                                                    <img alt="{$valueData.2}" src="{$valueData.6|fileinclude:"office":{$valueData.1}:"link"}" 
+                                                    data-src="{$valueData.6|fileinclude:"pictures":{$valueData.1}:"link"}" class="img-cover lazy">
                                                 </figure>
                                             </div>
                                             <div class="card-body">
                                                 <div class="inner">
-                                                    <div class="date">23 มิถุนายน 2560</div>
-                                                    <h4 class="title">เก็บขยะใต้ทะเล
-                                                        แนวปะการังเทียมบ้านเกาะแต้วเจอเศษอวน</h4>
+                                                    <div class="date">{$valueData.4|DateThai:'13':{$langon}:'shot'}</div>
+                                                    <h4 class="title">{$valueData.2}</h4>
                                                     <p class="desc">
-                                                        เป็นศูนย์รวบรวมข้อมูลปะการังเทียมจากหน่วยงานที่เกี่ยวข้อง
-                                                        โดยดำเนินการจัดเก็บข้อมูลเป็นหมวดหมู่และเป็นระเบียบเพื่อสะดวกในเป็นศูนย์รวบรวมข้อมูลปะการังเทียมจากหน่วยงานที่เกี่ยวข้อง
-                                                        โดยดำเนินการจัดเก็บข้อมูลเป็นหมวดหมู่และเป็นระเบียบเพื่อสะดวกใน...
+                                                        {$valueData.3}
                                                     </p>
                                                     <div class="action">
                                                         <div class="btn btn-outline-primary" title="อ่านต่อ">อ่านต่อ
@@ -516,6 +521,8 @@
                                             </div>
                                         </div>
                                     </a>
+                                    {/if}
+                                    {/foreach}
                                 </div>
                                 <div class="col-lg-8 col-12">
                                     <div class="h-100 card">
@@ -525,32 +532,33 @@
                                                     <div class="swiper-slide">
                                                         <div class="card-body">
                                                             <div class="vstack gap-3">
-                                                                {for $i=1 to 5}
-                                                                    <a class="link link-card -horizontal" title="เก็บขยะใต้ทะเล แนวปะการังเทียมบ้านเกาะแต้วเจอเศษอวน" href="/activity/detail">
+                                                                {foreach $FollowCoral as $keyValue => $valueData}
+                                                                
+                                                                    <a class="link link-card -horizontal" title="{$valueData.2}" href="{$ul}/follow/detail/{$valueData.0}?m={$valueData.1}">
                                                                         <div class="row">
                                                                             <div class="col-sm-auto">
                                                                                 <div class="thumbnail">
                                                                                     <figure class="cover" style="padding-top:75%">
-                                                                                        <img alt="" data-src="{$template}/assets/img/upload/beautiful-beach-sea.jpg" class="img-cover lazy rounded">
+                                                                                        <img alt="{$valueData.2}" src="{$valueData.6|fileinclude:"office":{$valueData.1}:"link"}" 
+                                                                                        data-src="{$valueData.6|fileinclude:"pictures":{$valueData.1}:"link"}"
+                                                                                        class="img-cover lazy rounded">
                                                                                     </figure>
                                                                                 </div>
                                                                             </div>
                                                                             <div class="col">
                                                                                 <div class="inner">
-                                                                                    <div class="date">23 มิถุนายน 2560</div>
-                                                                                    <h4 class="title">เก็บขยะใต้ทะเล
-                                                                                        แนวปะการังเทียมบ้านเกาะแต้วเจอเศษอวน
+                                                                                    <div class="date">{$valueData.4|DateThai:'13':{$langon}:'shot'}</div>
+                                                                                    <h4 class="title">{$valueData.2}
                                                                                     </h4>
                                                                                     <p class="desc">
-                                                                                        เป็นศูนย์รวบรวมข้อมูลปะการังเทียมจากหน่วยงานที่เกี่ยวข้อง
-                                                                                        โดยดำเนินการจัดเก็บข้อมูลเป็นหมวดหมู่และเป็นระเบียบเพื่อสะดวกในเป็นศูนย์รวบรวมข้อมูลปะการังเทียมจากหน่วยงานที่เกี่ยวข้อง
-                                                                                        โดยดำเนินการจัดเก็บข้อมูลเป็นหมวดหมู่และเป็นระเบียบเพื่อสะดวกใน...
+                                                                                        {$valueData.3}
                                                                                     </p>
                                                                                 </div>
                                                                             </div>
                                                                         </div>
                                                                     </a>
-                                                                {/for}
+                                                                
+                                                                {/foreach}
                                                             </div>
                                                         </div>
                                                     </div>
@@ -561,12 +569,195 @@
                                     </div>
                                 </div>
                             </div>
+                            {else}
+                            <div>ไม่มีเนื้อหา...</div>
+                            {/if}
                         </div>
                         <div role="tabpanel" id="tabpane-activity2" aria-labelledby="tab-activity2" class="fade tab-pane">
-                            <div>Tab content for</div>
+                            <div class="head-title">
+                                <div class="align-items-center row">
+                                    <div class="col">
+                                        <h3 class="h-title">การติดตามการใช้ประโยชน์ทุ่นทะเล</h3>
+                                    </div>
+                                    <div class="col-auto">
+                                        <div class="action">
+                                            <a class="btn btn-outline-primary" title="ดูทั้งหมด" href="{$ul}/follow">ดูทั้งหมด</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {if $Followfloating->_numOfRows>0}
+                            <div class="gutters-40 row">
+                                <div class="col-lg-4 col-12 pb-lg-0 pb-md-5 pb-4">
+                                    {foreach $Followfloating as $keyValue => $valueData}
+                                    {if $keyValue eq '0'}
+                                    <a class="link link-card -vertical" title="{$valueData.2}" href="{$ul}/follow/detail/{$valueData.0}?m={$valueData.1}">
+                                        <div class="overflow-hidden card">
+                                            <div class="thumbnail">
+                                                <figure class="cover" style="padding-top:75%">
+                                                    <img alt="{$valueData.2}" src="{$valueData.6|fileinclude:"office":{$valueData.1}:"link"}" 
+                                                    data-src="{$valueData.6|fileinclude:"pictures":{$valueData.1}:"link"}" class="img-cover lazy">
+                                                </figure>
+                                            </div>
+                                            <div class="card-body">
+                                                <div class="inner">
+                                                    <div class="date">{$valueData.4|DateThai:'13':{$langon}:'shot'}</div>
+                                                    <h4 class="title">{$valueData.2}</h4>
+                                                    <p class="desc">
+                                                        {$valueData.3}
+                                                    </p>
+                                                    <div class="action">
+                                                        <div class="btn btn-outline-primary" title="อ่านต่อ">อ่านต่อ
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    {/if}
+                                    {/foreach}
+                                </div>
+                                <div class="col-lg-8 col-12">
+                                    <div class="h-100 card">
+                                        <div class="scroll-wrapper">
+                                            <div class="swiper scroll-swiper">
+                                                <div class="swiper-wrapper">
+                                                    <div class="swiper-slide">
+                                                        <div class="card-body">
+                                                            <div class="vstack gap-3">
+                                                                {foreach $Followfloating as $keyValue => $valueData}
+                                                                
+                                                                    <a class="link link-card -horizontal" title="{$valueData.2}" href="{$ul}/follow/detail/{$valueData.0}?m={$valueData.1}">
+                                                                        <div class="row">
+                                                                            <div class="col-sm-auto">
+                                                                                <div class="thumbnail">
+                                                                                    <figure class="cover" style="padding-top:75%">
+                                                                                        <img alt="{$valueData.2}" src="{$valueData.6|fileinclude:"office":{$valueData.1}:"link"}" 
+                                                                                        data-src="{$valueData.6|fileinclude:"pictures":{$valueData.1}:"link"}"
+                                                                                        class="img-cover lazy rounded">
+                                                                                    </figure>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col">
+                                                                                <div class="inner">
+                                                                                    <div class="date">{$valueData.4|DateThai:'13':{$langon}:'shot'}</div>
+                                                                                    <h4 class="title">{$valueData.2}
+                                                                                    </h4>
+                                                                                    <p class="desc">
+                                                                                        {$valueData.3}
+                                                                                    </p>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </a>
+                                                                
+                                                                {/foreach}
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="swiper-scrollbar"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {else}
+                            <div>ไม่มีเนื้อหา...</div>
+                            {/if}
                         </div>
                         <div role="tabpanel" id="tabpane-activity3" aria-labelledby="tab-activity3" class="fade tab-pane">
-                            Tab contentfor
+                            <div class="head-title">
+                                <div class="align-items-center row">
+                                    <div class="col">
+                                        <h3 class="h-title">การติดตามการใช้ประโยชน์จุดวางเรือ</h3>
+                                    </div>
+                                    <div class="col-auto">
+                                        <div class="action">
+                                            <a class="btn btn-outline-primary" title="ดูทั้งหมด" href="{$ul}/follow">ดูทั้งหมด</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {if $Followsinkship->_numOfRows>0}
+                            <div class="gutters-40 row">
+                                <div class="col-lg-4 col-12 pb-lg-0 pb-md-5 pb-4">
+                                    {foreach $Followsinkship as $keyValue => $valueData}
+                                    {if $keyValue eq '0'}
+                                    <a class="link link-card -vertical" title="{$valueData.2}" href="{$ul}/follow/detail/{$valueData.0}?m={$valueData.1}">
+                                        <div class="overflow-hidden card">
+                                            <div class="thumbnail">
+                                                <figure class="cover" style="padding-top:75%">
+                                                    <img alt="{$valueData.2}" src="{$valueData.6|fileinclude:"office":{$valueData.1}:"link"}" 
+                                                    data-src="{$valueData.6|fileinclude:"pictures":{$valueData.1}:"link"}" class="img-cover lazy">
+                                                </figure>
+                                            </div>
+                                            <div class="card-body">
+                                                <div class="inner">
+                                                    <div class="date">{$valueData.4|DateThai:'13':{$langon}:'shot'}</div>
+                                                    <h4 class="title">{$valueData.2}</h4>
+                                                    <p class="desc">
+                                                        {$valueData.3}
+                                                    </p>
+                                                    <div class="action">
+                                                        <div class="btn btn-outline-primary" title="อ่านต่อ">อ่านต่อ
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    {/if}
+                                    {/foreach}
+                                </div>
+                                <div class="col-lg-8 col-12">
+                                    <div class="h-100 card">
+                                        <div class="scroll-wrapper">
+                                            <div class="swiper scroll-swiper">
+                                                <div class="swiper-wrapper">
+                                                    <div class="swiper-slide">
+                                                        <div class="card-body">
+                                                            <div class="vstack gap-3">
+                                                                {foreach $Followsinkship as $keyValue => $valueData}
+                                                                
+                                                                    <a class="link link-card -horizontal" title="{$valueData.2}" href="{$ul}/follow/detail/{$valueData.0}?m={$valueData.1}">
+                                                                        <div class="row">
+                                                                            <div class="col-sm-auto">
+                                                                                <div class="thumbnail">
+                                                                                    <figure class="cover" style="padding-top:75%">
+                                                                                        <img alt="{$valueData.2}" src="{$valueData.6|fileinclude:"office":{$valueData.1}:"link"}" 
+                                                                                        data-src="{$valueData.6|fileinclude:"pictures":{$valueData.1}:"link"}"
+                                                                                        class="img-cover lazy rounded">
+                                                                                    </figure>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col">
+                                                                                <div class="inner">
+                                                                                    <div class="date">{$valueData.4|DateThai:'13':{$langon}:'shot'}</div>
+                                                                                    <h4 class="title">{$valueData.2}
+                                                                                    </h4>
+                                                                                    <p class="desc">
+                                                                                        {$valueData.3}
+                                                                                    </p>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </a>
+                                                                
+                                                                {/foreach}
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="swiper-scrollbar"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {else}
+                            <div>ไม่มีเนื้อหา...</div>
+                            {/if}
                         </div>
                     </div>
                 </div>
@@ -575,38 +766,39 @@
                 <img alt="" data-src="{$template}/assets/img/background/bg-section-iii.jpg" class="lazy">
             </div>
         </div>
+        {if $ActivityLaist->_numOfRows > 0}
         <div class="wg-utilization-tracking">
             <div class="pt-5">
                 <div class="head-title">
                     <div class="align-items-center row">
                         <div class="col">
-                            <h3 class="h-title">การติดตามการใช้ประโยชน์</h3>
+                            <h3 class="h-title">กิจกรรมที่เกี่ยวข้อง</h3>
                         </div>
                         <div class="col-auto">
-                            <div class="action"><a class="btn btn-outline-primary" title="ดูทั้งหมด" href="/">ดูทั้งหมด</a></div>
+                            <div class="action"><a class="btn btn-outline-primary" title="ดูทั้งหมด" href="{$ul}/activity">ดูทั้งหมด</a></div>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="swiper ut-swiper default-swiper">
                 <div class="swiper-wrapper">
-                    {for $i=1 to 5}
+                    {foreach $ActivityLaist as $keyActivity => $valueActivity}
+                    
                         <div class="swiper-slide">
-                            <a class="link link-card -vertical" title="เก็บขยะใต้ทะเล แนวปะการังเทียมบ้านเกาะแต้วเจอเศษอวน" href="/activity/detail">
+                            <a class="link link-card -vertical" title="{$valueActivity.2}" href="{$ul}/activity/detail/{$valueActivity.0}">
                                 <div class="overflow-hidden card">
                                     <div class="thumbnail">
                                         <figure class="cover" style="padding-top:75%">
-                                            <img alt="" data-src="{$template}/assets/img/upload/beautiful-beach-sea.jpg" class="img-cover lazy">
+                                            <img alt="{$valueActivity.2}" src="{$valueActivity.6|fileinclude:"office":{$valueActivity.1}:"link"}" 
+                                            data-src="{$valueActivity.6|fileinclude:"pictures":{$valueActivity.1}:"link"}" class="img-cover lazy">
                                         </figure>
                                     </div>
                                     <div class="card-body">
                                         <div class="inner">
-                                            <div class="date">23 มิถุนายน 2560</div>
-                                            <h4 class="title">เก็บขยะใต้ทะเล แนวปะการังเทียมบ้านเกาะแต้วเจอเศษอวน</h4>
+                                            <div class="date">{$valueActivity.4|DateThai:'13':{$langon}:'shot'}</div>
+                                            <h4 class="title">{$valueActivity.2}</h4>
                                             <p class="desc">
-                                                เป็นศูนย์รวบรวมข้อมูลปะการังเทียมจากหน่วยงานที่เกี่ยวข้อง
-                                                โดยดำเนินการจัดเก็บข้อมูลเป็นหมวดหมู่และเป็นระเบียบเพื่อสะดวกในเป็นศูนย์รวบรวมข้อมูลปะการังเทียมจากหน่วยงานที่เกี่ยวข้อง
-                                                โดยดำเนินการจัดเก็บข้อมูลเป็นหมวดหมู่และเป็นระเบียบเพื่อสะดวกใน...
+                                                {$valueActivity.3}
                                             </p>
                                             <div class="action">
                                                 <div class="btn btn-outline-primary" title="อ่านต่อ">อ่านต่อ</div>
@@ -616,13 +808,14 @@
                                 </div>
                             </a>
                         </div>
-                    {/for}
+                    {/foreach}
                 </div>
                 <div class="swiper-button-prev"></div>
                 <div class="swiper-button-next"></div>
                 <div class="swiper-pagination"></div>
             </div>
         </div>
+        {/if}
     </div>
 </div>
 
@@ -635,7 +828,7 @@
                     <p class="desc">เป็นศูนย์รวบรวมข้อมูลปะการังเทียมจากหน่วยงานที่เกี่ยวข้อง โดยดำเนินการจัดเก็บข้อมูลเป็น หมวดหมู่และเป็นระเบียบ เพื่อสะดวกในการใช้งานสำหรับนักวิชาการและผู้ที่สนใจทั่วไป</p>
                 </div>
                 <div class="action">
-                    <a class="btn btn-secondary" title="อ่านต่อ" href="/about">อ่านต่อ</a>
+                    <a class="btn btn-secondary" title="อ่านต่อ" href="{$ul}/about">อ่านต่อ</a>
                 </div>
             </div>
             <div class="style-about" data-aos="fade-up" data-aos-duration="2000">
