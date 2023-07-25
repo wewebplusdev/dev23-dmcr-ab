@@ -71,6 +71,15 @@ $smarty->assign("rssProv", $result);
     $province = $homePage->callprovince();
     $smarty->assign("province", $province);
 
+    #### year ####
+    $arryear = array();
+    $year_real=date('Y');
+    $year_end=$year_real-10;
+    for($year_star=$year_real; $year_star>=$year_end; $year_star--){ 
+        array_push($arryear,($year_star+543));
+    }
+    $smarty->assign("arryear", $arryear);
+
     #### call activity ####
     $ActivityLaist = $homePage->callActivity($config['activity']['masterkey']);
     $smarty->assign("ActivityLaist", $ActivityLaist);

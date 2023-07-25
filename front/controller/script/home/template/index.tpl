@@ -123,13 +123,26 @@
             </div>
             <div class="wg-search-filter">
                 <form class="form-default" action="http://marinegiscenter.dmcr.go.th/admmapph2/summary_data_table.php?" name="myFormSearch" id="myFormSearch" enctype="multipart/form-data" method="get" target="_blank">
+                    <input name="type" id="type" value="prov_all" type="hidden">
                     <div class="row">
+                        <div class="col-md col-sm-6 col-12">
+                            <div class="form-group">
+                                <label class="form-label visually-hidden" for="typeName">ชื่อประเภท</label>
+                                <select class="select-control" name="layer" id="layer" data-placeholder="ชื่อประเภท"
+                                    style="width: 100%;">
+                                    <option value=""></option>
+                                    <option value="coral_artificial"  >ปะการังเทียม</option>
+                                    <option value="floating"  >ทุ่นในทะเล</option>
+                                    <option value="sinkship"  >จุดวางเรือ</option>
+                                </select>
+                            </div>
+                        </div>
                         <div class="col-md col-sm-6 col-12">
                             <div class="form-group">
                                 <label class="form-label visually-hidden" for="agencyName">ชื่อหน่วยงาน</label>
                                 <select class="select-control" name="auth_org" id="auth_org" data-placeholder="ชื่อหน่วยงาน"
                                     style="width: 100%;">
-                                    <option value="">หน่วยงาน</option>
+                                    <option value=""></option>
                                     <option value="กรมทรัพยากรทางทะเลและชายฝั่ง"  >กรมทรัพยากรทางทะเลและชายฝั่ง</option>
                                     <option value="กรมทรัพยากรทางทะเลและชายฝั่ง ร่วมกับหน่วยงานอื่น"  >กรมทรัพยากรทางทะเลและชายฝั่ง ร่วมกับหน่วยงานอื่น</option>
                                     <option value="กรมประมง"  >กรมประมง</option>
@@ -156,14 +169,15 @@
                                 <label class="form-label visually-hidden" for="years">ปี</label>
                                 <select class="select-control" name="years" id="years" data-placeholder="ปี" style="width: 100%;">
                                     <option></option>
-                                    <option value="0">2012</option>
-                                    <option value="1">2014</option>
+                                    {foreach $arryear as $keyyear => $valueyear}
+                                    <option value="{$valueyear}">{$valueyear}</option>
+                                    {/foreach}
                                 </select>
                             </div>
                         </div>
                         <div class="col-md-auto col-sm-6 col-12">
                             <div class="action">
-                                <button type="button" value="ค้นหา" class="btn btn-secondary">ค้นหา</button>
+                                <button type="submit" value="ค้นหา" class="btn btn-secondary">ค้นหา</button>
                             </div>
                         </div>
                     </div>

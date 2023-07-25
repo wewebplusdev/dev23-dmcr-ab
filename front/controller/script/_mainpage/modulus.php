@@ -14,6 +14,9 @@ $smarty->assign("menuactive", $menuactive);
 $modify="?v=".date('Ymd').time();
 $smarty->assign("modify", $modify);
 
+$callTGP = callTopgraphic();
+$smarty->assign("callTGP",$callTGP);
+
 
 $sqlSetting = "SELECT
    " . $config['system']['setting'] . "." . $config['system']['setting'] . "_subject as subject,
@@ -136,3 +139,39 @@ function Call_Album($id, $table)
      
      // print_pre($updateView);
      }
+
+     function callTopgraphic(){
+        global $config, $db, $url;
+      
+        $sql = "SELECT
+        " . $config['tgp']['db'] . "." . $config['tgp']['db'] . "_id as id,
+        " . $config['tgp']['db'] . "." . $config['tgp']['db'] . "_masterkey as masterkey,
+        " . $config['tgp']['db'] . "." . $config['tgp']['db'] . "_subject as subject,
+        " . $config['tgp']['db'] . "." . $config['tgp']['db'] . "_title as title,
+        " . $config['tgp']['db'] . "." . $config['tgp']['db'] . "_pic as pic,
+        " . $config['tgp']['db'] . "." . $config['tgp']['db'] . "_url as url,
+        " . $config['tgp']['db'] . "." . $config['tgp']['db'] . "_target as target,
+        " . $config['tgp']['db'] . "." . $config['tgp']['db'] . "_credate as credate
+      
+        FROM
+        " . $config['tgp']['db'] . "
+        WHERE
+        " . $config['tgp']['db'] . "." . $config['tgp']['db'] . "_masterkey = '".$config['tgp']['masterkey']."' and
+        " . $config['tgp']['db'] . "." . $config['tgp']['db'] . "_status = 'Enable' and
+        ((" . $config['tgp']['db'] . "." . $config['tgp']['db'] . "_sdate='0000-00-00 00:00:00' AND
+        " . $config['tgp']['db'] . "." . $config['tgp']['db'] . "_edate='0000-00-00 00:00:00')   OR
+        (" . $config['tgp']['db'] . "." . $config['tgp']['db'] . "_sdate='0000-00-00 00:00:00' AND
+        TO_DAYS(" . $config['tgp']['db'] . "." . $config['tgp']['db'] . "_edate)>=TO_DAYS(NOW()) ) OR
+        (TO_DAYS(" . $config['tgp']['db'] . "." . $config['tgp']['db'] . "_sdate)<=TO_DAYS(NOW()) AND
+        " . $config['tgp']['db'] . "." . $config['tgp']['db'] . "_edate='0000-00-00 00:00:00' )  OR
+        (TO_DAYS(" . $config['tgp']['db'] . "." . $config['tgp']['db'] . "_sdate)<=TO_DAYS(NOW()) AND
+        TO_DAYS(" . $config['tgp']['db'] . "." . $config['tgp']['db'] . "_edate)>=TO_DAYS(NOW())  ))
+      
+        ";
+        $sql .= "
+        ORDER  BY " . $config['tgp']['db'] . "." . $config['tgp']['db'] . "_order DESC
+        ";
+      // print_pre($sql);
+        $result = $db->execute($sql);
+        return $result;
+      }
