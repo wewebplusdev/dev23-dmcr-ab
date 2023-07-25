@@ -5,7 +5,7 @@ $homePage = new homePage;
 ################# Start get count RSS #####################
 $rssSet = array();
 $rssSet['Coral']['NavLv1'] = 'ฐานข้อมูลปะการังเทียม';
-$rssSet['Coral']['valTxtTitle'] = 'ฐานข้อมูลปะการังเทียม';
+$rssSet['Coral']['valTxtTitle'] = 'ปะการังเทียม';
 $rssCoral = simplexml_load_file('http://marinegiscenter.dmcr.go.th/admmapph2/php/summary_data.php?layer=coral_artificial&type=count');
 $rssSet['Coral']['count'] = (int) $rssCoral->channel->item[0]->count;
 
@@ -63,8 +63,13 @@ foreach (array_merge($rssProv['Coral']['item'], $rssProv['floating']['item'],$rs
 }
 
 $smarty->assign("rssProv", $result);
+// print_pre($result);
 
 ################# End get RSS Prov #####################
+
+    #### call province ####
+    $province = $homePage->callprovince();
+    $smarty->assign("province", $province);
 
     #### call activity ####
     $ActivityLaist = $homePage->callActivity($config['activity']['masterkey']);

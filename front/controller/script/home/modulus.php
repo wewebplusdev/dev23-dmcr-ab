@@ -138,5 +138,37 @@ class homePage {
         $result = $db->execute($sql);
         return $result;
         }
+
+        function callprovince(){
+            global $db, $config, $url;
+            $sql_province = "SELECT ".$config['province']['db']."_ID, ".$config['province']['db']."_NAME 	 FROM ".$config['province']['db']." 
+            WHERE  1  AND (  ot_pro_CODE ='23' 
+            OR ot_pro_CODE ='22' 
+            OR ot_pro_CODE ='21' 
+            OR ot_pro_CODE ='20' 
+            OR ot_pro_CODE ='24' 
+            OR ot_pro_CODE ='74' 
+            OR ot_pro_CODE ='75' 
+            OR ot_pro_CODE ='11' 
+            OR ot_pro_CODE ='10' 
+            OR ot_pro_CODE ='77' 
+            OR ot_pro_CODE ='76' 
+            OR ot_pro_CODE ='86' 
+            OR ot_pro_CODE ='85' 
+            OR ot_pro_CODE ='80' 
+            OR ot_pro_CODE ='82' 
+            OR ot_pro_CODE ='81' 
+            OR ot_pro_CODE ='83' 
+            OR ot_pro_CODE ='91' 
+            OR ot_pro_CODE ='92' 
+            OR ot_pro_CODE ='93' 
+            OR ot_pro_CODE ='84' 
+            OR ot_pro_CODE ='94' 
+            OR ot_pro_CODE ='90' 
+            OR ot_pro_CODE ='96' ) ";
+			$sql_province.="  ORDER BY ".$config['province']['db']."_NAME ASC ";
+
+            $result = $db->execute($sql_province);
+            return $result;
+        }
 }
-?>

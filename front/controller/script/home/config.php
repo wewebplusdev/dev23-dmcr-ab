@@ -42,3 +42,5 @@ $config['ques']['ansName'] = "md_fmn";
 $config['about']['db'] = 'md_al';
 $config['about']['file'] = 'md_alf';
 $config['about']['masterkey'] = 'ab';
+
+$config['province']['db'] = "ot_pro";

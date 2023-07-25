@@ -19,9 +19,9 @@
                             </div>
                         </div>
                         <div class="inner">
-                            <h2 class="title">ปะการังเทียม</h2>
+                            <h2 class="title">{$rss['Coral']['valTxtTitle']}</h2>
                             <div class="shadow-inset p-3 rounded">
-                                <div class="amount">456</div>
+                                <div class="amount">{$rss['Coral']['count']}</div>
                             </div>
                             <div class="measure">จุด</div>
                         </div>
@@ -40,9 +40,9 @@
                             </div>
                         </div>
                         <div class="inner">
-                            <h2 class="title">ทุ่นในทะเล</h2>
+                            <h2 class="title">{$rss['floating']['valTxtTitle']}</h2>
                             <div class="shadow-inset p-3 rounded">
-                                <div class="amount">459</div>
+                                <div class="amount">{$rss['floating']['count']}</div>
                             </div>
                             <div class="measure">จุด</div>
                         </div>
@@ -61,9 +61,9 @@
                             </div>
                         </div>
                         <div class="inner">
-                            <h2 class="title">จุดวางเรือ</h2>
+                            <h2 class="title">{$rss['sinkship']['valTxtTitle']}</h2>
                             <div class="shadow-inset p-3 rounded">
-                                <div class="amount">420</div>
+                                <div class="amount">{$rss['sinkship']['count']}</div>
                             </div>
                             <div class="measure">จุด</div>
                         </div>
@@ -122,27 +122,32 @@
                 </div>
             </div>
             <div class="wg-search-filter">
-                <form class="form-default">
+                <form class="form-default" action="http://marinegiscenter.dmcr.go.th/admmapph2/summary_data_table.php?" name="myFormSearch" id="myFormSearch" enctype="multipart/form-data" method="get" target="_blank">
                     <div class="row">
                         <div class="col-md col-sm-6 col-12">
                             <div class="form-group">
                                 <label class="form-label visually-hidden" for="agencyName">ชื่อหน่วยงาน</label>
-                                <select class="select-control" name="agency" id="agencyName" data-placeholder="ชื่อหน่วยงาน"
+                                <select class="select-control" name="auth_org" id="auth_org" data-placeholder="ชื่อหน่วยงาน"
                                     style="width: 100%;">
-                                    <option></option>
-                                    <option value="0">test</option>
-                                    <option value="1">test</option>
+                                    <option value="">หน่วยงาน</option>
+                                    <option value="กรมทรัพยากรทางทะเลและชายฝั่ง"  >กรมทรัพยากรทางทะเลและชายฝั่ง</option>
+                                    <option value="กรมทรัพยากรทางทะเลและชายฝั่ง ร่วมกับหน่วยงานอื่น"  >กรมทรัพยากรทางทะเลและชายฝั่ง ร่วมกับหน่วยงานอื่น</option>
+                                    <option value="กรมประมง"  >กรมประมง</option>
+                                    <option value="หน่วยงานท้องถิ่น"  >หน่วยงานท้องถิ่น</option>
+                                    <option value="หน่วยงานเอกชน"  >หน่วยงานเอกชน</option>
+                                    <option value="หน่วยงานอื่นๆ"  >หน่วยงานอื่นๆ</option>
                                 </select>
                             </div>
                         </div>
                         <div class="col-md col-sm-6 col-12">
                             <div class="form-group">
                                 <label class="form-label visually-hidden" for="province">จังหวัด</label>
-                                <select class="select-control" name="province" id="province" data-placeholder="จังหวัด"
+                                <select class="select-control" name="prov_th" id="prov_th" data-placeholder="จังหวัด"
                                     style="width: 100%;">
                                     <option></option>
-                                    <option value="0">Alabama</option>
-                                    <option value="1">Wyoming</option>
+                                    {foreach $province as $keypro => $valuepro}
+                                    <option value="{trim($valuepro.1)}">{trim($valuepro.1)}</option>
+                                    {/foreach}
                                 </select>
                             </div>
                         </div>
@@ -199,66 +204,15 @@
                                         <div class="swiper-slide">
                                             <table class="table-tbody table table-light table-hover">
                                                 <tbody>
+                                                    {foreach $rssProv as $keyrss => $valuerss}
                                                     <tr>
-                                                        <td style="width:34%" class="text-dark">กระบี่</td>
-                                                        <td style="width:22%" class="text-center">5</td>
-                                                        <td style="width:22%" class="text-center">6</td>
-                                                        <td style="width:22%" class="text-center">10</td>
+                                                        <td style="width:34%" class="text-dark">{$valuerss.prov_th}</td>
+                                                        <td style="width:22%" class="text-center">{if !empty($valuerss.coral['count'])}{$valuerss.coral['count']}{else}0{/if}</td>
+                                                        <td style="width:22%" class="text-center">{if !empty($valuerss.floating['count'])}{$valuerss.floating['count']}{else}0{/if}</td>
+                                                        <td style="width:22%" class="text-center">{if !empty($valuerss.sinkship['count'])}{$valuerss.sinkship['count']}{else}0{/if}</td>
                                                     </tr>
-                                                    <tr>
-                                                        <td style="width:34%" class="text-dark">ชลบุรี</td>
-                                                        <td style="width:22%" class="text-center">5</td>
-                                                        <td style="width:22%" class="text-center">6</td>
-                                                        <td style="width:22%" class="text-center">10</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td style="width:34%" class="text-dark">พังงา</td>
-                                                        <td style="width:22%" class="text-center">5</td>
-                                                        <td style="width:22%" class="text-center">6</td>
-                                                        <td style="width:22%" class="text-center">10</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td style="width:34%" class="text-dark">ตราด</td>
-                                                        <td style="width:22%" class="text-center">5</td>
-                                                        <td style="width:22%" class="text-center">6</td>
-                                                        <td style="width:22%" class="text-center">10</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td style="width:34%" class="text-dark">สุราษฎร์ธานี</td>
-                                                        <td style="width:22%" class="text-center">5</td>
-                                                        <td style="width:22%" class="text-center">6</td>
-                                                        <td style="width:22%" class="text-center">10</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td style="width:34%" class="text-dark">ชุมพร</td>
-                                                        <td style="width:22%" class="text-center">5</td>
-                                                        <td style="width:22%" class="text-center">6</td>
-                                                        <td style="width:22%" class="text-center">10</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td style="width:34%" class="text-dark">ชุมพร</td>
-                                                        <td style="width:22%" class="text-center">5</td>
-                                                        <td style="width:22%" class="text-center">6</td>
-                                                        <td style="width:22%" class="text-center">10</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td style="width:34%" class="text-dark">ชุมพร</td>
-                                                        <td style="width:22%" class="text-center">5</td>
-                                                        <td style="width:22%" class="text-center">6</td>
-                                                        <td style="width:22%" class="text-center">10</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td style="width:34%" class="text-dark">ชุมพร</td>
-                                                        <td style="width:22%" class="text-center">5</td>
-                                                        <td style="width:22%" class="text-center">6</td>
-                                                        <td style="width:22%" class="text-center">10</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td style="width:34%" class="text-dark">ชุมพร</td>
-                                                        <td style="width:22%" class="text-center">5</td>
-                                                        <td style="width:22%" class="text-center">6</td>
-                                                        <td style="width:22%" class="text-center">10</td>
-                                                    </tr>
+                                                    {/foreach}
+                                                    
                                                 </tbody>
                                             </table>
                                         </div>
@@ -364,8 +318,8 @@
                                     <button type="button" id="tab-chartReport3" data-bs-toggle="tab"
                                         data-bs-target="#tabpane-chartReport3" role="tab"
                                         data-rr-ui-event-key="chartReport3" aria-controls="tabpane-chartReport3"
-                                        aria-selected="false" tabindex="-1" aria-disabled="true" disabled=""
-                                        class="nav-link disabled">
+                                        aria-selected="false" tabindex="-1"
+                                        class="nav-link">
                                         <div class="icon">
                                             <div>
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="57.33" height="38.222"
@@ -400,95 +354,16 @@
                                 </div>
                                 <div role="tabpanel" id="tabpane-chartReport2" aria-labelledby="tab-chartReport2"
                                     class="tab-pane fade">
-                                    <div>
-                                        <div>
-                                            <h2>Title:
-                                                <!-- -->ปะการังเทียม
-                                            </h2>
-                                            <ul>
-                                                <li>Province:
-                                                    <!-- -->กระบี่
-                                                    <!-- -->, DMCR:
-                                                    <!-- -->14
-                                                    <!-- -->, Other:
-                                                    <!-- -->3
-                                                </li>
-                                                <li>Province:
-                                                    <!-- -->ชลบุรี
-                                                    <!-- -->, DMCR:
-                                                    <!-- -->7
-                                                    <!-- -->, Other:
-                                                    <!-- -->5
-                                                </li>
-                                                <li>Province:
-                                                    <!-- -->พังงา
-                                                    <!-- -->, DMCR:
-                                                    <!-- -->5
-                                                    <!-- -->, Other:
-                                                    <!-- -->5
-                                                </li>
-                                                <li>Province:
-                                                    <!-- -->ตราด
-                                                    <!-- -->, DMCR:
-                                                    <!-- -->7
-                                                    <!-- -->, Other:
-                                                    <!-- -->5
-                                                </li>
-                                                <li>Province:
-                                                    <!-- -->สุราษฎร์ธานี
-                                                    <!-- -->, DMCR:
-                                                    <!-- -->6
-                                                    <!-- -->, Other:
-                                                    <!-- -->2
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <div>
-                                            <h2>Title:
-                                                <!-- -->ทุ่นในทะเล
-                                            </h2>
-                                            <ul>
-                                                <li>Province:
-                                                    <!-- -->กระบี่
-                                                    <!-- -->, DMCR:
-                                                    <!-- -->1
-                                                    <!-- -->, Other:
-                                                    <!-- -->3
-                                                </li>
-                                                <li>Province:
-                                                    <!-- -->ชลบุรี
-                                                    <!-- -->, DMCR:
-                                                    <!-- -->2
-                                                    <!-- -->, Other:
-                                                    <!-- -->5
-                                                </li>
-                                                <li>Province:
-                                                    <!-- -->พังงา
-                                                    <!-- -->, DMCR:
-                                                    <!-- -->5
-                                                    <!-- -->, Other:
-                                                    <!-- -->1
-                                                </li>
-                                                <li>Province:
-                                                    <!-- -->ตราด
-                                                    <!-- -->, DMCR:
-                                                    <!-- -->7
-                                                    <!-- -->, Other:
-                                                    <!-- -->5
-                                                </li>
-                                                <li>Province:
-                                                    <!-- -->สุราษฎร์ธานี
-                                                    <!-- -->, DMCR:
-                                                    <!-- -->9
-                                                    <!-- -->, Other:
-                                                    <!-- -->2
-                                                </li>
-                                            </ul>
-                                        </div>
+                                    <div class="chart-container">
+                                        <canvas id="myChartfloat"></canvas>
                                     </div>
                                 </div>
                                 <div role="tabpanel" id="tabpane-chartReport3" aria-labelledby="tab-chartReport3"
-                                    class="tab-pane fade">Tab content for chartReport 3</div>
+                                    class="tab-pane fade">
+                                    <div class="chart-container">
+                                        <canvas id="myChartsink"></canvas>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
