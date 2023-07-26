@@ -1044,14 +1044,26 @@
                 <div class="swiper weblink-swiper default-swiper">
                     <div class="swiper-wrapper">
                         {foreach $BannerList as $keyBanner=> $valueBanner}
-                        
                         <div class="swiper-slide item">
                             <a class="link" title="{$valueBanner.subject}" href="{$valueBanner.url}" target="{if $valueBanner.target neq '2'}_self{else}_blank{/if}">
-                                <div class="thumbnail">
-                                    <figure class="cover">
-                                        <img alt="thumbnail-weblink" src="{$valueBanner.4|fileinclude:"office":{$valueBanner.1}:"link"}" 
-                                        data-src="{$valueBanner.4|fileinclude:"pictures":{$valueBanner.1}:"link"}" class="img-cover lazy">
-                                    </figure>
+                                <div class="wrapper">
+                                    <div class="row g-0 align-items-center">
+                                        <div class="col-auto">
+                                            <div class="thumbnail">
+                                                <figure class="cover">
+                                                    <img alt="thumbnail-weblink" src="{$valueBanner.4|fileinclude:"office":{$valueBanner.1}:"link"}" 
+                                                    data-src="{$valueBanner.4|fileinclude:"pictures":{$valueBanner.1}:"link"}" class="img-cover lazy">
+                                                </figure>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="inner">
+                                                <div class="title">
+                                                    <span>กรมทรัพยากร<br>ทางทะเลและชายฝั่ง</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </a>
                         </div>

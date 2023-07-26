@@ -27134,12 +27134,25 @@ div.swal2-html-container {
     width: 100%;
   }
 }
-.wg-weblinks .weblink-list .thumbnail {
+.wg-weblinks .weblink-list .wrapper {
   border-radius: 0.325rem;
   overflow: hidden;
+  color: #ffffff;
+  background: var(--color-primary);
 }
-.wg-weblinks .weblink-list .thumbnail .cover {
-  padding-top: 36%;
+.wg-weblinks .weblink-list .wrapper .thumbnail {
+  width: 96px;
+}
+.wg-weblinks .weblink-list .wrapper .thumbnail .cover {
+  padding-top: 100%;
+}
+.wg-weblinks .weblink-list .wrapper .inner {
+  padding: 0 15px;
+}
+.wg-weblinks .weblink-list .wrapper .inner .title {
+  font-size: var(--typo-default);
+  line-height: var(--line-height-1-4);
+  font-weight: var(--fw-medium);
 }
 
 .weblink-swiper.swiper-horizontal {
@@ -27152,12 +27165,20 @@ div.swal2-html-container {
     opacity: 1;
   }
 }
+@media (max-width: 1440px) {
+  .wg-weblinks .weblink-list .wrapper .thumbnail {
+    width: 90px;
+  }
+}
 @media (max-width: 1199px) {
   .weblink-swiper.swiper-horizontal > .swiper-pagination-bullets,
   .weblink-swiper .swiper-pagination-bullets.swiper-pagination-horizontal,
   .weblink-swiper .swiper-pagination-custom,
   .weblink-swiper .swiper-pagination-fraction {
     bottom: 18px;
+  }
+  .wg-weblinks .weblink-list .wrapper .thumbnail {
+    width: 80px;
   }
 }
 @media (max-width: 991px) {
@@ -27167,6 +27188,9 @@ div.swal2-html-container {
   .weblink-swiper .swiper-pagination-fraction {
     bottom: 24px;
   }
+  .wg-weblinks .weblink-list .wrapper .thumbnail {
+    width: 70px;
+  }
 }
 @media (max-width: 767px) {
   .weblink-swiper.swiper-horizontal > .swiper-pagination-bullets,
@@ -27174,6 +27198,23 @@ div.swal2-html-container {
   .weblink-swiper .swiper-pagination-custom,
   .weblink-swiper .swiper-pagination-fraction {
     bottom: 26px;
+  }
+  .wg-weblinks .weblink-list .wrapper .thumbnail {
+    width: 60px;
+  }
+  .wg-weblinks .weblink-list .wrapper .inner {
+    padding: 0 15px;
+  }
+  .wg-weblinks .weblink-list .wrapper .inner .title {
+    font-size: var(--typo-sm);
+  }
+}
+@media (max-width: 575px) {
+  .wg-weblinks .weblink-list .wrapper .thumbnail {
+    width: 50px;
+  }
+  .wg-weblinks .weblink-list .wrapper .inner .title {
+    font-size: var(--typo-xs);
   }
 }
 .mCustomScrollbar {

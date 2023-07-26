@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2023-07-26 15:30:15
+/* Smarty version 3.1.30, created on 2023-07-26 16:53:48
   from "/Applications/XAMPP/xamppfiles/htdocs/dev23-dmcr-ab/front/controller/script/home/template/index.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_64c0d9974a2cc3_44421689',
+  'unifunc' => 'content_64c0ed2c7da625_49906640',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '1474949d296045badc89b3f764bf0dbc245b8fa7' => 
     array (
       0 => '/Applications/XAMPP/xamppfiles/htdocs/dev23-dmcr-ab/front/controller/script/home/template/index.tpl',
-      1 => 1690360212,
+      1 => 1690365223,
       2 => 'file',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:front/template/default/inc-herobanner.tpl' => 1,
   ),
 ),false)) {
-function content_64c0d9974a2cc3_44421689 (Smarty_Internal_Template $_smarty_tpl) {
+function content_64c0ed2c7da625_49906640 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:front/template/default/inc-herobanner.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('title'=>'title'), 0, false);
 ?>
 
@@ -1334,24 +1334,36 @@ $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->t
 if ($_from !== null) {
 foreach ($_from as $_smarty_tpl->tpl_vars['keyBanner']->value => $_smarty_tpl->tpl_vars['valueBanner']->value) {
 ?>
-                        
                         <div class="swiper-slide item">
                             <a class="link" title="<?php echo $_smarty_tpl->tpl_vars['valueBanner']->value['subject'];?>
 " href="<?php echo $_smarty_tpl->tpl_vars['valueBanner']->value['url'];?>
 " target="<?php if ($_smarty_tpl->tpl_vars['valueBanner']->value['target'] != '2') {?>_self<?php } else { ?>_blank<?php }?>">
-                                <div class="thumbnail">
-                                    <figure class="cover">
-                                        <img alt="thumbnail-weblink" src="<?php ob_start();
+                                <div class="wrapper">
+                                    <div class="row g-0 align-items-center">
+                                        <div class="col-auto">
+                                            <div class="thumbnail">
+                                                <figure class="cover">
+                                                    <img alt="thumbnail-weblink" src="<?php ob_start();
 echo $_smarty_tpl->tpl_vars['valueBanner']->value[1];
 $_prefixVariable22=ob_get_clean();
 echo fileinclude($_smarty_tpl->tpl_vars['valueBanner']->value[4],"office",$_prefixVariable22,"link");?>
 " 
-                                        data-src="<?php ob_start();
+                                                    data-src="<?php ob_start();
 echo $_smarty_tpl->tpl_vars['valueBanner']->value[1];
 $_prefixVariable23=ob_get_clean();
 echo fileinclude($_smarty_tpl->tpl_vars['valueBanner']->value[4],"pictures",$_prefixVariable23,"link");?>
 " class="img-cover lazy">
-                                    </figure>
+                                                </figure>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="inner">
+                                                <div class="title">
+                                                    <span>กรมทรัพยากร<br>ทางทะเลและชายฝั่ง</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </a>
                         </div>
