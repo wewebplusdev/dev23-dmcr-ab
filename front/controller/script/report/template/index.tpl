@@ -27,7 +27,7 @@
                 <div class="default-tabs">
                     <ul class="nav nav-tabs nav-fill" data-aos="fade-up" data-aos-delay="300">
                         <li class="nav-item" role="presentation">
-                            <a href="{$ul}/report?m=1f" class="nav-link active">
+                            <a href="{$ul}/report?m=1f" class="nav-link {if $masterkey eq '1f'}active{/if}">
                                 <div class="icon">
                                     <div class="justify-content-center align-items-center row row-cols-auto">
                                         <div class="col">
@@ -59,7 +59,7 @@
                             </a>
                         </li>
                         <li class="nav-item" role="presentation">
-                            <a href="{$ul}/report?m=2f" class="nav-link">
+                            <a href="{$ul}/report?m=2f" class="nav-link {if $masterkey eq '2f'}active{/if}">
                                 <div class="icon">
                                     <div class="justify-content-center align-items-center row row-cols-auto">
                                         <div class="col">
@@ -107,7 +107,7 @@
                             </a>
                         </li>
                         <li class="nav-item" role="presentation">
-                            <a href="{$ul}/report?m=3f" class="nav-link">
+                            <a href="{$ul}/report?m=3f" class="nav-link {if $masterkey eq '3f'}active{/if}">
                                 <div class="icon">
                                     <div class="justify-content-center align-items-center row row-cols-auto">
                                         <div class="col">
@@ -165,7 +165,7 @@
                                         class="fade tab-pane active show">
                                         <div class="chart-title">
                                             <div class="whead">
-                                                <h3 class="subtitle">รายงานสรุปปะการังเทียม : แยกตามจังหวัด</h3>
+                                                <h3 class="subtitle">รายงานสรุป{$rssProv['valTxtTitle']} : แยกตามจังหวัด</h3>
                                             </div>
                                         </div>
                                         <div class="chart-content -doughnut-chart">
@@ -253,18 +253,18 @@
                                         class="fade tab-pane">
                                         <div class="chart-title">
                                             <div class="whead">
-                                                <h3 class="subtitle">รายงานสรุปปะการังเทียม : แยกตามหน่วยงาน</h3>
+                                                <h3 class="subtitle">รายงานสรุป{$rssProv['valTxtTitle']}  : แยกตามหน่วยงาน</h3>
                                             </div>
                                         </div>
                                         <div class="chart-content -bar-chart">
                                             <div class="row">
                                                 <div class="mx-auto col">
-                                                    {* <div class="chart-container" style="height:400px">
+                                                    <div class="chart-container" style="height:400px">
                                                     <canvas role="img"
                                                             style="display: block; box-sizing: border-box; height: 0px; width: 0px;"
-                                                            width="0" height="0">
+                                                            width="0" height="0" id="bar-chart">
                                                             </canvas>
-                                                            </div> *}
+                                                            </div> 
                                                 </div>
                                             </div>
                                         </div>
