@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2023-07-24 08:24:22
+/* Smarty version 3.1.30, created on 2023-07-26 16:05:22
   from "/Applications/XAMPP/xamppfiles/htdocs/dev23-dmcr-ab/front/controller/script/activity/template/detail.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_64bdd2c696c5e1_48645685',
+  'unifunc' => 'content_64c0e1d222dc99_45969750',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'c93c94a90e13b415b68cf2b55e7d7cff20bc3bdc' => 
     array (
       0 => '/Applications/XAMPP/xamppfiles/htdocs/dev23-dmcr-ab/front/controller/script/activity/template/detail.tpl',
-      1 => 1690161857,
+      1 => 1690362308,
       2 => 'file',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:front/template/default/inc-herobanner.tpl' => 1,
   ),
 ),false)) {
-function content_64bdd2c696c5e1_48645685 (Smarty_Internal_Template $_smarty_tpl) {
+function content_64c0e1d222dc99_45969750 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:front/template/default/inc-herobanner.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('title'=>'title'), 0, false);
 ?>
 
@@ -32,7 +32,8 @@ $_smarty_tpl->_subTemplateRender("file:front/template/default/inc-herobanner.tpl
          <div class="breadcrumb-block">
                <nav aria-label="breadcrumb">
                   <ol class="breadcrumb">
-                     <li class="breadcrumb-item breadcrumb-home"><a href="/">หน้าหลัก</a></li>
+                     <li class="breadcrumb-item breadcrumb-home"><a href="<?php echo $_smarty_tpl->tpl_vars['ul']->value;?>
+/home">หน้าหลัก</a></li>
                      <li class="breadcrumb-item"><a href="<?php echo $_smarty_tpl->tpl_vars['ul']->value;?>
 /activity" role="button" tabindex="0">กิจกรรมที่เกี่ยวข้อง</a></li>
                      <li class="breadcrumb-item active" aria-current="page"><?php echo $_smarty_tpl->tpl_vars['ActivityDetail']->value['subject'];?>
@@ -53,12 +54,12 @@ $_smarty_tpl->_subTemplateRender("file:front/template/default/inc-herobanner.tpl
 </h2>
                         </div>
                   </div>
-                  <div class="col-md-auto">
+                  <!-- <div class="col-md-auto">
                         <div class="hstack gap-4">
                            <div class="province">จังหวัด <span class="text-primary">ชุมพร</span></div>
                            <div class="year">ปี <span class="text-primary">2564</span></div>
                         </div>
-                  </div>
+                  </div> -->
                </div>
                <div class="row align-items-center justify-content-between">
                   <div class="col-sm-auto">
@@ -116,7 +117,8 @@ echo DateThai($_smarty_tpl->tpl_vars['ActivityDetail']->value['credate'],'13',$_
 
                </div>
             <?php }?>
-            <?php if (!empty($_smarty_tpl->tpl_vars['callalbum']->value)) {?>
+
+            <?php if ($_smarty_tpl->tpl_vars['callalbum']->value->_numOfRows > 0) {?>
             <div class="gallery-list" data-aos="fade-up" id="trigger-video-player">
                <div class="whead" data-aos="fade-left">
                   <div class="subtitle">รูปประกอบ</div>
@@ -132,14 +134,14 @@ foreach ($_from as $_smarty_tpl->tpl_vars['keycallalbum']->value => $_smarty_tpl
                         <a data-fancybox="gallery" href="<?php ob_start();
 echo $_smarty_tpl->tpl_vars['ActivityDetail']->value['masterkey'];
 $_prefixVariable2=ob_get_clean();
-echo fileinclude($_smarty_tpl->tpl_vars['valuecallalbum']->value['filename']," album",$_prefixVariable2,"link");?>
+echo fileinclude($_smarty_tpl->tpl_vars['valuecallalbum']->value['filename'],"album",$_prefixVariable2,"link");?>
 ">
                            <div class="ratio thumbnail ratio-1x1">
                               <img alt="<?php echo $_smarty_tpl->tpl_vars['valuecallalbum']->value['subject'];?>
 " data-src="<?php ob_start();
 echo $_smarty_tpl->tpl_vars['ActivityDetail']->value['masterkey'];
 $_prefixVariable3=ob_get_clean();
-echo fileinclude($_smarty_tpl->tpl_vars['valuecallalbum']->value['filename']," album",$_prefixVariable3,"link");?>
+echo fileinclude($_smarty_tpl->tpl_vars['valuecallalbum']->value['filename'],"album",$_prefixVariable3,"link");?>
 " class="rounded lazy">
                            </div>
                         </a>
@@ -155,12 +157,39 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
                </div>
             </div>
             <?php }?>
+
+            <?php if ($_smarty_tpl->tpl_vars['ActivityDetail']->value['url'] != '' && $_smarty_tpl->tpl_vars['ActivityDetail']->value['url'] != '#' && $_smarty_tpl->tpl_vars['ActivityDetail']->value['type'] == 'url') {?>
+                  <?php $_smarty_tpl->_assignInScope('myUrlArray', explode("v=",$_smarty_tpl->tpl_vars['ActivityDetail']->value['url']));
+?>
+                  <?php $_smarty_tpl->_assignInScope('myUrlCut', $_smarty_tpl->tpl_vars['myUrlArray']->value[1]);
+?>
+                  <?php $_smarty_tpl->_assignInScope('myUrlCutArray', explode("&",$_smarty_tpl->tpl_vars['myUrlCut']->value));
+?>
+                  <?php $_smarty_tpl->_assignInScope('myUrlCutAnd', $_smarty_tpl->tpl_vars['myUrlCutArray']->value[0]);
+?>
+                  <div class="video-player" data-aos="fade-up" data-aos-anchor="#trigger-video-player" data-aos-anchor-placement="top-top" id="trigger-attach">
+                     <div class="row justify-content-center my-xl-5">
+                        <div class="col-xl-10">
+                            <div class="ratio ratio-16x9">
+                                <iframe class="lazy" src="https://www.youtube.com/embed/<?php echo $_smarty_tpl->tpl_vars['myUrlCutAnd']->value;?>
+" title="YouTube video" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+            <?php } elseif ($_smarty_tpl->tpl_vars['ActivityDetail']->value['type'] == 'file' && $_smarty_tpl->tpl_vars['ActivityDetail']->value['filevdo'] != '') {?>
             <div class="video-player" data-aos="fade-up" data-aos-anchor="#trigger-video-player" data-aos-anchor-placement="top-top" id="trigger-attach">
                <div class="ratio ratio-16x9">
-                  <video class="lazy" data-src="<?php echo $_smarty_tpl->tpl_vars['template']->value;?>
-/assets/video/istockphoto-1305339327-640_adpp_is.mp4">
-                     <source data-src="<?php echo $_smarty_tpl->tpl_vars['template']->value;?>
-/assets/video/istockphoto-1305339327-640_adpp_is.mp4" type="video/mp4">
+                  <video class="lazy" data-src="<?php ob_start();
+echo $_smarty_tpl->tpl_vars['ActivityDetail']->value['masterkey'];
+$_prefixVariable4=ob_get_clean();
+echo fileinclude($_smarty_tpl->tpl_vars['ActivityDetail']->value['filevdo'],"vdo",$_prefixVariable4,"link");?>
+">
+                     <source data-src="<?php ob_start();
+echo $_smarty_tpl->tpl_vars['ActivityDetail']->value['masterkey'];
+$_prefixVariable5=ob_get_clean();
+echo fileinclude($_smarty_tpl->tpl_vars['ActivityDetail']->value['filevdo'],"vdo",$_prefixVariable5,"link");?>
+" type="video/mp4">
                      Your browser does not support the video tag.
                   </video>
                </div>
@@ -170,7 +199,9 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
                   </button>
                </div>
             </div>
-            <?php if (!empty($_smarty_tpl->tpl_vars['callfile']->value)) {?>
+            <?php }?>
+
+            <?php if ($_smarty_tpl->tpl_vars['callfile']->value->_numOfRows > 0) {?>
             <div class="attachment-list" data-aos="fade-up" data-aos-anchor="#trigger-attach" data-aos-anchor-placement="top-bottom" id="trigger-action">
                <div class="whead">
                   <div class="subtitle">เอกสารแนบ</div>
@@ -224,8 +255,8 @@ echo $_smarty_tpl->tpl_vars['fileinfo']->value['type'];?>
                                                 <div class="type">
                                                    ขนาด : <span class="text-primary"><?php ob_start();
 echo $_smarty_tpl->tpl_vars['ActivityDetail']->value['masterkey'];
-$_prefixVariable4=ob_get_clean();
-echo get_IconSize(fileinclude($_smarty_tpl->tpl_vars['valuecallfile']->value[2],'file',$_prefixVariable4));?>
+$_prefixVariable6=ob_get_clean();
+echo get_IconSize(fileinclude($_smarty_tpl->tpl_vars['valuecallfile']->value[2],'file',$_prefixVariable6));?>
 </span>
                                                 </div>
                                                 <div class="download">
@@ -260,7 +291,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
             <div class="action -back-2-prevoius" style="border-top:1px solid #fff">
                <div class="row justify-content-end">
                   <div class="col-auto">
-                        <button type="button" class="btn btn-gray-light">
+                        <button type="button" onclick="javascript:window.history.back();" class="btn btn-gray-light">
                            <span class="fa-solid fa-chevron-left"></span>กลับ
                         </button>
                   </div>
@@ -275,7 +306,5 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
          </div>
       </div>
    </div>
-</div>
-
-<?php }
+</div><?php }
 }
