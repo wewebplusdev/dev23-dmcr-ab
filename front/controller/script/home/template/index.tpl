@@ -762,7 +762,7 @@
                     </div>
                 </div>
             </div>
-            <div class="bg" data-aos="fade-up">
+            <div class="bg" style="z-index: -1;" data-aos="fade-up">
                 <img alt="" data-src="{$template}/assets/img/background/bg-section-iii.jpg" class="lazy">
             </div>
         </div>
@@ -1036,57 +1036,26 @@
     </div>
 </div>
 
+{if $BannerList->_numOfRows>0}
 <div class="section section-vii" style="overflow:hidden">
     <div class="container-lg">
         <div class="wg-weblinks" data-aos="fade-up">
             <div class="weblink-list">
                 <div class="swiper weblink-swiper default-swiper">
                     <div class="swiper-wrapper">
+                        {foreach $BannerList as $keyBanner=> $valueBanner}
+                        
                         <div class="swiper-slide item">
-                            <a class="link" title="" href="/">
+                            <a class="link" title="{$valueBanner.subject}" href="{$valueBanner.url}" target="{if $valueBanner.target neq '2'}_self{else}_blank{/if}">
                                 <div class="thumbnail">
                                     <figure class="cover">
-                                        <img alt="thumbnail-weblink" data-src="{$template}/assets/img/upload/thumbnail-weblink.jpg" class="img-cover lazy">
+                                        <img alt="thumbnail-weblink" src="{$valueBanner.4|fileinclude:"office":{$valueBanner.1}:"link"}" 
+                                        data-src="{$valueBanner.4|fileinclude:"pictures":{$valueBanner.1}:"link"}" class="img-cover lazy">
                                     </figure>
                                 </div>
                             </a>
                         </div>
-                        <div class="swiper-slide item">
-                            <a class="link" title="" href="/">
-                                <div class="thumbnail">
-                                    <figure class="cover">
-                                        <img alt="thumbnail-weblink" data-src="{$template}/assets/img/upload/thumbnail-weblink.jpg" class="img-cover lazy">
-                                    </figure>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="swiper-slide item">
-                            <a class="link" title="" href="/">
-                                <div class="thumbnail">
-                                    <figure class="cover">
-                                        <img alt="thumbnail-weblink" data-src="{$template}/assets/img/upload/thumbnail-weblink.jpg" class="img-cover lazy">
-                                    </figure>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="swiper-slide item">
-                            <a class="link" title="" href="/">
-                                <div class="thumbnail">
-                                    <figure class="cover">
-                                        <img alt="thumbnail-weblink" data-src="{$template}/assets/img/upload/thumbnail-weblink.jpg" class="img-cover lazy">
-                                    </figure>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="swiper-slide item">
-                            <a class="link" title="" href="/">
-                                <div class="thumbnail">
-                                    <figure class="cover">
-                                        <img alt="thumbnail-weblink" data-src="{$template}/assets/img/upload/thumbnail-weblink.jpg" class="img-cover lazy">
-                                    </figure>
-                                </div>
-                            </a>
-                        </div>
+                        {/foreach}
                     </div>
                     <div class="swiper-pagination"></div>
                 </div>
@@ -1094,6 +1063,7 @@
         </div>
     </div>
 </div>
+{/if}
 
 {* <div class="row">
     <div class="col-md-10 col-md-offset-1">

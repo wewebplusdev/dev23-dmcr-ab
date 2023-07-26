@@ -16,7 +16,14 @@ $contentID = $url->segment[1];
     $callAboutDetail = $aboutPage->callAboutDetail($config['about']['masterkey'],$contentID);
     $smarty->assign("callAboutDetail", $callAboutDetail->fields);
 
-    print_pre($callAboutDetail->fields);
+    $callalbum = Call_Album($contentID,$config['cms']['album']);
+    $smarty->assign("callalbum", $callalbum);
+
+
+    $callfile = Call_File($contentID,$config['cms']['file']);
+    $smarty->assign("callfile", $callfile);
+
+    // print_pre($callAboutDetail->fields);
 
     /*## Start SEO #####*/
     $seo_desc = "";

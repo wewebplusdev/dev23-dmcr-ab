@@ -100,11 +100,15 @@ $smarty->assign("rssProv", $result);
     $Followsinkship = $homePage->callFollow($config['follow']['sinkpoint']['masterkey']);
     $smarty->assign("Followsinkship", $Followsinkship);
 
-$settingPage = array(
+    #### call weblink ####
+    $BannerList = $homePage->callBanner($config['weblink']['masterkey']);
+    $smarty->assign("BannerList", $BannerList);
+
+    $settingPage = array(
     "page" => $menuActive,
     "template" => "index.tpl",
     "display" => "page"
-);
+    );
 
 
 $smarty->assign("pagination", $pagination);

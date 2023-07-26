@@ -171,4 +171,54 @@ class homePage {
             $result = $db->execute($sql_province);
             return $result;
         }
+
+    function callBanner($masterkey, $gid = null, $limit = 15)
+  {
+    global $config, $db, $url;
+    $lang = $url->pagelang[3];
+    $langOption = $url->pagelang[2];
+    $langFull = strtolower($url->pagelang[4]);
+
+    $sql = "SELECT
+    " . $config['ban']['db']['main'] . "." . $config['ban']['db']['main'] . "_id as id,
+    " . $config['ban']['db']['main'] . "." . $config['ban']['db']['main'] . "_masterkey as masterkey,
+    " . $config['ban']['db']['main'] . "." . $config['ban']['db']['main'] . "_subject as subject,
+    " . $config['ban']['db']['main'] . "." . $config['ban']['db']['main'] . "_title as title,
+    " . $config['ban']['db']['main'] . "." . $config['ban']['db']['main'] . "_pic as pic,
+    " . $config['ban']['db']['main'] . "." . $config['ban']['db']['main'] . "_lastdate as lastdate,
+    " . $config['ban']['db']['main'] . "." . $config['ban']['db']['main'] . "_link as url,
+    " . $config['ban']['db']['main'] . "." . $config['ban']['db']['main'] . "_target as target,
+    " . $config['ban']['db']['main'] . "." . $config['ban']['db']['main'] . "_gid as gid,
+    " . $config['ban']['db']['main'] . "." . $config['ban']['db']['main'] . "_view as view,
+    " . $config['ban']['db']['main'] . "." . $config['ban']['db']['main'] . "_credate as credate
+
+    FROM
+    " . $config['ban']['db']['main'] . "
+    WHERE
+    " . $config['ban']['db']['main'] . "." . $config['ban']['db']['main'] . "_masterkey = '" . $masterkey . "' AND
+    " . $config['ban']['db']['main'] . "." . $config['ban']['db']['main'] . "_subject != '' AND
+    ((" . $config['ban']['db']['main'] . "." . $config['ban']['db']['main'] . "_sdate='0000-00-00 00:00:00' AND
+    " . $config['ban']['db']['main'] . "." . $config['ban']['db']['main'] . "_edate='0000-00-00 00:00:00')   OR
+    (" . $config['ban']['db']['main'] . "." . $config['ban']['db']['main'] . "_sdate='0000-00-00 00:00:00' AND
+    TO_DAYS(" . $config['ban']['db']['main'] . "." . $config['ban']['db']['main'] . "_edate)>=TO_DAYS(NOW()) ) OR
+    (TO_DAYS(" . $config['ban']['db']['main'] . "." . $config['ban']['db']['main'] . "_sdate)<=TO_DAYS(NOW()) AND
+    " . $config['ban']['db']['main'] . "." . $config['ban']['db']['main'] . "_edate='0000-00-00 00:00:00' )  OR
+    (TO_DAYS(" . $config['ban']['db']['main'] . "." . $config['ban']['db']['main'] . "_sdate)<=TO_DAYS(NOW()) AND
+    TO_DAYS(" . $config['ban']['db']['main'] . "." . $config['ban']['db']['main'] . "_edate)>=TO_DAYS(NOW())  ))
+    ";
+
+    $sql .= " AND " . $config['ban']['db']['main'] . "." . $config['ban']['db']['main'] . "_status != 'Disable' ";
+
+    if (!empty($gid)) {
+      $sql .= " AND " . $config['ban']['db']['main'] . "." . $config['ban']['db']['main'] . "_gid = '" . $gid . "' ";
+    }
+
+
+    $sql .= " ORDER  BY "  . $config['ban']['db']['main'] . "." . $config['ban']['db']['main'] . "_order DESC LIMIT ".$limit." ";
+
+    // print_pre($sql);
+    $result = $db->execute($sql);
+    return $result;
+  }
+
 }

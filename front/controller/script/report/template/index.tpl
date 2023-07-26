@@ -1,6 +1,6 @@
 {include file="front/template/default/inc-herobanner.tpl" title=title}
 
-<div class="default-page news-page" style="position:relative;z-index:1;overflow:hidden">
+<div class="default-page news-page report-page" style="position:relative;z-index:1;overflow:hidden" data-masterkey="{$masterkey}">
     <div class="default-head" data-aos="fade-up">
         <div class="container-lg">
             <div class="breadcrumb-block">
@@ -20,14 +20,14 @@
                     <img alt="" data-src="{$template}/assets/img/background/bg-inner-page-top.png" class="lazy">
                 </div>
             </div>
-            <div class="body-content">
+            <div class="body-content" >
                 <div class="whead page-title" data-aos="fade-left">
                     <h2 class="title">รายงานสรุป</h2>
                 </div>
                 <div class="default-tabs">
                     <ul class="nav nav-tabs nav-fill" data-aos="fade-up" data-aos-delay="300">
                         <li class="nav-item" role="presentation">
-                            <a href="{$ul}/follow?m=1f" class="nav-link active">
+                            <a href="{$ul}/report?m=1f" class="nav-link active">
                                 <div class="icon">
                                     <div class="justify-content-center align-items-center row row-cols-auto">
                                         <div class="col">
@@ -59,7 +59,7 @@
                             </a>
                         </li>
                         <li class="nav-item" role="presentation">
-                            <a href="{$ul}/follow?m=2f" class="nav-link">
+                            <a href="{$ul}/report?m=2f" class="nav-link">
                                 <div class="icon">
                                     <div class="justify-content-center align-items-center row row-cols-auto">
                                         <div class="col">
@@ -101,13 +101,13 @@
                                                 </svg>
                                             </div>
                                         </div>
-                                        <div class="col">ปะการังเทียม</div>
+                                        <div class="col">ทุ่นในทะเล</div>
                                     </div>
                                 </div>
                             </a>
                         </li>
                         <li class="nav-item" role="presentation">
-                            <a href="{$ul}/follow?m=3f" class="nav-link">
+                            <a href="{$ul}/report?m=3f" class="nav-link">
                                 <div class="icon">
                                     <div class="justify-content-center align-items-center row row-cols-auto">
                                         <div class="col">
@@ -133,7 +133,7 @@
                                                 </svg>
                                             </div>
                                         </div>
-                                        <div class="col">ปะการังเทียม</div>
+                                        <div class="col">จุดวางเรือ</div>
                                     </div>
                                 </div>
                             </a>
@@ -148,7 +148,7 @@
                                             data-bs-target="#tabpane-chartReport1" role="tab"
                                             data-rr-ui-event-key="chartReport1" aria-controls="tabpane-chartReport1"
                                             aria-selected="true" class="nav-link active">
-                                            แยกตามหน่วยงาน
+                                            แยกตามจังหวัด
                                         </button>
                                     </li>
                                     <li class="nav-item" role="presentation">
@@ -172,9 +172,8 @@
                                             <div class="row">
                                                 <div class="mx-auto col-lg-5 col-md-8 col-10">
                                                     <div class="chart-container">
-                                                        {* <canvas role="img"
-                                                            style="display: block; box-sizing: border-box; height: 509px; width: 509px;"
-                                                            width="1018" height="1018"></canvas> *}
+                                                        <canvas role="img" style="display: block; box-sizing: border-box; height: 509px; width: 509px;"
+                                                            width="1018" height="1018" id="doughnutChart"></canvas> 
                                                     </div>
                                                 </div>
                                             </div>
@@ -199,16 +198,18 @@
                                                                 <table
                                                                     class="table-tbody table table-light table-hover">
                                                                     <tbody>
+                                                                        {foreach $rssProv['item'] as $keyValue => $value}
+                                                                        
                                                                         <tr>
                                                                             <td style="width:34%" class="text-dark">
-                                                                                กระบี่
+                                                                                {$value.prov_th}
                                                                             </td>
                                                                             <td style="width:22%" class="text-center">
-                                                                                5
+                                                                                {$value.count}
                                                                             </td>
                                                                             <td style="width:22%" class="text-center">
                                                                                 <a class="btn btn-outline-primary"
-                                                                                    href="/report">
+                                                                                    href="{$value.link}" target="_blank">
                                                                                     <div
                                                                                         class="justify-content-center hstack gap-2">
                                                                                         <div class="icon">
@@ -223,7 +224,7 @@
                                                                             </td>
                                                                             <td style="width:22%" class="text-center">
                                                                                 <a class="btn btn-outline-primary"
-                                                                                    href="/report">
+                                                                                    href="{$value.linkmap}" target="_blank">
                                                                                     <div
                                                                                         class="justify-content-center hstack gap-2">
                                                                                         <div class="icon">
@@ -236,339 +237,8 @@
                                                                                 </a>
                                                                             </td>
                                                                         </tr>
-                                                                        <tr>
-                                                                            <td style="width:34%" class="text-dark">
-                                                                                ชลบุรี
-                                                                            </td>
-                                                                            <td style="width:22%" class="text-center">
-                                                                                5
-                                                                            </td>
-                                                                            <td style="width:22%" class="text-center">
-                                                                                <a class="btn btn-outline-primary"
-                                                                                    href="/report">
-                                                                                    <div
-                                                                                        class="justify-content-center hstack gap-2">
-                                                                                        <div class="icon">
-                                                                                            <img alt="magnifying glass icon"
-                                                                                                src="{$template}/assets/img/icon/icon-magnifying-glass.svg"
-                                                                                                class="lazy">
-                                                                                        </div>
-                                                                                        <div class="txt">ดูรายละเอียด
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </a>
-                                                                            </td>
-                                                                            <td style="width:22%" class="text-center">
-                                                                                <a class="btn btn-outline-primary"
-                                                                                    href="/report">
-                                                                                    <div
-                                                                                        class="justify-content-center hstack gap-2">
-                                                                                        <div class="icon">
-                                                                                            <img alt="pin maps icon"
-                                                                                                src="{$template}/assets/img/icon/icon-pin-maps.svg"
-                                                                                                class="lazy">
-                                                                                        </div>
-                                                                                        <div class="txt">ดูแผนที่</div>
-                                                                                    </div>
-                                                                                </a>
-                                                                            </td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td style="width:34%" class="text-dark">
-                                                                                พังงา
-                                                                            </td>
-                                                                            <td style="width:22%" class="text-center">
-                                                                                5
-                                                                            </td>
-                                                                            <td style="width:22%" class="text-center">
-                                                                                <a class="btn btn-outline-primary"
-                                                                                    href="/report">
-                                                                                    <div
-                                                                                        class="justify-content-center hstack gap-2">
-                                                                                        <div class="icon">
-                                                                                            <img alt="magnifying glass icon"
-                                                                                                src="{$template}/assets/img/icon/icon-magnifying-glass.svg"
-                                                                                                class="lazy">
-                                                                                        </div>
-                                                                                        <div class="txt">ดูรายละเอียด
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </a>
-                                                                            </td>
-                                                                            <td style="width:22%" class="text-center">
-                                                                                <a class="btn btn-outline-primary"
-                                                                                    href="/report">
-                                                                                    <div
-                                                                                        class="justify-content-center hstack gap-2">
-                                                                                        <div class="icon">
-                                                                                            <img alt="pin maps icon"
-                                                                                                src="{$template}/assets/img/icon/icon-pin-maps.svg"
-                                                                                                class="lazy">
-                                                                                        </div>
-                                                                                        <div class="txt">ดูแผนที่</div>
-                                                                                    </div>
-                                                                                </a>
-                                                                            </td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td style="width:34%" class="text-dark">
-                                                                                ตราด
-                                                                            </td>
-                                                                            <td style="width:22%" class="text-center">
-                                                                                5
-                                                                            </td>
-                                                                            <td style="width:22%" class="text-center">
-                                                                                <a class="btn btn-outline-primary"
-                                                                                    href="/report">
-                                                                                    <div
-                                                                                        class="justify-content-center hstack gap-2">
-                                                                                        <div class="icon">
-                                                                                            <img alt="magnifying glass icon"
-                                                                                                src="{$template}/assets/img/icon/icon-magnifying-glass.svg"
-                                                                                                class="lazy">
-                                                                                        </div>
-                                                                                        <div class="txt">ดูรายละเอียด
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </a>
-                                                                            </td>
-                                                                            <td style="width:22%" class="text-center">
-                                                                                <a class="btn btn-outline-primary"
-                                                                                    href="/report">
-                                                                                    <div
-                                                                                        class="justify-content-center hstack gap-2">
-                                                                                        <div class="icon">
-                                                                                            <img alt="pin maps icon"
-                                                                                                src="{$template}/assets/img/icon/icon-pin-maps.svg"
-                                                                                                class="lazy">
-                                                                                        </div>
-                                                                                        <div class="txt">ดูแผนที่</div>
-                                                                                    </div>
-                                                                                </a>
-                                                                            </td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td style="width:34%" class="text-dark">
-                                                                                สุราษฎร์ธานี
-                                                                            </td>
-                                                                            <td style="width:22%" class="text-center">
-                                                                                5
-                                                                            </td>
-                                                                            <td style="width:22%" class="text-center">
-                                                                                <a class="btn btn-outline-primary"
-                                                                                    href="/report">
-                                                                                    <div
-                                                                                        class="justify-content-center hstack gap-2">
-                                                                                        <div class="icon">
-                                                                                            <img alt="magnifying glass icon"
-                                                                                                src="{$template}/assets/img/icon/icon-magnifying-glass.svg"
-                                                                                                class="lazy">
-                                                                                        </div>
-                                                                                        <div class="txt">ดูรายละเอียด
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </a>
-                                                                            </td>
-                                                                            <td style="width:22%" class="text-center">
-                                                                                <a class="btn btn-outline-primary"
-                                                                                    href="/report">
-                                                                                    <div
-                                                                                        class="justify-content-center hstack gap-2">
-                                                                                        <div class="icon">
-                                                                                            <img alt="pin maps icon"
-                                                                                                src="{$template}/assets/img/icon/icon-pin-maps.svg"
-                                                                                                class="lazy">
-                                                                                        </div>
-                                                                                        <div class="txt">ดูแผนที่</div>
-                                                                                    </div>
-                                                                                </a>
-                                                                            </td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td style="width:34%" class="text-dark">
-                                                                                ชุมพร
-                                                                            </td>
-                                                                            <td style="width:22%" class="text-center">
-                                                                                5
-                                                                            </td>
-                                                                            <td style="width:22%" class="text-center">
-                                                                                <a class="btn btn-outline-primary"
-                                                                                    href="/report">
-                                                                                    <div
-                                                                                        class="justify-content-center hstack gap-2">
-                                                                                        <div class="icon">
-                                                                                            <img alt="magnifying glass icon"
-                                                                                                src="{$template}/assets/img/icon/icon-magnifying-glass.svg"
-                                                                                                class="lazy">
-                                                                                        </div>
-                                                                                        <div class="txt">ดูรายละเอียด
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </a>
-                                                                            </td>
-                                                                            <td style="width:22%" class="text-center">
-                                                                                <a class="btn btn-outline-primary"
-                                                                                    href="/report">
-                                                                                    <div
-                                                                                        class="justify-content-center hstack gap-2">
-                                                                                        <div class="icon">
-                                                                                            <img alt="pin maps icon"
-                                                                                                src="{$template}/assets/img/icon/icon-pin-maps.svg"
-                                                                                                class="lazy">
-                                                                                        </div>
-                                                                                        <div class="txt">ดูแผนที่</div>
-                                                                                    </div>
-                                                                                </a>
-                                                                            </td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td style="width:34%" class="text-dark">
-                                                                                ชุมพร
-                                                                            </td>
-                                                                            <td style="width:22%" class="text-center">
-                                                                                5
-                                                                            </td>
-                                                                            <td style="width:22%" class="text-center">
-                                                                                <a class="btn btn-outline-primary"
-                                                                                    href="/report">
-                                                                                    <div
-                                                                                        class="justify-content-center hstack gap-2">
-                                                                                        <div class="icon">
-                                                                                            <img alt="magnifying glass icon"
-                                                                                                src="{$template}/assets/img/icon/icon-magnifying-glass.svg"
-                                                                                                class="lazy">
-                                                                                        </div>
-                                                                                        <div class="txt">ดูรายละเอียด
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </a>
-                                                                            </td>
-                                                                            <td style="width:22%" class="text-center">
-                                                                                <a class="btn btn-outline-primary"
-                                                                                    href="/report">
-                                                                                    <div
-                                                                                        class="justify-content-center hstack gap-2">
-                                                                                        <div class="icon">
-                                                                                            <img alt="pin maps icon"
-                                                                                                src="{$template}/assets/img/icon/icon-pin-maps.svg"
-                                                                                                class="lazy">
-                                                                                        </div>
-                                                                                        <div class="txt">ดูแผนที่</div>
-                                                                                    </div>
-                                                                                </a>
-                                                                            </td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td style="width:34%" class="text-dark">
-                                                                                ชุมพร
-                                                                            </td>
-                                                                            <td style="width:22%" class="text-center">
-                                                                                5
-                                                                            </td>
-                                                                            <td style="width:22%" class="text-center">
-                                                                                <a class="btn btn-outline-primary"
-                                                                                    href="/report">
-                                                                                    <div
-                                                                                        class="justify-content-center hstack gap-2">
-                                                                                        <div class="icon">
-                                                                                            <img alt="magnifying glass icon"
-                                                                                                src="{$template}/assets/img/icon/icon-magnifying-glass.svg"
-                                                                                                class="lazy">
-                                                                                        </div>
-                                                                                        <div class="txt">ดูรายละเอียด
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </a>
-                                                                            </td>
-                                                                            <td style="width:22%" class="text-center">
-                                                                                <a class="btn btn-outline-primary"
-                                                                                    href="/report">
-                                                                                    <div
-                                                                                        class="justify-content-center hstack gap-2">
-                                                                                        <div class="icon">
-                                                                                            <img alt="pin maps icon"
-                                                                                                src="{$template}/assets/img/icon/icon-pin-maps.svg"
-                                                                                                class="lazy">
-                                                                                        </div>
-                                                                                        <div class="txt">ดูแผนที่</div>
-                                                                                    </div>
-                                                                                </a>
-                                                                            </td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td style="width:34%" class="text-dark">
-                                                                                ชุมพร
-                                                                            </td>
-                                                                            <td style="width:22%" class="text-center">
-                                                                                5
-                                                                            </td>
-                                                                            <td style="width:22%" class="text-center">
-                                                                                <a class="btn btn-outline-primary"
-                                                                                    href="/report">
-                                                                                    <div
-                                                                                        class="justify-content-center hstack gap-2">
-                                                                                        <div class="icon">
-                                                                                            <img alt="magnifying glass icon"
-                                                                                                src="{$template}/assets/img/icon/icon-magnifying-glass.svg"
-                                                                                                class="lazy">
-                                                                                        </div>
-                                                                                        <div class="txt">ดูรายละเอียด
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </a>
-                                                                            </td>
-                                                                            <td style="width:22%" class="text-center">
-                                                                                <a class="btn btn-outline-primary"
-                                                                                    href="/report">
-                                                                                    <div
-                                                                                        class="justify-content-center hstack gap-2">
-                                                                                        <div class="icon">
-                                                                                            <img alt="pin maps icon"
-                                                                                                src="{$template}/assets/img/icon/icon-pin-maps.svg"
-                                                                                                class="lazy">
-                                                                                        </div>
-                                                                                        <div class="txt">ดูแผนที่</div>
-                                                                                    </div>
-                                                                                </a>
-                                                                            </td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td style="width:34%" class="text-dark">
-                                                                                ชุมพร
-                                                                            </td>
-                                                                            <td style="width:22%" class="text-center">
-                                                                                5
-                                                                            </td>
-                                                                            <td style="width:22%" class="text-center">
-                                                                                <a class="btn btn-outline-primary"
-                                                                                    href="/report">
-                                                                                    <div
-                                                                                        class="justify-content-center hstack gap-2">
-                                                                                        <div class="icon">
-                                                                                            <img alt="magnifying glass icon"
-                                                                                                src="{$template}/assets/img/icon/icon-magnifying-glass.svg"
-                                                                                                class="lazy">
-                                                                                        </div>
-                                                                                        <div class="txt">ดูรายละเอียด
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </a>
-                                                                            </td>
-                                                                            <td style="width:22%" class="text-center">
-                                                                                <a class="btn btn-outline-primary"
-                                                                                    href="/report">
-                                                                                    <div
-                                                                                        class="justify-content-center hstack gap-2">
-                                                                                        <div class="icon">
-                                                                                            <img alt="pin maps icon"
-                                                                                                src="{$template}/assets/img/icon/icon-pin-maps.svg"
-                                                                                                class="lazy">
-                                                                                        </div>
-                                                                                        <div class="txt">ดูแผนที่</div>
-                                                                                    </div>
-                                                                                </a>
-                                                                            </td>
-                                                                        </tr>
+                                                                        {/foreach}
+                                                                        
                                                                     </tbody>
                                                                 </table>
                                                             </div>

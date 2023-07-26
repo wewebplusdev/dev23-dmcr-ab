@@ -25,7 +25,7 @@
                     <h2 class="title">กิจกรรมที่เกี่ยวข้อง</h2>
                 </div>
                 <div class="default-tabs">
-                    <ul class="nav nav-tabs nav-fill" data-aos="fade-up" data-aos-delay="300">
+                    <!-- <ul class="nav nav-tabs nav-fill" data-aos="fade-up" data-aos-delay="300">
                         <li class="nav-item" role="presentation">
                             <a href="" class="nav-link active">
                                 <div class="icon">
@@ -104,7 +104,7 @@
                                 </div>
                             </a>
                         </li>
-                    </ul>
+                    </ul> -->
                     <div class="tab-content">
                         <div class="default-content">
                             <div class="news-head" data-aos="fade-up">
@@ -124,19 +124,22 @@
                             </div>
                             <div class="news-highlights">
                                 <div class="gutters-xl-40 row">
+                                    {foreach $ActivityList as $KeyActivityList => $valueActivityList}
+                                    {if $KeyActivityList < '2' }
                                     <div class="col-md-6 col-12" data-aos="fade-up">
-                                        <a class="link link-card -vertical" title="เก็บขยะใต้ทะเล แนวปะการังเทียมบ้านเกาะแต้วเจอเศษอวน" href="/activity/detail">
+                                        <a class="link link-card -vertical" title="{$valueActivityList.subject}" href="{$ul}/activity/detail/{$valueActivityList.id}">
                                             <div class="overflow-hidden card">
                                                 <div class="thumbnail">
                                                     <figure class="cover">
-                                                        <img alt="" data-src="{$template}/assets/img/upload/beautiful-beach-sea.jpg" class="img-cover lazy">
+                                                        <img alt="{$valueActivityList.subject}" src="{$valueActivityList.6|fileinclude:"office":{$valueActivityList.1}:"link"}" 
+                                                        data-src="{$valueActivityList.6|fileinclude:"pictures":{$valueActivityList.1}:"link"}" class="img-cover lazy">
                                                     </figure>
                                                 </div>
                                                 <div class="card-body">
                                                     <div class="inner">
-                                                        <div class="date">23 มิถุนายน 2560</div>
-                                                        <h4 class="title">เก็บขยะใต้ทะเล แนวปะการังเทียมบ้านเกาะแต้วเจอเศษอวน</h4>
-                                                        <p class="desc">เป็นศูนย์รวบรวมข้อมูลปะการังเทียมจากหน่วยงานที่เกี่ยวข้อง โดยดำเนินการจัดเก็บข้อมูลเป็นหมวดหมู่และเป็นระเบียบเพื่อสะดวกในเป็นศูนย์รวบรวมข้อมูลปะการังเทียมจากหน่วยงานที่เกี่ยวข้อง โดยดำเนินการจัดเก็บข้อมูลเป็นหมวดหมู่และเป็นระเบียบเพื่อสะดวกใน...</p>
+                                                        <div class="date">{$valueActivityList.credate|DateThai:'13':{$langon}:'shot'}</div>
+                                                        <h4 class="title">{$valueActivityList.subject}</h4>
+                                                        <p class="desc">{$valueActivityList.title}</p>
                                                         <div class="action">
                                                             <div class="btn btn-outline-primary" title="อ่านต่อ">อ่านต่อ</div>
                                                         </div>
@@ -145,38 +148,21 @@
                                             </div>
                                         </a>
                                     </div>
-                                    <div class="col-md-6 col-12" data-aos="fade-up">
-                                        <a class="link link-card -vertical" title="เก็บขยะใต้ทะเล แนวปะการังเทียมบ้านเกาะแต้วเจอเศษอวน" href="/activity/detail">
-                                            <div class="overflow-hidden card">
-                                                <div class="thumbnail">
-                                                    <figure class="cover">
-                                                        <img alt="" data-src="{$template}/assets/img/upload/beautiful-beach-sea.jpg" class="img-cover lazy">
-                                                    </figure>
-                                                </div>
-                                                <div class="card-body">
-                                                    <div class="inner">
-                                                        <div class="date">23 มิถุนายน 2560</div>
-                                                        <h4 class="title">เก็บขยะใต้ทะเล แนวปะการังเทียมบ้านเกาะแต้วเจอเศษอวน</h4>
-                                                        <p class="desc">เป็นศูนย์รวบรวมข้อมูลปะการังเทียมจากหน่วยงานที่เกี่ยวข้อง โดยดำเนินการจัดเก็บข้อมูลเป็นหมวดหมู่และเป็นระเบียบเพื่อสะดวกในเป็นศูนย์รวบรวมข้อมูลปะการังเทียมจากหน่วยงานที่เกี่ยวข้อง โดยดำเนินการจัดเก็บข้อมูลเป็นหมวดหมู่และเป็นระเบียบเพื่อสะดวกใน...</p>
-                                                        <div class="action">
-                                                            <div class="btn btn-outline-primary" title="อ่านต่อ">อ่านต่อ</div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </div>
+                                    {/if}
+                                    {/foreach}
+                                    
                                 </div>
                             </div>
                             <div class="news-list">
                                 <div class="row gutters-xl-40">
                                     {foreach $ActivityList as $KeyActivityList => $valueActivityList}
+                                    {if $KeyActivityList >= '2' }
                                         <div class="col-lg-4 col-sm-6 col-12" data-aos="fade-up">
-                                            <a class="link link-card -vertical" title="{$valueActivityList.credate|DateThai:'13':{$langon}:'shot'}" href="{$ul}/activity/detail/{$valueActivityList.id}">
+                                            <a class="link link-card -vertical" title="{$valueActivityList.subject}" href="{$ul}/activity/detail/{$valueActivityList.id}">
                                                 <div class="overflow-hidden card">
                                                     <div class="thumbnail">
                                                         <figure class="cover">
-                                                            <img alt="" 
+                                                            <img alt="{$valueActivityList.subject}" 
                                                                 src="{$valueActivityList.6|fileinclude:"office":{$valueActivityList.1}:"link"}" 
                                                                 data-src="{$valueActivityList.6|fileinclude:"pictures":{$valueActivityList.1}:"link"}" class="img-cover lazy">
                                                         </figure>
@@ -194,6 +180,7 @@
                                                 </div>
                                             </a>
                                         </div>
+                                        {/if}
                                     {/foreach}
                                 </div>
                             </div>

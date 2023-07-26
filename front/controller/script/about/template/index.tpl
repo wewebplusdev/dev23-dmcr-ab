@@ -88,144 +88,130 @@
                         
                     </div>
                 </div>
-                <div class="editor-content" data-aos="fade-up">
-                    <p>This is Editor Content</p>
-                    <p>Commodo adipisicing anim non minim fugiat amet laborum minim aute. Anim irure quis Lorem fugiat
-                        veniam deserunt anim nostrud irure Lorem ipsum duis fugiat do. Officia ea deserunt dolor ad
-                        mollit aliqua cillum do velit. Anim minim dolore ut occaecat magna cupidatat amet incididunt
-                        consectetur laboris.</p>
-                </div>
+                {if $callAboutDetail.htmlfilename neq ""}
+               <div class="editor-content" data-aos="fade-up">
+                  {strip}
+                  {$callAboutDetail.htmlfilename|fileinclude:"html":$callAboutDetail.masterkey|callHtml}
+                  {/strip}
+               </div>
+                {/if}
+
+                {if $callalbum->_numOfRows > 0}
                 <div class="gallery-list" data-aos="fade-up" id="trigger-video-player">
                     <div class="whead" data-aos="fade-left">
                         <div class="subtitle">รูปประกอบ</div>
                     </div>
                     <div class="swiper gallery-swiper default-swiper" data-aos="fade-up">
                         <div class="swiper-wrapper">
+                            {foreach $callalbum as $keycallalbum => $valuecallalbum}
                             <div class="swiper-slide">
-                                <a data-fancybox="gallery" href="https://lipsum.app/id/60/1600x1200">
+                                <a data-fancybox="gallery" href="{$valuecallalbum['filename']|fileinclude:"album":{$callAboutDetail.masterkey}:"link"}">
                                     <div class="ratio thumbnail ratio-1x1">
-                                        <img alt="Description of image is here image1" data-src="https://lipsum.app/id/60/1600x1200" class="rounded lazy">
+                                        <img alt="{$valuecallalbum.subject}" data-src="{$valuecallalbum['filename']|fileinclude:"album":{$callAboutDetail.masterkey}:"link"}" class="rounded lazy">
                                     </div>
                                 </a>
                             </div>
-                            <div class="swiper-slide swiper-slide-next">
-                                <a data-fancybox="gallery" href="https://lipsum.app/id/61/1600x1200">
-                                    <div class="ratio thumbnail ratio-1x1">
-                                        <img alt="Description of image is here image2" data-src="https://lipsum.app/id/61/1600x1200" class="rounded lazy">
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="swiper-slide">
-                                <a data-fancybox="gallery" href="https://lipsum.app/id/62/1600x1200">
-                                    <div class="ratio thumbnail ratio-1x1">
-                                        <img alt="Description of image is here image3" data-src="https://lipsum.app/id/62/1600x1200" class="rounded lazy">
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="swiper-slide">
-                                <a data-fancybox="gallery" href="https://lipsum.app/id/63/1600x1200">
-                                    <div class="ratio thumbnail ratio-1x1">
-                                        <img alt="Description of image is here image4" data-src="https://lipsum.app/id/63/1600x1200" class="rounded lazy">
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="swiper-slide">
-                                <a data-fancybox="gallery" href="https://lipsum.app/id/64/1600x1200">
-                                    <div class="ratio thumbnail ratio-1x1">
-                                        <img alt="Description of image is here image5" data-src="https://lipsum.app/id/64/1600x1200" class="rounded lazy">
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="swiper-slide">
-                                <a data-fancybox="gallery" href="https://lipsum.app/id/65/1600x1200">
-                                    <div class="ratio thumbnail ratio-1x1">
-                                        <img alt="Description of image is here image6" data-src="https://lipsum.app/id/65/1600x1200" class="rounded lazy">
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="swiper-slide">
-                                <a data-fancybox="gallery" href="https://lipsum.app/id/66/1600x1200">
-                                    <div class="ratio thumbnail ratio-1x1">
-                                        <img alt="Description of image is here image7" data-src="https://lipsum.app/id/66/1600x1200" class="rounded lazy">
-                                    </div>
-                                </a>
-                            </div>
+                            {/foreach}
                         </div>
                         <div class="swiper-pagination"></div>
                     </div>
                 </div>
-                <div class="video-player" data-aos="fade-up" data-aos-anchor="#trigger-video-player" data-aos-anchor-placement="top-top" id="trigger-attach">
-                    <div class="ratio ratio-16x9">
-                        <video class="lazy" data-src="{$template}/assets/video/istockphoto-1305339327-640_adpp_is.mp4">
-                            <source data-src="{$template}/assets/video/istockphoto-1305339327-640_adpp_is.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
+                {/if}
+
+                {if $callAboutDetail.url neq '' && $callAboutDetail.url neq '#' && $callAboutDetail.type eq 'url'}
+                  {$myUrlArray = "v="|explode:$callAboutDetail.url}
+                  {$myUrlCut = $myUrlArray[1]}
+                  {$myUrlCutArray = "&"|explode:$myUrlCut}
+                  {$myUrlCutAnd= $myUrlCutArray.0}
+                  <div class="video-player" data-aos="fade-up" data-aos-anchor="#trigger-video-player" data-aos-anchor-placement="top-top" id="trigger-attach">
+                     <div class="row justify-content-center my-xl-5">
+                        <div class="col-xl-10">
+                            <div class="ratio ratio-16x9">
+                                <iframe class="lazy" src="https://www.youtube.com/embed/{$myUrlCutAnd}" title="YouTube video" allowfullscreen></iframe>
+                            </div>
+                        </div>
                     </div>
-                    <div class="video-control">
-                        <button class="btn btn-play">
-                            <span class="fa-solid fa-play fa-6x"></span>
-                        </button>
-                    </div>
-                </div>
-                <div class="attachment-list" data-aos="fade-up" data-aos-anchor="#trigger-attach" data-aos-anchor-placement="top-bottom" id="trigger-action">
-                    <div class="whead">
-                        <div class="subtitle">เอกสารแนบ</div>
-                    </div>
-                    <div class="swiper attach-swiper default-swiper">
-                        <div class="swiper-wrapper">
-                            {for $i=1 to 5}
-                                <div class="swiper-slide">
-                                    <a title="โครงการจุดวางเรือ" class="link attach-item" target="_blank" href="https://lipsum.app/id/60/1600x1200">
-                                        <div class="default-card card">
-                                            <div class="card-body">
-                                                <div class="theme-blue">
-                                                    <div class="align-items-xxl-center gutters-15 row">
-                                                        <div class="col-sm-auto">
-                                                            <div class="hexagon-wrapper">
-                                                                <div class="hexagon-inner">
-                                                                    <div class="icon-wrapper hexagon">
-                                                                        <div class="icon">
-                                                                            <img alt="" data-src="{$template}/assets/img/icon/icon-attachment.svg" class="lazy" style="position:absolute;height:100%;width:100%;left:0;top:0;right:0;bottom:0;color:transparent">
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="hexagon-outer"></div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col">
-                                                            <div class="inner">
-                                                                <div class="title text-limit"><span class="text-primary fw-bold">โครงการจุดวางเรือ.pdf
-                                                                    </span>
-                                                                </div>
-                                                                <div class="desc hstack gap-3">
-                                                                    <div class="type">
-                                                                        ประเภทไฟล์ : <span class="text-primary">.pdf</span>
-                                                                    </div>
-                                                                    <div class="type">
-                                                                        ขนาด : <span class="text-primary">0.06 mb</span>
-                                                                    </div>
-                                                                    <div class="download">
-                                                                        จำนวนดาวน์โหลด : <span class="text-primary">65</span>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-xxl-auto">
-                                                            <div class="action">
-                                                                <button type="button" class="btn btn-outline-primary">ดาวน์โหลด</button>
-                                                            </div>
-                                                        </div>
-                                                    </div>
+                  </div>
+            {elseif $callAboutDetail.type eq 'file' && $callAboutDetail.filevdo neq ''}
+            <div class="video-player" data-aos="fade-up" data-aos-anchor="#trigger-video-player" data-aos-anchor-placement="top-top" id="trigger-attach">
+               <div class="ratio ratio-16x9">
+                  <video class="lazy" data-src="{$callAboutDetail.filevdo|fileinclude:"vdo":{$callAboutDetail.masterkey}:"link"}">
+                     <source data-src="{$callAboutDetail.filevdo|fileinclude:"vdo":{$callAboutDetail.masterkey}:"link"}" type="video/mp4">
+                     Your browser does not support the video tag.
+                  </video>
+               </div>
+               <div class="video-control">
+                  <button class="btn btn-play">
+                        <span class="fa-solid fa-play fa-6x"></span>
+                  </button>
+               </div>
+            </div>
+            {/if}
+
+                {if $callfile->_numOfRows > 0}
+            <div class="attachment-list" data-aos="fade-up" data-aos-anchor="#trigger-attach" data-aos-anchor-placement="top-bottom" id="trigger-action">
+               <div class="whead">
+                  <div class="subtitle">เอกสารแนบ</div>
+               </div>
+               <div class="swiper attach-swiper default-swiper">
+                  <div class="swiper-wrapper">
+                     {foreach $callfile as $keycallfile => $valuecallfile}
+                     {$fileinfo = $valuecallfile.2|fileinclude:"file":$valuecallfile.1|get_Icon}
+                     <div class="swiper-slide">
+                        <a title="{$valuecallfile.3}{$fileinfo.type}" class="link attach-item" target="_blank" href="{$ul}/downloadFile/{$valuecallfile.2|fileinclude:"file":$callAboutDetail.masterkey:"download"}&n={$valuecallfile.3}&id={encodeStr($valuecallfile.0)}">
+                           <div class="default-card card">
+                              <div class="card-body">
+                                 <div class="theme-blue">
+                                    <div class="align-items-xxl-center gutters-15 row">
+                                       <div class="col-sm-auto">
+                                          <div class="hexagon-wrapper">
+                                             <div class="hexagon-inner">
+                                                <div class="icon-wrapper hexagon">
+                                                   <div class="icon">
+                                                      <img alt="" data-src="{$template}/assets/img/icon/icon-attachment.svg" class="lazy" style="position:absolute;height:100%;width:100%;left:0;top:0;right:0;bottom:0;color:transparent">
+                                                   </div>
                                                 </div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                            {/for}
-                        </div>
-                        <div class="swiper-pagination"></div>
-                    </div>
-                </div>
+                                             </div>
+                                             <div class="hexagon-outer"></div>
+                                          </div>
+                                       </div>
+                                       <div class="col">
+                                          <div class="inner">
+                                             <div class="title text-limit">
+                                                <span class="text-primary fw-bold">{$valuecallfile.3}{$fileinfo.type}</span>
+                                             </div>
+                                             <div class="desc hstack gap-3">
+                                                <div class="type">
+                                                   ประเภทไฟล์ : <span class="text-primary">{$fileinfo.type}</span>
+                                                </div>
+                                                <div class="type">
+                                                   ขนาด : <span class="text-primary">{$valuecallfile.2|fileinclude:'file':{$callAboutDetail.masterkey}|get_IconSize}</span>
+                                                </div>
+                                                <div class="download">
+                                                   จำนวนดาวน์โหลด : <span class="text-primary">{$valuecallfile.4|default:0}</span>
+                                                </div>
+                                             </div>
+                                          </div>
+                                       </div>
+                                       <div class="col-xxl-auto">
+                                          <div class="action">
+                                             <button type="button" class="btn btn-outline-primary">ดาวน์โหลด</button>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </a>
+                     </div>
+                     {/foreach}
+                  </div>
+                  <div class="swiper-pagination"></div>
+               </div>
+            </div>
+            {/if} 
+
+
                 <div class="action -back-2-prevoius" style="border-top:1px solid #fff">
                     <div class="row justify-content-end">
                         <div class="col-auto">

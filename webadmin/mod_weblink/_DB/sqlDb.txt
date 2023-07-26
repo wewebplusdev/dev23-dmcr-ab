@@ -1,0 +1,114 @@
+-- phpMyAdmin SQL Dump
+-- version 4.4.15
+-- http://www.phpmyadmin.net
+--
+-- Host: localhost
+-- Generation Time: Nov 15, 2017 at 09:00 AM
+-- Server version: 10.0.32-MariaDB
+-- PHP Version: 5.3.29
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+--
+-- Database: `newweb_db`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `md_weg`
+--
+
+CREATE TABLE IF NOT EXISTS `md_weg` (
+  `md_weg_id` int(11) NOT NULL,
+  `md_weg_masterkey` varchar(20) NOT NULL,
+  `md_weg_language` varchar(50) NOT NULL,
+  `md_weg_subject` varchar(200) NOT NULL,
+  `md_weg_title` text NOT NULL,
+  `md_weg_crebyid` int(11) NOT NULL DEFAULT '0',
+  `md_weg_creby` varchar(100) NOT NULL,
+  `md_weg_credate` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `md_weg_lastdate` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `md_weg_status` varchar(50) NOT NULL,
+  `md_weg_order` int(11) NOT NULL DEFAULT '0',
+  `md_weg_subjecten` varchar(255) NOT NULL,
+  `md_weg_titleen` text NOT NULL,
+  `md_weg_lastbyid` int(11) NOT NULL,
+  `md_weg_lastby` varchar(255) NOT NULL,
+  `md_weg_type` varchar(255) DEFAULT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `md_wel`
+--
+
+CREATE TABLE IF NOT EXISTS `md_wel` (
+  `md_wel_id` int(11) NOT NULL,
+  `md_wel_masterkey` varchar(20) NOT NULL,
+  `md_wel_language` varchar(50) NOT NULL,
+  `md_wel_subject` text NOT NULL,
+  `md_wel_pic` varchar(50) NOT NULL,
+  `md_wel_url` text NOT NULL,
+  `md_wel_crebyid` int(11) NOT NULL DEFAULT '0',
+  `md_wel_creby` varchar(100) NOT NULL,
+  `md_wel_credate` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `md_wel_lastdate` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `md_wel_status` varchar(50) NOT NULL,
+  `md_wel_order` int(11) NOT NULL DEFAULT '0',
+  `md_wel_sdate` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `md_wel_edate` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `md_wel_target` int(11) NOT NULL,
+  `md_wel_lastbyid` int(11) NOT NULL,
+  `md_wel_lastby` varchar(200) NOT NULL,
+  `md_wel_color` varchar(50) NOT NULL,
+  `md_wel_urlm` text NOT NULL,
+  `md_wel_subjecten` varchar(255) NOT NULL,
+  `md_wel_urlen` text NOT NULL,
+  `md_wel_gid` int(11) NOT NULL,
+  `md_wel_click` int(11) DEFAULT NULL,
+  `md_wel_type` varchar(11) DEFAULT NULL,
+  `md_wel_latiture` varchar(255) DEFAULT NULL,
+  `md_wel_longtiture` varchar(255) DEFAULT NULL,
+  `md_wel_address` text NOT NULL,
+  `md_wel_tel` varchar(255) NOT NULL,
+  `md_wel_fax` varchar(255) NOT NULL,
+  `md_wel_pin` varchar(30) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `md_weg`
+--
+ALTER TABLE `md_weg`
+  ADD PRIMARY KEY (`md_weg_id`),
+  ADD UNIQUE KEY `md_weg_id` (`md_weg_id`),
+  ADD KEY `md_weg_id_2` (`md_weg_id`);
+
+--
+-- Indexes for table `md_wel`
+--
+ALTER TABLE `md_wel`
+  ADD PRIMARY KEY (`md_wel_id`),
+  ADD UNIQUE KEY `md_wel_id` (`md_wel_id`),
+  ADD KEY `md_wel_id_2` (`md_wel_id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `md_weg`
+--
+ALTER TABLE `md_weg`
+  MODIFY `md_weg_id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `md_wel`
+--
+ALTER TABLE `md_wel`
+  MODIFY `md_wel_id` int(11) NOT NULL AUTO_INCREMENT;

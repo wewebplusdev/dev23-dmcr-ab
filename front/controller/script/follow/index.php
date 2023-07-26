@@ -7,13 +7,13 @@ $contentID = $url->segment[2];
 switch ($url->segment[1]) {
     default:
     $req['masterkey'] = $_REQUEST['m'];
-    $limit = 12;
+    $limit = 11;
     if (empty($req['masterkey'])){
         $req['masterkey'] = '1f';
     }
     $smarty->assign("masterkey", $req['masterkey']);
         
-        $followListC = $followPage->callFollow($req['masterkey']);
+        $followListC = $followPage->callFollow($req['masterkey'],$page['on'],$limit);
         $smarty->assign("followListC", $followListC);
 
 

@@ -5,7 +5,7 @@ $contentID = $url->segment[2];
 switch ($url->segment[1]) {
     default:
     #### call activity ####
-    $limit = 6;
+    $limit = 8;
     $ActivityList = $activityPage->callActivity($config['activity']['masterkey'],$page['on'],$limit);
     $smarty->assign("ActivityList", $ActivityList);
     
@@ -41,6 +41,8 @@ switch ($url->segment[1]) {
 
     $callalbum = Call_Album($contentID,$config['cms']['album']);
     $smarty->assign("callalbum", $callalbum);
+
+
     $callfile = Call_File($contentID,$config['cms']['file']);
     $smarty->assign("callfile", $callfile);
 
