@@ -38,4 +38,7 @@ switch ($url->segment[1]) {
     case 'votecount':
         require_once _DIR . '/front/controller/script/' . $menuActive . '/services/votecount.php';
         break;
+    case 'insertvote':
+        require_once _DIR . '/front/controller/script/' . $menuActive . '/services/insertvote.php';
+        break;
 }

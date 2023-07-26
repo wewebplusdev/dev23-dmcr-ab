@@ -1,5 +1,6 @@
+var urlgo = $("base").attr("href");
 $(document).ready(function () {
-    var urlgo = $("base").attr("href");
+    
     $(function () {
 
 
@@ -262,7 +263,7 @@ $(document).ready(function () {
 
 
     /// chart vote ////
-    var gid = "34";
+    var gid = $('.wg-vote-poll').data("id");
     jQuery.ajax({
 
         url: urlgo + 'api/votecount',
@@ -272,7 +273,7 @@ $(document).ready(function () {
         },
         dataType: 'json',
         success: function (data, status) {
-            console.log(data.data);
+            // console.log(data.data);
             const item = data.data;
             const count = [];
             const name = [];
@@ -326,3 +327,42 @@ $(document).ready(function () {
     });
 
 });
+
+function submitVote() {
+
+    var valGrease = jQuery("input:radio[name=votePoll]:checked").val();
+
+    if (valGrease >= 1) {
+        var valGrease = jQuery("input:radio[name=votePoll]:checked").val();
+    } else {
+        var valGrease = 0;
+    }
+
+    if (valGrease <= 0) {
+        alert('กรุณาเลือกรายการที่ต้องการโหวต'); return false;
+    }
+
+    insertVote();
+}
+
+function insertVote(){
+    /// chart vote ////
+var gid = $('.wg-vote-poll').data("id");
+var vid = jQuery("input:radio[name=votePoll]:checked").val();
+jQuery.ajax({
+
+    url: urlgo + 'api/insertvote',
+    type: 'POST',
+    data: {
+        gid: gid,
+        vid: vid,
+    },
+    dataType: 'json',
+    success: function (data, status) {
+        console.log(data);
+    },
+    error: function () {
+        console.log("error");
+    }
+});
+}

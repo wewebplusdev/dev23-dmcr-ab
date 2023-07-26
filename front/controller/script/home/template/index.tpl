@@ -990,7 +990,7 @@
                 </div>
             </div>
             <div class="col-lg-6">
-                <div class="wg-vote-poll">
+                <div class="wg-vote-poll" data-id="{$vote->fields['id']}">
                     <div class="content" style="color:#fff" data-aos="fade-left">
                         <div class="text-center">
                             <div class="whead">
@@ -1007,7 +1007,7 @@
                                     {/foreach}
                                 </div>
                                 <div class="action">
-                                    <button type="button" class="btn btn-secondary submitvote">โหวต</button>
+                                    <button type="button" class="btn btn-secondary submitvote" onclick="submitVote()">โหวต</button>
                                     <button type="button" class="link btn btn-outline-orange" data-bs-toggle="modal" data-bs-target="#voteResult"><span>แสดงผลโหวต</span></button>
                                 </div>
                             </form>

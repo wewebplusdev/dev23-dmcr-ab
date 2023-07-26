@@ -15,6 +15,7 @@ $config['contact']['group']['db'] = "md_cug";
 $config['contact']['email']['db'] = "md_cue";
 $config['ban']['db']['main'] = "md_ban";
 $config['system']['setting'] = "md_site";
+$config['vote']['checkip']['db'] = "md_vtc";
 
 ##### masterkey #####
 $config['about']['masterkey'] = "about";
