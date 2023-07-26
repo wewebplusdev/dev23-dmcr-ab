@@ -27203,7 +27203,7 @@ div.swal2-html-container {
     width: 60px;
   }
   .wg-weblinks .weblink-list .wrapper .inner {
-    padding: 0 15px;
+    padding: 0 10px;
   }
   .wg-weblinks .weblink-list .wrapper .inner .title {
     font-size: var(--typo-sm);
@@ -27211,7 +27211,7 @@ div.swal2-html-container {
 }
 @media (max-width: 575px) {
   .wg-weblinks .weblink-list .wrapper .thumbnail {
-    width: 50px;
+    width: 44px;
   }
   .wg-weblinks .weblink-list .wrapper .inner .title {
     font-size: var(--typo-xs);
