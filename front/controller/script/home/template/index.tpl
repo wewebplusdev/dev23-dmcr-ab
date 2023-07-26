@@ -995,33 +995,19 @@
                         <div class="text-center">
                             <div class="whead">
                                 <h2 class="h-title text-uppercase">VOTE &amp; POLL</h2>
-                                <p class="desc">แบบสำรวจความพึงพอใจในการใช้งานฐานข้อมูลปะการังเทียมและทุ่นในทะเล</p>
+                                <p class="desc">{$vote->fields['name']}</p>
                             </div>
                             <form class="form-default">
                                 <div class="default-radio radio-light mb-3">
+                                    {foreach $voteAns as $keyAns => $valueAns }
                                     <div class="form-check">
-                                        <input name="votePoll" type="radio" id="vp05" class="form-check-input" checked="">
-                                        <label title="" for="vp05" class="form-check-label">พึงพอใจมากที่สุด</label>
+                                        <input name="votePoll" type="radio" id="vp{$valueAns.id}" value="{$valueAns.id}" class="form-check-input" {if $keyAns eq '0'}checked=''{/if}>
+                                        <label title="" for="vp{$valueAns.id}" class="form-check-label">{$valueAns.name}</label>
                                     </div>
-                                    <div class="form-check">
-                                        <input name="votePoll" type="radio" id="vp04" class="form-check-input">
-                                        <label title="" for="vp04" class="form-check-label">พึงพอใจมาก</label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input name="votePoll" type="radio" id="vp03" class="form-check-input">
-                                        <label title="" for="vp03" class="form-check-label">พึงพอใจปานกลาง</label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input name="votePoll" type="radio" id="vp02" class="form-check-input">
-                                        <label title="" for="vp02" class="form-check-label">พึงพอใจน้อย</label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input name="votePoll" type="radio" id="vp01" class="form-check-input">
-                                        <label title="" for="vp01" class="form-check-label">พึงพอใจน้อยที่สุด</label>
-                                    </div>
+                                    {/foreach}
                                 </div>
                                 <div class="action">
-                                    <button type="button" class="btn btn-secondary">โหวต</button>
+                                    <button type="button" class="btn btn-secondary submitvote">โหวต</button>
                                     <button type="button" class="link btn btn-outline-orange" data-bs-toggle="modal" data-bs-target="#voteResult"><span>แสดงผลโหวต</span></button>
                                 </div>
                             </form>
@@ -1059,7 +1045,7 @@
                                         <div class="col">
                                             <div class="inner">
                                                 <div class="title">
-                                                    <span>กรมทรัพยากร<br>ทางทะเลและชายฝั่ง</span>
+                                                    <span>{$valueBanner.subject}</span>
                                                 </div>
                                             </div>
                                         </div>

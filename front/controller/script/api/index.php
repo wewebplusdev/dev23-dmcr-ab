@@ -35,4 +35,7 @@ switch ($url->segment[1]) {
     case 'report_sink':
         require_once _DIR . '/front/controller/script/' . $menuActive . '/services/reportrss_sink.php';
         break;
+    case 'votecount':
+        require_once _DIR . '/front/controller/script/' . $menuActive . '/services/votecount.php';
+        break;
 }

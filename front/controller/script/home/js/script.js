@@ -1,7 +1,8 @@
 $(document).ready(function () {
+    var urlgo = $("base").attr("href");
     $(function () {
 
-        var urlgo = $("base").attr("href");
+
         var url = urlgo + 'api/report';
         // console.log(url);
         jQuery.ajax({
@@ -260,45 +261,68 @@ $(document).ready(function () {
     });
 
 
+    /// chart vote ////
+    var gid = "34";
+    jQuery.ajax({
 
-
-    var voteData = [680, 693, 66, 253, 95];
-    var voteLabels = ["พึงพอใจมากที่สุด", "พึงพอใจมาก", "พึงพอใจปานกลาง", "พึงพอใจน้อย", "พึงพอใจน้อยที่สุด"];
-    var voteColors = ["#004AC9", "#29A2FF", "#9B0AF7", "#FF2C66", "#F7CC02"];
-    var ctv = document.getElementById("voteChart");
-    var voteChart = new Chart(ctv, {
-        type: 'doughnut',
+        url: urlgo + 'api/votecount',
+        type: 'POST',
         data: {
-            labels: voteLabels,
-            datasets: [{
-                label: 'ผลโหวต',
-                data: voteData,
-                backgroundColor: voteColors,
-                borderWidth: 0,
-                rotation: 45,
-            }],
+            gid: gid,
         },
-        options: {
-            plugins: {
-                legend: {
-                    display: true,
-                    position: 'bottom',
-                    align: 'center',
-                    labels: {
-                        usePointStyle: true,
-                        padding: 25,
-                    },
+        dataType: 'json',
+        success: function (data, status) {
+            console.log(data.data);
+            const item = data.data;
+            const count = [];
+            const name = [];
+            for (let i = 0; i < item.length; i++) {
+                count.push(item[i].count);
+                name.push(item[i].name);
+            }
+            var voteData = count;
+            var voteLabels = name;
+            var voteColors = ["#004AC9", "#29A2FF", "#9B0AF7", "#FF2C66", "#F7CC02"];
+            var ctv = document.getElementById("voteChart");
+            var voteChart = new Chart(ctv, {
+                type: 'doughnut',
+                data: {
+                    labels: voteLabels,
+                    datasets: [{
+                        label: 'ผลโหวต',
+                        data: voteData,
+                        backgroundColor: voteColors,
+                        borderWidth: 0,
+                        rotation: 45,
+                    }],
                 },
-            },
-            layout: {
-                padding: {
-                    top: 10,
-                    bottom: 10,
-                }
-            },
-            responsive: true,
-            maintainAspectRatio: false
+                options: {
+                    plugins: {
+                        legend: {
+                            display: true,
+                            position: 'bottom',
+                            align: 'center',
+                            labels: {
+                                usePointStyle: true,
+                                padding: 25,
+                            },
+                        },
+                    },
+                    layout: {
+                        padding: {
+                            top: 10,
+                            bottom: 10,
+                        }
+                    },
+                    responsive: true,
+                    maintainAspectRatio: false
+                },
+            });
+
         },
+        error: function () {
+            console.log("error");
+        }
     });
-    // END: Chart.js
+
 });
