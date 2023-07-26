@@ -26,4 +26,13 @@ switch ($url->segment[1]) {
     case 'prov_sink':
         require_once _DIR . '/front/controller/script/' . $menuActive . '/services/prov_sink.php';
         break;
+    case 'report_coral':
+        require_once _DIR . '/front/controller/script/' . $menuActive . '/services/reportrss_coral.php';
+        break;
+    case 'report_float':
+        require_once _DIR . '/front/controller/script/' . $menuActive . '/services/reportrss_float.php';
+        break;
+    case 'report_sink':
+        require_once _DIR . '/front/controller/script/' . $menuActive . '/services/reportrss_sink.php';
+        break;
 }
