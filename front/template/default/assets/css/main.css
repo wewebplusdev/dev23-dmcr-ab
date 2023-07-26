@@ -25910,7 +25910,6 @@ div.swal2-html-container {
   background-position: center top 200px;
   background-size: cover;
   background-repeat: no-repeat;
-  min-height: 800px;
 }
 .default-page .video-player,
 .default-page .video-player-yt {
@@ -25928,17 +25927,17 @@ div.swal2-html-container {
 .default-page .action.-back-2-prevoius .btn span {
   margin-right: 10px;
 }
-.default-page .graphic-inner-page-bottom {
-  height: 550px;
-  z-index: 0;
-}
-.default-page .graphic-inner-page-bottom .bg {
-  bottom: 0;
-}
 .default-page .graphic-inner-page-top {
   height: 261px;
   top: 0;
   z-index: 0;
+}
+.default-page .graphic-inner-page-bottom {
+  height: 480px;
+  z-index: 0;
+}
+.default-page .graphic-inner-page-bottom .bg {
+  bottom: 0;
 }
 .default-page .attachment-list .whead .subtitle {
   color: var(--color-light);
@@ -25963,6 +25962,9 @@ div.swal2-html-container {
   .default-page .detail-head .year {
     margin-top: 10px;
   }
+}
+.default-page .editor-content + .action {
+  margin-top: 300px;
 }
 
 .graphic {
@@ -26274,6 +26276,9 @@ div.swal2-html-container {
     background-position-y: -241px;
     background-size: 1000px;
   }
+  .default-page .graphic-inner-page-bottom {
+    height: 420px;
+  }
 }
 @media (max-width: 1440px) {
   .section-i {
@@ -26287,10 +26292,13 @@ div.swal2-html-container {
     height: 500px;
   }
   .default-page .graphic-inner-page-bottom {
-    height: 490px;
+    height: 360px;
   }
   .default-page .graphic-inner-page-top {
     height: 252px;
+  }
+  .default-page .editor-content + .action {
+    margin-top: 250px;
   }
 }
 @media (max-width: 1199px) {
@@ -26322,6 +26330,9 @@ div.swal2-html-container {
   .default-page .default-body {
     padding: 3rem 0;
   }
+  .default-page .graphic-inner-page-bottom {
+    height: 300px;
+  }
   .default-tabs > .nav-tabs .nav-link {
     height: 72px;
   }
@@ -26331,6 +26342,9 @@ div.swal2-html-container {
   }
   .default-page .graphic-inner-page-top {
     height: 229px;
+  }
+  .default-page .editor-content + .action {
+    margin-top: 180px;
   }
 }
 @media (max-width: 991px) {
@@ -26363,11 +26377,14 @@ div.swal2-html-container {
     padding: 0;
   }
   .default-page .graphic-inner-page-bottom {
-    height: 560px;
+    height: 260px;
   }
   .default-page .graphic-inner-page-top {
     top: 8px;
     height: 216px;
+  }
+  .default-page .editor-content + .action {
+    margin-top: 150px;
   }
 }
 @media (max-width: 767px) {
@@ -26418,6 +26435,9 @@ div.swal2-html-container {
   .default-page .detail-head .whead .title {
     margin-bottom: 0.75rem;
   }
+  .default-page .editor-content + .action {
+    margin-top: 140px;
+  }
 }
 @media (max-width: 575px) {
   .link-card.-horizontal .thumbnail {
@@ -26427,7 +26447,7 @@ div.swal2-html-container {
     min-width: 80px;
   }
   .default-page .graphic-inner-page-bottom {
-    height: 250px;
+    height: 200px;
   }
   .default-page .attachment-list .whead .subtitle {
     color: var(--color-primary);
@@ -26439,6 +26459,9 @@ div.swal2-html-container {
   .default-tabs > .nav-tabs .nav-link,
   .default-tabs > .nav-tabs .nav-item:first-child .nav-link {
     border-radius: 0.325rem 0.325rem 0 0 !important;
+  }
+  .default-page .editor-content + .action {
+    margin-top: 100px;
   }
 }
 .section-iv {
