@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2023-07-26 16:53:48
+/* Smarty version 3.1.30, created on 2023-07-27 14:09:21
   from "/Applications/XAMPP/xamppfiles/htdocs/dev23-dmcr-ab/front/controller/script/home/template/index.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_64c0ed2c7da625_49906640',
+  'unifunc' => 'content_64c21821e7a631_10213859',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '1474949d296045badc89b3f764bf0dbc245b8fa7' => 
     array (
       0 => '/Applications/XAMPP/xamppfiles/htdocs/dev23-dmcr-ab/front/controller/script/home/template/index.tpl',
-      1 => 1690365223,
+      1 => 1690441758,
       2 => 'file',
     ),
   ),
@@ -21,12 +21,12 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:front/template/default/inc-herobanner.tpl' => 1,
   ),
 ),false)) {
-function content_64c0ed2c7da625_49906640 (Smarty_Internal_Template $_smarty_tpl) {
+function content_64c21821e7a631_10213859 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:front/template/default/inc-herobanner.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('title'=>'title'), 0, false);
 ?>
 
 
-<div class="section section-i" style="overflow:hidden">
+<div class="section section-i pt-0" style="overflow:hidden">
     <div class="container-lg">
         <div class="wg-overview">
             <div class="ov-list">
@@ -1275,38 +1275,39 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
                 </div>
             </div>
             <div class="col-lg-6">
-                <div class="wg-vote-poll">
+                <div class="wg-vote-poll" data-id="<?php echo $_smarty_tpl->tpl_vars['vote']->value->fields['id'];?>
+">
                     <div class="content" style="color:#fff" data-aos="fade-left">
                         <div class="text-center">
                             <div class="whead">
                                 <h2 class="h-title text-uppercase">VOTE &amp; POLL</h2>
-                                <p class="desc">แบบสำรวจความพึงพอใจในการใช้งานฐานข้อมูลปะการังเทียมและทุ่นในทะเล</p>
+                                <p class="desc"><?php echo $_smarty_tpl->tpl_vars['vote']->value->fields['name'];?>
+</p>
                             </div>
                             <form class="form-default">
                                 <div class="default-radio radio-light mb-3">
+                                    <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['voteAns']->value, 'valueAns', false, 'keyAns');
+if ($_from !== null) {
+foreach ($_from as $_smarty_tpl->tpl_vars['keyAns']->value => $_smarty_tpl->tpl_vars['valueAns']->value) {
+?>
                                     <div class="form-check">
-                                        <input name="votePoll" type="radio" id="vp05" class="form-check-input" checked="">
-                                        <label title="" for="vp05" class="form-check-label">พึงพอใจมากที่สุด</label>
+                                        <input name="votePoll" type="radio" id="vp<?php echo $_smarty_tpl->tpl_vars['valueAns']->value['id'];?>
+" value="<?php echo $_smarty_tpl->tpl_vars['valueAns']->value['id'];?>
+" class="form-check-input" <?php if ($_smarty_tpl->tpl_vars['keyAns']->value == '0') {?>checked=''<?php }?>>
+                                        <label title="" for="vp<?php echo $_smarty_tpl->tpl_vars['valueAns']->value['id'];?>
+" class="form-check-label"><?php echo $_smarty_tpl->tpl_vars['valueAns']->value['name'];?>
+</label>
                                     </div>
-                                    <div class="form-check">
-                                        <input name="votePoll" type="radio" id="vp04" class="form-check-input">
-                                        <label title="" for="vp04" class="form-check-label">พึงพอใจมาก</label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input name="votePoll" type="radio" id="vp03" class="form-check-input">
-                                        <label title="" for="vp03" class="form-check-label">พึงพอใจปานกลาง</label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input name="votePoll" type="radio" id="vp02" class="form-check-input">
-                                        <label title="" for="vp02" class="form-check-label">พึงพอใจน้อย</label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input name="votePoll" type="radio" id="vp01" class="form-check-input">
-                                        <label title="" for="vp01" class="form-check-label">พึงพอใจน้อยที่สุด</label>
-                                    </div>
+                                    <?php
+}
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
+?>
+
                                 </div>
                                 <div class="action">
-                                    <button type="button" class="btn btn-secondary">โหวต</button>
+                                    <button type="button" class="btn btn-secondary submitvote" onclick="submitVote()">โหวต</button>
                                     <button type="button" class="link btn btn-outline-orange" data-bs-toggle="modal" data-bs-target="#voteResult"><span>แสดงผลโหวต</span></button>
                                 </div>
                             </form>
@@ -1359,7 +1360,8 @@ echo fileinclude($_smarty_tpl->tpl_vars['valueBanner']->value[4],"pictures",$_pr
                                         <div class="col">
                                             <div class="inner">
                                                 <div class="title">
-                                                    <span>กรมทรัพยากร<br>ทางทะเลและชายฝั่ง</span>
+                                                    <span><?php echo $_smarty_tpl->tpl_vars['valueBanner']->value['subject'];?>
+</span>
                                                 </div>
                                             </div>
                                         </div>

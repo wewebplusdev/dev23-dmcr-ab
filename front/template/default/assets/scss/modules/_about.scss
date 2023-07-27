@@ -2,7 +2,8 @@ $--wg-about-height: 500px;
 $--wg-about-overlapse: 80px;
 
 .section-iv {
-    margin-top: -$--wg-about-overlapse;
+    // margin-top: calc($--wg-about-overlapse / 2);
+
 }
 .wg-about {
     display: flex;
@@ -27,8 +28,10 @@ $--wg-about-overlapse: 80px;
     .bg {
         position: absolute;
         width: 100%;
-        height: calc(100% - $--wg-about-overlapse);
-        top: $--wg-about-overlapse;
+        // height: calc(100% - $--wg-about-overlapse);
+        // top: $--wg-about-overlapse;
+        top: 0;
+        height: 100%;
         left: 0;
     }
     .style-about {
@@ -162,10 +165,10 @@ $--wg-about-overlapse: 80px;
         width: 960px;
         height: auto;
     }
-    .wg-about .bg {
-        height: calc(100% - $--wg-about-overlapse);
-        top: $--wg-about-overlapse;
-    }
+    // .wg-about .bg {
+    //     height: calc(100% - $--wg-about-overlapse);
+    //     top: $--wg-about-overlapse;
+    // }
 }
 @media (max-width: 1440px) {
     $--wg-about-height: 400px;
@@ -175,10 +178,10 @@ $--wg-about-overlapse: 80px;
         margin-top: $--wg-about-overlapse;
         height: $--wg-about-height;
     }
-    .wg-about .bg {
-        height: calc(100% - $--wg-about-overlapse);
-        top: $--wg-about-overlapse;
-    }
+    // .wg-about .bg {
+    //     height: calc(100% - $--wg-about-overlapse);
+    //     top: $--wg-about-overlapse;
+    // }
     .wg-about .content {
         width: 560px;
         padding: 3rem 0;
@@ -195,10 +198,10 @@ $--wg-about-overlapse: 80px;
         margin-top: $--wg-about-overlapse;
         height: $--wg-about-height;
     }
-    .wg-about .bg {
-        height: calc(100% - $--wg-about-overlapse);
-        top: $--wg-about-overlapse;
-    }
+    // .wg-about .bg {
+    //     height: calc(100% - $--wg-about-overlapse);
+    //     top: $--wg-about-overlapse;
+    // }
     .wg-about .content {
         width: 540px;
         padding: 3rem 0;
@@ -227,10 +230,10 @@ $--wg-about-overlapse: 80px;
         // padding: 0;
         width: 360px;
     }
-    .wg-about .bg {
-        top: 0;
-        height: 100%;
-    }
+    // .wg-about .bg {
+    //     top: 0;
+    //     height: 100%;
+    // }
     .wg-about .style-about > img {
         width: 525px;
     }
