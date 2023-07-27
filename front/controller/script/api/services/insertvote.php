@@ -19,6 +19,7 @@ if (!empty($_REQUEST['gid'])) {
         $dataJson = array(
             'status' => 200,
             'msg' => "คุณสามารถโหวตได้ 1 ครั้ง เท่านั้น",
+            'statustext' => 'failure',
         );
     } else {
         $insert = array();
@@ -36,15 +37,17 @@ if (!empty($_REQUEST['gid'])) {
         $dataJson = array(
             'status' => 200,
             'msg' => "โหวตสำเร็จ",
+            'statustext' => 'success',
         );
     }
 
-
+    
     
 } else {
     $dataJson = array(
         'status' => 400,
         'msg' => 'โหวตไม่สำเร็จ',
+        'statustext' => 'failure',
     );
 }
 
