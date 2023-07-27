@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2023-07-24 19:04:58
+/* Smarty version 3.1.30, created on 2023-07-26 17:01:29
   from "/Applications/XAMPP/xamppfiles/htdocs/dev23-dmcr-ab/front/controller/script/activity/template/index.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_64be68ea00e637_16795740',
+  'unifunc' => 'content_64c0eef9195d88_22704362',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '1ccccec56964dfaa1930a97d5aadccabd616a3fc' => 
     array (
       0 => '/Applications/XAMPP/xamppfiles/htdocs/dev23-dmcr-ab/front/controller/script/activity/template/index.tpl',
-      1 => 1690200074,
+      1 => 1690360212,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:pagination.tpl' => 1,
   ),
 ),false)) {
-function content_64be68ea00e637_16795740 (Smarty_Internal_Template $_smarty_tpl) {
+function content_64c0eef9195d88_22704362 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:front/template/default/inc-herobanner.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('title'=>'title'), 0, false);
 ?>
 
@@ -54,7 +54,7 @@ $_smarty_tpl->_subTemplateRender("file:front/template/default/inc-herobanner.tpl
                     <h2 class="title">กิจกรรมที่เกี่ยวข้อง</h2>
                 </div>
                 <div class="default-tabs">
-                    <ul class="nav nav-tabs nav-fill" data-aos="fade-up" data-aos-delay="300">
+                    <!-- <ul class="nav nav-tabs nav-fill" data-aos="fade-up" data-aos-delay="300">
                         <li class="nav-item" role="presentation">
                             <a href="" class="nav-link active">
                                 <div class="icon">
@@ -133,7 +133,7 @@ $_smarty_tpl->_subTemplateRender("file:front/template/default/inc-herobanner.tpl
                                 </div>
                             </a>
                         </li>
-                    </ul>
+                    </ul> -->
                     <div class="tab-content">
                         <div class="default-content">
                             <div class="news-head" data-aos="fade-up">
@@ -153,20 +153,44 @@ $_smarty_tpl->_subTemplateRender("file:front/template/default/inc-herobanner.tpl
                             </div>
                             <div class="news-highlights">
                                 <div class="gutters-xl-40 row">
+                                    <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['ActivityList']->value, 'valueActivityList', false, 'KeyActivityList');
+if ($_from !== null) {
+foreach ($_from as $_smarty_tpl->tpl_vars['KeyActivityList']->value => $_smarty_tpl->tpl_vars['valueActivityList']->value) {
+?>
+                                    <?php if ($_smarty_tpl->tpl_vars['KeyActivityList']->value < '2') {?>
                                     <div class="col-md-6 col-12" data-aos="fade-up">
-                                        <a class="link link-card -vertical" title="เก็บขยะใต้ทะเล แนวปะการังเทียมบ้านเกาะแต้วเจอเศษอวน" href="/activity/detail">
+                                        <a class="link link-card -vertical" title="<?php echo $_smarty_tpl->tpl_vars['valueActivityList']->value['subject'];?>
+" href="<?php echo $_smarty_tpl->tpl_vars['ul']->value;?>
+/activity/detail/<?php echo $_smarty_tpl->tpl_vars['valueActivityList']->value['id'];?>
+">
                                             <div class="overflow-hidden card">
                                                 <div class="thumbnail">
                                                     <figure class="cover">
-                                                        <img alt="" data-src="<?php echo $_smarty_tpl->tpl_vars['template']->value;?>
-/assets/img/upload/beautiful-beach-sea.jpg" class="img-cover lazy">
+                                                        <img alt="<?php echo $_smarty_tpl->tpl_vars['valueActivityList']->value['subject'];?>
+" src="<?php ob_start();
+echo $_smarty_tpl->tpl_vars['valueActivityList']->value[1];
+$_prefixVariable1=ob_get_clean();
+echo fileinclude($_smarty_tpl->tpl_vars['valueActivityList']->value[6],"office",$_prefixVariable1,"link");?>
+" 
+                                                        data-src="<?php ob_start();
+echo $_smarty_tpl->tpl_vars['valueActivityList']->value[1];
+$_prefixVariable2=ob_get_clean();
+echo fileinclude($_smarty_tpl->tpl_vars['valueActivityList']->value[6],"pictures",$_prefixVariable2,"link");?>
+" class="img-cover lazy">
                                                     </figure>
                                                 </div>
                                                 <div class="card-body">
                                                     <div class="inner">
-                                                        <div class="date">23 มิถุนายน 2560</div>
-                                                        <h4 class="title">เก็บขยะใต้ทะเล แนวปะการังเทียมบ้านเกาะแต้วเจอเศษอวน</h4>
-                                                        <p class="desc">เป็นศูนย์รวบรวมข้อมูลปะการังเทียมจากหน่วยงานที่เกี่ยวข้อง โดยดำเนินการจัดเก็บข้อมูลเป็นหมวดหมู่และเป็นระเบียบเพื่อสะดวกในเป็นศูนย์รวบรวมข้อมูลปะการังเทียมจากหน่วยงานที่เกี่ยวข้อง โดยดำเนินการจัดเก็บข้อมูลเป็นหมวดหมู่และเป็นระเบียบเพื่อสะดวกใน...</p>
+                                                        <div class="date"><?php ob_start();
+echo $_smarty_tpl->tpl_vars['langon']->value;
+$_prefixVariable3=ob_get_clean();
+echo DateThai($_smarty_tpl->tpl_vars['valueActivityList']->value['credate'],'13',$_prefixVariable3,'shot');?>
+</div>
+                                                        <h4 class="title"><?php echo $_smarty_tpl->tpl_vars['valueActivityList']->value['subject'];?>
+</h4>
+                                                        <p class="desc"><?php echo $_smarty_tpl->tpl_vars['valueActivityList']->value['title'];?>
+</p>
                                                         <div class="action">
                                                             <div class="btn btn-outline-primary" title="อ่านต่อ">อ่านต่อ</div>
                                                         </div>
@@ -175,28 +199,14 @@ $_smarty_tpl->_subTemplateRender("file:front/template/default/inc-herobanner.tpl
                                             </div>
                                         </a>
                                     </div>
-                                    <div class="col-md-6 col-12" data-aos="fade-up">
-                                        <a class="link link-card -vertical" title="เก็บขยะใต้ทะเล แนวปะการังเทียมบ้านเกาะแต้วเจอเศษอวน" href="/activity/detail">
-                                            <div class="overflow-hidden card">
-                                                <div class="thumbnail">
-                                                    <figure class="cover">
-                                                        <img alt="" data-src="<?php echo $_smarty_tpl->tpl_vars['template']->value;?>
-/assets/img/upload/beautiful-beach-sea.jpg" class="img-cover lazy">
-                                                    </figure>
-                                                </div>
-                                                <div class="card-body">
-                                                    <div class="inner">
-                                                        <div class="date">23 มิถุนายน 2560</div>
-                                                        <h4 class="title">เก็บขยะใต้ทะเล แนวปะการังเทียมบ้านเกาะแต้วเจอเศษอวน</h4>
-                                                        <p class="desc">เป็นศูนย์รวบรวมข้อมูลปะการังเทียมจากหน่วยงานที่เกี่ยวข้อง โดยดำเนินการจัดเก็บข้อมูลเป็นหมวดหมู่และเป็นระเบียบเพื่อสะดวกในเป็นศูนย์รวบรวมข้อมูลปะการังเทียมจากหน่วยงานที่เกี่ยวข้อง โดยดำเนินการจัดเก็บข้อมูลเป็นหมวดหมู่และเป็นระเบียบเพื่อสะดวกใน...</p>
-                                                        <div class="action">
-                                                            <div class="btn btn-outline-primary" title="อ่านต่อ">อ่านต่อ</div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </div>
+                                    <?php }?>
+                                    <?php
+}
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
+?>
+
+                                    
                                 </div>
                             </div>
                             <div class="news-list">
@@ -206,27 +216,26 @@ $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->t
 if ($_from !== null) {
 foreach ($_from as $_smarty_tpl->tpl_vars['KeyActivityList']->value => $_smarty_tpl->tpl_vars['valueActivityList']->value) {
 ?>
+                                    <?php if ($_smarty_tpl->tpl_vars['KeyActivityList']->value >= '2') {?>
                                         <div class="col-lg-4 col-sm-6 col-12" data-aos="fade-up">
-                                            <a class="link link-card -vertical" title="<?php ob_start();
-echo $_smarty_tpl->tpl_vars['langon']->value;
-$_prefixVariable1=ob_get_clean();
-echo DateThai($_smarty_tpl->tpl_vars['valueActivityList']->value['credate'],'13',$_prefixVariable1,'shot');?>
+                                            <a class="link link-card -vertical" title="<?php echo $_smarty_tpl->tpl_vars['valueActivityList']->value['subject'];?>
 " href="<?php echo $_smarty_tpl->tpl_vars['ul']->value;?>
 /activity/detail/<?php echo $_smarty_tpl->tpl_vars['valueActivityList']->value['id'];?>
 ">
                                                 <div class="overflow-hidden card">
                                                     <div class="thumbnail">
                                                         <figure class="cover">
-                                                            <img alt="" 
+                                                            <img alt="<?php echo $_smarty_tpl->tpl_vars['valueActivityList']->value['subject'];?>
+" 
                                                                 src="<?php ob_start();
 echo $_smarty_tpl->tpl_vars['valueActivityList']->value[1];
-$_prefixVariable2=ob_get_clean();
-echo fileinclude($_smarty_tpl->tpl_vars['valueActivityList']->value[6],"office",$_prefixVariable2,"link");?>
+$_prefixVariable4=ob_get_clean();
+echo fileinclude($_smarty_tpl->tpl_vars['valueActivityList']->value[6],"office",$_prefixVariable4,"link");?>
 " 
                                                                 data-src="<?php ob_start();
 echo $_smarty_tpl->tpl_vars['valueActivityList']->value[1];
-$_prefixVariable3=ob_get_clean();
-echo fileinclude($_smarty_tpl->tpl_vars['valueActivityList']->value[6],"pictures",$_prefixVariable3,"link");?>
+$_prefixVariable5=ob_get_clean();
+echo fileinclude($_smarty_tpl->tpl_vars['valueActivityList']->value[6],"pictures",$_prefixVariable5,"link");?>
 " class="img-cover lazy">
                                                         </figure>
                                                     </div>
@@ -234,8 +243,8 @@ echo fileinclude($_smarty_tpl->tpl_vars['valueActivityList']->value[6],"pictures
                                                         <div class="inner">
                                                             <div class="date"><?php ob_start();
 echo $_smarty_tpl->tpl_vars['langon']->value;
-$_prefixVariable4=ob_get_clean();
-echo DateThai($_smarty_tpl->tpl_vars['valueActivityList']->value['credate'],'13',$_prefixVariable4,'shot');?>
+$_prefixVariable6=ob_get_clean();
+echo DateThai($_smarty_tpl->tpl_vars['valueActivityList']->value['credate'],'13',$_prefixVariable6,'shot');?>
 </div>
                                                             <h4 class="title"><?php echo $_smarty_tpl->tpl_vars['valueActivityList']->value['subject'];?>
 </h4>
@@ -249,6 +258,7 @@ echo DateThai($_smarty_tpl->tpl_vars['valueActivityList']->value['credate'],'13'
                                                 </div>
                                             </a>
                                         </div>
+                                        <?php }?>
                                     <?php
 }
 }
