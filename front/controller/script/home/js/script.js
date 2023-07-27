@@ -343,6 +343,7 @@ function submitVote() {
     }
 
     insertVote();
+    
 }
 
 function insertVote(){
@@ -359,7 +360,16 @@ jQuery.ajax({
     },
     dataType: 'json',
     success: function (data, status) {
-        console.log(data);
+        // console.log(data);
+        if(data.statustext == 'success'){
+            $(".icon").html('<span class="material-symbols-rounded">check_circle</span>');
+        }else{
+            $(".icon").html('<span class="material-symbols-outlined">cancel</span>');
+        }
+        var d = document.getElementById("status");
+        $("#msg-vote").html(data.msg);
+        d.classList.add('status-'+data.statustext);
+        $("#voteComplete").modal('show');
     },
     error: function () {
         console.log("error");
