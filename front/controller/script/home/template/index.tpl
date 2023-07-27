@@ -194,7 +194,7 @@
                             </div>
                             <div class="col-auto">
                                 <div class="action">
-                                    <a class="btn btn-light" title="ดูทั้งหมด" href="/">ดูทั้งหมด</a>
+                                    <a class="btn btn-light" title="ดูทั้งหมด" href="{$ul}/report">ดูทั้งหมด</a>
                                 </div>
                             </div>
                         </div>
@@ -247,7 +247,7 @@
                             </div>
                             <div class="col-auto">
                                 <div class="action">
-                                    <a class="btn btn-light" title="ดูทั้งหมด" href="/">ดูทั้งหมด</a>
+                                    <a class="btn btn-light" title="ดูทั้งหมด" href="{$ul}/report">ดูทั้งหมด</a>
                                 </div>
                             </div>
                         </div>

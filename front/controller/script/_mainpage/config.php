@@ -17,6 +17,12 @@ $config['ban']['db']['main'] = "md_ban";
 $config['system']['setting'] = "md_site";
 $config['vote']['checkip']['db'] = "md_vtc";
 
+## Other Table  ######################################################
+$config['distric']['db']  = "ot_dis";
+$config['amphur']['db']  = "ot_amp";
+$config['geo']['db']  = "ot_geo";
+$config['nat']['db']  = "ot_nat";
+
 ##### masterkey #####
 $config['about']['masterkey'] = "about";
 $config['tgp']['masterkey'] = "topg";

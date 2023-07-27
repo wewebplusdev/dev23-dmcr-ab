@@ -46,3 +46,31 @@
     </div>
 </div>
 {* END: Policy Modal *}
+
+{* START: Vote Result Modal *}
+<div id="voteComplete" class="modal modal-vote fade" role="dialog" aria-modal="true" tabindex="-1">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="modal-title h4">ผลโหวต</div>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="status  text-center" id="status">
+                    <div role="alert" class="fade alert alert-light show">
+                        <div class="icon">
+                            <!-- <span class="material-symbols-rounded">check_circle</span>
+                            <span class="material-symbols-outlined">
+                                cancel
+                                </span> -->
+                        </div>
+                        <div class="alert-heading h4" id="msg-vote">โหวตสำเร็จ</div>
+                        <p>ขอบพระคุณที่ใช้บริการ</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+{* END: Policy Modal *}

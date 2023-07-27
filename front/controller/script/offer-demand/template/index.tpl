@@ -56,7 +56,7 @@
                                 <div class="default-card overflow-hidden card">
                                     <div class="form-head">เสนอความต้องการ</div>
                                     <div class="card-body">
-                                        <form class="form-default needs-validation" novalidate="">
+                                        <form class="form-default needs-validation" id="demand-form" data-toggle="validator" role="form" method="post">
                                             <div class="row">
                                                 <div class="form-group col-md-12">
                                                     <label class="form-label" for="validationFormik01">ชื่อผู้เสนอความต้องการ <span class="text-danger">*</span></label>
@@ -66,28 +66,27 @@
                                                 </div>
                                                 <div class="form-group col-md-6">
                                                     <label class="form-label" for="validationFormik02">จังหวัด <span class="text-danger">*</span></label>
-                                                    <select class="select-control" name="province" id="validationFormik02" data-placeholder="จังหวัด" style="width: 100%;">
+                                                    <select class="select-control" name="province" id="validationFormik02" data-placeholder="จังหวัด" style="width: 100%;" onchange="selectAmphur('#validationFormik02','#validationFormik03')">
                                                         <option></option>
-                                                        <option value="0">test</option>
-                                                        <option value="1">test</option>
+                                                        {foreach $province as $keypro => $valpro}
+                                                        <option value="{$valpro.id}">{$valpro.name}</option>
+                                                        {/foreach}
                                                     </select>
                                                     <div class="invalid-feedback"></div>
                                                 </div>
                                                 <div class="form-group col-md-6">
                                                     <label class="form-label" for="validationFormik03">อำเภอ <span class="text-danger">*</span></label>
-                                                    <select class="select-control" name="amphoe" id="validationFormik03" data-placeholder="อำเภอ" style="width: 100%;">
+                                                    <select class="select-control" name="amphoe" id="validationFormik03" data-placeholder="อำเภอ" style="width: 100%;" onchange="selectDistric('#validationFormik03','#validationFormik04')">
                                                         <option></option>
-                                                        <option value="0">test</option>
-                                                        <option value="1">test</option>
+
                                                     </select>
                                                     <div class="invalid-feedback"></div>
                                                 </div>
                                                 <div class="form-group col-md-6">
                                                     <label class="form-label" for="validationFormik04">ตำบล <span class="text-danger">*</span></label>
-                                                    <select class="select-control" name="subDistrict" id="validationFormik04" data-placeholder="ตำบล" style="width: 100%;">
+                                                    <select class="select-control" name="subDistrict" id="validationFormik04" data-placeholder="ตำบล" style="width: 100%;" onchange="selectDiscode('#validationFormik04','#validationFormik05')" >
                                                         <option></option>
-                                                        <option value="0">test</option>
-                                                        <option value="1">test</option>
+
                                                     </select>
                                                     <div class="invalid-feedback"></div>
                                                 </div>
@@ -108,7 +107,7 @@
                                                 </div>
                                                 <div class="form-group col-md-6">
                                                     <label class="form-label" for="validationFormik07">ชื่อผู้สนับสนุน <span class="text-danger">*</span></label>
-                                                    <input name="sponsorName" type="text" id="validationFormik07" class="form-control" value="test">
+                                                    <input name="sponsorName" type="text" id="validationFormik07" class="form-control" value="">
                                                     <div class="invalid-feedback">กรุณากรอกข้อมูล<!-- -->ชื่อ</div>
                                                     <div class="valid-feedback">Looks good!</div>
                                                 </div>
@@ -119,28 +118,27 @@
                                                 </div>
                                                 <div class="form-group col-md-6">
                                                     <label class="form-label" for="validationFormik09">จังหวัด <span class="text-danger">*</span></label>
-                                                    <select class="select-control" name="province1" id="validationFormik09" data-placeholder="จังหวัด" style="width: 100%;">
+                                                    <select class="select-control" name="province1" id="validationFormik09" data-placeholder="จังหวัด" style="width: 100%;" onchange="selectAmphur('#validationFormik09','#validationFormik10')">
                                                         <option></option>
-                                                        <option value="0">test</option>
-                                                        <option value="1">test</option>
+                                                        {foreach $province as $keypro => $valpro}
+                                                        <option value="{$valpro.id}">{$valpro.name}</option>
+                                                        {/foreach}
                                                     </select>
                                                     <div class="invalid-feedback"></div>
                                                 </div>
                                                 <div class="form-group col-md-6">
                                                     <label class="form-label" for="validationFormik10">อำเภอ <span class="text-danger">*</span></label>
-                                                    <select class="select-control" name="amphoe1" id="validationFormik10" data-placeholder="อำเภอ" style="width: 100%;">
+                                                    <select class="select-control" name="amphoe1" id="validationFormik10" data-placeholder="อำเภอ" style="width: 100%;" onchange="selectDistric('#validationFormik10','#validationFormik11')">
                                                         <option></option>
-                                                        <option value="0">test</option>
-                                                        <option value="1">test</option>
+
                                                     </select>
                                                     <div class="invalid-feedback"></div>
                                                 </div>
                                                 <div class="form-group col-md-6">
                                                     <label class="form-label" for="validationFormik11">ตำบล <span class="text-danger">*</span></label>
-                                                    <select class="select-control" name="subDistrict1" id="validationFormik11" data-placeholder="ตำบล" style="width: 100%;">
+                                                    <select class="select-control" name="subDistrict1" id="validationFormik11" data-placeholder="ตำบล" style="width: 100%;" onchange="selectDiscode('#validationFormik11','#validationFormik12')">
                                                         <option></option>
-                                                        <option value="0">test</option>
-                                                        <option value="1">test</option>
+
                                                     </select>
                                                     <div class="invalid-feedback"></div>
                                                 </div>
@@ -167,6 +165,12 @@
                                                 </div>
                                                 <div class="form-group col-md-6">
                                                     <label class="form-label" for="validationFormik15">ประเภทการเสนอความต้องการ <span class="text-danger">*</span></label>
+                                                    <select class="select-control" name="tpyeDemand" id="tpyeDemand" data-placeholder="ประเภทการเสนอความต้องการ" style="width: 100%;">
+                                                        <option></option>
+                                                        {foreach $grouptype as $keyGroupType => $valueGroupType}
+                                                        <option value="{$valueGroupType.id}">{$valueGroupType.subject}</option>
+                                                        {/foreach}
+                                                    </select>
                                                     <div class="invalid-feedback">กรุณากรอกข้อมูล<!-- -->ประเภทการเสนอความต้องการ</div>
                                                 </div>
                                                 <div class="form-group col-md-12">
@@ -186,7 +190,7 @@
                                                 </div>
                                                 <div class="form-group col-md-6">
                                                     <label class="form-label" for="validationFormik19">งบประมาณ (บาท) <span class="text-danger">*</span></label>
-                                                    <input placeholder="" name="budget" type="text" id="validationFormik19" class="form-control" value="10">
+                                                    <input placeholder="" name="budget" type="text" id="validationFormik19" class="form-control" value="0">
                                                     <div class="invalid-feedback"></div>
                                                 </div>
                                                 <div class="form-group col-md-6">
@@ -207,7 +211,7 @@
                                             </div>
                                             <div class="row">
                                                 <div class="form-group input-file col-12">
-                                                    <div class="form-label">ผังการจัดวาง <span class="text-danger">*</span></div>
+                                                    <div class="form-label">ผังการจัดวาง </div>
                                                     <div class="align-items-center row">
                                                         <div class="col-sm-auto">
                                                             <input placeholder="" name="layout" type="file" id="validationFormik23" class="form-control" hidden="">
@@ -219,7 +223,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="form-group input-file col-12">
-                                                    <div class="form-label">แผนที่พื้นที่วาง <span class="text-danger">*</span></div>
+                                                    <div class="form-label">แผนที่พื้นที่วาง </div>
                                                     <div class="align-items-center row">
                                                         <div class="col-sm-auto">
                                                             <input placeholder="" name="placementAreaMap" type="file" id="validationFormik24" class="form-control" hidden="">
@@ -231,12 +235,12 @@
                                                     </div>
                                                 </div>
                                                 <div class="form-group col-md-12">
-                                                    <label class="form-label" for="validationFormik25">รายละเอียดอื่น ๆ <span class="text-danger">*</span></label>
+                                                    <label class="form-label" for="validationFormik25">รายละเอียดอื่น ๆ </label>
                                                     <input placeholder="" name="details" type="text" id="validationFormik25" class="form-control">
                                                     <div class="invalid-feedback">กรุณากรอกข้อมูล</div>
                                                 </div>
                                                 <div class="form-group input-file col-12">
-                                                    <div class="form-label">แนบไฟล์ <span class="text-danger">*</span></div>
+                                                    <div class="form-label">แนบไฟล์ </div>
                                                     <div class="align-items-center row">
                                                         <div class="col-sm-auto">
                                                             <input placeholder="" name="attachment" type="file" id="validationFormik26" class="form-control" hidden="">
@@ -247,25 +251,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="form-group col-md-8">
-                                                    <label class="form-label" for="validationFormik25">รหัสยืนยัน <span class="text-danger">*</span></label>
-                                                    <div class="align-items-center row">
-                                                        <div class="col">
-                                                            <input placeholder="captcha จ้าาาาา" name="details" type="text" id="validationFormik25" class="form-control">
-                                                        </div>
-                                                        <div class="col-sm-auto">
-                                                            <div class="captcha d-flex gap-3">
-                                                                <div class="captcha-content">
-                                                                    <img alt="" data-src="{$template}/assets/img/static/captcha.png" class="lazy" style="color:transparent" width="94" height="41">
-                                                                </div>
-                                                                <div class="captcha-reload">
-                                                                    <a href=""><span class="material-symbols-rounded">autorenew</span></a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="invalid-feedback">กรุณากรอกข้อมูล</div>
-                                                </div>
+                                                
                                             </div>
                                             <div class="form-action justify-content-center row">
                                                 <div class="mb-md-4 mb-3 col-md-auto col-sm-6"><button type="submit" class="btn btn-secondary">ตกลง</button></div>
@@ -276,9 +262,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="content-step-ii 
-                                    {* d-none *}
-                        ">
+                        <div class="content-step-ii d-none">
                             <div class="form-offer-demand">
                                 <div class="default-card overflow-hidden card">
                                     <div class="form-head">ส่งความต้องการ</div>

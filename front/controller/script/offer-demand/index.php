@@ -1,19 +1,33 @@
 <?php
 $menuActive = "offer-demand";
 $listcss[] = '<link rel="stylesheet" type="text/css" href="front/template/default/public/css/front-qa-new.css' . "?u=" . date("YdmHis") . '" />';
+$listjs[] = '<script type="text/javascript" src="front/controller/script/' . $menuActive . '/js/script.js' . "?u=" . date("ydmhis") . '"></script>';
+$listjs[] = '<script type="text/javascript" src="front/controller/script/' . $menuActive . '/js/ajaxfileupload.js' . "?u=" . date("ydmhis") . '"></script>';
+$listjs[] = '<script type="text/javascript" src="front/controller/script/' . $menuActive . '/js/jquery.uploadfile.js' . "?u=" . date("ydmhis") . '"></script>';
+$listjs[] = '<script type="text/javascript" src="front/controller/script/' . $menuActive . '/js/uploadfile.js' . "?u=" . date("ydmhis") . '"></script>';
 $contentID = $url->segment[2];
+$offerPage = new OfferPage;
 switch ($url->segment[1]) {
     default:
-        
+
+        $province = $offerPage->callProvince();
+        $smarty->assign("province", $province);
+
+        $callGroupType = $offerPage->callGroupType();
+        $smarty->assign("grouptype", $callGroupType);
+
+
+        // $test = $offerPage->callDistricCODE('7079');
+        // print_pre($test);
 
         /*## Start SEO #####*/
         $seo_desc = "";
-        $seo_title = $lang["nav"]["offer"] ;
+        $seo_title = $lang["nav"]["offer"];
         $seo_keyword = "";
         Seo($seo_title, $seo_desc, $seo_keyword, $seo_pic);
         /*## End SEO #####*/
 
-        
+
 
         $settingPage = array(
             "page" => $menuActive,
@@ -22,19 +36,16 @@ switch ($url->segment[1]) {
         );
         break;
     case 'insert':
-
-        /*## Start SEO #####*/
-        $seo_desc = "";
-        $seo_title = $lang["nav"]["offer"] ;
-        $seo_keyword = "";
-        Seo($seo_title, $seo_desc, $seo_keyword, $seo_pic);
-        /*## End SEO #####*/
-
-        $settingPage = array(
-            "page" => $menuActive,
-            "template" => "detail.tpl",
-            "display" => "page"
-        );
+        require_once _DIR . '/front/controller/script/' . $menuActive . '/services/insertform.php';
+        break;
+    case 'distric':
+        require_once _DIR . '/front/controller/script/' . $menuActive . '/services/distric.php';
+        break;
+    case 'amphur':
+        require_once _DIR . '/front/controller/script/' . $menuActive . '/services/amphur.php';
+        break;
+    case 'districcode':
+        require_once _DIR . '/front/controller/script/' . $menuActive . '/services/districCode.php';
         break;
 }
 
