@@ -16,6 +16,8 @@ switch ($url->segment[1]) {
         $callGroupType = $offerPage->callGroupType();
         $smarty->assign("grouptype", $callGroupType);
 
+        $myid = randomNameUpdate(1);
+        $smarty->assign("myid",$myid);
 
         // $test = $offerPage->callDistricCODE('7079');
         // print_pre($test);
@@ -46,6 +48,12 @@ switch ($url->segment[1]) {
         break;
     case 'districcode':
         require_once _DIR . '/front/controller/script/' . $menuActive . '/services/districCode.php';
+        break;
+    case 'deletefile':
+        require_once _DIR . '/front/controller/script/' . $menuActive . '/deleteFileInsert.php';
+        break;
+    case 'insertfile':
+        require_once _DIR . '/front/controller/script/' . $menuActive . '/loadInsertFile.php';
         break;
 }
 

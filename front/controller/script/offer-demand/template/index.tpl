@@ -57,6 +57,7 @@
                                     <div class="form-head">เสนอความต้องการ</div>
                                     <div class="card-body">
                                         <form class="form-default needs-validation" id="demand-form" data-toggle="validator" role="form" method="post">
+                                            <input placeholder="" name="msKey" type="hidden" id="msKey" class="form-control" value="1c">
                                             <div class="row">
                                                 <div class="form-group col-md-12">
                                                     <label class="form-label" for="validationFormik01">ชื่อผู้เสนอความต้องการ <span class="text-danger">*</span></label>
@@ -213,10 +214,13 @@
                                                 <div class="form-group input-file col-12">
                                                     <div class="form-label">ผังการจัดวาง </div>
                                                     <div class="align-items-center row">
-                                                        <div class="col-sm-auto">
-                                                            <input placeholder="" name="layout" type="file" id="validationFormik23" class="form-control" hidden="">
-                                                            <label class="btn btn-secondary form-label" for="validationFormik23" style="cursor:pointer"><span class="material-symbols-rounded">upload</span>เลือกไฟล์</label>
+                                                        <div class="col-sm-auto form-form-att">
+                                                            <input placeholder="" name="inputFileUpload-layout" type="file" id="inputFileUpload-layout" class="form-control" hidden="">
+                                                            <label class="btn btn-secondary form-label" for="inputFileUpload-layout" style="cursor:pointer"><span class="material-symbols-rounded">upload</span>เลือกไฟล์</label>
                                                         </div>
+                                                        <div class="col" id="boxFileNew-layout"><span class="input-group-text">xxxx</span></div>
+                                                    </div>
+                                                    <div class="align-items-center row">
                                                         <div class="col">
                                                             <span class="input-group-text">* หมายเหตุ : กรุณาเลือกอัพโหลดไฟล์ที่มีขนาดเหมาะสมไม่ใหญ่เกินไป เนื่องจากหากไฟล์ขนาดใหญ่จะส่งผลให้เกินความล่าช้าในการอัพโหลดไฟล์</span>
                                                         </div>
@@ -226,9 +230,12 @@
                                                     <div class="form-label">แผนที่พื้นที่วาง </div>
                                                     <div class="align-items-center row">
                                                         <div class="col-sm-auto">
-                                                            <input placeholder="" name="placementAreaMap" type="file" id="validationFormik24" class="form-control" hidden="">
-                                                            <label class="btn btn-secondary form-label" for="validationFormik24" style="cursor:pointer"><span class="material-symbols-rounded">upload</span>เลือกไฟล์</label>
+                                                            <input placeholder="" name="inputFileUpload-placementAreaMap" type="file" id="inputFileUpload-placementAreaMap" class="form-control" hidden="">
+                                                            <label class="btn btn-secondary form-label" for="inputFileUpload-placementAreaMap" style="cursor:pointer"><span class="material-symbols-rounded">upload</span>เลือกไฟล์</label>
                                                         </div>
+                                                        <div class="col" id="boxFileNew-placementAreaMap"><span class="input-group-text">xxxx</span></div>
+                                                    </div>
+                                                    <div class="align-items-center row">
                                                         <div class="col">
                                                             <span class="input-group-text">* หมายเหตุ : กรุณาเลือกอัพโหลดไฟล์ที่มีขนาดเหมาะสมไม่ใหญ่เกินไป เนื่องจากหากไฟล์ขนาดใหญ่จะส่งผลให้เกินความล่าช้าในการอัพโหลดไฟล์</span>
                                                         </div>
@@ -243,9 +250,12 @@
                                                     <div class="form-label">แนบไฟล์ </div>
                                                     <div class="align-items-center row">
                                                         <div class="col-sm-auto">
-                                                            <input placeholder="" name="attachment" type="file" id="validationFormik26" class="form-control" hidden="">
-                                                            <label class="btn btn-secondary form-label" for="validationFormik26" style="cursor:pointer"><span class="material-symbols-rounded">upload</span>เลือกไฟล์</label>
+                                                            <input placeholder="" name="inputFileUpload-attachment" type="file" id="inputFileUpload-attachment" class="form-control" hidden="">
+                                                            <label class="btn btn-secondary form-label" for="inputFileUpload-attachment" style="cursor:pointer"><span class="material-symbols-rounded">upload</span>เลือกไฟล์</label>
                                                         </div>
+                                                        <div class="col" id="boxFileNew-attachment"><span class="input-group-text">xxxx</span></div>
+                                                    </div>
+                                                    <div class="align-items-center row">
                                                         <div class="col">
                                                             <span class="input-group-text">* หมายเหตุ : กรุณาเลือกอัพโหลดไฟล์ที่มีขนาดเหมาะสมไม่ใหญ่เกินไป เนื่องจากหากไฟล์ขนาดใหญ่จะส่งผลให้เกินความล่าช้าในการอัพโหลดไฟล์</span>
                                                         </div>
