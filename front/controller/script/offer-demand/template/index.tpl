@@ -51,7 +51,7 @@
                 </div>
                 <div class="row">
                     <div class="col" data-aos="fade-up">
-                        <div class="content-step-i">
+                        <div class="content-step-i" id="step-i">
                             <div class="form-offer-demand">
                                 <div class="default-card overflow-hidden card">
                                     <div class="form-head">เสนอความต้องการ</div>
@@ -63,6 +63,12 @@
                                                     <label class="form-label" for="validationFormik01">ชื่อผู้เสนอความต้องการ <span class="text-danger">*</span></label>
                                                     <input name="name" type="text" id="validationFormik01" class="form-control" value="" required>
                                                     <div class="invalid-feedback">กรุณากรอกข้อมูล-ชื่อ</div>
+                                                    <div class="valid-feedback">Looks good!</div>
+                                                </div>
+                                                <div class="form-group col-md-6">
+                                                    <label class="form-label" for="validationFormik01">เลขที่ <span class="text-danger">*</span></label>
+                                                    <input name="address" type="text" id="validationFormik01" class="form-control" value="" required>
+                                                    <div class="invalid-feedback">กรุณากรอกข้อมูล-ที่อยู่</div>
                                                     <div class="valid-feedback">Looks good!</div>
                                                 </div>
                                                 <div class="form-group col-md-6">
@@ -116,6 +122,12 @@
                                                     <label class="form-label" for="validationFormik08">งบประมาณ (บาท) <span class="text-danger">*</span></label>
                                                     <input placeholder="" name="sponsorAmount" type="number" id="validationFormik08" class="form-control" value="0">
                                                     <div class="invalid-feedback">กรุณากรอกข้อมูล</div>
+                                                </div>
+                                                <div class="form-group col-md-6">
+                                                    <label class="form-label" for="validationFormik01">เลขที่ <span class="text-danger">*</span></label>
+                                                    <input name="address2" type="text" id="validationFormik01" class="form-control" value="" required>
+                                                    <div class="invalid-feedback">กรุณากรอกข้อมูล-ที่อยู่</div>
+                                                    <div class="valid-feedback">Looks good!</div>
                                                 </div>
                                                 <div class="form-group col-md-6">
                                                     <label class="form-label" for="validationFormik09">จังหวัด <span class="text-danger">*</span></label>
@@ -215,10 +227,10 @@
                                                     <div class="form-label">ผังการจัดวาง </div>
                                                     <div class="align-items-center row">
                                                         <div class="col-sm-auto form-form-att">
-                                                            <input placeholder="" name="inputFileUpload-layout" type="file" id="inputFileUpload-layout" class="form-control" hidden="">
-                                                            <label class="btn btn-secondary form-label" for="inputFileUpload-layout" style="cursor:pointer"><span class="material-symbols-rounded">upload</span>เลือกไฟล์</label>
+                                                            <input placeholder="" name="inputFileUpload-0" type="file" id="inputFileUpload-0" data-class="0" class="form-control" hidden="" onchange="ajaxFileUploadDoc({$myid},0,this)">
+                                                            <label class="btn btn-secondary form-label" for="inputFileUpload-0" style="cursor:pointer"><span class="material-symbols-rounded">upload</span>เลือกไฟล์</label>
                                                         </div>
-                                                        <div class="col" id="boxFileNew-layout"><span class="input-group-text">xxxx</span></div>
+                                                        <div class="col" id="boxFileNew-0"><span class="input-group-text"></span></div>
                                                     </div>
                                                     <div class="align-items-center row">
                                                         <div class="col">
@@ -230,10 +242,10 @@
                                                     <div class="form-label">แผนที่พื้นที่วาง </div>
                                                     <div class="align-items-center row">
                                                         <div class="col-sm-auto">
-                                                            <input placeholder="" name="inputFileUpload-placementAreaMap" type="file" id="inputFileUpload-placementAreaMap" class="form-control" hidden="">
-                                                            <label class="btn btn-secondary form-label" for="inputFileUpload-placementAreaMap" style="cursor:pointer"><span class="material-symbols-rounded">upload</span>เลือกไฟล์</label>
+                                                            <input placeholder="" name="inputFileUpload-1" type="file" id="inputFileUpload-1" data-class="1" class="form-control" hidden="" onchange="ajaxFileUploadDoc({$myid},1,this)">
+                                                            <label class="btn btn-secondary form-label" for="inputFileUpload-1" style="cursor:pointer"><span class="material-symbols-rounded">upload</span>เลือกไฟล์</label>
                                                         </div>
-                                                        <div class="col" id="boxFileNew-placementAreaMap"><span class="input-group-text">xxxx</span></div>
+                                                        <div class="col" id="boxFileNew-1"><span class="input-group-text"></span></div>
                                                     </div>
                                                     <div class="align-items-center row">
                                                         <div class="col">
@@ -250,10 +262,10 @@
                                                     <div class="form-label">แนบไฟล์ </div>
                                                     <div class="align-items-center row">
                                                         <div class="col-sm-auto">
-                                                            <input placeholder="" name="inputFileUpload-attachment" type="file" id="inputFileUpload-attachment" class="form-control" hidden="">
-                                                            <label class="btn btn-secondary form-label" for="inputFileUpload-attachment" style="cursor:pointer"><span class="material-symbols-rounded">upload</span>เลือกไฟล์</label>
+                                                            <input placeholder="" name="inputFileUpload-2" type="file" id="inputFileUpload-2" data-class="2" class="form-control" hidden="" onchange="ajaxFileUploadDoc({$myid},2,this)">
+                                                            <label class="btn btn-secondary form-label" for="inputFileUpload-2" style="cursor:pointer"><span class="material-symbols-rounded">upload</span>เลือกไฟล์</label>
                                                         </div>
-                                                        <div class="col" id="boxFileNew-attachment"><span class="input-group-text">xxxx</span></div>
+                                                        <div class="col" id="boxFileNew-2"><span class="input-group-text"></span></div>
                                                     </div>
                                                     <div class="align-items-center row">
                                                         <div class="col">
@@ -272,7 +284,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="content-step-ii d-none">
+                        <div class="content-step-ii d-none" id="step-ii">
                             <div class="form-offer-demand">
                                 <div class="default-card overflow-hidden card">
                                     <div class="form-head">ส่งความต้องการ</div>

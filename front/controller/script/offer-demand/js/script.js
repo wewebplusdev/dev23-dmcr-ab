@@ -1,8 +1,8 @@
 var path = $("base").attr("href");
 $("#demand-form").validator().on("submit", function (e) {
     e.preventDefault();
-    var formData = new FormData($("#reset-password")[0]);
-
+    var formData = new FormData($("#demand-form")[0]);
+    // console.log(formData);
 
     $.ajax({
         url: path + "/offer-demand/insert",

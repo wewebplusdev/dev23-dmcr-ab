@@ -26003,3 +26003,12 @@ div.swal2-html-container {
 .mCustomScrollbar {
   height: 300px;
 }/*# sourceMappingURL=main.css.map */
+
+.upload-file-txt{float: left; margin-top: 2px; font-size: 13px; color: #464646; line-height: 1.2em; padding-top: 0; padding-left: 10; height: auto; /*background: url('../image/icon/icon-att.png') left center no-repeat;*/} 
+.uploadTxt-close{position: relative; top: -1px; cursor: pointer; margin-left: 15px; margin-top: 0; float: left; width: 20px; height: 20px; background-color: #ddd; text-align: center; line-height: 19px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+}
+.uploadTxt-close:hover{background-color: #aaa;}
+.uploadTxt-close .fa{font-size: 12px; color: #fff;}

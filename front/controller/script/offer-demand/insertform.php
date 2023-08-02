@@ -1,5 +1,5 @@
 <?
-if($_POST['inputkeyCode']==$_SESSION['security_code']){
+if($_POST){
 global $coreLanguageSQL;
 
 		$insert=array();
@@ -39,8 +39,8 @@ global $coreLanguageSQL;
 		$insert[$config['contact']['main']['db']."_credate"] = "NOW()";
 		$insert[$config['contact']['main']['db']."_status"] = "'New Post'";
 		$sql="INSERT INTO ".$config['contact']['main']['db']."(".implode(",",array_keys($insert)).") VALUES (".implode(",",array_values($insert)).")";
-		$Query=wewebQueryDB($coreLanguageSQL,$sql);		
-		$contantID=wewebInsertID($coreLanguageSQL);
+		$Query=$db->execute($sql);		
+		$contantID=$db->insert_Id();
 		
 			$sql_filetemp="SELECT ".$mod_tb_fileTemp."_id,".$mod_tb_fileTemp."_filename,".$mod_tb_fileTemp."_name,".$mod_tb_fileTemp."_language  FROM ".$mod_tb_fileTemp." WHERE ".$mod_tb_fileTemp."_contantid 	='".$_REQUEST['valEditID']."' ORDER BY ".$mod_tb_fileTemp."_id ASC";
 			$query_filetemp=wewebQueryDB($coreLanguageSQL,$sql_filetemp);
