@@ -47,6 +47,9 @@
 // echo json_encode($respons);
 // //echo $txtFile;
 
+$sql="DELETE FROM ".$config['contact']['tamp']['db']." WHERE   ".$config['contact']['tamp']['db']."_id='".$_REQUEST['valDelFile']."' ";
+	$Query=$db->execute($sql);
+
 if (file_exists($mod_path_file_form . "/" . $_REQUEST['filename'])) {
     @unlink($mod_path_file_form . "/" . $_REQUEST['filename']);
 }

@@ -1,6 +1,12 @@
 <?php
+// GOOGLE CAPTCHA
+$secret = $secretkey;
+// print_pre('asdasdasdasddas');die;
+$verifyResponse = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret='.$secret.'&response='.$_REQUEST['g-recaptcha-response']);
+$responseData = json_decode($verifyResponse);
+// GOOGLE CAPTCHA
 
-if($_POST){
+if($_POST && $responseData->success){
     global $coreLanguageSQL;
     
             $insert=array();
@@ -43,10 +49,29 @@ if($_POST){
             $Query=$db->execute($sql);		
 		    $contantID=$db->insert_Id();
             
-            //     $sql_filetemp="SELECT ".$mod_tb_fileTemp."_id,".$mod_tb_fileTemp."_filename,".$mod_tb_fileTemp."_name,".$mod_tb_fileTemp."_language  FROM ".$mod_tb_fileTemp." WHERE ".$mod_tb_fileTemp."_contantid 	='".$_REQUEST['valEditID']."' ORDER BY ".$mod_tb_fileTemp."_id ASC";
-            //     $query_filetemp=wewebQueryDB($coreLanguageSQL,$sql_filetemp);
+                $sql_filetemp="SELECT ".$config['contact']['tamp']['db']."_id,".$config['contact']['tamp']['db']."_filename,".$config['contact']['tamp']['db']."_name,".$config['contact']['tamp']['db']."_language  FROM ".$config['contact']['tamp']['db']." WHERE ".$config['contact']['tamp']['db']."_contantid 	='".$_REQUEST['randid']."' ORDER BY ".$config['contact']['tamp']['db']."_id ASC";
+                $query_filetemp=$db->execute($sql_filetemp);
             //     $number_filetemp=wewebNumRowsDB($coreLanguageSQL,$query_filetemp);
-            //     if($number_filetemp>=1){
+                if($query_filetemp->_numOfRows >0){
+                    foreach($query_filetemp as $key => $value){
+                        $downloadID = $value[0];
+                        $downloadFile = $value[1];
+                        $downloadName = $value[2];
+                        $downloadLang = $value[3];
+            
+                        $insert=array();
+                        $insert[$config['contact']['file']['db']."_contantid"] = "'".$contantID."'";
+                        $insert[$config['contact']['file']['db']."_filename"] = "'".$downloadFile."'";
+                        $insert[$config['contact']['file']['db']."_name"]="'".$downloadName."'";
+                        $insert[$config['contact']['file']['db']."_language"]="'".$downloadLang."'";
+            
+                        $sql="INSERT INTO ".$config['contact']['file']['db']."(".implode(",",array_keys($insert)).") VALUES (".implode(",",array_values($insert)).")";
+                        $Query=$db->execute($sql);	
+                    
+                        $sql_del="DELETE FROM ".$config['contact']['tamp']['db']." WHERE   ".$config['contact']['tamp']['db']."_id='".$downloadID."'";
+                        $Query_del=$db->execute($sql_del);
+                    }}
+
             //     while($row_filetemp=wewebFetchArrayDB($coreLanguageSQL,$query_filetemp)){
             //     $downloadID = $row_filetemp[0];
             //     $downloadFile = $row_filetemp[1];
@@ -62,7 +87,7 @@ if($_POST){
             //     $sql="INSERT INTO ".$mod_tb_file."(".implode(",",array_keys($insert)).") VALUES (".implode(",",array_values($insert)).")";
             //     $Query=wewebQueryDB($coreLanguageSQL,$sql);	
             
-            //     $sql_del="DELETE FROM ".$mod_tb_fileTemp." WHERE   ".$mod_tb_fileTemp."_id='".$downloadID."'";
+            //     $sql_del="DELETE FROM ".$config['contact']['tamp']['db']." WHERE   ".$config['contact']['tamp']['db']."_id='".$downloadID."'";
             //     $Query_del=wewebQueryDB($coreLanguageSQL,$sql_del);
     
         
@@ -187,12 +212,12 @@ if($_POST){
     //     }
         $dataJson = array(
             'status' => 200,
-            'msg' => $Query,
+            'msg' => 'success',
             
         );
     }else{
         $dataJson = array(
-            'status' => 200,
+            'status' => 400,
             'msg' => "error",
             
         );

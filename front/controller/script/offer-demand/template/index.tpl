@@ -1,6 +1,6 @@
 {include file="front/template/default/inc-herobanner.tpl" title=title}
 
-<div class="default-page about-page" style="position:relative;z-index:1;overflow:hidden">
+<div class="default-page about-page sitekey" style="position:relative;z-index:1;overflow:hidden" data-id="{$sitekey}">
     <div class="default-head" data-aos="fade-up">
         <div class="container-lg">
             <div class="breadcrumb-block">
@@ -58,6 +58,7 @@
                                     <div class="card-body">
                                         <form class="form-default needs-validation" id="demand-form" data-toggle="validator" role="form" method="post">
                                             <input placeholder="" name="msKey" type="hidden" id="msKey" class="form-control" value="1c">
+                                            <input placeholder="" name="randid" type="hidden" id="randid" class="form-control" value="{$myid}">
                                             <div class="row">
                                                 <div class="form-group col-md-12">
                                                     <label class="form-label" for="validationFormik01">ชื่อผู้เสนอความต้องการ <span class="text-danger">*</span></label>
@@ -73,7 +74,7 @@
                                                 </div>
                                                 <div class="form-group col-md-6">
                                                     <label class="form-label" for="validationFormik02">จังหวัด <span class="text-danger">*</span></label>
-                                                    <select class="select-control" name="province" id="validationFormik02" data-placeholder="จังหวัด" style="width: 100%;" onchange="selectAmphur('#validationFormik02','#validationFormik03')">
+                                                    <select class="select-control" name="province" id="validationFormik02" data-placeholder="จังหวัด" style="width: 100%;" onchange="selectAmphur('#validationFormik02','#validationFormik03')" required>
                                                         <option></option>
                                                         {foreach $province as $keypro => $valpro}
                                                         <option value="{$valpro.id}">{$valpro.name}</option>
@@ -83,7 +84,7 @@
                                                 </div>
                                                 <div class="form-group col-md-6">
                                                     <label class="form-label" for="validationFormik03">อำเภอ <span class="text-danger">*</span></label>
-                                                    <select class="select-control" name="amphoe" id="validationFormik03" data-placeholder="อำเภอ" style="width: 100%;" onchange="selectDistric('#validationFormik03','#validationFormik04')">
+                                                    <select class="select-control" name="amphoe" id="validationFormik03" data-placeholder="อำเภอ" style="width: 100%;" onchange="selectDistric('#validationFormik03','#validationFormik04')" required>
                                                         <option></option>
 
                                                     </select>
@@ -91,7 +92,7 @@
                                                 </div>
                                                 <div class="form-group col-md-6">
                                                     <label class="form-label" for="validationFormik04">ตำบล <span class="text-danger">*</span></label>
-                                                    <select class="select-control" name="subDistrict" id="validationFormik04" data-placeholder="ตำบล" style="width: 100%;" onchange="selectDiscode('#validationFormik04','#validationFormik05')" >
+                                                    <select class="select-control" name="subDistrict" id="validationFormik04" data-placeholder="ตำบล" style="width: 100%;" onchange="selectDiscode('#validationFormik04','#validationFormik05')" required>
                                                         <option></option>
 
                                                     </select>
@@ -99,12 +100,12 @@
                                                 </div>
                                                 <div class="form-group col-md-6">
                                                     <label class="form-label" for="validationFormik05">รหัสไปรษณีย์ <span class="text-danger">*</span></label>
-                                                    <input placeholder="" name="zip" type="text" id="validationFormik05" class="form-control" value="">
+                                                    <input placeholder="" name="zip" type="text" id="validationFormik05" class="form-control" value="" required>
                                                     <div class="invalid-feedback">กรุณากรอกข้อมูล<!-- -->รหัสไปรษณีย์</div>
                                                 </div>
                                                 <div class="form-group col-md-6">
                                                     <label class="form-label" for="validationFormik06">เบอร์โทรศัพท์ <span class="text-danger">*</span></label>
-                                                    <input placeholder="" name="telephone" type="text" id="validationFormik06" class="form-control" value="">
+                                                    <input placeholder="" name="telephone" type="text" id="validationFormik06" class="form-control" value="" required>
                                                     <div class="invalid-feedback">กรุณากรอกข้อมูล<!-- -->เบอร์โทรศัพท์</div>
                                                 </div>
                                             </div>
@@ -114,13 +115,13 @@
                                                 </div>
                                                 <div class="form-group col-md-6">
                                                     <label class="form-label" for="validationFormik07">ชื่อผู้สนับสนุน <span class="text-danger">*</span></label>
-                                                    <input name="sponsorName" type="text" id="validationFormik07" class="form-control" value="">
+                                                    <input name="sponsorName" type="text" id="validationFormik07" class="form-control" value="" required>
                                                     <div class="invalid-feedback">กรุณากรอกข้อมูล<!-- -->ชื่อ</div>
                                                     <div class="valid-feedback">Looks good!</div>
                                                 </div>
                                                 <div class="form-group col-md-6">
                                                     <label class="form-label" for="validationFormik08">งบประมาณ (บาท) <span class="text-danger">*</span></label>
-                                                    <input placeholder="" name="sponsorAmount" type="number" id="validationFormik08" class="form-control" value="0">
+                                                    <input placeholder="" name="sponsorAmount" type="number" id="validationFormik08" class="form-control" value="0" required>
                                                     <div class="invalid-feedback">กรุณากรอกข้อมูล</div>
                                                 </div>
                                                 <div class="form-group col-md-6">
@@ -131,7 +132,7 @@
                                                 </div>
                                                 <div class="form-group col-md-6">
                                                     <label class="form-label" for="validationFormik09">จังหวัด <span class="text-danger">*</span></label>
-                                                    <select class="select-control" name="province1" id="validationFormik09" data-placeholder="จังหวัด" style="width: 100%;" onchange="selectAmphur('#validationFormik09','#validationFormik10')">
+                                                    <select class="select-control" name="province1" id="validationFormik09" data-placeholder="จังหวัด" style="width: 100%;" onchange="selectAmphur('#validationFormik09','#validationFormik10')" required>
                                                         <option></option>
                                                         {foreach $province as $keypro => $valpro}
                                                         <option value="{$valpro.id}">{$valpro.name}</option>
@@ -141,7 +142,7 @@
                                                 </div>
                                                 <div class="form-group col-md-6">
                                                     <label class="form-label" for="validationFormik10">อำเภอ <span class="text-danger">*</span></label>
-                                                    <select class="select-control" name="amphoe1" id="validationFormik10" data-placeholder="อำเภอ" style="width: 100%;" onchange="selectDistric('#validationFormik10','#validationFormik11')">
+                                                    <select class="select-control" name="amphoe1" id="validationFormik10" data-placeholder="อำเภอ" style="width: 100%;" onchange="selectDistric('#validationFormik10','#validationFormik11')" required>
                                                         <option></option>
 
                                                     </select>
@@ -149,7 +150,7 @@
                                                 </div>
                                                 <div class="form-group col-md-6">
                                                     <label class="form-label" for="validationFormik11">ตำบล <span class="text-danger">*</span></label>
-                                                    <select class="select-control" name="subDistrict1" id="validationFormik11" data-placeholder="ตำบล" style="width: 100%;" onchange="selectDiscode('#validationFormik11','#validationFormik12')">
+                                                    <select class="select-control" name="subDistrict1" id="validationFormik11" data-placeholder="ตำบล" style="width: 100%;" onchange="selectDiscode('#validationFormik11','#validationFormik12')" required>
                                                         <option></option>
 
                                                     </select>
@@ -157,12 +158,12 @@
                                                 </div>
                                                 <div class="form-group col-md-6">
                                                     <label class="form-label" for="validationFormik12">รหัสไปรษณีย์ <span class="text-danger">*</span></label>
-                                                    <input placeholder="" name="sponsorZip" type="text" id="validationFormik12" class="form-control" value="">
+                                                    <input placeholder="" name="sponsorZip" type="text" id="validationFormik12" class="form-control" value="" required>
                                                     <div class="invalid-feedback">กรุณากรอกข้อมูล<!-- -->รหัสไปรษณีย์</div>
                                                 </div>
                                                 <div class="form-group col-md-6">
                                                     <label class="form-label" for="validationFormik13">เบอร์โทรศัพท์ <span class="text-danger">*</span></label>
-                                                    <input placeholder="" name="sponsorTelephone" type="text" id="validationFormik13" class="form-control" value="">
+                                                    <input placeholder="" name="sponsorTelephone" type="text" id="validationFormik13" class="form-control" value="" required>
                                                     <div class="invalid-feedback">กรุณากรอกข้อมูล<!-- -->เบอร์โทรศัพท์</div>
                                                 </div>
                                             </div>
@@ -172,13 +173,13 @@
                                                 </div>
                                                 <div class="form-group col-md-6">
                                                     <label class="form-label" for="validationFormik14">หน่วยงานดำเนินการ <span class="text-danger">*</span></label>
-                                                    <input name="agency" type="text" id="validationFormik14" class="form-control" value="">
+                                                    <input name="agency" type="text" id="validationFormik14" class="form-control" value="" required>
                                                     <div class="invalid-feedback">กรุณากรอกข้อมูล<!-- -->หน่วยงานดำเนินการ</div>
                                                     <div class="valid-feedback">Looks good!</div>
                                                 </div>
                                                 <div class="form-group col-md-6">
                                                     <label class="form-label" for="validationFormik15">ประเภทการเสนอความต้องการ <span class="text-danger">*</span></label>
-                                                    <select class="select-control" name="tpyeDemand" id="tpyeDemand" data-placeholder="ประเภทการเสนอความต้องการ" style="width: 100%;">
+                                                    <select class="select-control" name="tpyeDemand" id="tpyeDemand" data-placeholder="ประเภทการเสนอความต้องการ" style="width: 100%;" required>
                                                         <option></option>
                                                         {foreach $grouptype as $keyGroupType => $valueGroupType}
                                                         <option value="{$valueGroupType.id}">{$valueGroupType.subject}</option>
@@ -188,37 +189,37 @@
                                                 </div>
                                                 <div class="form-group col-md-12">
                                                     <label class="form-label" for="validationFormik16">สถานที่วาง/ดำเนินการ <span class="text-danger">*</span></label>
-                                                    <input placeholder="" name="locationExecution" type="text" id="validationFormik16" class="form-control" value="">
+                                                    <input placeholder="" name="locationExecution" type="text" id="validationFormik16" class="form-control" value="" required>
                                                     <div class="invalid-feedback">กรุณากรอกข้อมูล<!-- -->สถานที่วาง/ดำเนินการ</div>
                                                 </div>
                                                 <div class="form-group col-md-12">
                                                     <label class="form-label" for="validationFormik17">ชนิดขนาด และจำนวนวัสดุที่ใช้วาง/ดำเนินการ <span class="text-danger">*</span></label>
-                                                    <input placeholder="" name="typeExecution" type="text" id="validationFormik17" class="form-control" value="">
+                                                    <input placeholder="" name="typeExecution" type="text" id="validationFormik17" class="form-control" value="" required>
                                                     <div class="invalid-feedback">กรุณากรอกข้อมูล</div>
                                                 </div>
                                                 <div class="form-group col-md-6">
                                                     <label class="form-label" for="validationFormik18">ขนาดพื้นที่จัดวาง/ดำเนินการ <span class="text-danger">*</span></label>
-                                                    <input placeholder="" name="sizeExecution" type="text" id="validationFormik18" class="form-control" value="">
+                                                    <input placeholder="" name="sizeExecution" type="text" id="validationFormik18" class="form-control" value="" required>
                                                     <div class="invalid-feedback">กรุณากรอกข้อมูล</div>
                                                 </div>
                                                 <div class="form-group col-md-6">
                                                     <label class="form-label" for="validationFormik19">งบประมาณ (บาท) <span class="text-danger">*</span></label>
-                                                    <input placeholder="" name="budget" type="text" id="validationFormik19" class="form-control" value="0">
+                                                    <input placeholder="" name="budget" type="text" id="validationFormik19" class="form-control" value="0" required>
                                                     <div class="invalid-feedback"></div>
                                                 </div>
                                                 <div class="form-group col-md-6">
                                                     <label class="form-label" for="validationFormik20">ลักษณะพื้นทะเล <span class="text-danger">*</span></label>
-                                                    <input placeholder="" name="seaFloorFeatures" type="text" id="validationFormik20" class="form-control" value="">
+                                                    <input placeholder="" name="seaFloorFeatures" type="text" id="validationFormik20" class="form-control" value="" required>
                                                     <div class="invalid-feedback">กรุณากรอกข้อมูล</div>
                                                 </div>
                                                 <div class="form-group col-md-6">
                                                     <label class="form-label" for="validationFormik21">ระดับความลึกของนํ้า <span class="text-danger">*</span></label>
-                                                    <input placeholder="" name="waterDepth" type="text" id="validationFormik21" class="form-control" value="">
+                                                    <input placeholder="" name="waterDepth" type="text" id="validationFormik21" class="form-control" value="" required>
                                                     <div class="invalid-feedback">กรุณากรอกข้อมูล</div>
                                                 </div>
                                                 <div class="form-group col-md-6">
                                                     <label class="form-label" for="validationFormik22">ระดับความลึกของนํ้า <span class="text-danger">*</span></label>
-                                                    <input placeholder="" name="coastDistance" type="text" id="validationFormik22" class="form-control" value="">
+                                                    <input placeholder="" name="coastDistance" type="text" id="validationFormik22" class="form-control" value="" required>
                                                     <div class="invalid-feedback">กรุณากรอกข้อมูล</div>
                                                 </div>
                                             </div>
@@ -276,6 +277,7 @@
                                                 
                                             </div>
                                             <div class="form-action justify-content-center row">
+                                                <input type="hidden" id="g-recaptcha-response" name="g-recaptcha-response">
                                                 <div class="mb-md-4 mb-3 col-md-auto col-sm-6"><button type="submit" class="btn btn-secondary">ตกลง</button></div>
                                                 <div class="mb-md-4 mb-3 col-md-auto col-sm-6"><button type="button" class="btn btn-gray">ยกเลิก</button></div>
                                             </div>
@@ -284,7 +286,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="content-step-ii d-none" id="step-ii">
+                        <div class="content-step-ii" id="step-ii" style="display: none;">
                             <div class="form-offer-demand">
                                 <div class="default-card overflow-hidden card">
                                     <div class="form-head">ส่งความต้องการ</div>

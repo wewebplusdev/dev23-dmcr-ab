@@ -14,6 +14,7 @@ $config['contact']['main']['db'] = "md_cus";
 $config['contact']['group']['db'] = "md_cug";
 $config['contact']['email']['db'] = "md_cue";
 $config['contact']['tamp']['db'] = "md_cutp";
+$config['contact']['file']['db'] = "md_cuf";
 $config['ban']['db']['main'] = "md_ban";
 $config['system']['setting'] = "md_site";
 $config['vote']['checkip']['db'] = "md_vtc";

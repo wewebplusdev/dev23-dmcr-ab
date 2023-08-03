@@ -17,6 +17,13 @@ $smarty->assign("modify", $modify);
 $callTGP = callTopgraphic();
 $smarty->assign("callTGP",$callTGP);
 
+// dev test php8
+$sitekey = '6LeiOU8mAAAAALEEZVAtyyOevXrTmc93MPSf0KZ1';
+$smarty->assign("sitekey", $sitekey);
+$secretkey = '6LeiOU8mAAAAABloeO9k9rYOQAXzJjqankbaJYU7';
+$smarty->assign("secretkey", $secretkey);
+/* End Google Recaptcha */
+
 
 $sqlSetting = "SELECT
    " . $config['system']['setting'] . "." . $config['system']['setting'] . "_subject as subject,

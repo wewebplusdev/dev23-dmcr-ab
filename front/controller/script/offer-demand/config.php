@@ -43,5 +43,5 @@ $config['about']['db'] = 'md_al';
 $config['about']['file'] = 'md_alf';
 $config['about']['masterkey'] = 'ab';
 
-$mod_path_file_form        = _DIR . '/upload/form/file';
+$mod_path_file_form        = _DIR . '/upload/1c/file';
 $mod_path_file_form_fornt  = $path_upload."/form/file";

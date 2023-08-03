@@ -16,7 +16,7 @@ function ajaxFileUploadDoc(Rand,idAns, el) {
     // if(count == 1 && $('.form-form-att.'+data_class+' input[name="inputAns['+idAns+'][]"]').eq(0).val() == ''){
     //     count--;
     // }
-    var url = urlgo + 'offer-demand/insertfile?myID=' + myRand + '&masterkey=' + mk + '&idAns=' + idAns + '&count=' + count + '&class=' + data_class;
+    var url = urlgo + 'offer-demand/insertfile?myID=' + Rand + '&masterkey=' + mk + '&idAns=' + idAns + '&count=' + count + '&class=' + data_class;
 // alert(data_count);
 //    for (var i = 0; i <= fi.files.length - 1; i++) {
     $("#boxFileNew-"+idAns).append('<div class="loadding"><span class="fa fa-circle-o-notch fa-spin"></span></div>').show();
@@ -37,25 +37,25 @@ function ajaxFileUploadDoc(Rand,idAns, el) {
                     $("#boxFileNew-"+idAns).html(data.msg);
                     // $('.file-class').append('<input type="hidden" name="inputAns['+idAns+'][]" value="'+data.namefile+'">');
                     // ถ้า input แรกไม่มีค่าเพิ่มค่าให้และ ถ้ามี new input ใหม่ทันที
-                    if ($('.form-form-att.'+data_class+' input[name="inputAns['+idAns+'][]"]').eq(0).val() != '') {
-                        $('.form-form-att.'+data_class+'').append('<input type="hidden" name="inputAns['+idAns+'][]" class="'+data_class+'-temp '+data_class+'-input" data-item="" value="'+data.namefile+'">');
+                    if ($('input[name="inputFileUpload-'+idAns+'"]').eq(0).val() != '') {
+                        $('#demand-form').append('<input type="hidden" name="inputFileUpload-'+idAns+'" class="'+data_class+'-temp '+data_class+'-input" data-item="" value="'+data.namefile+'">');
                     }else{
-                        $('.form-form-att.'+data_class+' input[name="inputAns['+idAns+'][]"]').eq(0).val(data.namefile);
+                        $('input[name="inputFileUpload-'+idAns+'"]').eq(0).val(data.namefile);
                     }
-                    $('.form-form-att input[name="inputFileUpload-'+idAns+'"]').val(null);
-                    count = 0;
+                    // $('.form-form-att input[name="inputFileUpload-'+idAns+'"]').val(null);
+                    // count = 0;
                     // check input ใหม่และเพิ่ม class ลำดับอีกรอบ
-                    var input_after = $('.'+data_class+'-temp');
-                    input_after.each(function() {
-                        $(this).data('item',count)
-                        $(this).removeClass();
-                        $(this).addClass(data_class+'-temp');
-                        $(this).addClass(data_class+'-input');
-                        $(this).addClass(''+count+'');
-                        console.log(this);
-                        count++;
-                        console.log(count);
-                    });
+                    // var input_after = $('.'+data_class+'-temp');
+                    // input_after.each(function() {
+                    //     $(this).data('item',count)
+                    //     $(this).removeClass();
+                    //     $(this).addClass(data_class+'-temp');
+                    //     $(this).addClass(data_class+'-input');
+                    //     $(this).addClass(''+count+'');
+                    //     console.log(this);
+                    //     count++;
+                    //     console.log(count);
+                    // });
                 }
 
             }
@@ -70,17 +70,17 @@ function ajaxFileUploadDoc(Rand,idAns, el) {
     return false;
 }
 
-function delFileUpload(idAns, count, el) {
+function delFileUpload(idAns, count, el ,delfile) {
     // var iddel = id;
     // var myRand = Rand;
-    // var inputFile = $('#inputAns-'+idAns).val();
+    var inputFile = $('#inputFileUpload-'+idAns).val();
     var class_name = $(el).data('class');
     var myArray = class_name.split(" ");
-    var inputFile = $('.'+myArray[0]+'.'+myArray[1]).val();
+    // var inputFile = $('.'+myArray[0]+'.'+myArray[1]).val();
     // alert(inputFile);
     // return false;
     var urlgo = $("base").attr("href");
-    var url = urlgo + 'offer-demand/deletefile?filename=' + inputFile;
+    var url = urlgo + 'offer-demand/deletefile?filename=' + inputFile + '&valDelFile='+ delfile;
     //console.log(url);
     $("#boxFileNew-"+idAns).append('<div class="loadding"><span class="fa fa-circle-o-notch fa-spin"></span></div>').show();
     var URL = url;

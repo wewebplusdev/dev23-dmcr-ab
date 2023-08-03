@@ -9,6 +9,7 @@ $contentID = $url->segment[2];
 $offerPage = new OfferPage;
 switch ($url->segment[1]) {
     default:
+    $listjs[] = '<script src="https://www.google.com/recaptcha/api.js?render='.$sitekey.'"></script>';
 
         $province = $offerPage->callProvince();
         $smarty->assign("province", $province);
@@ -16,7 +17,7 @@ switch ($url->segment[1]) {
         $callGroupType = $offerPage->callGroupType();
         $smarty->assign("grouptype", $callGroupType);
 
-        $myid = randomNameUpdate(1);
+        $myid = rand(119, 999);
         $smarty->assign("myid",$myid);
 
         // $test = $offerPage->callDistricCODE('7079');

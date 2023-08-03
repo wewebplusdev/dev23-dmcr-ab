@@ -1,4 +1,19 @@
 var path = $("base").attr("href");
+$(document).ready(function() {
+    // recaptcha v3
+    grecaptcha.ready(function() {
+
+        // do request for recaptcha token
+        // response is promise with passed token
+        grecaptcha
+            .execute($(".sitekey").data("id"), { action: "validate_captcha" })
+            .then(function(token) {
+                // add token value to form
+                document.getElementById("g-recaptcha-response").value = token;
+            });
+    });
+});
+
 $("#demand-form").validator().on("submit", function (e) {
     e.preventDefault();
     var formData = new FormData($("#demand-form")[0]);
@@ -13,7 +28,13 @@ $("#demand-form").validator().on("submit", function (e) {
         },
         success: function (data) {
             console.log(data);
+            if(data.status == 200){
+                $("#step-i").hide();
+                $("#step-ii").show();
+            }
+            
             return false;
+            
         },
         data: formData,
         cache: false,
