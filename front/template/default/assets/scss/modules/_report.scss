@@ -55,13 +55,13 @@ $--report-height: 400px;
 }
 @media (max-width: 991px) {
     .wg-charts-report {
-        margin-top: 4rem;
+        margin-top: 2rem;
     }
 }
 @media (max-width: 767px) {
-    .wg-charts-report {
-        margin-top: 3rem;
-    }
+    // .wg-charts-report {
+    //     margin-top: 3rem;
+    // }
 }
 @media (max-width: 575px) {
 }

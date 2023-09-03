@@ -165,7 +165,7 @@
                             </form>
                         </div>
                     </div>
-                    <div class="gutters-40 row">
+                    <div class="row g-lg-5 g-4">
                         <div class="col-lg-6" data-aos="fade-right">
                             <div class="wg-province-report">
                                 <div class="head-title">
@@ -383,6 +383,42 @@
                                                 </div>
                                             </div>
                                             <div role="tabpanel" id="tabpane-chartReport3" aria-labelledby="tab-chartReport3" class="tab-pane fade">Tab content for chartReport 3</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6" data-aos="fade-right">
+                            <div class="wg-gis">
+                                <div class="card default-card lazy" data-bg="<?php echo $core_template; ?>assets/img/background/bg-wg-gis.png">
+                                    <div class="card-body">
+                                        <div class="row align-items-center">
+                                            <div class="col-auto">
+                                                <img src="#" class="obj lazy" data-src="<?php echo $core_template; ?>assets/img/static/obj-wg-gis.png" alt="obj-wg-gis.png">
+                                            </div>
+                                            <div class="col">
+                                                <h3 class="title">แผนที่ GIS</h3>
+                                                <p class="desc text-limit -x2">ค้นหาปะการังเทียม ทุ่นในทะเล และจุดวางเรือจากแผนที่</p>
+                                                <a class="btn btn-light" title="อ่านต่อ" href="/">อ่านต่อ</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6" data-aos="fade-left">
+                            <div class="wg-knowledge">
+                                <div class="card default-card lazy" data-bg="<?php echo $core_template; ?>assets/img/background/bg-wg-knowledge.png">
+                                    <div class="card-body">
+                                        <div class="row align-items-center">
+                                            <div class="col-auto">
+                                                <img src="#" class="obj lazy" data-src="<?php echo $core_template; ?>assets/img/static/obj-wg-knowledge.png" alt="obj-wg-knowledge.png">
+                                            </div>
+                                            <div class="col">
+                                                <h3 class="title">องค์ความรู้</h3>
+                                                <p class="desc text-limit -x2">ข้อมูลองค์ความรู้เกี่ยวกับปะการังเทียม</p>
+                                                <a class="btn btn-light" title="อ่านต่อ" href="/">อ่านต่อ</a>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>

@@ -388,6 +388,13 @@
                 </div>
             </div>
         </div>
+        <div class="row">
+            <div class="col">
+                <div class="default-card">
+                    แผนที่ GIS
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 

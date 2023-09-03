@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2023-09-03 20:46:43
+/* Smarty version 3.1.30, created on 2023-09-03 20:51:50
   from "/Applications/XAMPP/xamppfiles/htdocs/dev23-dmcr-ab/front/controller/script/home/template/index.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_64f48e43b756b9_46879819',
+  'unifunc' => 'content_64f48f7640efa1_02584428',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '1474949d296045badc89b3f764bf0dbc245b8fa7' => 
     array (
       0 => '/Applications/XAMPP/xamppfiles/htdocs/dev23-dmcr-ab/front/controller/script/home/template/index.tpl',
-      1 => 1693748787,
+      1 => 1693749079,
       2 => 'file',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:front/template/default/inc-herobanner.tpl' => 1,
   ),
 ),false)) {
-function content_64f48e43b756b9_46879819 (Smarty_Internal_Template $_smarty_tpl) {
+function content_64f48f7640efa1_02584428 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:front/template/default/inc-herobanner.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('title'=>'title'), 0, false);
 ?>
 
@@ -461,6 +461,13 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="default-card">
+                    แผนที่ GIS
                 </div>
             </div>
         </div>

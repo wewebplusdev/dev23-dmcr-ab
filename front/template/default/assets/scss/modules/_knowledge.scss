@@ -1,0 +1,26 @@
+.wg-knowledge{
+    .card{background: linear-gradient(#f76a00 0%, #f7cc02 100%);background-position: center;background-repeat: no-repeat;background-size: cover;color:#fff;
+        .obj{width: 240px;}
+        .title{font-size: var(--typo-xl); font-weight: var(--fw-bold);line-height: 1.4em;}
+        @media (min-width: 768px) {
+            .desc{line-height: 1.5em;min-height: calc(1.5em * 2);}
+        }
+        .btn{margin-top: 10px;}
+    }
+}
+
+@media (max-width: 1440px) {
+    .wg-knowledge .card .obj {width: 200px;}
+}
+@media (max-width: 1199px) {
+    .wg-knowledge .card .obj {width: 180px;}
+}
+@media (max-width: 991px) {
+    .wg-knowledge .card .obj {width: 160px;}
+}
+@media (max-width: 767px) {
+    .wg-knowledge .card .obj {width: 140px;}
+}
+@media (max-width: 575px) {
+    .wg-knowledge .card .obj {width: 120px;}
+}
