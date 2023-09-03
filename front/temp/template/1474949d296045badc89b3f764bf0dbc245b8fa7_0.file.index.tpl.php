@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2023-09-03 20:35:23
+/* Smarty version 3.1.30, created on 2023-09-03 20:46:43
   from "/Applications/XAMPP/xamppfiles/htdocs/dev23-dmcr-ab/front/controller/script/home/template/index.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_64f48b9b060b20_66388727',
+  'unifunc' => 'content_64f48e43b756b9_46879819',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '1474949d296045badc89b3f764bf0dbc245b8fa7' => 
     array (
       0 => '/Applications/XAMPP/xamppfiles/htdocs/dev23-dmcr-ab/front/controller/script/home/template/index.tpl',
-      1 => 1693748091,
+      1 => 1693748787,
       2 => 'file',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:front/template/default/inc-herobanner.tpl' => 1,
   ),
 ),false)) {
-function content_64f48b9b060b20_66388727 (Smarty_Internal_Template $_smarty_tpl) {
+function content_64f48e43b756b9_46879819 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:front/template/default/inc-herobanner.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('title'=>'title'), 0, false);
 ?>
 
@@ -1326,8 +1326,8 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
 </div>
 
 <?php if ($_smarty_tpl->tpl_vars['BannerList']->value->_numOfRows > 0) {?>
-<div class="section section-vii" style="overflow:hidden" data-bg="url(<?php echo $_smarty_tpl->tpl_vars['template']->value;?>
-/assets/img/background/bg-wg-weblink.png)">
+<div class="section section-vii lazy" data-bg="<?php echo $_smarty_tpl->tpl_vars['template']->value;?>
+/assets/img/background/bg-wg-weblink.png" style="overflow:hidden;background-repeat: no-repeat;background-size: cover;background-position: center;">
     <div class="container-lg">
         <div class="wg-weblinks" data-aos="fade-up">
             <div class="weblink-list">
