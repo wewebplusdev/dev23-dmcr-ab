@@ -399,7 +399,7 @@
                                             <div class="col">
                                                 <h3 class="title">แผนที่ GIS</h3>
                                                 <p class="desc text-limit -x2">ค้นหาปะการังเทียม ทุ่นในทะเล และจุดวางเรือจากแผนที่</p>
-                                                <a class="btn btn-light" title="อ่านต่อ" href="/">อ่านต่อ</a>
+                                                <a class="btn btn-light" title="อ่านต่อ"  href="https://marinegiscenter.dmcr.go.th/gis/" target="_blank">อ่านต่อ</a>
                                             </div>
                                         </div>
                                     </div>
@@ -417,7 +417,7 @@
                                             <div class="col">
                                                 <h3 class="title">องค์ความรู้</h3>
                                                 <p class="desc text-limit -x2">ข้อมูลองค์ความรู้เกี่ยวกับปะการังเทียม</p>
-                                                <a class="btn btn-light" title="อ่านต่อ" href="/">อ่านต่อ</a>
+                                                <a class="btn btn-light" title="อ่านต่อ" href="https://km.dmcr.go.th/c_18" target="_blank">อ่านต่อ</a>
                                             </div>
                                         </div>
                                     </div>
