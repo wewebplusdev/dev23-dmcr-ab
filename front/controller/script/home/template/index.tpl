@@ -389,11 +389,11 @@
             </div>
             <div class="col-md-6" data-aos="fade-right">
                 <div class="wg-gis">
-                    <div class="card default-card lazy" data-bg="<?php echo $core_template; ?>assets/img/background/bg-wg-gis.png">
+                    <div class="card default-card lazy" data-bg="{$template}/assets/img/background/bg-wg-gis.png">
                         <div class="card-body">
                             <div class="row align-items-center">
                                 <div class="col-auto">
-                                    <img src="#" class="obj lazy" data-src="<?php echo $core_template; ?>assets/img/static/obj-wg-gis.png" alt="obj-wg-gis.png">
+                                    <img src="#" class="obj lazy" data-src="{$template}/assets/img/static/obj-wg-gis.png" alt="obj-wg-gis.png">
                                 </div>
                                 <div class="col">
                                     <h3 class="title">แผนที่ GIS</h3>
@@ -407,11 +407,11 @@
             </div>
             <div class="col-md-6" data-aos="fade-left">
                 <div class="wg-knowledge">
-                    <div class="card default-card lazy" data-bg="<?php echo $core_template; ?>assets/img/background/bg-wg-knowledge.png">
+                    <div class="card default-card lazy" data-bg="{$template}/assets/img/background/bg-wg-knowledge.png">
                         <div class="card-body">
                             <div class="row align-items-center">
                                 <div class="col-auto">
-                                    <img src="#" class="obj lazy" data-src="<?php echo $core_template; ?>assets/img/static/obj-wg-knowledge.png" alt="obj-wg-knowledge.png">
+                                    <img src="#" class="obj lazy" data-src="{$template}/assets/img/static/obj-wg-knowledge.png" alt="obj-wg-knowledge.png">
                                 </div>
                                 <div class="col">
                                     <h3 class="title">องค์ความรู้</h3>
