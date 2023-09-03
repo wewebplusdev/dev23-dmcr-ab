@@ -27250,8 +27250,8 @@ div.swal2-html-container {
   }
 }
 .wg-knowledge .card {
-  background: -webkit-gradient(linear, left top, left bottom, from(#f76a00), to(#f7cc02));
-  background: linear-gradient(#f76a00 0%, #f7cc02 100%);
+  background: -webkit-gradient(linear, left top, left bottom, from(#ff2c66), to(#9b0af7));
+  background: linear-gradient(#ff2c66 0%, #9b0af7 100%);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
