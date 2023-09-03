@@ -1023,7 +1023,7 @@
 </div>
 
 {if $BannerList->_numOfRows>0}
-<div class="section section-vii" style="overflow:hidden">
+<div class="section section-vii" style="overflow:hidden" data-bg="url({$template}/assets/img/background/bg-wg-weblink.png)">
     <div class="container-lg">
         <div class="wg-weblinks" data-aos="fade-up">
             <div class="weblink-list">

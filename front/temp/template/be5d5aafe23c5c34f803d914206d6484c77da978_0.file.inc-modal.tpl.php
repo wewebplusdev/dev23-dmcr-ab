@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2023-07-24 19:52:22
+/* Smarty version 3.1.30, created on 2023-08-24 09:46:03
   from "/Applications/XAMPP/xamppfiles/htdocs/dev23-dmcr-ab/front/template/default/inc-modal.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_64be7406cd1c43_88590372',
+  'unifunc' => 'content_64e6c46badfc76_98781540',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'be5d5aafe23c5c34f803d914206d6484c77da978' => 
     array (
       0 => '/Applications/XAMPP/xamppfiles/htdocs/dev23-dmcr-ab/front/template/default/inc-modal.tpl',
-      1 => 1690203141,
+      1 => 1692845123,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_64be7406cd1c43_88590372 (Smarty_Internal_Template $_smarty_tpl) {
+function content_64e6c46badfc76_98781540 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 
 <div id="policyModal1" class="modal modal-policy fade" role="dialog" aria-modal="true" tabindex="-1">
@@ -65,6 +65,34 @@ function content_64be7406cd1c43_88590372 (Smarty_Internal_Template $_smarty_tpl)
                 <div class="chart-container">
                     <canvas id="voteChart"></canvas>
                 </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div id="voteComplete" class="modal modal-vote fade" role="dialog" aria-modal="true" tabindex="-1">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="modal-title h4">ผลโหวต</div>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="status  text-center" id="status">
+                    <div role="alert" class="fade alert alert-light show">
+                        <div class="icon">
+                            <!-- <span class="material-symbols-rounded">check_circle</span>
+                            <span class="material-symbols-outlined">
+                                cancel
+                                </span> -->
+                        </div>
+                        <div class="alert-heading h4" id="msg-vote">โหวตสำเร็จ</div>
+                        <p>ขอบพระคุณที่ใช้บริการ</p>
+                    </div>
+                </div>
+                
             </div>
         </div>
     </div>
