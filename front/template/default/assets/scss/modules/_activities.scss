@@ -28,7 +28,7 @@ $--tabs-overlapse: 164px;
         color: var(--color-primary);
     }
     .scroll-wrapper {
-        height: 540px;
+        height: 504px;
     }
     .mcscroll {
         height: 530px;
@@ -52,6 +52,7 @@ $--tabs-overlapse: 164px;
     .wg-activities .mcscroll {
         height: 460px;
     }
+    .wg-activities .scroll-wrapper {height: 459px;}
 }
 @media (max-width: 991px) {
     .wg-activities .mcscroll {

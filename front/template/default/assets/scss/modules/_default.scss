@@ -309,7 +309,8 @@ $--nav-tabs-h: 80px;
             -webkit-box-orient: vertical;
             line-height: var(--line-height-1-4);
             -webkit-line-clamp: 2;
-            min-height: calc(1.4em * 2);
+            min-height: 2.7em;
+            max-height: 2.7em;
         }
         .action {
             text-align: right;
@@ -406,6 +407,7 @@ $--nav-tabs-h: 80px;
     .default-page .graphic-inner-page-bottom {
         height: 420px;
     }
+    .default-page .action.-back-2-prevoius{padding-top: 2rem;}
 }
 @media (max-width: 1440px) {
     .section-i {
@@ -419,7 +421,7 @@ $--nav-tabs-h: 80px;
         height: 500px;
     }
     .default-page .graphic-inner-page-bottom {
-        height: 360px;
+        height: 400px;
     }
     .default-page .graphic-inner-page-top {
         height: 252px;
@@ -435,15 +437,16 @@ $--nav-tabs-h: 80px;
         padding: 4rem 0;
     }
     .section-i .graphic .object-i {
-        background-position-y: 149px;
+        background-position-x: -40px;
+        background-position-y: 210px;
         background-size: 280px;
     }
     .section-i .graphic .wave-iii svg {
         height: 140px;
     }
     .section-i .graphic .object-ii {
-        background-position-x: 950px;
-        background-position-y: -50px;
+        background-position-x: 920px;
+        background-position-y: -30px;
         background-size: 600px;
     }
     .section-ii {
@@ -475,6 +478,7 @@ $--nav-tabs-h: 80px;
     .default-page .editor-content + .action {
         margin-top: 180px;
     }
+    .default-page .attachment-list .whead .subtitle{color: var(--color-primary);}
 }
 @media (max-width: 991px) {
     .default-page {
@@ -515,6 +519,8 @@ $--nav-tabs-h: 80px;
     .default-page .editor-content + .action {
         margin-top: 150px;
     }
+
+    .wg-activities .link-card .inner .title{min-height: inherit; max-height: 2.8em;}
 }
 @media (max-width: 767px) {
     $--nav-tabs-h: 58px;
@@ -571,6 +577,10 @@ $--nav-tabs-h: 80px;
     .default-page .editor-content + .action {
         margin-top: 140px;
     }
+    .default-tabs > .nav-tabs .nav-link.active, 
+    .default-tabs > .nav-tabs .nav-item.show .nav-link {z-index: +1;position: relative;}
+
+    .link-card .inner .action{margin-top: 1.5rem;}
 }
 @media (max-width: 575px) {
     .link-card.-horizontal .thumbnail {

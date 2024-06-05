@@ -123,3 +123,16 @@ $--swiper-gap: calc(1920px - 1280px);
         background-color: var(--color-secondary);
     }
 }
+
+@media (max-width: 1199px) {
+    .default-swiper .swiper-button-next,
+    .default-swiper .swiper-button-prev{width: 40px; height: 40px; top: -12%; bottom: 0; margin: auto;}
+    .default-swiper.swiper-horizontal .swiper-button-prev{left: 600px;}
+    .default-swiper.swiper-horizontal .swiper-button-next{right: 600px;}
+    .default-swiper .swiper-button-next:after,
+    .default-swiper .swiper-button-prev:after{font-size: 20px;}
+}
+@media (max-width: 991px) {
+    .default-swiper .swiper-button-next,
+    .default-swiper .swiper-button-prev{display: none;}
+}

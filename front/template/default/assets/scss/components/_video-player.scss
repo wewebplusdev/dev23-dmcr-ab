@@ -30,3 +30,10 @@
         }
     }
 }
+
+@media (max-width: 1199px) {
+    .video-player .video-control .btn .fa-6x{font-size: 5em;}
+}
+@media (max-width: 767px) {
+    .video-player .video-control .btn .fa-6x{font-size: 3em;}
+}

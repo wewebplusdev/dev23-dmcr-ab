@@ -64,6 +64,7 @@
 }
 
 @media (max-width: 1600px) {
+    .attachment-list .attach-swiper {padding-bottom: 50px;}
 }
 @media (max-width: 1440px) {
     :root {
@@ -88,6 +89,7 @@
             height: calc(var(--hexagon-outer-attach-h) - 18px);
         }
     }
+    .attachment-list .attach-swiper {padding-bottom: 50px;}
 }
 @media (max-width: 1400px) {
     .attach-item .action {
