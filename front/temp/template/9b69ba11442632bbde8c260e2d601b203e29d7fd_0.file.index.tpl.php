@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2023-07-24 01:21:51
+/* Smarty version 3.1.30, created on 2024-06-05 17:27:49
   from "C:\xampp\htdocs\dev23-dmcr-ab\front\controller\script\home\template\index.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_64bd6fbf9dd3b2_92913344',
+  'unifunc' => 'content_66603da5414832_38296650',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '9b69ba11442632bbde8c260e2d601b203e29d7fd' => 
     array (
       0 => 'C:\\xampp\\htdocs\\dev23-dmcr-ab\\front\\controller\\script\\home\\template\\index.tpl',
-      1 => 1690136504,
+      1 => 1717553665,
       2 => 'file',
     ),
   ),
@@ -21,12 +21,12 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:front/template/default/inc-herobanner.tpl' => 1,
   ),
 ),false)) {
-function content_64bd6fbf9dd3b2_92913344 (Smarty_Internal_Template $_smarty_tpl) {
+function content_66603da5414832_38296650 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:front/template/default/inc-herobanner.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('title'=>'title'), 0, false);
 ?>
 
 
-<div class="section section-i" style="overflow:hidden">
+<div class="section section-i pt-0" style="overflow:hidden">
     <div class="container-lg">
         <div class="wg-overview">
             <div class="ov-list">
@@ -46,9 +46,11 @@ $_smarty_tpl->_subTemplateRender("file:front/template/default/inc-herobanner.tpl
                             </div>
                         </div>
                         <div class="inner">
-                            <h2 class="title">ปะการังเทียม</h2>
+                            <h2 class="title"><?php echo $_smarty_tpl->tpl_vars['rss']->value['Coral']['valTxtTitle'];?>
+</h2>
                             <div class="shadow-inset p-3 rounded">
-                                <div class="amount">456</div>
+                                <div class="amount"><?php echo $_smarty_tpl->tpl_vars['rss']->value['Coral']['count'];?>
+</div>
                             </div>
                             <div class="measure">จุด</div>
                         </div>
@@ -68,9 +70,11 @@ $_smarty_tpl->_subTemplateRender("file:front/template/default/inc-herobanner.tpl
                             </div>
                         </div>
                         <div class="inner">
-                            <h2 class="title">ทุ่นในทะเล</h2>
+                            <h2 class="title"><?php echo $_smarty_tpl->tpl_vars['rss']->value['floating']['valTxtTitle'];?>
+</h2>
                             <div class="shadow-inset p-3 rounded">
-                                <div class="amount">459</div>
+                                <div class="amount"><?php echo $_smarty_tpl->tpl_vars['rss']->value['floating']['count'];?>
+</div>
                             </div>
                             <div class="measure">จุด</div>
                         </div>
@@ -90,9 +94,11 @@ $_smarty_tpl->_subTemplateRender("file:front/template/default/inc-herobanner.tpl
                             </div>
                         </div>
                         <div class="inner">
-                            <h2 class="title">จุดวางเรือ</h2>
+                            <h2 class="title"><?php echo $_smarty_tpl->tpl_vars['rss']->value['sinkship']['valTxtTitle'];?>
+</h2>
                             <div class="shadow-inset p-3 rounded">
-                                <div class="amount">420</div>
+                                <div class="amount"><?php echo $_smarty_tpl->tpl_vars['rss']->value['sinkship']['count'];?>
+</div>
                             </div>
                             <div class="measure">จุด</div>
                         </div>
@@ -152,50 +158,91 @@ $_smarty_tpl->_subTemplateRender("file:front/template/default/inc-herobanner.tpl
                 </div>
             </div>
             <div class="wg-search-filter">
-                <form class="form-default">
+                <form class="form-default" action="http://marinegiscenter.dmcr.go.th/admmapph2/summary_data_table.php?" name="myFormSearch" id="myFormSearch" enctype="multipart/form-data" method="get" target="_blank">
+                    <input name="type" id="type" value="prov_all" type="hidden">
                     <div class="row">
                         <div class="col-md col-sm-6 col-12">
                             <div class="form-group">
-                                <label class="form-label visually-hidden" for="agencyName">ชื่อหน่วยงาน</label>
-                                <select class="select-control" name="agency" data-placeholder="ชื่อหน่วยงาน"
+                                <label class="form-label visually-hidden" for="typeName">ชื่อประเภทฐานข้อมูล</label>
+                                <select class="select-control" name="layer" id="layer" data-placeholder="ชื่อประเภทฐานข้อมูล"
                                     style="width: 100%;">
-                                    <option></option>
-                                    <option value="0">test</option>
-                                    <option value="1">test</option>
+                                    <option value=""></option>
+                                    <option value="coral_artificial"  >ปะการังเทียม</option>
+                                    <option value="floating"  >ทุ่นในทะเล</option>
+                                    <option value="sinkship"  >จุดวางเรือ</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md col-sm-6 col-12">
+                            <div class="form-group">
+                                <label class="form-label visually-hidden" for="agencyName">ชื่อหน่วยงาน</label>
+                                <select class="select-control" name="auth_org" id="auth_org" data-placeholder="ชื่อหน่วยงาน"
+                                    style="width: 100%;">
+                                    <option value=""></option>
+                                    <option value="กรมทรัพยากรทางทะเลและชายฝั่ง"  >กรมทรัพยากรทางทะเลและชายฝั่ง</option>
+                                    <option value="กรมทรัพยากรทางทะเลและชายฝั่ง ร่วมกับหน่วยงานอื่น"  >กรมทรัพยากรทางทะเลและชายฝั่ง ร่วมกับหน่วยงานอื่น</option>
+                                    <option value="กรมประมง"  >กรมประมง</option>
+                                    <option value="หน่วยงานท้องถิ่น"  >หน่วยงานท้องถิ่น</option>
+                                    <option value="หน่วยงานเอกชน"  >หน่วยงานเอกชน</option>
+                                    <option value="หน่วยงานอื่นๆ"  >หน่วยงานอื่นๆ</option>
                                 </select>
                             </div>
                         </div>
                         <div class="col-md col-sm-6 col-12">
                             <div class="form-group">
                                 <label class="form-label visually-hidden" for="province">จังหวัด</label>
-                                <select class="select-control" name="province" data-placeholder="จังหวัด"
+                                <select class="select-control" name="prov_th" id="prov_th" data-placeholder="จังหวัด"
                                     style="width: 100%;">
                                     <option></option>
-                                    <option value="0">Alabama</option>
-                                    <option value="1">Wyoming</option>
+                                    <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['province']->value, 'valuepro', false, 'keypro');
+if ($_from !== null) {
+foreach ($_from as $_smarty_tpl->tpl_vars['keypro']->value => $_smarty_tpl->tpl_vars['valuepro']->value) {
+?>
+                                    <option value="<?php echo trim($_smarty_tpl->tpl_vars['valuepro']->value[1]);?>
+"><?php echo trim($_smarty_tpl->tpl_vars['valuepro']->value[1]);?>
+</option>
+                                    <?php
+}
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
+?>
+
                                 </select>
                             </div>
                         </div>
                         <div class="col-md col-sm-6 col-12">
                             <div class="form-group">
                                 <label class="form-label visually-hidden" for="years">ปี</label>
-                                <select class="select-control" name="years" data-placeholder="ปี" style="width: 100%;">
+                                <select class="select-control" name="years" id="years" data-placeholder="ปี" style="width: 100%;">
                                     <option></option>
-                                    <option value="0">2012</option>
-                                    <option value="1">2014</option>
+                                    <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['arryear']->value, 'valueyear', false, 'keyyear');
+if ($_from !== null) {
+foreach ($_from as $_smarty_tpl->tpl_vars['keyyear']->value => $_smarty_tpl->tpl_vars['valueyear']->value) {
+?>
+                                    <option value="<?php echo $_smarty_tpl->tpl_vars['valueyear']->value;?>
+"><?php echo $_smarty_tpl->tpl_vars['valueyear']->value;?>
+</option>
+                                    <?php
+}
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
+?>
+
                                 </select>
                             </div>
                         </div>
                         <div class="col-md-auto col-sm-6 col-12">
                             <div class="action">
-                                <button type="button" value="ค้นหา" class="btn btn-secondary">ค้นหา</button>
+                                <button type="submit" value="ค้นหา" class="btn btn-secondary">ค้นหา</button>
                             </div>
                         </div>
                     </div>
                 </form>
             </div>
         </div>
-        <div class="gutters-40 row">
+        <div class="row g-lg-5 g-4">
             <div class="col-lg-6" data-aos="fade-right">
                 <div class="wg-province-report">
                     <div class="head-title">
@@ -205,7 +252,8 @@ $_smarty_tpl->_subTemplateRender("file:front/template/default/inc-herobanner.tpl
                             </div>
                             <div class="col-auto">
                                 <div class="action">
-                                    <a class="btn btn-light" title="ดูทั้งหมด" href="/">ดูทั้งหมด</a>
+                                    <a class="btn btn-light" title="ดูทั้งหมด" href="<?php echo $_smarty_tpl->tpl_vars['ul']->value;?>
+/report">ดูทั้งหมด</a>
                                 </div>
                             </div>
                         </div>
@@ -229,66 +277,31 @@ $_smarty_tpl->_subTemplateRender("file:front/template/default/inc-herobanner.tpl
                                         <div class="swiper-slide">
                                             <table class="table-tbody table table-light table-hover">
                                                 <tbody>
+                                                    <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['rssProv']->value, 'valuerss', false, 'keyrss');
+if ($_from !== null) {
+foreach ($_from as $_smarty_tpl->tpl_vars['keyrss']->value => $_smarty_tpl->tpl_vars['valuerss']->value) {
+?>
                                                     <tr>
-                                                        <td style="width:34%" class="text-dark">กระบี่</td>
-                                                        <td style="width:22%" class="text-center">5</td>
-                                                        <td style="width:22%" class="text-center">6</td>
-                                                        <td style="width:22%" class="text-center">10</td>
+                                                        <td style="width:34%" class="text-dark"><?php echo $_smarty_tpl->tpl_vars['valuerss']->value['prov_th'];?>
+</td>
+                                                        <td style="width:22%" class="text-center"><?php if (!empty($_smarty_tpl->tpl_vars['valuerss']->value['coral']['count'])) {
+echo $_smarty_tpl->tpl_vars['valuerss']->value['coral']['count'];
+} else { ?>0<?php }?></td>
+                                                        <td style="width:22%" class="text-center"><?php if (!empty($_smarty_tpl->tpl_vars['valuerss']->value['floating']['count'])) {
+echo $_smarty_tpl->tpl_vars['valuerss']->value['floating']['count'];
+} else { ?>0<?php }?></td>
+                                                        <td style="width:22%" class="text-center"><?php if (!empty($_smarty_tpl->tpl_vars['valuerss']->value['sinkship']['count'])) {
+echo $_smarty_tpl->tpl_vars['valuerss']->value['sinkship']['count'];
+} else { ?>0<?php }?></td>
                                                     </tr>
-                                                    <tr>
-                                                        <td style="width:34%" class="text-dark">ชลบุรี</td>
-                                                        <td style="width:22%" class="text-center">5</td>
-                                                        <td style="width:22%" class="text-center">6</td>
-                                                        <td style="width:22%" class="text-center">10</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td style="width:34%" class="text-dark">พังงา</td>
-                                                        <td style="width:22%" class="text-center">5</td>
-                                                        <td style="width:22%" class="text-center">6</td>
-                                                        <td style="width:22%" class="text-center">10</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td style="width:34%" class="text-dark">ตราด</td>
-                                                        <td style="width:22%" class="text-center">5</td>
-                                                        <td style="width:22%" class="text-center">6</td>
-                                                        <td style="width:22%" class="text-center">10</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td style="width:34%" class="text-dark">สุราษฎร์ธานี</td>
-                                                        <td style="width:22%" class="text-center">5</td>
-                                                        <td style="width:22%" class="text-center">6</td>
-                                                        <td style="width:22%" class="text-center">10</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td style="width:34%" class="text-dark">ชุมพร</td>
-                                                        <td style="width:22%" class="text-center">5</td>
-                                                        <td style="width:22%" class="text-center">6</td>
-                                                        <td style="width:22%" class="text-center">10</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td style="width:34%" class="text-dark">ชุมพร</td>
-                                                        <td style="width:22%" class="text-center">5</td>
-                                                        <td style="width:22%" class="text-center">6</td>
-                                                        <td style="width:22%" class="text-center">10</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td style="width:34%" class="text-dark">ชุมพร</td>
-                                                        <td style="width:22%" class="text-center">5</td>
-                                                        <td style="width:22%" class="text-center">6</td>
-                                                        <td style="width:22%" class="text-center">10</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td style="width:34%" class="text-dark">ชุมพร</td>
-                                                        <td style="width:22%" class="text-center">5</td>
-                                                        <td style="width:22%" class="text-center">6</td>
-                                                        <td style="width:22%" class="text-center">10</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td style="width:34%" class="text-dark">ชุมพร</td>
-                                                        <td style="width:22%" class="text-center">5</td>
-                                                        <td style="width:22%" class="text-center">6</td>
-                                                        <td style="width:22%" class="text-center">10</td>
-                                                    </tr>
+                                                    <?php
+}
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
+?>
+
+                                                    
                                                 </tbody>
                                             </table>
                                         </div>
@@ -309,7 +322,8 @@ $_smarty_tpl->_subTemplateRender("file:front/template/default/inc-herobanner.tpl
                             </div>
                             <div class="col-auto">
                                 <div class="action">
-                                    <a class="btn btn-light" title="ดูทั้งหมด" href="/">ดูทั้งหมด</a>
+                                    <a class="btn btn-light" title="ดูทั้งหมด" href="<?php echo $_smarty_tpl->tpl_vars['ul']->value;?>
+/report">ดูทั้งหมด</a>
                                 </div>
                             </div>
                         </div>
@@ -394,8 +408,8 @@ $_smarty_tpl->_subTemplateRender("file:front/template/default/inc-herobanner.tpl
                                     <button type="button" id="tab-chartReport3" data-bs-toggle="tab"
                                         data-bs-target="#tabpane-chartReport3" role="tab"
                                         data-rr-ui-event-key="chartReport3" aria-controls="tabpane-chartReport3"
-                                        aria-selected="false" tabindex="-1" aria-disabled="true" disabled=""
-                                        class="nav-link disabled">
+                                        aria-selected="false" tabindex="-1"
+                                        class="nav-link">
                                         <div class="icon">
                                             <div>
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="57.33" height="38.222"
@@ -424,101 +438,66 @@ $_smarty_tpl->_subTemplateRender("file:front/template/default/inc-herobanner.tpl
                             <div class="tab-content">
                                 <div role="tabpanel" id="tabpane-chartReport1" aria-labelledby="tab-chartReport1"
                                     class="tab-pane fade active show">
+                                    <div class="spinner-border text-primary" id="spinning" role="status">
+                                        <span class="visually-hidden">Loading...</span>
+                                      </div>
                                     <div class="chart-container">
+                                            
                                         <canvas id="myChart"></canvas>
                                     </div>
                                 </div>
                                 <div role="tabpanel" id="tabpane-chartReport2" aria-labelledby="tab-chartReport2"
                                     class="tab-pane fade">
-                                    <div>
-                                        <div>
-                                            <h2>Title:
-                                                <!-- -->ปะการังเทียม
-                                            </h2>
-                                            <ul>
-                                                <li>Province:
-                                                    <!-- -->กระบี่
-                                                    <!-- -->, DMCR:
-                                                    <!-- -->14
-                                                    <!-- -->, Other:
-                                                    <!-- -->3
-                                                </li>
-                                                <li>Province:
-                                                    <!-- -->ชลบุรี
-                                                    <!-- -->, DMCR:
-                                                    <!-- -->7
-                                                    <!-- -->, Other:
-                                                    <!-- -->5
-                                                </li>
-                                                <li>Province:
-                                                    <!-- -->พังงา
-                                                    <!-- -->, DMCR:
-                                                    <!-- -->5
-                                                    <!-- -->, Other:
-                                                    <!-- -->5
-                                                </li>
-                                                <li>Province:
-                                                    <!-- -->ตราด
-                                                    <!-- -->, DMCR:
-                                                    <!-- -->7
-                                                    <!-- -->, Other:
-                                                    <!-- -->5
-                                                </li>
-                                                <li>Province:
-                                                    <!-- -->สุราษฎร์ธานี
-                                                    <!-- -->, DMCR:
-                                                    <!-- -->6
-                                                    <!-- -->, Other:
-                                                    <!-- -->2
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <div>
-                                            <h2>Title:
-                                                <!-- -->ทุ่นในทะเล
-                                            </h2>
-                                            <ul>
-                                                <li>Province:
-                                                    <!-- -->กระบี่
-                                                    <!-- -->, DMCR:
-                                                    <!-- -->1
-                                                    <!-- -->, Other:
-                                                    <!-- -->3
-                                                </li>
-                                                <li>Province:
-                                                    <!-- -->ชลบุรี
-                                                    <!-- -->, DMCR:
-                                                    <!-- -->2
-                                                    <!-- -->, Other:
-                                                    <!-- -->5
-                                                </li>
-                                                <li>Province:
-                                                    <!-- -->พังงา
-                                                    <!-- -->, DMCR:
-                                                    <!-- -->5
-                                                    <!-- -->, Other:
-                                                    <!-- -->1
-                                                </li>
-                                                <li>Province:
-                                                    <!-- -->ตราด
-                                                    <!-- -->, DMCR:
-                                                    <!-- -->7
-                                                    <!-- -->, Other:
-                                                    <!-- -->5
-                                                </li>
-                                                <li>Province:
-                                                    <!-- -->สุราษฎร์ธานี
-                                                    <!-- -->, DMCR:
-                                                    <!-- -->9
-                                                    <!-- -->, Other:
-                                                    <!-- -->2
-                                                </li>
-                                            </ul>
-                                        </div>
+                                    <div class="chart-container">
+                                        <canvas id="myChartfloat"></canvas>
                                     </div>
                                 </div>
                                 <div role="tabpanel" id="tabpane-chartReport3" aria-labelledby="tab-chartReport3"
-                                    class="tab-pane fade">Tab content for chartReport 3</div>
+                                    class="tab-pane fade">
+                                    <div class="chart-container">
+                                        <canvas id="myChartsink"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6" data-aos="fade-right">
+                <div class="wg-gis">
+                    <div class="card default-card lazy" data-bg="<?php echo $_smarty_tpl->tpl_vars['template']->value;?>
+/assets/img/background/bg-wg-gis.png">
+                        <div class="card-body">
+                            <div class="row align-items-center">
+                                <div class="col-auto">
+                                    <img src="#" class="obj lazy" data-src="<?php echo $_smarty_tpl->tpl_vars['template']->value;?>
+/assets/img/static/obj-wg-gis.png" alt="obj-wg-gis.png">
+                                </div>
+                                <div class="col">
+                                    <h3 class="title">แผนที่ GIS</h3>
+                                    <p class="desc text-limit -x2">ค้นหาปะการังเทียม ทุ่นในทะเล และจุดวางเรือจากแผนที่</p>
+                                    <a class="btn btn-light" title="อ่านต่อ"  href="https://marinegiscenter.dmcr.go.th/gis/" target="_blank">อ่านต่อ</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6" data-aos="fade-left">
+                <div class="wg-knowledge">
+                    <div class="card default-card lazy" data-bg="<?php echo $_smarty_tpl->tpl_vars['template']->value;?>
+/assets/img/background/bg-wg-knowledge.png">
+                        <div class="card-body">
+                            <div class="row align-items-center">
+                                <div class="col-auto">
+                                    <img src="#" class="obj lazy" data-src="<?php echo $_smarty_tpl->tpl_vars['template']->value;?>
+/assets/img/static/obj-wg-knowledge.png" alt="obj-wg-knowledge.png">
+                                </div>
+                                <div class="col">
+                                    <h3 class="title">องค์ความรู้</h3>
+                                    <p class="desc text-limit -x2">ข้อมูลองค์ความรู้เกี่ยวกับปะการังเทียม</p>
+                                    <a class="btn btn-light" title="อ่านต่อ" href="https://km.dmcr.go.th/c_18" target="_blank">อ่านต่อ</a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -533,7 +512,7 @@ $_smarty_tpl->_subTemplateRender("file:front/template/default/inc-herobanner.tpl
         <div class="wg-activities">
             <div class="content">
                 <div class="whead text-center" data-aos="fade-up">
-                    <h2 class="title">กิจกรรมที่เกี่ยวข้อง</h2>
+                    <h2 class="title">การติดตามการใช้ประโยชน์</h2>
                 </div>
                 <div class="default-tabs" data-aos="fade-up">
                     <ul class="mb-md-5 mb-4 nav nav-tabs nav-fill" role="tablist">
@@ -587,13 +566,13 @@ $_smarty_tpl->_subTemplateRender("file:front/template/default/inc-herobanner.tpl
                                                 </svg>
                                             </div>
                                         </div>
-                                        <div class="col">ปะการังเทียม</div>
+                                        <div class="col">ทุ่นในทะเล</div>
                                     </div>
                                 </div>
                             </button>
                         </li>
                         <li class="nav-item" role="presentation">
-                            <button type="button" id="tab-activity3" data-bs-toggle="tab" data-bs-target="#tabpane-activity3" role="tab" data-rr-ui-event-key="activity3" aria-controls="tabpane-activity3" aria-selected="false" tabindex="-1" aria-disabled="true" disabled="" class="nav-link disabled">
+                            <button type="button" id="tab-activity3" data-bs-toggle="tab" data-bs-target="#tabpane-activity3" role="tab" data-rr-ui-event-key="activity3" aria-controls="tabpane-activity3" aria-selected="false" tabindex="-1" class="nav-link">
                                 <div class="icon">
                                     <div class="justify-content-center align-items-center row row-cols-auto">
                                         <div class="col">
@@ -610,7 +589,7 @@ $_smarty_tpl->_subTemplateRender("file:front/template/default/inc-herobanner.tpl
                                                 </svg>
                                             </div>
                                         </div>
-                                        <div class="col">ปะการังเทียม</div>
+                                        <div class="col">จุดวางเรือ</div>
                                     </div>
                                 </div>
                             </button>
@@ -621,34 +600,58 @@ $_smarty_tpl->_subTemplateRender("file:front/template/default/inc-herobanner.tpl
                             <div class="head-title">
                                 <div class="align-items-center row">
                                     <div class="col">
-                                        <h3 class="h-title">กิจกรรมที่เกี่ยวข้องกับปะการังเทียม</h3>
+                                        <h3 class="h-title">การติดตามการใช้ประโยชน์ปะการังเทียม</h3>
                                     </div>
                                     <div class="col-auto">
                                         <div class="action">
-                                            <a class="btn btn-outline-primary" title="ดูทั้งหมด" href="/">ดูทั้งหมด</a>
+                                            <a class="btn btn-outline-primary" title="ดูทั้งหมด" href="<?php echo $_smarty_tpl->tpl_vars['ul']->value;?>
+/follow">ดูทั้งหมด</a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                            <?php if ($_smarty_tpl->tpl_vars['FollowCoral']->value->_numOfRows > 0) {?>
                             <div class="gutters-40 row">
                                 <div class="col-lg-4 col-12 pb-lg-0 pb-md-5 pb-4">
-                                    <a class="link link-card -vertical" title="เก็บขยะใต้ทะเล แนวปะการังเทียมบ้านเกาะแต้วเจอเศษอวน" href="/activity/detail">
+                                    <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['FollowCoral']->value, 'valueData', false, 'keyValue');
+if ($_from !== null) {
+foreach ($_from as $_smarty_tpl->tpl_vars['keyValue']->value => $_smarty_tpl->tpl_vars['valueData']->value) {
+?>
+                                    <?php if ($_smarty_tpl->tpl_vars['keyValue']->value == '0') {?>
+                                    <a class="link link-card -vertical" title="<?php echo $_smarty_tpl->tpl_vars['valueData']->value[2];?>
+" href="<?php echo $_smarty_tpl->tpl_vars['ul']->value;?>
+/follow/detail/<?php echo $_smarty_tpl->tpl_vars['valueData']->value[0];?>
+?m=<?php echo $_smarty_tpl->tpl_vars['valueData']->value[1];?>
+">
                                         <div class="overflow-hidden card">
                                             <div class="thumbnail">
                                                 <figure class="cover" style="padding-top:75%">
-                                                    <img alt="" data-src="<?php echo $_smarty_tpl->tpl_vars['template']->value;?>
-/assets/img/upload/beautiful-beach-sea.jpg" class="img-cover lazy">
+                                                    <img alt="<?php echo $_smarty_tpl->tpl_vars['valueData']->value[2];?>
+" src="<?php ob_start();
+echo $_smarty_tpl->tpl_vars['valueData']->value[1];
+$_prefixVariable1=ob_get_clean();
+echo fileinclude($_smarty_tpl->tpl_vars['valueData']->value[6],"office",$_prefixVariable1,"link");?>
+" 
+                                                    data-src="<?php ob_start();
+echo $_smarty_tpl->tpl_vars['valueData']->value[1];
+$_prefixVariable2=ob_get_clean();
+echo fileinclude($_smarty_tpl->tpl_vars['valueData']->value[6],"pictures",$_prefixVariable2,"link");?>
+" class="img-cover lazy">
                                                 </figure>
                                             </div>
                                             <div class="card-body">
                                                 <div class="inner">
-                                                    <div class="date">23 มิถุนายน 2560</div>
-                                                    <h4 class="title">เก็บขยะใต้ทะเล
-                                                        แนวปะการังเทียมบ้านเกาะแต้วเจอเศษอวน</h4>
+                                                    <div class="date"><?php ob_start();
+echo $_smarty_tpl->tpl_vars['langon']->value;
+$_prefixVariable3=ob_get_clean();
+echo DateThai($_smarty_tpl->tpl_vars['valueData']->value[4],'13',$_prefixVariable3,'shot');?>
+</div>
+                                                    <h4 class="title"><?php echo $_smarty_tpl->tpl_vars['valueData']->value[2];?>
+</h4>
                                                     <p class="desc">
-                                                        เป็นศูนย์รวบรวมข้อมูลปะการังเทียมจากหน่วยงานที่เกี่ยวข้อง
-                                                        โดยดำเนินการจัดเก็บข้อมูลเป็นหมวดหมู่และเป็นระเบียบเพื่อสะดวกในเป็นศูนย์รวบรวมข้อมูลปะการังเทียมจากหน่วยงานที่เกี่ยวข้อง
-                                                        โดยดำเนินการจัดเก็บข้อมูลเป็นหมวดหมู่และเป็นระเบียบเพื่อสะดวกใน...
+                                                        <?php echo $_smarty_tpl->tpl_vars['valueData']->value[3];?>
+
                                                     </p>
                                                     <div class="action">
                                                         <div class="btn btn-outline-primary" title="อ่านต่อ">อ่านต่อ
@@ -658,6 +661,13 @@ $_smarty_tpl->_subTemplateRender("file:front/template/default/inc-herobanner.tpl
                                             </div>
                                         </div>
                                     </a>
+                                    <?php }?>
+                                    <?php
+}
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
+?>
+
                                 </div>
                                 <div class="col-lg-8 col-12">
                                     <div class="h-100 card">
@@ -668,37 +678,58 @@ $_smarty_tpl->_subTemplateRender("file:front/template/default/inc-herobanner.tpl
                                                         <div class="card-body">
                                                             <div class="vstack gap-3">
                                                                 <?php
-$_smarty_tpl->tpl_vars['i'] = new Smarty_Variable(null, $_smarty_tpl->isRenderingCache);$_smarty_tpl->tpl_vars['i']->step = 1;$_smarty_tpl->tpl_vars['i']->total = (int) ceil(($_smarty_tpl->tpl_vars['i']->step > 0 ? 5+1 - (1) : 1-(5)+1)/abs($_smarty_tpl->tpl_vars['i']->step));
-if ($_smarty_tpl->tpl_vars['i']->total > 0) {
-for ($_smarty_tpl->tpl_vars['i']->value = 1, $_smarty_tpl->tpl_vars['i']->iteration = 1;$_smarty_tpl->tpl_vars['i']->iteration <= $_smarty_tpl->tpl_vars['i']->total;$_smarty_tpl->tpl_vars['i']->value += $_smarty_tpl->tpl_vars['i']->step, $_smarty_tpl->tpl_vars['i']->iteration++) {
-$_smarty_tpl->tpl_vars['i']->first = $_smarty_tpl->tpl_vars['i']->iteration == 1;$_smarty_tpl->tpl_vars['i']->last = $_smarty_tpl->tpl_vars['i']->iteration == $_smarty_tpl->tpl_vars['i']->total;?>
-                                                                    <a class="link link-card -horizontal" title="เก็บขยะใต้ทะเล แนวปะการังเทียมบ้านเกาะแต้วเจอเศษอวน" href="/activity/detail">
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['FollowCoral']->value, 'valueData', false, 'keyValue');
+if ($_from !== null) {
+foreach ($_from as $_smarty_tpl->tpl_vars['keyValue']->value => $_smarty_tpl->tpl_vars['valueData']->value) {
+?>
+                                                                
+                                                                    <a class="link link-card -horizontal" title="<?php echo $_smarty_tpl->tpl_vars['valueData']->value[2];?>
+" href="<?php echo $_smarty_tpl->tpl_vars['ul']->value;?>
+/follow/detail/<?php echo $_smarty_tpl->tpl_vars['valueData']->value[0];?>
+?m=<?php echo $_smarty_tpl->tpl_vars['valueData']->value[1];?>
+">
                                                                         <div class="row">
                                                                             <div class="col-sm-auto">
                                                                                 <div class="thumbnail">
                                                                                     <figure class="cover" style="padding-top:75%">
-                                                                                        <img alt="" data-src="<?php echo $_smarty_tpl->tpl_vars['template']->value;?>
-/assets/img/upload/beautiful-beach-sea.jpg" class="img-cover lazy rounded">
+                                                                                        <img alt="<?php echo $_smarty_tpl->tpl_vars['valueData']->value[2];?>
+" src="<?php ob_start();
+echo $_smarty_tpl->tpl_vars['valueData']->value[1];
+$_prefixVariable4=ob_get_clean();
+echo fileinclude($_smarty_tpl->tpl_vars['valueData']->value[6],"office",$_prefixVariable4,"link");?>
+" 
+                                                                                        data-src="<?php ob_start();
+echo $_smarty_tpl->tpl_vars['valueData']->value[1];
+$_prefixVariable5=ob_get_clean();
+echo fileinclude($_smarty_tpl->tpl_vars['valueData']->value[6],"pictures",$_prefixVariable5,"link");?>
+"
+                                                                                        class="img-cover lazy rounded">
                                                                                     </figure>
                                                                                 </div>
                                                                             </div>
                                                                             <div class="col">
                                                                                 <div class="inner">
-                                                                                    <div class="date">23 มิถุนายน 2560</div>
-                                                                                    <h4 class="title">เก็บขยะใต้ทะเล
-                                                                                        แนวปะการังเทียมบ้านเกาะแต้วเจอเศษอวน
+                                                                                    <div class="date"><?php ob_start();
+echo $_smarty_tpl->tpl_vars['langon']->value;
+$_prefixVariable6=ob_get_clean();
+echo DateThai($_smarty_tpl->tpl_vars['valueData']->value[4],'13',$_prefixVariable6,'shot');?>
+</div>
+                                                                                    <h4 class="title"><?php echo $_smarty_tpl->tpl_vars['valueData']->value[2];?>
+
                                                                                     </h4>
                                                                                     <p class="desc">
-                                                                                        เป็นศูนย์รวบรวมข้อมูลปะการังเทียมจากหน่วยงานที่เกี่ยวข้อง
-                                                                                        โดยดำเนินการจัดเก็บข้อมูลเป็นหมวดหมู่และเป็นระเบียบเพื่อสะดวกในเป็นศูนย์รวบรวมข้อมูลปะการังเทียมจากหน่วยงานที่เกี่ยวข้อง
-                                                                                        โดยดำเนินการจัดเก็บข้อมูลเป็นหมวดหมู่และเป็นระเบียบเพื่อสะดวกใน...
+                                                                                        <?php echo $_smarty_tpl->tpl_vars['valueData']->value[3];?>
+
                                                                                     </p>
                                                                                 </div>
                                                                             </div>
                                                                         </div>
                                                                     </a>
-                                                                <?php }
+                                                                
+                                                                <?php
 }
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
 ?>
 
                                                             </div>
@@ -711,30 +742,329 @@ $_smarty_tpl->tpl_vars['i']->first = $_smarty_tpl->tpl_vars['i']->iteration == 1
                                     </div>
                                 </div>
                             </div>
+                            <?php } else { ?>
+                            <div>ไม่มีเนื้อหา...</div>
+                            <?php }?>
                         </div>
                         <div role="tabpanel" id="tabpane-activity2" aria-labelledby="tab-activity2" class="fade tab-pane">
-                            <div>Tab content for</div>
+                            <div class="head-title">
+                                <div class="align-items-center row">
+                                    <div class="col">
+                                        <h3 class="h-title">การติดตามการใช้ประโยชน์ทุ่นทะเล</h3>
+                                    </div>
+                                    <div class="col-auto">
+                                        <div class="action">
+                                            <a class="btn btn-outline-primary" title="ดูทั้งหมด" href="<?php echo $_smarty_tpl->tpl_vars['ul']->value;?>
+/follow">ดูทั้งหมด</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <?php if ($_smarty_tpl->tpl_vars['Followfloating']->value->_numOfRows > 0) {?>
+                            <div class="gutters-40 row">
+                                <div class="col-lg-4 col-12 pb-lg-0 pb-md-5 pb-4">
+                                    <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['Followfloating']->value, 'valueData', false, 'keyValue');
+if ($_from !== null) {
+foreach ($_from as $_smarty_tpl->tpl_vars['keyValue']->value => $_smarty_tpl->tpl_vars['valueData']->value) {
+?>
+                                    <?php if ($_smarty_tpl->tpl_vars['keyValue']->value == '0') {?>
+                                    <a class="link link-card -vertical" title="<?php echo $_smarty_tpl->tpl_vars['valueData']->value[2];?>
+" href="<?php echo $_smarty_tpl->tpl_vars['ul']->value;?>
+/follow/detail/<?php echo $_smarty_tpl->tpl_vars['valueData']->value[0];?>
+?m=<?php echo $_smarty_tpl->tpl_vars['valueData']->value[1];?>
+">
+                                        <div class="overflow-hidden card">
+                                            <div class="thumbnail">
+                                                <figure class="cover" style="padding-top:75%">
+                                                    <img alt="<?php echo $_smarty_tpl->tpl_vars['valueData']->value[2];?>
+" src="<?php ob_start();
+echo $_smarty_tpl->tpl_vars['valueData']->value[1];
+$_prefixVariable7=ob_get_clean();
+echo fileinclude($_smarty_tpl->tpl_vars['valueData']->value[6],"office",$_prefixVariable7,"link");?>
+" 
+                                                    data-src="<?php ob_start();
+echo $_smarty_tpl->tpl_vars['valueData']->value[1];
+$_prefixVariable8=ob_get_clean();
+echo fileinclude($_smarty_tpl->tpl_vars['valueData']->value[6],"pictures",$_prefixVariable8,"link");?>
+" class="img-cover lazy">
+                                                </figure>
+                                            </div>
+                                            <div class="card-body">
+                                                <div class="inner">
+                                                    <div class="date"><?php ob_start();
+echo $_smarty_tpl->tpl_vars['langon']->value;
+$_prefixVariable9=ob_get_clean();
+echo DateThai($_smarty_tpl->tpl_vars['valueData']->value[4],'13',$_prefixVariable9,'shot');?>
+</div>
+                                                    <h4 class="title"><?php echo $_smarty_tpl->tpl_vars['valueData']->value[2];?>
+</h4>
+                                                    <p class="desc">
+                                                        <?php echo $_smarty_tpl->tpl_vars['valueData']->value[3];?>
+
+                                                    </p>
+                                                    <div class="action">
+                                                        <div class="btn btn-outline-primary" title="อ่านต่อ">อ่านต่อ
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <?php }?>
+                                    <?php
+}
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
+?>
+
+                                </div>
+                                <div class="col-lg-8 col-12">
+                                    <div class="h-100 card">
+                                        <div class="scroll-wrapper">
+                                            <div class="swiper scroll-swiper">
+                                                <div class="swiper-wrapper">
+                                                    <div class="swiper-slide">
+                                                        <div class="card-body">
+                                                            <div class="vstack gap-3">
+                                                                <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['Followfloating']->value, 'valueData', false, 'keyValue');
+if ($_from !== null) {
+foreach ($_from as $_smarty_tpl->tpl_vars['keyValue']->value => $_smarty_tpl->tpl_vars['valueData']->value) {
+?>
+                                                                
+                                                                    <a class="link link-card -horizontal" title="<?php echo $_smarty_tpl->tpl_vars['valueData']->value[2];?>
+" href="<?php echo $_smarty_tpl->tpl_vars['ul']->value;?>
+/follow/detail/<?php echo $_smarty_tpl->tpl_vars['valueData']->value[0];?>
+?m=<?php echo $_smarty_tpl->tpl_vars['valueData']->value[1];?>
+">
+                                                                        <div class="row">
+                                                                            <div class="col-sm-auto">
+                                                                                <div class="thumbnail">
+                                                                                    <figure class="cover" style="padding-top:75%">
+                                                                                        <img alt="<?php echo $_smarty_tpl->tpl_vars['valueData']->value[2];?>
+" src="<?php ob_start();
+echo $_smarty_tpl->tpl_vars['valueData']->value[1];
+$_prefixVariable10=ob_get_clean();
+echo fileinclude($_smarty_tpl->tpl_vars['valueData']->value[6],"office",$_prefixVariable10,"link");?>
+" 
+                                                                                        data-src="<?php ob_start();
+echo $_smarty_tpl->tpl_vars['valueData']->value[1];
+$_prefixVariable11=ob_get_clean();
+echo fileinclude($_smarty_tpl->tpl_vars['valueData']->value[6],"pictures",$_prefixVariable11,"link");?>
+"
+                                                                                        class="img-cover lazy rounded">
+                                                                                    </figure>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col">
+                                                                                <div class="inner">
+                                                                                    <div class="date"><?php ob_start();
+echo $_smarty_tpl->tpl_vars['langon']->value;
+$_prefixVariable12=ob_get_clean();
+echo DateThai($_smarty_tpl->tpl_vars['valueData']->value[4],'13',$_prefixVariable12,'shot');?>
+</div>
+                                                                                    <h4 class="title"><?php echo $_smarty_tpl->tpl_vars['valueData']->value[2];?>
+
+                                                                                    </h4>
+                                                                                    <p class="desc">
+                                                                                        <?php echo $_smarty_tpl->tpl_vars['valueData']->value[3];?>
+
+                                                                                    </p>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </a>
+                                                                
+                                                                <?php
+}
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
+?>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="swiper-scrollbar"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <?php } else { ?>
+                            <div>ไม่มีเนื้อหา...</div>
+                            <?php }?>
                         </div>
                         <div role="tabpanel" id="tabpane-activity3" aria-labelledby="tab-activity3" class="fade tab-pane">
-                            Tab contentfor
+                            <div class="head-title">
+                                <div class="align-items-center row">
+                                    <div class="col">
+                                        <h3 class="h-title">การติดตามการใช้ประโยชน์จุดวางเรือ</h3>
+                                    </div>
+                                    <div class="col-auto">
+                                        <div class="action">
+                                            <a class="btn btn-outline-primary" title="ดูทั้งหมด" href="<?php echo $_smarty_tpl->tpl_vars['ul']->value;?>
+/follow">ดูทั้งหมด</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <?php if ($_smarty_tpl->tpl_vars['Followsinkship']->value->_numOfRows > 0) {?>
+                            <div class="gutters-40 row">
+                                <div class="col-lg-4 col-12 pb-lg-0 pb-md-5 pb-4">
+                                    <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['Followsinkship']->value, 'valueData', false, 'keyValue');
+if ($_from !== null) {
+foreach ($_from as $_smarty_tpl->tpl_vars['keyValue']->value => $_smarty_tpl->tpl_vars['valueData']->value) {
+?>
+                                    <?php if ($_smarty_tpl->tpl_vars['keyValue']->value == '0') {?>
+                                    <a class="link link-card -vertical" title="<?php echo $_smarty_tpl->tpl_vars['valueData']->value[2];?>
+" href="<?php echo $_smarty_tpl->tpl_vars['ul']->value;?>
+/follow/detail/<?php echo $_smarty_tpl->tpl_vars['valueData']->value[0];?>
+?m=<?php echo $_smarty_tpl->tpl_vars['valueData']->value[1];?>
+">
+                                        <div class="overflow-hidden card">
+                                            <div class="thumbnail">
+                                                <figure class="cover" style="padding-top:75%">
+                                                    <img alt="<?php echo $_smarty_tpl->tpl_vars['valueData']->value[2];?>
+" src="<?php ob_start();
+echo $_smarty_tpl->tpl_vars['valueData']->value[1];
+$_prefixVariable13=ob_get_clean();
+echo fileinclude($_smarty_tpl->tpl_vars['valueData']->value[6],"office",$_prefixVariable13,"link");?>
+" 
+                                                    data-src="<?php ob_start();
+echo $_smarty_tpl->tpl_vars['valueData']->value[1];
+$_prefixVariable14=ob_get_clean();
+echo fileinclude($_smarty_tpl->tpl_vars['valueData']->value[6],"pictures",$_prefixVariable14,"link");?>
+" class="img-cover lazy">
+                                                </figure>
+                                            </div>
+                                            <div class="card-body">
+                                                <div class="inner">
+                                                    <div class="date"><?php ob_start();
+echo $_smarty_tpl->tpl_vars['langon']->value;
+$_prefixVariable15=ob_get_clean();
+echo DateThai($_smarty_tpl->tpl_vars['valueData']->value[4],'13',$_prefixVariable15,'shot');?>
+</div>
+                                                    <h4 class="title"><?php echo $_smarty_tpl->tpl_vars['valueData']->value[2];?>
+</h4>
+                                                    <p class="desc">
+                                                        <?php echo $_smarty_tpl->tpl_vars['valueData']->value[3];?>
+
+                                                    </p>
+                                                    <div class="action">
+                                                        <div class="btn btn-outline-primary" title="อ่านต่อ">อ่านต่อ
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <?php }?>
+                                    <?php
+}
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
+?>
+
+                                </div>
+                                <div class="col-lg-8 col-12">
+                                    <div class="h-100 card">
+                                        <div class="scroll-wrapper">
+                                            <div class="swiper scroll-swiper">
+                                                <div class="swiper-wrapper">
+                                                    <div class="swiper-slide">
+                                                        <div class="card-body">
+                                                            <div class="vstack gap-3">
+                                                                <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['Followsinkship']->value, 'valueData', false, 'keyValue');
+if ($_from !== null) {
+foreach ($_from as $_smarty_tpl->tpl_vars['keyValue']->value => $_smarty_tpl->tpl_vars['valueData']->value) {
+?>
+                                                                
+                                                                    <a class="link link-card -horizontal" title="<?php echo $_smarty_tpl->tpl_vars['valueData']->value[2];?>
+" href="<?php echo $_smarty_tpl->tpl_vars['ul']->value;?>
+/follow/detail/<?php echo $_smarty_tpl->tpl_vars['valueData']->value[0];?>
+?m=<?php echo $_smarty_tpl->tpl_vars['valueData']->value[1];?>
+">
+                                                                        <div class="row">
+                                                                            <div class="col-sm-auto">
+                                                                                <div class="thumbnail">
+                                                                                    <figure class="cover" style="padding-top:75%">
+                                                                                        <img alt="<?php echo $_smarty_tpl->tpl_vars['valueData']->value[2];?>
+" src="<?php ob_start();
+echo $_smarty_tpl->tpl_vars['valueData']->value[1];
+$_prefixVariable16=ob_get_clean();
+echo fileinclude($_smarty_tpl->tpl_vars['valueData']->value[6],"office",$_prefixVariable16,"link");?>
+" 
+                                                                                        data-src="<?php ob_start();
+echo $_smarty_tpl->tpl_vars['valueData']->value[1];
+$_prefixVariable17=ob_get_clean();
+echo fileinclude($_smarty_tpl->tpl_vars['valueData']->value[6],"pictures",$_prefixVariable17,"link");?>
+"
+                                                                                        class="img-cover lazy rounded">
+                                                                                    </figure>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col">
+                                                                                <div class="inner">
+                                                                                    <div class="date"><?php ob_start();
+echo $_smarty_tpl->tpl_vars['langon']->value;
+$_prefixVariable18=ob_get_clean();
+echo DateThai($_smarty_tpl->tpl_vars['valueData']->value[4],'13',$_prefixVariable18,'shot');?>
+</div>
+                                                                                    <h4 class="title"><?php echo $_smarty_tpl->tpl_vars['valueData']->value[2];?>
+
+                                                                                    </h4>
+                                                                                    <p class="desc">
+                                                                                        <?php echo $_smarty_tpl->tpl_vars['valueData']->value[3];?>
+
+                                                                                    </p>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </a>
+                                                                
+                                                                <?php
+}
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
+?>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="swiper-scrollbar"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <?php } else { ?>
+                            <div>ไม่มีเนื้อหา...</div>
+                            <?php }?>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="bg" data-aos="fade-up">
+            <div class="bg" style="z-index: -1;" data-aos="fade-up">
                 <img alt="" data-src="<?php echo $_smarty_tpl->tpl_vars['template']->value;?>
 /assets/img/background/bg-section-iii.jpg" class="lazy">
             </div>
         </div>
+        <?php if ($_smarty_tpl->tpl_vars['ActivityLaist']->value->_numOfRows > 0) {?>
         <div class="wg-utilization-tracking">
             <div class="pt-5">
                 <div class="head-title">
                     <div class="align-items-center row">
                         <div class="col">
-                            <h3 class="h-title">การติดตามการใช้ประโยชน์</h3>
+                            <h3 class="h-title">กิจกรรมที่เกี่ยวข้อง</h3>
                         </div>
                         <div class="col-auto">
-                            <div class="action"><a class="btn btn-outline-primary" title="ดูทั้งหมด" href="/">ดูทั้งหมด</a></div>
+                            <div class="action"><a class="btn btn-outline-primary" title="ดูทั้งหมด" href="<?php echo $_smarty_tpl->tpl_vars['ul']->value;?>
+/activity">ดูทั้งหมด</a></div>
                         </div>
                     </div>
                 </div>
@@ -742,27 +1072,44 @@ $_smarty_tpl->tpl_vars['i']->first = $_smarty_tpl->tpl_vars['i']->iteration == 1
             <div class="swiper ut-swiper default-swiper">
                 <div class="swiper-wrapper">
                     <?php
-$_smarty_tpl->tpl_vars['i'] = new Smarty_Variable(null, $_smarty_tpl->isRenderingCache);$_smarty_tpl->tpl_vars['i']->step = 1;$_smarty_tpl->tpl_vars['i']->total = (int) ceil(($_smarty_tpl->tpl_vars['i']->step > 0 ? 5+1 - (1) : 1-(5)+1)/abs($_smarty_tpl->tpl_vars['i']->step));
-if ($_smarty_tpl->tpl_vars['i']->total > 0) {
-for ($_smarty_tpl->tpl_vars['i']->value = 1, $_smarty_tpl->tpl_vars['i']->iteration = 1;$_smarty_tpl->tpl_vars['i']->iteration <= $_smarty_tpl->tpl_vars['i']->total;$_smarty_tpl->tpl_vars['i']->value += $_smarty_tpl->tpl_vars['i']->step, $_smarty_tpl->tpl_vars['i']->iteration++) {
-$_smarty_tpl->tpl_vars['i']->first = $_smarty_tpl->tpl_vars['i']->iteration == 1;$_smarty_tpl->tpl_vars['i']->last = $_smarty_tpl->tpl_vars['i']->iteration == $_smarty_tpl->tpl_vars['i']->total;?>
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['ActivityLaist']->value, 'valueActivity', false, 'keyActivity');
+if ($_from !== null) {
+foreach ($_from as $_smarty_tpl->tpl_vars['keyActivity']->value => $_smarty_tpl->tpl_vars['valueActivity']->value) {
+?>
+                    
                         <div class="swiper-slide">
-                            <a class="link link-card -vertical" title="เก็บขยะใต้ทะเล แนวปะการังเทียมบ้านเกาะแต้วเจอเศษอวน" href="/activity/detail">
+                            <a class="link link-card -vertical" title="<?php echo $_smarty_tpl->tpl_vars['valueActivity']->value[2];?>
+" href="<?php echo $_smarty_tpl->tpl_vars['ul']->value;?>
+/activity/detail/<?php echo $_smarty_tpl->tpl_vars['valueActivity']->value[0];?>
+">
                                 <div class="overflow-hidden card">
                                     <div class="thumbnail">
                                         <figure class="cover" style="padding-top:75%">
-                                            <img alt="" data-src="<?php echo $_smarty_tpl->tpl_vars['template']->value;?>
-/assets/img/upload/beautiful-beach-sea.jpg" class="img-cover lazy">
+                                            <img alt="<?php echo $_smarty_tpl->tpl_vars['valueActivity']->value[2];?>
+" src="<?php ob_start();
+echo $_smarty_tpl->tpl_vars['valueActivity']->value[1];
+$_prefixVariable19=ob_get_clean();
+echo fileinclude($_smarty_tpl->tpl_vars['valueActivity']->value[6],"office",$_prefixVariable19,"link");?>
+" 
+                                            data-src="<?php ob_start();
+echo $_smarty_tpl->tpl_vars['valueActivity']->value[1];
+$_prefixVariable20=ob_get_clean();
+echo fileinclude($_smarty_tpl->tpl_vars['valueActivity']->value[6],"pictures",$_prefixVariable20,"link");?>
+" class="img-cover lazy">
                                         </figure>
                                     </div>
                                     <div class="card-body">
                                         <div class="inner">
-                                            <div class="date">23 มิถุนายน 2560</div>
-                                            <h4 class="title">เก็บขยะใต้ทะเล แนวปะการังเทียมบ้านเกาะแต้วเจอเศษอวน</h4>
+                                            <div class="date"><?php ob_start();
+echo $_smarty_tpl->tpl_vars['langon']->value;
+$_prefixVariable21=ob_get_clean();
+echo DateThai($_smarty_tpl->tpl_vars['valueActivity']->value[4],'13',$_prefixVariable21,'shot');?>
+</div>
+                                            <h4 class="title"><?php echo $_smarty_tpl->tpl_vars['valueActivity']->value[2];?>
+</h4>
                                             <p class="desc">
-                                                เป็นศูนย์รวบรวมข้อมูลปะการังเทียมจากหน่วยงานที่เกี่ยวข้อง
-                                                โดยดำเนินการจัดเก็บข้อมูลเป็นหมวดหมู่และเป็นระเบียบเพื่อสะดวกในเป็นศูนย์รวบรวมข้อมูลปะการังเทียมจากหน่วยงานที่เกี่ยวข้อง
-                                                โดยดำเนินการจัดเก็บข้อมูลเป็นหมวดหมู่และเป็นระเบียบเพื่อสะดวกใน...
+                                                <?php echo $_smarty_tpl->tpl_vars['valueActivity']->value[3];?>
+
                                             </p>
                                             <div class="action">
                                                 <div class="btn btn-outline-primary" title="อ่านต่อ">อ่านต่อ</div>
@@ -772,8 +1119,10 @@ $_smarty_tpl->tpl_vars['i']->first = $_smarty_tpl->tpl_vars['i']->iteration == 1
                                 </div>
                             </a>
                         </div>
-                    <?php }
+                    <?php
 }
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
 ?>
 
                 </div>
@@ -782,6 +1131,7 @@ $_smarty_tpl->tpl_vars['i']->first = $_smarty_tpl->tpl_vars['i']->iteration == 1
                 <div class="swiper-pagination"></div>
             </div>
         </div>
+        <?php }?>
     </div>
 </div>
 
@@ -794,7 +1144,8 @@ $_smarty_tpl->tpl_vars['i']->first = $_smarty_tpl->tpl_vars['i']->iteration == 1
                     <p class="desc">เป็นศูนย์รวบรวมข้อมูลปะการังเทียมจากหน่วยงานที่เกี่ยวข้อง โดยดำเนินการจัดเก็บข้อมูลเป็น หมวดหมู่และเป็นระเบียบ เพื่อสะดวกในการใช้งานสำหรับนักวิชาการและผู้ที่สนใจทั่วไป</p>
                 </div>
                 <div class="action">
-                    <a class="btn btn-secondary" title="อ่านต่อ" href="/about">อ่านต่อ</a>
+                    <a class="btn btn-secondary" title="อ่านต่อ" href="<?php echo $_smarty_tpl->tpl_vars['ul']->value;?>
+/about">อ่านต่อ</a>
                 </div>
             </div>
             <div class="style-about" data-aos="fade-up" data-aos-duration="2000">
@@ -954,7 +1305,8 @@ $_smarty_tpl->tpl_vars['i']->first = $_smarty_tpl->tpl_vars['i']->iteration == 1
                                 <p class="desc">เป็นศูนย์รวบรวมข้อมูลปะการังเทียมจากหน่วยงานที่เกี่ยวข้อง โดยดำเนินการ จัดเก็บข้อมูลเป็นหมวดหมู่และเป็นระเบียบ เพื่อสะดวกในการใช้งานสำหรับนักวิชาการ และผู้ที่สนใจทั่วไป</p>
                             </div>
                             <div class="action">
-                                <a class="btn btn-secondary" title="อ่านต่อ" href="/offer-demand">อ่านต่อ</a>
+                                <a class="btn btn-secondary" title="อ่านต่อ" href="<?php echo $_smarty_tpl->tpl_vars['ul']->value;?>
+/offer-demand">อ่านต่อ</a>
                             </div>
                         </div>
                     </div>
@@ -965,39 +1317,40 @@ $_smarty_tpl->tpl_vars['i']->first = $_smarty_tpl->tpl_vars['i']->iteration == 1
                 </div>
             </div>
             <div class="col-lg-6">
-                <div class="wg-vote-poll">
+                <div class="wg-vote-poll" data-id="<?php echo $_smarty_tpl->tpl_vars['vote']->value->fields['id'];?>
+">
                     <div class="content" style="color:#fff" data-aos="fade-left">
                         <div class="text-center">
                             <div class="whead">
                                 <h2 class="h-title text-uppercase">VOTE &amp; POLL</h2>
-                                <p class="desc">แบบสำรวจความพึงพอใจในการใช้งานฐานข้อมูลปะการังเทียมและทุ่นในทะเล</p>
+                                <p class="desc"><?php echo $_smarty_tpl->tpl_vars['vote']->value->fields['name'];?>
+</p>
                             </div>
                             <form class="form-default">
                                 <div class="default-radio radio-light mb-3">
+                                    <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['voteAns']->value, 'valueAns', false, 'keyAns');
+if ($_from !== null) {
+foreach ($_from as $_smarty_tpl->tpl_vars['keyAns']->value => $_smarty_tpl->tpl_vars['valueAns']->value) {
+?>
                                     <div class="form-check">
-                                        <input name="votePoll" type="radio" id="vp05" class="form-check-input" checked="">
-                                        <label title="" for="vp05" class="form-check-label">พึงพอใจมากที่สุด</label>
+                                        <input name="votePoll" type="radio" id="vp<?php echo $_smarty_tpl->tpl_vars['valueAns']->value['id'];?>
+" value="<?php echo $_smarty_tpl->tpl_vars['valueAns']->value['id'];?>
+" class="form-check-input" <?php if ($_smarty_tpl->tpl_vars['keyAns']->value == '0') {?>checked=''<?php }?>>
+                                        <label title="" for="vp<?php echo $_smarty_tpl->tpl_vars['valueAns']->value['id'];?>
+" class="form-check-label"><?php echo $_smarty_tpl->tpl_vars['valueAns']->value['name'];?>
+</label>
                                     </div>
-                                    <div class="form-check">
-                                        <input name="votePoll" type="radio" id="vp04" class="form-check-input">
-                                        <label title="" for="vp04" class="form-check-label">พึงพอใจมาก</label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input name="votePoll" type="radio" id="vp03" class="form-check-input">
-                                        <label title="" for="vp03" class="form-check-label">พึงพอใจปานกลาง</label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input name="votePoll" type="radio" id="vp02" class="form-check-input">
-                                        <label title="" for="vp02" class="form-check-label">พึงพอใจน้อย</label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input name="votePoll" type="radio" id="vp01" class="form-check-input">
-                                        <label title="" for="vp01" class="form-check-label">พึงพอใจน้อยที่สุด</label>
-                                    </div>
+                                    <?php
+}
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
+?>
+
                                 </div>
                                 <div class="action">
-                                    <button type="button" class="btn btn-secondary">โหวต</button>
-                                    <button type="button" class="link btn btn-outline-orange"><span>แสดงผลโหวต</span></button>
+                                    <button type="button" class="btn btn-secondary submitvote" onclick="submitVote()">โหวต</button>
+                                    <button type="button" class="link btn btn-outline-orange" data-bs-toggle="modal" data-bs-target="#voteResult"><span>แสดงผลโหวต</span></button>
                                 </div>
                             </form>
                         </div>
@@ -1012,62 +1365,59 @@ $_smarty_tpl->tpl_vars['i']->first = $_smarty_tpl->tpl_vars['i']->iteration == 1
     </div>
 </div>
 
-<div class="section section-vii" style="overflow:hidden">
+<?php if ($_smarty_tpl->tpl_vars['BannerList']->value->_numOfRows > 0) {?>
+<div class="section section-vii lazy" data-bg="<?php echo $_smarty_tpl->tpl_vars['template']->value;?>
+/assets/img/background/bg-wg-weblink.png" style="overflow:hidden;background-repeat: no-repeat;background-size: cover;background-position: center;">
     <div class="container-lg">
         <div class="wg-weblinks" data-aos="fade-up">
             <div class="weblink-list">
                 <div class="swiper weblink-swiper default-swiper">
                     <div class="swiper-wrapper">
+                        <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['BannerList']->value, 'valueBanner', false, 'keyBanner');
+if ($_from !== null) {
+foreach ($_from as $_smarty_tpl->tpl_vars['keyBanner']->value => $_smarty_tpl->tpl_vars['valueBanner']->value) {
+?>
                         <div class="swiper-slide item">
-                            <a class="link" title="" href="/">
-                                <div class="thumbnail">
-                                    <figure class="cover">
-                                        <img alt="thumbnail-weblink" data-src="<?php echo $_smarty_tpl->tpl_vars['template']->value;?>
-/assets/img/upload/thumbnail-weblink.jpg" class="img-cover lazy">
-                                    </figure>
+                            <a class="link" title="<?php echo $_smarty_tpl->tpl_vars['valueBanner']->value['subject'];?>
+" href="<?php echo $_smarty_tpl->tpl_vars['valueBanner']->value['url'];?>
+" target="<?php if ($_smarty_tpl->tpl_vars['valueBanner']->value['target'] != '2') {?>_self<?php } else { ?>_blank<?php }?>">
+                                <div class="wrapper">
+                                    <div class="row g-0 align-items-center">
+                                        <div class="col-auto">
+                                            <div class="thumbnail">
+                                                <figure class="cover">
+                                                    <img alt="thumbnail-weblink" src="<?php ob_start();
+echo $_smarty_tpl->tpl_vars['valueBanner']->value[1];
+$_prefixVariable22=ob_get_clean();
+echo fileinclude($_smarty_tpl->tpl_vars['valueBanner']->value[4],"office",$_prefixVariable22,"link");?>
+" 
+                                                    data-src="<?php ob_start();
+echo $_smarty_tpl->tpl_vars['valueBanner']->value[1];
+$_prefixVariable23=ob_get_clean();
+echo fileinclude($_smarty_tpl->tpl_vars['valueBanner']->value[4],"pictures",$_prefixVariable23,"link");?>
+" class="img-cover lazy">
+                                                </figure>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="inner">
+                                                <div class="title">
+                                                    <span><?php echo $_smarty_tpl->tpl_vars['valueBanner']->value['subject'];?>
+</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </a>
                         </div>
-                        <div class="swiper-slide item">
-                            <a class="link" title="" href="/">
-                                <div class="thumbnail">
-                                    <figure class="cover">
-                                        <img alt="thumbnail-weblink" data-src="<?php echo $_smarty_tpl->tpl_vars['template']->value;?>
-/assets/img/upload/thumbnail-weblink.jpg" class="img-cover lazy">
-                                    </figure>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="swiper-slide item">
-                            <a class="link" title="" href="/">
-                                <div class="thumbnail">
-                                    <figure class="cover">
-                                        <img alt="thumbnail-weblink" data-src="<?php echo $_smarty_tpl->tpl_vars['template']->value;?>
-/assets/img/upload/thumbnail-weblink.jpg" class="img-cover lazy">
-                                    </figure>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="swiper-slide item">
-                            <a class="link" title="" href="/">
-                                <div class="thumbnail">
-                                    <figure class="cover">
-                                        <img alt="thumbnail-weblink" data-src="<?php echo $_smarty_tpl->tpl_vars['template']->value;?>
-/assets/img/upload/thumbnail-weblink.jpg" class="img-cover lazy">
-                                    </figure>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="swiper-slide item">
-                            <a class="link" title="" href="/">
-                                <div class="thumbnail">
-                                    <figure class="cover">
-                                        <img alt="thumbnail-weblink" data-src="<?php echo $_smarty_tpl->tpl_vars['template']->value;?>
-/assets/img/upload/thumbnail-weblink.jpg" class="img-cover lazy">
-                                    </figure>
-                                </div>
-                            </a>
-                        </div>
+                        <?php
+}
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
+?>
+
                     </div>
                     <div class="swiper-pagination"></div>
                 </div>
@@ -1075,6 +1425,7 @@ $_smarty_tpl->tpl_vars['i']->first = $_smarty_tpl->tpl_vars['i']->iteration == 1
         </div>
     </div>
 </div>
+<?php }?>
 
 <?php }
 }

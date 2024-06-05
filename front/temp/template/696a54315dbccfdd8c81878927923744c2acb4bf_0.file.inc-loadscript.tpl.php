@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2023-07-24 00:35:49
+/* Smarty version 3.1.30, created on 2024-06-05 17:26:46
   from "C:\xampp\htdocs\dev23-dmcr-ab\front\template\default\inc-loadscript.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_64bd64f5122c89_62502341',
+  'unifunc' => 'content_66603d66ac4776_77487876',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '696a54315dbccfdd8c81878927923744c2acb4bf' => 
     array (
       0 => 'C:\\xampp\\htdocs\\dev23-dmcr-ab\\front\\template\\default\\inc-loadscript.tpl',
-      1 => 1690133316,
+      1 => 1717553665,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_64bd64f5122c89_62502341 (Smarty_Internal_Template $_smarty_tpl) {
+function content_66603d66ac4776_77487876 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!-- Core -->
 <?php echo '<script'; ?>
@@ -94,8 +94,8 @@ function content_64bd64f5122c89_62502341 (Smarty_Internal_Template $_smarty_tpl)
 >
 <?php ob_start();
 echo (($tmp = @$_smarty_tpl->tpl_vars['assignjs']->value)===null||$tmp==='' ? null : $tmp);
-$_prefixVariable2=ob_get_clean();
-if ($_prefixVariable2) {
+$_prefixVariable4=ob_get_clean();
+if ($_prefixVariable4) {
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['assignjs']->value, 'addAssetScript');
 if ($_from !== null) {
 foreach ($_from as $_smarty_tpl->tpl_vars['addAssetScript']->value) {

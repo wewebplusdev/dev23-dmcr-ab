@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.30, created on 2024-06-05 13:48:12
+/* Smarty version 3.1.30, created on 2024-06-05 17:27:55
   from "C:\xampp\htdocs\dev23-dmcr-ab\front\template\default\pagination.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_66600a2c8006e4_05837213',
+  'unifunc' => 'content_66603dab96fb21_84326378',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_66600a2c8006e4_05837213 (Smarty_Internal_Template $_smarty_tpl) {
+function content_66603dab96fb21_84326378 (Smarty_Internal_Template $_smarty_tpl) {
 if ((($tmp = @$_smarty_tpl->tpl_vars['pagination']->value)===null||$tmp==='' ? null : $tmp)) {?>
     <div class="pagination-block" data-aos="fade-up">
         <div class="align-items-center row">
@@ -41,11 +41,11 @@ if ((($tmp = @$_smarty_tpl->tpl_vars['pagination']->value)===null||$tmp==='' ? n
                     <?php if ($_smarty_tpl->tpl_vars['pageStartShow']->value-2 < 0) {?>
                         <?php ob_start();
 echo $_smarty_tpl->tpl_vars['pageStartShow']->value-$_smarty_tpl->tpl_vars['pagination']->value['curent'];
-$_prefixVariable1=ob_get_clean();
+$_prefixVariable7=ob_get_clean();
 ob_start();
-echo 2+$_prefixVariable1;
-$_prefixVariable2=ob_get_clean();
-$_smarty_tpl->_assignInScope('pageEndShow', $_smarty_tpl->tpl_vars['pageEndShow']->value+$_prefixVariable2);
+echo 2+$_prefixVariable7;
+$_prefixVariable8=ob_get_clean();
+$_smarty_tpl->_assignInScope('pageEndShow', $_smarty_tpl->tpl_vars['pageEndShow']->value+$_prefixVariable8);
 ?>
                     <?php }?>
                     <?php if ($_smarty_tpl->tpl_vars['pageEndShow']->value >= $_smarty_tpl->tpl_vars['pagination']->value['totalpage']) {?>
@@ -55,8 +55,8 @@ $_smarty_tpl->_assignInScope('pageEndShow', $_smarty_tpl->tpl_vars['pageEndShow'
                     <?php if ($_smarty_tpl->tpl_vars['pagination']->value['total']-$_smarty_tpl->tpl_vars['pagination']->value['curent'] < 2) {?>
                         <?php ob_start();
 echo $_smarty_tpl->tpl_vars['pagination']->value['totalpage']-$_smarty_tpl->tpl_vars['pagination']->value['curent'];
-$_prefixVariable3=ob_get_clean();
-$_smarty_tpl->_assignInScope('startAdd', 2-$_prefixVariable3);
+$_prefixVariable9=ob_get_clean();
+$_smarty_tpl->_assignInScope('startAdd', 2-$_prefixVariable9);
 ?>
                         <?php $_smarty_tpl->_assignInScope('pageStartShow', $_smarty_tpl->tpl_vars['pageStartShow']->value-$_smarty_tpl->tpl_vars['startAdd']->value);
 ?>

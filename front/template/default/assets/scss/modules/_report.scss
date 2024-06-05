@@ -4,7 +4,7 @@ $--report-height: 400px;
         min-height: $--report-height;
     }
     .default-table .scroll-wrapper {
-        height: calc($--report-height - 68px);
+        height: calc($--report-height - 19px);
     }
     .default-table .mcscroll {
         height: calc($--report-height - 50px);
@@ -52,6 +52,9 @@ $--report-height: 400px;
 @media (max-width: 1440px) {
 }
 @media (max-width: 1199px) {
+    .wg-province-report .default-table .scroll-wrapper {
+        height: 362px;
+    }
 }
 @media (max-width: 991px) {
     .wg-charts-report {
@@ -62,6 +65,12 @@ $--report-height: 400px;
     // .wg-charts-report {
     //     margin-top: 3rem;
     // }
+    .report-page .default-table thead th,
+    .report-page .default-table tbody td{padding: 0.75em;}
+    .report-page .default-table .btn{min-width: 30px; height: 30px; line-height: 28px; padding: 0; font-size: 14px;}
+    .report-page .default-table .btn .hstack.gap-2{gap: 0 !important;}
+    .report-page .default-table .btn .icon{width: 16px; height: 16px;}
+    .report-page .default-table .btn .txt{font-size: 0px;}
 }
 @media (max-width: 575px) {
 }

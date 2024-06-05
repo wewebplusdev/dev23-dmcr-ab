@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.30, created on 2024-06-05 10:55:27
+/* Smarty version 3.1.30, created on 2024-06-05 17:27:55
   from "C:\xampp\htdocs\dev23-dmcr-ab\front\controller\script\follow\template\index.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_665fe1af891245_81950179',
+  'unifunc' => 'content_66603dabdd7b13_07277637',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:pagination.tpl' => 1,
   ),
 ),false)) {
-function content_665fe1af891245_81950179 (Smarty_Internal_Template $_smarty_tpl) {
+function content_66603dabdd7b13_07277637 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:front/template/default/inc-herobanner.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('title'=>'title'), 0, false);
 ?>
 

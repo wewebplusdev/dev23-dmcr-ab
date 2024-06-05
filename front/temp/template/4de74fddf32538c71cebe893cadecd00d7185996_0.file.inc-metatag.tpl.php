@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2023-07-24 00:35:45
+/* Smarty version 3.1.30, created on 2024-06-05 17:26:46
   from "C:\xampp\htdocs\dev23-dmcr-ab\front\template\default\inc-metatag.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_64bd64f1e0d646_10089882',
+  'unifunc' => 'content_66603d664b61b2_06122052',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '4de74fddf32538c71cebe893cadecd00d7185996' => 
     array (
       0 => 'C:\\xampp\\htdocs\\dev23-dmcr-ab\\front\\template\\default\\inc-metatag.tpl',
-      1 => 1690133316,
+      1 => 1717553665,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_64bd64f1e0d646_10089882 (Smarty_Internal_Template $_smarty_tpl) {
+function content_66603d664b61b2_06122052 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <base href="<?php echo $_smarty_tpl->tpl_vars['base']->value;?>
 ">

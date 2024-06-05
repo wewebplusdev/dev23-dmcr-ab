@@ -317,6 +317,7 @@ $--nav-tabs-h: 80px;
             margin-top: 2rem;
             .btn {
                 min-width: 148px;
+                &:active{color: var(--color-light);}
             }
         }
     }
@@ -524,6 +525,10 @@ $--nav-tabs-h: 80px;
 }
 @media (max-width: 767px) {
     $--nav-tabs-h: 58px;
+
+    .default-page .page-title {
+        margin-bottom: 1rem;
+    }
 
     .default-page {
         margin-top: -2.5rem;

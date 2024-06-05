@@ -137,6 +137,7 @@ $--wg-about-overlapse: 80px;
             &::before{
                 display: none;
             }
+            &:hover{color: var(--color-primary);}
         }
     }
     .action {

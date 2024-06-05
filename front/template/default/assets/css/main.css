@@ -19566,7 +19566,8 @@ textarea {
 }
 
 .select2-container--default .select2-selection--single {
-  border-color: #ececec;
+  border-color: var(--color-primary);
+  border-radius: 25px;
 }
 .select2-container--default .select2-selection--single,
 .select2-container--default .select2-selection--single .select2-selection__arrow {
@@ -19689,6 +19690,17 @@ textarea {
   transform: rotate(120deg);
 }
 
+@media (max-width: 767px) {
+  .select2-container--default .select2-selection--single {
+    height: 32px;
+  }
+  .select2-container--default .select2-selection--single .select2-selection__rendered {
+    line-height: 30px;
+  }
+  .select2-container--default .select2-selection--single .select2-selection__arrow::before {
+    line-height: 30px;
+  }
+}
 @media (max-width: 575px) {
   .captcha {
     margin-top: 1rem;
@@ -21907,6 +21919,9 @@ div.swal2-html-container {
 .link-card .inner .action .btn {
   min-width: 148px;
 }
+.link-card .inner .action .btn:active {
+  color: var(--color-light);
+}
 .link-card.-horizontal .thumbnail {
   width: 144px;
 }
@@ -22099,6 +22114,9 @@ div.swal2-html-container {
   }
 }
 @media (max-width: 767px) {
+  .default-page .page-title {
+    margin-bottom: 1rem;
+  }
   .default-page {
     margin-top: -2.5rem;
   }
@@ -22282,6 +22300,9 @@ div.swal2-html-container {
 .about-list .item:not(.active) .btn::before {
   display: none;
 }
+.about-list .item:not(.active) .btn:hover {
+  color: var(--color-primary);
+}
 .about-list .action {
   margin: 0 auto;
 }
@@ -22392,7 +22413,7 @@ div.swal2-html-container {
   color: var(--color-primary);
 }
 .wg-activities .scroll-wrapper {
-  height: 504px;
+  height: 538px;
 }
 .wg-activities .mcscroll {
   height: 530px;
@@ -22606,7 +22627,7 @@ div.swal2-html-container {
   min-height: 400px;
 }
 .wg-province-report .default-table .scroll-wrapper {
-  height: 332px;
+  height: 381px;
 }
 .wg-province-report .default-table .mcscroll {
   height: 350px;
@@ -22643,9 +22664,37 @@ div.swal2-html-container {
   fill: var(--color-primary);
 }
 
+@media (max-width: 1199px) {
+  .wg-province-report .default-table .scroll-wrapper {
+    height: 362px;
+  }
+}
 @media (max-width: 991px) {
   .wg-charts-report {
     margin-top: 2rem;
+  }
+}
+@media (max-width: 767px) {
+  .report-page .default-table thead th,
+  .report-page .default-table tbody td {
+    padding: 0.75em;
+  }
+  .report-page .default-table .btn {
+    min-width: 30px;
+    height: 30px;
+    line-height: 28px;
+    padding: 0;
+    font-size: 14px;
+  }
+  .report-page .default-table .btn .hstack.gap-2 {
+    gap: 0 !important;
+  }
+  .report-page .default-table .btn .icon {
+    width: 16px;
+    height: 16px;
+  }
+  .report-page .default-table .btn .txt {
+    font-size: 0px;
   }
 }
 .wg-search {
@@ -22760,6 +22809,9 @@ div.swal2-html-container {
   .wg-utilization-tracking .swiper-pagination-fraction {
     bottom: 15px;
   }
+  .wg-activities .gutters-40 > .pb-md-5 {
+    padding-bottom: 2rem !important;
+  }
 }
 .wg-vote-poll .content {
   position: relative;
@@ -22823,6 +22875,7 @@ div.swal2-html-container {
   overflow: hidden;
   color: #ffffff;
   background: var(--color-primary);
+  padding: 5px;
 }
 .wg-weblinks .weblink-list .wrapper .thumbnail {
   width: 96px;

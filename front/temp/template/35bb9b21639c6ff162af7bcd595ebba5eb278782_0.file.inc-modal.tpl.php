@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2023-07-24 00:35:48
+/* Smarty version 3.1.30, created on 2024-06-05 17:26:46
   from "C:\xampp\htdocs\dev23-dmcr-ab\front\template\default\inc-modal.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_64bd64f4981746_41358226',
+  'unifunc' => 'content_66603d669ea512_30789761',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '35bb9b21639c6ff162af7bcd595ebba5eb278782' => 
     array (
       0 => 'C:\\xampp\\htdocs\\dev23-dmcr-ab\\front\\template\\default\\inc-modal.tpl',
-      1 => 1690133316,
+      1 => 1717553665,
       2 => 'file',
     ),
   ),
@@ -20,9 +20,8 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_64bd64f4981746_41358226 (Smarty_Internal_Template $_smarty_tpl) {
+function content_66603d669ea512_30789761 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
-
 
 <div id="policyModal1" class="modal modal-policy fade" role="dialog" aria-modal="true" tabindex="-1">
     <div class="modal-dialog modal-lg modal-dialog-centered">
@@ -48,6 +47,52 @@ function content_64bd64f4981746_41358226 (Smarty_Internal_Template $_smarty_tpl)
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div id="voteResult" class="modal modal-vote fade" role="dialog" aria-modal="true" tabindex="-1">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="modal-title h4">ผลโหวต</div>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="chart-container">
+                    <canvas id="voteChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div id="voteComplete" class="modal modal-vote fade" role="dialog" aria-modal="true" tabindex="-1">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="modal-title h4">ผลโหวต</div>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="status  text-center" id="status">
+                    <div role="alert" class="fade alert alert-light show">
+                        <div class="icon">
+                            <!-- <span class="material-symbols-rounded">check_circle</span>
+                            <span class="material-symbols-outlined">
+                                cancel
+                                </span> -->
+                        </div>
+                        <div class="alert-heading h4" id="msg-vote">โหวตสำเร็จ</div>
+                        <p>ขอบพระคุณที่ใช้บริการ</p>
+                    </div>
+                </div>
+                
             </div>
         </div>
     </div>
