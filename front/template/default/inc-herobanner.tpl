@@ -1,4 +1,4 @@
-<div class="hero-banner" data-aos="fade-up">
+<div class="hero-banner test" data-aos="fade-up">
     <div class="hero-banner-swiper swiper">
         <div class="swiper-wrapper">
             {if $callTGP->_numOfRows >0}

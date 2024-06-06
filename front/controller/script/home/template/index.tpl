@@ -1,6 +1,6 @@
 {include file="front/template/default/inc-herobanner.tpl" title=title}
 
-<div class="section section-i pt-0" style="overflow:hidden; backgroud-color: #cc1212;">
+<div class="section section-i pt-0" style="overflow:hidden;">
     <div class="container-lg">
         <div class="wg-overview">
             <div class="ov-list">
